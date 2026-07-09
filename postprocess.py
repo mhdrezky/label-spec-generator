@@ -18,8 +18,15 @@ lives here as plain Python:
 Value provenance, most to least trusted: annotated (plain value) >
 measured (bbox-derived) > computed (layout default).
 
+When ``stage_dir`` is set, a deep-copied specs snapshot is written after each
+major stage under that directory (for eval / debugging).
+
 Returns the spec dict with a top-level ``warnings`` list.
 """
+
+import copy
+import json
+import os
 
 from calibrate import calibrate, flag_suspect_plates
 
@@ -27,6 +34,16 @@ SEQUENCE_MIN_POINTS = 4
 SEQUENCE_TOLERANCE_MM = 2.0
 POSITION_STEP_MM = 0.5
 MIN_TEXT_SIZE_MM = 2.0
+
+# Ordered stage names written under results/<ts>/stages/ when stage_dir is set.
+STAGE_NAMES = (
+    "01_extract",
+    "02_normalize",
+    "03_calibrate",
+    "04_flagged",
+    "05_refine",
+    "06_resolve",
+)
 
 
 def _round_step(value: float) -> float:
@@ -48,6 +65,19 @@ def _sort_lines_by_y(label: dict) -> None:
     if len(annotated) == len(lines) and len(lines) > 1:
         # stable sort: same-row texts keep their left-to-right order
         lines.sort(key=lambda ln: ln["y_mm"])
+
+
+def _snapshot_stage(stage_dir: str | None, name: str, spec: dict, warnings: list[str]) -> None:
+    """Write a deep-copied specs snapshot for one pipeline stage."""
+    if not stage_dir:
+        return
+    os.makedirs(stage_dir, exist_ok=True)
+    payload = copy.deepcopy(spec)
+    payload["warnings"] = list(warnings)
+    payload["pipeline_stage"] = name
+    path = os.path.join(stage_dir, f"{name}.json")
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(payload, f, indent=2, ensure_ascii=False)
 
 
 def normalize(spec: dict) -> None:
@@ -128,11 +158,27 @@ def correct_sequence_outliers(spec: dict, warnings: list[str]) -> None:
                 computed.append("y_mm")
 
 
+def _snap_equal_row_positions(label: dict) -> None:
+    """Numbered-column plates: many short tokens in equal rows → slot centers."""
+    lines = label.get("lines") or []
+    n = len(lines)
+    height = label.get("height_mm")
+    if not (isinstance(height, (int, float)) and n >= 6):
+        return
+    if not all(len((ln.get("text") or "").strip()) <= 4 for ln in lines):
+        return
+    for i, line in enumerate(lines):
+        line["y_mm"] = _round_step(float(height) * (2 * i + 1) / (2 * n))
+        computed = line.setdefault("computed_fields", [])
+        if "y_mm" not in computed:
+            computed.append("y_mm")
+
+
 def _default_size(height: float, line_count: int) -> float:
     if line_count <= 1:
-        size = height * 0.35
+        size = height * 0.55
     else:
-        size = (height / line_count) * 0.45
+        size = (height / line_count) * 0.55
     return max(MIN_TEXT_SIZE_MM, _round_step(size))
 
 
@@ -233,20 +279,34 @@ def physical_checks(spec: dict, warnings: list[str]) -> None:
                 )
 
 
-def postprocess(spec: dict, refiner=None) -> dict:
+def postprocess(spec: dict, refiner=None, stage_dir: str | None = None) -> dict:
     """``refiner(spec, warnings)`` — optional pass-2 hook (see layered.refine_with_layers),
-    invoked only when the sanity check flags physically impossible geometry."""
+    invoked only when the sanity check flags physically impossible geometry.
+
+    ``stage_dir`` — if set, write a specs snapshot after each major stage.
+    """
     warnings: list[str] = []
+    _snapshot_stage(stage_dir, "01_extract", spec, warnings)
+
     normalize(spec)
     drop_impossible_values(spec, warnings)
     correct_sequence_outliers(spec, warnings)
+    _snapshot_stage(stage_dir, "02_normalize", spec, warnings)
+
     calibrate(spec, warnings)
 
+    for label in spec.get("labels") or []:
+        _snap_equal_row_positions(label)
+    _snapshot_stage(stage_dir, "03_calibrate", spec, warnings)
+
     flagged = flag_suspect_plates(spec, warnings)
+    _snapshot_stage(stage_dir, "04_flagged", spec, warnings)
+
     if refiner is not None and flagged:
         refiner(spec, warnings)
         # refined values replace the suspect ones; re-apply the guards
         drop_impossible_values(spec, warnings)
+    _snapshot_stage(stage_dir, "05_refine", spec, warnings)
 
     for label in spec.get("labels") or []:
         _sort_lines_by_y(label)
@@ -254,4 +314,5 @@ def postprocess(spec: dict, refiner=None) -> dict:
     physical_checks(spec, warnings)
     spec["total_labels"] = len(spec.get("labels") or [])
     spec["warnings"] = warnings
+    _snapshot_stage(stage_dir, "06_resolve", spec, warnings)
     return spec

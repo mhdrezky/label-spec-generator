@@ -8,6 +8,8 @@ import time
 import requests
 from requests.exceptions import ConnectionError, ReadTimeout, RequestException
 
+from llm_cache import load as load_cache, save as save_cache, stage_cache_path
+
 API_URL = os.environ.get(
     "API_URL", "http://10.65.1.119:5004/v1/chat/completions"
 )
@@ -181,6 +183,13 @@ def call_chat(
             },
         }
 
+    cache_path, may_load = stage_cache_path(label)
+    if cache_path is not None and may_load:
+        cached = load_cache(cache_path)
+        if cached is not None:
+            print(f"{label} response from cache ({cache_path.name}, {len(cached)} chars).")
+            return cached
+
     timeout = (API_CONNECT_TIMEOUT, API_READ_TIMEOUT)
     last_error: Exception | None = None
 
@@ -205,6 +214,9 @@ def call_chat(
                 f"finish_reason={finish_reason}, completion_tokens={completion_tokens}, "
                 f"max_tokens={resolved_tokens})."
             )
+
+            if cache_path is not None:
+                save_cache(cache_path, label, content)
 
             return content
         except ReadTimeout as exc:

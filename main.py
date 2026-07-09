@@ -25,6 +25,7 @@ from api_client import (
     check_api_health,
     warmup_model,
 )
+from llm_cache import set_run_cache_dir
 from postprocess import postprocess
 from render_md import render_markdown
 
@@ -73,6 +74,7 @@ def main() -> None:
     print(f"Timeout: read={API_READ_TIMEOUT}s, structured_output=json_schema")
 
     output_dir = create_result_dir()
+    set_run_cache_dir(os.path.join(output_dir, "llm"))
     print(f"Output directory: {output_dir}")
 
     if not check_api_health() or not warmup_model():
@@ -102,7 +104,9 @@ def main() -> None:
         if n:
             print(f"Refined {n} flagged plate(s) via per-crop layered geometry.")
 
-    spec = postprocess(raw_spec, refiner=refiner)
+    stage_dir = os.path.join(output_dir, "stages")
+    spec = postprocess(raw_spec, refiner=refiner, stage_dir=stage_dir)
+    print(f"Stage snapshots saved to {stage_dir}")
 
     save_json(
         specs_path,

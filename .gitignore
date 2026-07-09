@@ -9,7 +9,7 @@ wheels/
 # Virtual environments
 .venv
 
-# Extraction results
+# Extraction results (includes per-run llm/ stage cache)
 results/
 
 # editor

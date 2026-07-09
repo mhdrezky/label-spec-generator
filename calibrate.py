@@ -37,7 +37,16 @@ SCALE_MISMATCH_TOLERANCE = 0.20     # dim vs global-scale conflict threshold
 SCALE_OUTLIER_FRACTION = 0.25       # >25% outlier samples = not drawn to scale
 EDGE_MATCH_TOLERANCE = 0.15         # dimension span vs plate edge match window
 COORD_SLACK = 0.05                  # measured coord may exceed plate by 5%
-MAX_TEXT_HEIGHT_FRACTION = 0.4      # taller = bbox is a row band, not glyphs
+EDGE_CLAMP_EPS_MM = 0.5             # keep measured centers strictly inside plate
+EQUAL_BBOX_FRAC = 0.08              # bbox spans within 8% → same drawn column/row
+TABLE_EQUAL_BBOX_SHARE = 0.75       # fraction of plates that must share that span
+MIN_TABLE_PLATES = 4                # need enough plates to call it a table axis
+MIN_TABLE_DISTINCT_DIMS = 2         # …with at least this many distinct annotated sizes
+MAX_TEXT_HEIGHT_FRACTION = 0.4      # taller = bbox is a row band, not glyphs (multi-line)
+SINGLE_LINE_MAX_TEXT_FRACTION = 0.85  # one line may fill most of a short plate
+SLOT_SIZE_FRACTION = 0.65           # cap height vs equal row slot on stacked plates
+SHORT_TEXT_SIZE_FRACTION = 0.55     # numbers / codes in a stacked cell
+SHORT_TEXT_MAX_CHARS = 3
 SUSPECT_SIZE_FRACTION = 0.45        # final size above this flags the plate
 CHAR_WIDTH_RATIO = 0.6              # rough text width estimate per char
 MIN_PLATE_DIM_MM = 3.0
@@ -47,6 +56,17 @@ MIN_TEXT_SIZE_MM = 1.0
 
 def _round_step(value: float) -> float:
     return round(value / POSITION_STEP_MM) * POSITION_STEP_MM
+
+
+def _clamp_center(value: float, dim: float) -> float:
+    """Clamp a text-center coordinate into the plate, never onto the edge.
+
+    Clamping onto exactly 0 / ``dim`` used to trip ``flag_suspect_plates``
+    (``y >= height``) and send an otherwise-good baseline into refine.
+    """
+    if dim <= 2 * EDGE_CLAMP_EPS_MM:
+        return _round_step(dim / 2)
+    return _round_step(min(max(value, EDGE_CLAMP_EPS_MM), dim - EDGE_CLAMP_EPS_MM))
 
 
 def _valid_bbox(bbox) -> bool:
@@ -142,13 +162,58 @@ def _plate_scales(labels: list[dict]) -> tuple["_AxisScale", "_AxisScale"]:
     return _AxisScale(sx_samples), _AxisScale(sy_samples)
 
 
+def _tabular_axis(labels: list[dict], axis: str) -> bool:
+    """True when plates share nearly equal drawn bbox spans but annotated sizes differ.
+
+    Spec sheets (SIZE column in a table) draw every row the same pixel width
+    even when real plate widths are 150 / 130 / 80. A global px/mm from those
+    bboxes then "repairs" the correct annotations down to the majority size.
+    """
+    pairs: list[tuple[float, float]] = []
+    for label in labels:
+        bbox = label.get("bbox_px")
+        if not _valid_bbox(bbox):
+            continue
+        if axis == "x":
+            span = bbox[2] - bbox[0]
+            dim = label.get("width_mm")
+        else:
+            span = bbox[3] - bbox[1]
+            dim = label.get("height_mm")
+        if _is_num(dim) and dim >= MIN_PLATE_DIM_MM and span > 0:
+            pairs.append((float(span), float(dim)))
+    if len(pairs) < MIN_TABLE_PLATES:
+        return False
+    spans = [s for s, _ in pairs]
+    med_span = _median(spans)
+    if med_span <= 0:
+        return False
+    equal = [
+        (s, d) for s, d in pairs
+        if abs(s - med_span) / med_span <= EQUAL_BBOX_FRAC
+    ]
+    if len(equal) / len(pairs) < TABLE_EQUAL_BBOX_SHARE:
+        return False
+    distinct = {round(d, 1) for _, d in equal}
+    return len(distinct) >= MIN_TABLE_DISTINCT_DIMS
+
+
 def _axis_scales(spec: dict) -> tuple["_AxisScale", "_AxisScale"]:
-    """Prefer dimension-line anchors per axis; fall back to plate-width scale."""
+    """Prefer dimension-line anchors per axis; fall back to plate-width scale.
+
+    Plate-derived scales that look "consistent" only because a table drew
+    equal columns are marked inconsistent so annotated sizes are not repaired.
+    """
     labels = spec.get("labels") or []
     dx, dy = _dimension_scales(spec)
     px, py = _plate_scales(labels)
-    return (dx if dx.scale is not None else px,
-            dy if dy.scale is not None else py)
+    ax = dx if dx.scale is not None else px
+    ay = dy if dy.scale is not None else py
+    if not ax.anchored and _tabular_axis(labels, "x"):
+        ax.consistent = False
+    if not ay.anchored and _tabular_axis(labels, "y"):
+        ay.consistent = False
+    return ax, ay
 
 
 def _match_dimension_to_edge(
@@ -207,6 +272,9 @@ def _fill_dim_from_scale(
 ) -> bool:
     """Fill an unannotated plate dimension from the global scale, or repair a
     stated one only when a plate-derived scale is internally consistent.
+
+    Annotated sizes always win on schematic / tabular axes (``axis.consistent``
+    False) — e.g. a SIZE column listing 150×70 next to an 80-wide majority.
     Returns True when a stated value disagreed on a schematic sheet."""
     stated = label.get(field)
     if axis.scale is None:
@@ -227,8 +295,8 @@ def _fill_dim_from_scale(
         return False
 
     # No dimension line bracketed this edge. A plate-derived scale may repair
-    # only when the sheet is internally consistent; a bare dimension-derived
-    # global scale is NOT trusted here (it may be built from position markers).
+    # only when the sheet is internally consistent; tabular equal-bbox axes
+    # and bare dimension-derived scales are NOT trusted to overwrite SIZE text.
     if axis.consistent and not axis.anchored:
         fixed = max(MIN_PLATE_DIM_MM, _round_step(implied))
         warnings.append(
@@ -242,6 +310,21 @@ def _fill_dim_from_scale(
     return True  # keep annotation, count for schematic summary
 
 
+def _estimate_size_from_bbox(
+    text_h_mm: float, slot_h: float | None, line_count: int, text: str
+) -> float:
+    """Turn a tight bbox height into cap-letter height mm.
+
+    Multi-line plates: bbox often spans the whole row cell, so cap the estimate
+    to a fraction of the per-line slot. Short tokens (e.g. "73") are smaller."""
+    if line_count > 1 and slot_h and slot_h > 0:
+        cap = slot_h * SLOT_SIZE_FRACTION
+        if len((text or "").strip()) <= SHORT_TEXT_MAX_CHARS:
+            cap = min(cap, slot_h * SHORT_TEXT_SIZE_FRACTION)
+        return min(text_h_mm, cap)
+    return text_h_mm
+
+
 def _measure_lines(label: dict, sheet_to_scale: bool, warnings: list[str]) -> None:
     """Positions/sizes from fractional position inside THIS plate's bbox,
     scaled by this plate's own dimensions (center-anchored, like the editor)."""
@@ -250,8 +333,14 @@ def _measure_lines(label: dict, sheet_to_scale: bool, warnings: list[str]) -> No
     sx = (bbox[2] - bbox[0]) / width if _is_num(width) and width > 0 else None
     sy = (bbox[3] - bbox[1]) / height if _is_num(height) and height > 0 else None
     name = _label_name(label)
+    lines_list = label.get("lines") or []
+    line_count = len(lines_list)
+    slot_h = (height / line_count) if _is_num(height) and line_count > 0 else None
+    max_text_frac = (
+        SINGLE_LINE_MAX_TEXT_FRACTION if line_count == 1 else MAX_TEXT_HEIGHT_FRACTION
+    )
 
-    for line in label.get("lines") or []:
+    for line in lines_list:
         lb = line.get("bbox_px")
         if not _valid_bbox(lb):
             continue
@@ -260,7 +349,7 @@ def _measure_lines(label: dict, sheet_to_scale: bool, warnings: list[str]) -> No
         if sx and not _is_num(line.get("x_mm")):
             cx = ((lb[0] + lb[2]) / 2 - bbox[0]) / sx
             if -COORD_SLACK * width <= cx <= (1 + COORD_SLACK) * width:
-                line["x_mm"] = _round_step(min(max(cx, 0), width))
+                line["x_mm"] = _clamp_center(cx, width)
                 measured.append("x_mm")
             # else: box grabbed something outside the plate — leave null
 
@@ -268,11 +357,14 @@ def _measure_lines(label: dict, sheet_to_scale: bool, warnings: list[str]) -> No
             if not _is_num(line.get("y_mm")):
                 cy = ((lb[1] + lb[3]) / 2 - bbox[1]) / sy
                 if -COORD_SLACK * height <= cy <= (1 + COORD_SLACK) * height:
-                    line["y_mm"] = _round_step(min(max(cy, 0), height))
+                    line["y_mm"] = _clamp_center(cy, height)
                     measured.append("y_mm")
 
             text_h = (lb[3] - lb[1]) / sy
-            glyph_box = 0 < text_h <= MAX_TEXT_HEIGHT_FRACTION * height
+            text_h = _estimate_size_from_bbox(
+                text_h, slot_h, line_count, line.get("text", "")
+            )
+            glyph_box = 0 < text_h <= max_text_frac * height
             if not _is_num(line.get("size_mm")):
                 if glyph_box:
                     line["size_mm"] = max(MIN_TEXT_SIZE_MM, _round_step(text_h))
@@ -312,22 +404,26 @@ def flag_suspect_plates(spec: dict, warnings: list[str]) -> list[dict]:
         reasons: set[str] = set()
 
         if _is_num(height):
+            line_count = len(lines)
+            size_limit_frac = 0.85 if line_count == 1 else SUSPECT_SIZE_FRACTION
             for line in lines:
                 size = line.get("size_mm")
-                if _is_num(size) and size > SUSPECT_SIZE_FRACTION * height:
+                if _is_num(size) and size > size_limit_frac * height:
                     reasons.add("text taller than ~half the plate")
                 y = line.get("y_mm")
                 if _is_num(y):
-                    # y/x are text CENTERS: a center on (or past) the plate
-                    # edge is impossible for any text size
-                    half = size / 2 if _is_num(size) else MIN_TEXT_SIZE_MM / 2
-                    if y - half <= -0.5 or y + half >= height + 0.5 or y <= 0 or y >= height:
+                    # Centers only — glyph extent past the edge is common for
+                    # near-edge rows and is warned in physical_checks, not a
+                    # refine trigger (avoids false positives from clamp-to-edge).
+                    if y < -EDGE_CLAMP_EPS_MM or y > height + EDGE_CLAMP_EPS_MM:
                         reasons.add("text centered on or past the plate edge")
         width = label.get("width_mm")
         if _is_num(width):
             for line in lines:
                 x = line.get("x_mm")
-                if _is_num(x) and (x <= 0 or x >= width):
+                if _is_num(x) and (
+                    x < -EDGE_CLAMP_EPS_MM or x > width + EDGE_CLAMP_EPS_MM
+                ):
                     reasons.add("text centered on or past the plate edge")
 
         seen: set[tuple] = set()
@@ -364,6 +460,8 @@ def flag_suspect_plates(spec: dict, warnings: list[str]) -> list[dict]:
 def calibrate(spec: dict, warnings: list[str]) -> None:
     """Fill/repair mm geometry from pixel bboxes. Mutates ``spec`` in place."""
     labels = spec.get("labels") or []
+    tabular_x = _tabular_axis(labels, "x")
+    tabular_y = _tabular_axis(labels, "y")
     ax, ay = _axis_scales(spec)
     sheet_to_scale = ax.consistent and ay.consistent
     if ax.scale is not None or ay.scale is not None:
@@ -372,7 +470,21 @@ def calibrate(spec: dict, warnings: list[str]) -> None:
             "y": round(ay.scale, 3) if ay.scale else None,
             "sheet_to_scale": sheet_to_scale,
             "anchored": ax.anchored or ay.anchored,
+            "tabular_x": tabular_x,
+            "tabular_y": tabular_y,
         }
+    if tabular_x or tabular_y:
+        axes = []
+        if tabular_x:
+            axes.append("widths")
+        if tabular_y:
+            axes.append("heights")
+        warnings.append(
+            "plate "
+            + "/".join(axes)
+            + " look tabular (equal drawn spans, varying annotated sizes) — "
+            "keeping annotated dimensions"
+        )
 
     schematic_conflicts = 0
     for label in labels:

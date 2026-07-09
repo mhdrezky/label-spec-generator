@@ -12,6 +12,9 @@ vision call on the single-plate crop:
            routes the worst issue back to size/position, capped so it never
            loops.
 
+Refine is non-destructive: if the measured result violates plate bounds or
+y-order while the calibrate baseline was valid, the baseline is kept.
+
 Text and decomposition are authoritative from extract.py and are never re-read
 here. Only the offending plates pay for the extra vision calls.
 """
@@ -24,14 +27,20 @@ from plate_render import render_plate
 
 MAX_REVIEW_ATTEMPTS = 2      # per plate, then accept with a warning
 MAX_PLATES = 60              # runaway guard
+BOUNDS_EPS_MM = 0.5          # allow tiny float/rounding slack at plate edges
 
 SIZE_PROMPT = """\
 This image is a crop of ONE label plate. Its real size is {width} mm wide by
-{height} mm tall.
-For each text below, estimate the height of its CAPITAL letters in millimetres,
-judged against the plate's known height (a line filling half a 20mm plate is
-~10mm; a small sub-label is smaller). Headings and sub-labels should differ.
-Return size_mm for each, matched by its line index.
+{height} mm tall.{slot_context}
+For each text below, estimate the height of its CAPITAL letters in millimetres
+(the visible cap height — NOT the row height, cell height, or full plate height).
+Judgement hints:
+- One line filling a short plate (~20mm tall): cap height is often 10–14mm.
+- Two stacked lines on a ~40mm plate: heading ~10mm, sub-line ~6mm.
+- Many stacked rows on one plate: each row is roughly plate_height / line_count;
+  cap height is usually 50–65% of that row slot. A lone number in a narrow cell
+  (e.g. "73") is often 3–6mm even when the cell looks tall.
+Return size_mm for each text, matched by its line index.
 
 Texts:
 {texts}
@@ -89,8 +98,19 @@ def _texts_with_sizes(lines: list[dict]) -> str:
 
 
 def stage_size(crop_b64: str, plate: dict, texts: list[dict], warnings: list[str]) -> dict:
+    line_count = len(texts)
+    height = plate.get("height_mm")
+    slot_context = ""
+    if line_count > 1 and isinstance(height, (int, float)):
+        slot = float(height) / line_count
+        slot_context = (
+            f" There are {line_count} stacked text rows — each row slot is "
+            f"roughly {slot:.1f}mm tall."
+        )
     prompt = SIZE_PROMPT.format(
-        width=plate.get("width_mm", "?"), height=plate.get("height_mm", "?"),
+        width=plate.get("width_mm", "?"),
+        height=plate.get("height_mm", "?"),
+        slot_context=slot_context,
         texts=_texts_block(texts),
     )
     result = call_vision(
@@ -159,6 +179,54 @@ def _measure_position(lines: list[dict], crop_b64, plate, warnings) -> None:
             ln["x_mm"], ln["y_mm"] = pos_by[ln["line"]]
 
 
+def _is_num(value) -> bool:
+    return isinstance(value, (int, float)) and not isinstance(value, bool)
+
+
+def _geometry_violations(
+    lines: list[dict], width, height, *, require_complete: bool = False
+) -> list[str]:
+    """Deterministic checks: in-bounds centers, sizes, and non-decreasing y.
+
+    ``require_complete`` — when True (refine output), every line must have
+    numeric x/y/size. Baseline may still have nulls for the resolver to fill.
+    """
+    issues: list[str] = []
+    ys: list[float] = []
+    for i, ln in enumerate(lines):
+        text = (ln.get("text") or "")[:24]
+        x, y, size = ln.get("x_mm"), ln.get("y_mm"), ln.get("size_mm")
+        if require_complete:
+            missing = [f for f, v in (("x_mm", x), ("y_mm", y), ("size_mm", size))
+                       if not _is_num(v)]
+            if missing:
+                issues.append(f"line {i + 1} '{text}' missing {', '.join(missing)}")
+                continue
+        if _is_num(width) and _is_num(x):
+            if x < -BOUNDS_EPS_MM or x > float(width) + BOUNDS_EPS_MM:
+                issues.append(
+                    f"line {i + 1} '{text}' x_mm={x} outside width {width}"
+                )
+        if _is_num(height) and _is_num(y):
+            if y < -BOUNDS_EPS_MM or y > float(height) + BOUNDS_EPS_MM:
+                issues.append(
+                    f"line {i + 1} '{text}' y_mm={y} outside height {height}"
+                )
+            ys.append(float(y))
+        if _is_num(height) and _is_num(size) and size > float(height) + BOUNDS_EPS_MM:
+            issues.append(
+                f"line {i + 1} '{text}' size_mm={size} > plate height {height}"
+            )
+    for i in range(1, len(ys)):
+        if ys[i] + BOUNDS_EPS_MM < ys[i - 1]:
+            issues.append(
+                f"y order not monotonic at lines {i}/{i + 1} "
+                f"({ys[i - 1]:g} → {ys[i]:g})"
+            )
+            break
+    return issues
+
+
 def _process_plate(
     image: Image.Image, image_px: dict | None, plate: dict, warnings: list[str]
 ) -> list[dict]:
@@ -223,9 +291,23 @@ def _apply_measured(label: dict, refined: list[dict]) -> None:
         orig.pop("computed_fields", None)
 
 
+def _baseline_geometry_ok(label: dict) -> bool:
+    """True when the calibrate baseline has no hard bound/order violations."""
+    return not _geometry_violations(
+        label.get("lines") or [],
+        label.get("width_mm"),
+        label.get("height_mm"),
+        require_complete=False,
+    )
+
+
 def refine_with_layers(spec: dict, image_path: str, warnings: list[str]) -> int:
     """Re-measure only the plates flag_suspect_plates marked
-    ``needs_refinement``. Returns the number of plates refined."""
+    ``needs_refinement``. Returns the number of plates whose refine was kept.
+
+    If refine output violates plate bounds / y-order and the baseline did not,
+    the baseline is retained (non-destructive).
+    """
     flagged = [lab for lab in spec.get("labels") or []
                if lab.get("needs_refinement")]
     if not flagged:
@@ -233,12 +315,35 @@ def refine_with_layers(spec: dict, image_path: str, warnings: list[str]) -> int:
 
     image_px = spec.get("image_px")
     image = Image.open(image_path)
-    count = 0
+    accepted = 0
     for label in flagged[:MAX_PLATES]:
         plate = _label_to_plate(label)
         if not plate.get("texts") or not plate.get("bbox_px"):
             continue
+        baseline_ok = _baseline_geometry_ok(label)
         refined = _process_plate(image, image_px, plate, warnings)
+        refine_issues = _geometry_violations(
+            refined,
+            label.get("width_mm"),
+            label.get("height_mm"),
+            require_complete=True,
+        )
+        pid = label.get("label_number", "?")
+        if refine_issues and baseline_ok:
+            warnings.append(
+                f"label #{pid}: refine rejected ({refine_issues[0]}) — "
+                "keeping calibrate baseline"
+            )
+            label["refine_rejected"] = True
+            label["refine_reject_reasons"] = refine_issues
+            continue
+        if refine_issues and not baseline_ok:
+            warnings.append(
+                f"label #{pid}: refine still invalid ({refine_issues[0]}) — "
+                "applying anyway (baseline was also invalid)"
+            )
         _apply_measured(label, refined)
-        count += 1
-    return count
+        label.pop("refine_rejected", None)
+        label.pop("refine_reject_reasons", None)
+        accepted += 1
+    return accepted

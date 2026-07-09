@@ -14,8 +14,10 @@ One path — `python main.py [image_path]`. Each step does what it is best at:
    values, snap sequence outliers, then **calibrate.py** (bbox → mm).
 3. **layered.py** — per-crop refine *only* when `flag_suspect_plates` marks a
    plate's baseline geometry as physically impossible (size → position → review).
+   Rejected if the refine result is out-of-bounds / non-monotonic while the
+   baseline was valid (non-destructive).
 4. **resolve_layout** + **physical_checks** — fill remaining nulls with defaults,
-   emit warnings, write output.
+   emit warnings, write output. Specs snapshots land in `results/<ts>/stages/`.
 
 ```mermaid
 flowchart TD
@@ -64,7 +66,8 @@ flowchart TD
 - **extract.py** owns *decomposition and text* — one full-sheet call keeps dense
   multi-strip layouts intact.
 - **calibrate.py** owns *baseline geometry* — per-line bbox → mm, anchored on
-  dimension lines where the draft has them.
+  dimension lines where the draft has them. Annotated plate sizes from a SIZE
+  column win over equal-column bbox inference (tabular sheets).
 - **layered.py** owns *rescue geometry* — per-crop size/position only when the
   baseline is physically impossible. Text is never re-read; extract stays
   authoritative.
@@ -87,6 +90,25 @@ python main.py [image_path]      # default: draft.png
 ```
 
 Env overrides: `API_URL`, `MODEL`, ... (see `api_client.py`).
+
+Every LLM call is saved under `results/<timestamp>/llm/` named by stage
+(`extract.json`, `size-1.json`, `pos-1.json`, `review-1.json`, …; retries
+get a `-2` suffix). Set `LLM_CACHE=0` to disable recording.
+
+Pipeline specs snapshots are also written under `results/<timestamp>/stages/`:
+
+| File | After |
+|------|--------|
+| `01_extract.json` | raw extract |
+| `02_normalize.json` | normalize + drop impossible + sequence snap |
+| `03_calibrate.json` | bbox → mm baseline |
+| `04_flagged.json` | `flag_suspect_plates` |
+| `05_refine.json` | layered refine (or unchanged if nothing flagged / rejected) |
+| `06_resolve.json` | resolve_layout + physical_checks |
+
+Use these to see which stage introduced a geometry regression without re-running
+the model. Refine is non-destructive: out-of-bounds / non-monotonic refine
+output is rejected when the calibrate baseline was valid.
 
 ## Editor preview (replica)
 
