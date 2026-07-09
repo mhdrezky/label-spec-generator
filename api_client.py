@@ -9,17 +9,17 @@ import requests
 from requests.exceptions import ConnectionError, ReadTimeout, RequestException
 
 API_URL = os.environ.get(
-    "API_URL", "http://10.65.1.116:5003/v1/chat/completions"
+    "API_URL", "http://10.65.1.119:5004/v1/chat/completions"
 )
 API_BASE = API_URL.rsplit("/v1/", 1)[0]
-MODEL = os.environ.get("MODEL", "cyankiwi/Qwen3.5-9B-AWQ-BF16-INT8")
+MODEL = os.environ.get("MODEL", "Qwen/Qwen3-VL-32B-Instruct-FP8")
 API_CONNECT_TIMEOUT = int(os.environ.get("API_CONNECT_TIMEOUT", "30"))
 API_READ_TIMEOUT = int(os.environ.get("API_READ_TIMEOUT", "900"))
 API_MAX_RETRIES = int(os.environ.get("API_MAX_RETRIES", "3"))
 API_WARMUP_TIMEOUT = int(os.environ.get("API_WARMUP_TIMEOUT", "120"))
 API_HEALTH_TIMEOUT = int(os.environ.get("API_HEALTH_TIMEOUT", "15"))
 API_MAX_TOKENS = int(os.environ.get("API_MAX_TOKENS", "4096"))
-API_SPECS_MAX_TOKENS = int(os.environ.get("API_SPECS_MAX_TOKENS", "24000"))
+API_EXTRACT_MAX_TOKENS = int(os.environ.get("API_EXTRACT_MAX_TOKENS", "16000"))
 HEARTBEAT_INTERVAL = int(os.environ.get("HEARTBEAT_INTERVAL", "15"))
 API_ENABLE_THINKING = os.environ.get("API_ENABLE_THINKING", "false").lower() == "true"
 
@@ -159,7 +159,11 @@ def call_chat(
     *,
     label: str = "chat",
     max_tokens: int | None = None,
+    json_schema: dict | None = None,
 ) -> str:
+    """Call the chat endpoint. When ``json_schema`` is given, output is
+    constrained to that schema via vLLM structured output (response_format
+    json_schema), guaranteeing structurally valid JSON."""
     resolved_tokens = max_tokens if max_tokens is not None else API_MAX_TOKENS
     payload = build_api_payload(
         model=MODEL,
@@ -167,6 +171,15 @@ def call_chat(
         max_tokens=resolved_tokens,
         messages=messages,
     )
+    if json_schema is not None:
+        payload["response_format"] = {
+            "type": "json_schema",
+            "json_schema": {
+                "name": "label_spec",
+                "schema": json_schema,
+                "strict": True,
+            },
+        }
 
     timeout = (API_CONNECT_TIMEOUT, API_READ_TIMEOUT)
     last_error: Exception | None = None
