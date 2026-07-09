@@ -11,3 +11,6 @@ wheels/
 
 # Extraction results
 results/
+
+# editor
+editor/latest-specs.json

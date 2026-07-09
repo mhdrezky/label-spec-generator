@@ -6,43 +6,45 @@ sketches, photos, CAD-style drawings) into JSON ready for the label editor
 
 ## Pipeline
 
-The default pipeline is **hybrid** — it plays each approach to its strength.
-The proven single vision call (`extract.py`) does what it is good at:
-decomposing the sheet into plates and reading their text. The deterministic
-`calibrate.py` turns per-line pixel boxes into mm — this is the geometry
-baseline (it scores KISO 100%). Only plates whose geometry comes out
-physically impossible get re-measured by the per-crop **layered** stages, so
-simple and tall/dense strips keep the proven path and just the genuinely
-broken plates pay for extra vision calls.
+One path — `python main.py [image_path]`. Each step does what it is best at:
+
+1. **extract.py** — one vision call: decompose the sheet into plates, transcribe
+   text, return per-line `bbox_px` and any annotated mm values.
+2. **postprocess.py** — deterministic geometry: normalize, drop impossible
+   values, snap sequence outliers, then **calibrate.py** (bbox → mm).
+3. **layered.py** — per-crop refine *only* when `flag_suspect_plates` marks a
+   plate's baseline geometry as physically impossible (size → position → review).
+4. **resolve_layout** + **physical_checks** — fill remaining nulls with defaults,
+   emit warnings, write output.
 
 ```mermaid
 flowchart TD
-    IMG["draft image<br/>(png / jpg / rasterized pdf)"]
-    EX["extract.py — 1 vision call<br/>plates + text + per-line bbox + dims<br/>(proven decomposition)"]
+    IMG["draft image<br/>(png / jpg / jpeg / webp)"]
+    EX["extract.py — 1 vision call<br/>plates + text + bbox + dims"]
 
-    subgraph POST["postprocess.py — deterministic geometry baseline"]
+    subgraph POST["postprocess.py"]
         direction TB
-        DROP["drop impossible values"]
-        CAL["calibrate.py<br/>per-line bbox → mm, dimension anchors"]
-        FLAG{"flag_suspect_plates<br/>geometry impossible?"}
-        RES["layout resolver → checks"]
-        DROP --> CAL --> FLAG
+        NORM["normalize + drop impossible<br/>+ sequence outliers"]
+        CAL["calibrate.py — bbox → mm"]
+        FLAG{"geometry suspect?"}
+        RES["resolve_layout + physical_checks"]
+        NORM --> CAL --> FLAG
         FLAG -->|"no"| RES
     end
 
-    subgraph REF["layered.py — per-crop refine (flagged plates only)"]
+    subgraph REF["layered.py — flagged plates only"]
         direction TB
         C["crop plate"]
-        S["size (per crop)"]
-        P["position (per crop)"]
-        R{"review vs render<br/>(lenient, cap 2)"}
+        S["size"]
+        P["position"]
+        R{"review vs render<br/>(cap 2)"}
         C --> S --> P --> R
-        R -->|"revise size/position<br/>(text stays authoritative)"| S
+        R -->|"revise size/position"| S
     end
 
     OUT["results/&lt;ts&gt;/specs.json + output.md<br/>+ editor/latest-specs.json"]
 
-    IMG --> EX --> DROP
+    IMG --> EX --> NORM
     FLAG -->|"yes"| REF
     R -->|"pass / capped"| RES
     RES --> OUT
@@ -51,30 +53,24 @@ flowchart TD
     classDef det fill:#f4f5f7,stroke:#8a94a0,color:#123;
     classDef io fill:#fff8ec,stroke:#f0a929,color:#123;
     class EX,REF,C,S,P,R vis;
-    class POST,DROP,CAL,FLAG,RES det;
+    class POST,NORM,CAL,FLAG,RES det;
     class IMG,OUT io;
 ```
 
-Why hybrid, in one line each:
+**One line:** image → extract → calibrate → (refine if needed) → resolve → JSON.
 
-- **extract.py** (single call) is the most reliable at *decomposition and
-  text* — it reads KISO's two strips and their labels correctly where the
-  full-layered `detect` stage fragments them.
-- **calibrate.py** is the most reliable at *geometry on tall/dense strips*
-  (per-line bbox → mm), scoring KISO positions 100% where the layered
-  `position` stage compresses them.
-- **layered.py** stages (`size` / `position` on a clean crop) are the most
-  reliable at *geometry on simple plates* — so they run only when
-  `flag_suspect_plates` marks a plate's baseline geometry impossible. Text is
-  never re-read there; extract stays authoritative.
+### Why this split
 
-`--layered` still runs the full staged pipeline (detect→size→position→review)
-and `--single` runs just extract + reconciliation, for comparison.
+- **extract.py** owns *decomposition and text* — one full-sheet call keeps dense
+  multi-strip layouts intact.
+- **calibrate.py** owns *baseline geometry* — per-line bbox → mm, anchored on
+  dimension lines where the draft has them.
+- **layered.py** owns *rescue geometry* — per-crop size/position only when the
+  baseline is physically impossible. Text is never re-read; extract stays
+  authoritative.
 
-Design principles:
+### Design principles
 
-- **Right tool per job.** Decomposition/text = one call; baseline geometry =
-  calibrate; per-crop refine = layered stages, triggered not blanket.
 - **Structured output enforced by the server.** Every schema is sent as
   `response_format: json_schema`, so responses are always structurally valid.
 - **x/y are the CENTER of the text** (the editor's anchor convention).
@@ -87,11 +83,10 @@ Design principles:
 ## Usage
 
 ```
-python main.py [image_path]            # layered pipeline (default)
-python main.py [image_path] --single   # legacy single vision call
+python main.py [image_path]      # default: draft.png
 ```
 
-Env overrides: `API_URL`, `MODEL`, ... (see api_client.py).
+Env overrides: `API_URL`, `MODEL`, ... (see `api_client.py`).
 
 ## Editor preview (replica)
 
@@ -126,22 +121,19 @@ overfitted.
 Scores: label count, text match %, positions within ±2mm, null precision
 (catches invented numbers).
 
+Note: the eval harness scores **extract + calibrate** only — not the per-crop
+refine stages.
+
 ## Known limits
 
-- **Plate decomposition on dense grids is the load-bearing risk.** Stage 1
-  runs on the full sheet; on a bordered table where each row is one full-width
-  plate with column *zones* (e.g. `eval/images/image003.png`), detect tends to
-  over-split each row into per-column plates. Per-plate review structurally
-  cannot catch a wrong split/merge — each fragment looks locally valid. This
-  ambiguity is under-determined from the image alone (a human needs domain
-  context too). Simple drafts (single-plate CAD, the common IMark case) work
-  well; dense grids need review/correction.
-- The layered `detect` stage can also mis-read a noisy multi-strip photo that
-  the single-call path read cleanly — see the "hybrid (proven decomposition +
-  layered geometry)" direction under discussion.
-- `eval/run_eval.py` currently scores the `--single` extraction, not the
-  layered stages — the harness needs pointing at the layered pipeline.
+- **Plate decomposition on dense grids is the load-bearing risk.** The extract
+  call runs on the full sheet; on a bordered table where each row is one
+  full-width plate with column *zones* (e.g. `eval/images/image003.png`), the
+  model tends to over-split each row into per-column plates. Per-plate refine
+  structurally cannot catch a wrong split/merge — each fragment looks locally
+  valid. Simple drafts (single-plate CAD) work well; dense grids need human
+  review/correction.
 - Very messy low-res handwriting (`eval/images/handwriting.jpg`) still
   mis-transcribes — consider client photo-quality guidance or preprocessing.
-- xlsx/PDF client inputs are out of scope (image pipeline only); rasterizing
-  PDFs is a possible future extension.
+- PDF/xlsx client inputs are out of scope (image pipeline only); rasterize PDFs
+  to png/jpg before running.

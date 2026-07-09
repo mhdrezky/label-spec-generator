@@ -1,13 +1,11 @@
-"""Label extractor pipeline orchestrator.
+"""Label extractor pipeline orchestrator (hybrid).
 
-    python main.py [image_path]            # hybrid (default)
-    python main.py [image_path] --single   # legacy single vision call
-    python main.py [image_path] --layered  # full layered (detect stage too)
+    python main.py [image_path]
 
-Hybrid (direction B): extract.py does the proven single-call decomposition +
-text, and postprocess.py/calibrate is the geometry baseline. Only plates whose
-geometry is flagged impossible get re-measured by the per-crop layered stages
-(layered.refine_with_layers) — everything simple keeps the proven path.
+extract.py does the single-call decomposition + text, postprocess.py/calibrate
+is the geometry baseline, and only plates whose geometry is flagged impossible
+get re-measured by the per-crop layered stages (layered.refine_with_layers) —
+everything simple keeps the proven path.
 """
 
 import json
@@ -60,44 +58,18 @@ def format_label_summary(label: dict) -> str:
     return f"#{num} ({dims}, qty {qty}): {line_count} lines — {first!r}"
 
 
-def run_extraction(image_path: str, mode: str) -> tuple[dict, list[str]]:
-    """Return (raw_spec, warnings) for the chosen pipeline mode.
-
-    hybrid/single both extract first; layered runs the full staged pipeline.
-    The hybrid layered-refinement happens later, inside postprocess's refiner
-    hook (only for flagged plates)."""
-    warnings: list[str] = []
-    if mode == "layered":
-        from layered import run_layered
-
-        return run_layered(image_path, warnings), warnings
-
-    from extract import extract_specs
-
-    raw_spec, schema_errors = extract_specs(image_path)
-    for error in schema_errors:
-        print(f"Schema warning: {error}", file=sys.stderr)
-    return raw_spec, warnings
-
-
 def main() -> None:
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
-    mode = "single" if "--single" in sys.argv else "layered" if "--layered" in sys.argv else "hybrid"
     image_path = args[0] if args else IMAGE_FILE
 
     if not os.path.isfile(image_path):
         print(f"Error: image file not found: {image_path}", file=sys.stderr)
         sys.exit(1)
 
-    labels_desc = {
-        "single": "single vision call",
-        "layered": "layered (detect->size->position->review)",
-        "hybrid": "hybrid (extract + calibrate baseline, layered refine on flagged plates)",
-    }
     print(f"Extracting label specs from {image_path}...")
     print(f"API: {API_URL}")
     print(f"Model: {MODEL}")
-    print(f"Pipeline: {labels_desc[mode]}")
+    print("Pipeline: hybrid (extract + calibrate baseline, layered refine on flagged plates)")
     print(f"Timeout: read={API_READ_TIMEOUT}s, structured_output=json_schema")
 
     output_dir = create_result_dir()
@@ -106,11 +78,15 @@ def main() -> None:
     if not check_api_health() or not warmup_model():
         sys.exit(1)
 
+    from extract import extract_specs
+
     try:
-        raw_spec, stage_warnings = run_extraction(image_path, mode)
+        raw_spec, schema_errors = extract_specs(image_path)
     except Exception as exc:
         print(f"Extraction failed: {exc}", file=sys.stderr)
         sys.exit(1)
+    for error in schema_errors:
+        print(f"Schema warning: {error}", file=sys.stderr)
 
     specs_path = os.path.join(output_dir, SPECS_FILENAME)
 
@@ -119,17 +95,14 @@ def main() -> None:
         print(f"Error: response is not valid JSON. Saved to {specs_path}", file=sys.stderr)
         sys.exit(1)
 
-    refiner = None
-    if mode == "hybrid":
-        def refiner(spec_ref: dict, warnings: list[str]) -> None:
-            from layered import refine_with_layers
+    def refiner(spec_ref: dict, warnings: list[str]) -> None:
+        from layered import refine_with_layers
 
-            n = refine_with_layers(spec_ref, image_path, warnings)
-            if n:
-                print(f"Refined {n} flagged plate(s) via per-crop layered geometry.")
+        n = refine_with_layers(spec_ref, image_path, warnings)
+        if n:
+            print(f"Refined {n} flagged plate(s) via per-crop layered geometry.")
 
     spec = postprocess(raw_spec, refiner=refiner)
-    spec["warnings"] = stage_warnings + spec.get("warnings", [])
 
     save_json(
         specs_path,

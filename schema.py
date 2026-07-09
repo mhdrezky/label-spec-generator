@@ -121,68 +121,13 @@ LABEL_SPEC_SCHEMA = {
 }
 
 # ─────────────────────────────────────────────────────────────────────────
-# Layered pipeline (layered.py) — each stage is its own vision call.
-# Designers work in passes: decide the plates, then sizes, then spacing, then
-# review. Each stage has a tiny schema so the model answers one question.
+# Per-crop geometry stages (layered.py) — each its own tiny vision call, run
+# only on plates flagged for refinement. Decomposition + text come from
+# extract.py's LABEL_SPEC_SCHEMA above, so these stages only ask about size,
+# position, and a visual review.
 # ─────────────────────────────────────────────────────────────────────────
 
-# Stage 1 — detect: plates + their text content. NO layout math here.
-DETECT_TEXT_SCHEMA = {
-    "type": "object",
-    "properties": {
-        "line": {"type": "integer"},          # stable id, top-to-bottom
-        "text": {"type": "string"},
-    },
-    "required": ["line", "text"],
-    "additionalProperties": False,
-}
-
-DETECT_PLATE_SCHEMA = {
-    "type": "object",
-    "properties": {
-        "plate_id": {"type": "integer"},
-        "bbox_px": BBOX_SCHEMA,
-        "width_mm": {"type": ["number", "null"]},
-        "height_mm": {"type": ["number", "null"]},
-        "quantity": {"type": ["integer", "null"]},
-        "material": {"type": ["string", "null"]},
-        "background_color": {"type": ["string", "null"]},
-        "text_color": {"type": ["string", "null"]},
-        "fixing": {"type": ["string", "null"]},
-        "notes": {"type": ["string", "null"]},
-        "texts": {"type": "array", "items": DETECT_TEXT_SCHEMA},
-    },
-    "required": [
-        "plate_id", "bbox_px", "width_mm", "height_mm", "quantity",
-        "material", "background_color", "text_color", "fixing", "notes", "texts",
-    ],
-    "additionalProperties": False,
-}
-
-DETECT_SCHEMA = {
-    "type": "object",
-    "properties": {
-        "unit": {"type": "string"},
-        "image_px": IMAGE_PX_SCHEMA,
-        "plates": {"type": "array", "items": DETECT_PLATE_SCHEMA},
-    },
-    "required": ["unit", "image_px", "plates"],
-    "additionalProperties": False,
-}
-
-# Stage 1b — re-detect ONE plate from its crop (dims + texts only).
-REDETECT_SCHEMA = {
-    "type": "object",
-    "properties": {
-        "width_mm": {"type": ["number", "null"]},
-        "height_mm": {"type": ["number", "null"]},
-        "texts": {"type": "array", "items": DETECT_TEXT_SCHEMA},
-    },
-    "required": ["width_mm", "height_mm", "texts"],
-    "additionalProperties": False,
-}
-
-# Stage 2 — size: capital-letter height per text, relative to the plate.
+# size: capital-letter height per text, relative to the plate.
 SIZE_SCHEMA = {
     "type": "object",
     "properties": {
