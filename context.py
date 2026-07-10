@@ -12,6 +12,15 @@ class SheetContext:
     image_px: dict | None = None
     draft_type: str | None = None
     material_notes: str | None = None
+    # Structured global spec parsed from the sheet's written notes (survey node),
+    # applied to every plate: material, colours, fixing, and stated per-line
+    # letter heights that take priority over the visual size estimate.
+    material: str | None = None
+    background_color: str | None = None
+    text_color: str | None = None
+    fixing: str | None = None
+    default_size_mm: float | None = None
+    line_sizes: list[dict] = field(default_factory=list)
     dimension_annotations: list[dict] = field(default_factory=list)
     plate_regions: list[dict] = field(default_factory=list)
     labels: list[dict] = field(default_factory=list)

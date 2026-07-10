@@ -25,8 +25,14 @@ Return each line with tight bbox_px [x1,y1,x2,y2] in THIS crop's pixels.
 SIZE_PROMPT = """\
 Plate {plate_id} of {total}. Plate size: {width} mm wide × {height} mm tall.{slot_context}
 
-Estimate CAPITAL letter height (size_mm) for each text line below.
-Typical engraved labels: 3–8mm for body text, up to ~12mm for large titles.
+For each line, give size_mm = the height of its CAPITAL letters in millimetres.
+- Judge each line's letter height against the {height} mm plate height, then
+  convert to mm. A bold title can reach a third of the plate height or more;
+  fine print is much smaller. Do NOT assume a small default — large plates carry
+  large text (a title on an 80mm plate can be 20mm+).
+- If the drawing states a letter size for a line (e.g. "20mm"), use that number.
+- Compare lines to each other: a visibly larger line MUST get a larger size_mm;
+  do not flatten every line to a similar value.
 
 Texts:
 {texts}
@@ -72,15 +78,35 @@ def _new_label_from_region(region: dict, ctx: SheetContext) -> dict:
         "width_mm": region.get("width_mm"),
         "height_mm": region.get("height_mm"),
         "quantity": None,
-        "material": ctx.material_notes,
-        "background_color": None,
-        "text_color": None,
-        "fixing": None,
+        "material": ctx.material,
+        "background_color": ctx.background_color,
+        "text_color": ctx.text_color,
+        "fixing": ctx.fixing,
         "notes": None,
         "bbox_px": region.get("bbox_px"),
         "lines": [],
         "holes": [],
     }
+
+
+def _apply_stated_sizes(label: dict, ctx: SheetContext) -> None:
+    """A letter size written in the sheet's spec notes overrides the visual
+    estimate — the size node is text-only (it never sees the crop, so it just
+    guesses), and the client's stated value is authoritative. A single global
+    "Letter Size: Nmm" applies to every line; per-line values override it."""
+    default = ctx.default_size_mm if isinstance(ctx.default_size_mm, (int, float)) else None
+    by_index = {
+        s["line"]: s["size_mm"]
+        for s in (ctx.line_sizes or [])
+        if isinstance(s.get("line"), int) and isinstance(s.get("size_mm"), (int, float))
+    }
+    if default is None and not by_index:
+        return
+    for i, line in enumerate(label.get("lines") or [], start=1):
+        if i in by_index:
+            line["size_mm"] = by_index[i]
+        elif default is not None:
+            line["size_mm"] = default
 
 
 def _transcribe_plate(
@@ -198,6 +224,9 @@ def _process_one_plate(
         _size_plate(region, label["lines"], total, ctx.warnings)
     if position and label.get("lines"):
         _position_plate(crop_b64, region, label["lines"], total, ctx.warnings)
+
+    if label.get("lines"):
+        _apply_stated_sizes(label, ctx)
 
     return label
 

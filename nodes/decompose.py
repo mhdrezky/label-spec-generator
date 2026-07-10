@@ -29,7 +29,10 @@ would be cut as a separate piece.
 For each plate return:
 - id: 1, 2, 3... top-to-bottom then left-to-right
 - bbox_frac: [x1, y1, x2, y2] as FRACTIONS of the image in [0, 1]
-  (x = column/width, y = row/height; NEVER pixels)
+  (x = column/width, y = row/height; NEVER pixels). The box must TIGHTLY enclose
+  the whole plate outline — from its top edge to its bottom edge — including
+  EVERY text line inside it (the title AND any second/subtitle line), not just
+  the first line of text.
 - width_mm / height_mm: copy ONLY written mm numbers; null if not stated
 
 {qc_hint}

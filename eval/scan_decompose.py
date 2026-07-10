@@ -20,6 +20,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from llm_cache import set_run_cache_dir  # noqa: E402
+from nodes.decompose import PLATE_COUNT_PROMPT  # noqa: E402  (shared, no drift)
 from plate_detect import detect_plates, file_image_px  # noqa: E402
 from plate_gate import evaluate_gate  # noqa: E402
 from schema import PLATE_COUNT_SCHEMA  # noqa: E402
@@ -28,14 +29,6 @@ from vision import call_vision, guess_mime, image_to_base64  # noqa: E402
 EVAL_DIR = Path(__file__).resolve().parent
 IMAGES_DIR = EVAL_DIR / "images"
 IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".webp"}
-
-PLATE_COUNT_PROMPT = """\
-Count the physical label PLATES to manufacture in this draft — each is a separate
-rectangle cut as its own piece.
-- Stacked horizontal rows, each with its own outline/height, are ONE plate per row.
-- Vertical column guides INSIDE one row do NOT create separate plates.
-Return only the integer plate_count.
-"""
 
 
 def _llm_count(image_path: Path) -> int | None:

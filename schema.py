@@ -121,8 +121,31 @@ SURVEY_SCHEMA = {
     "properties": {
         "draft_type": {"enum": ["cad", "sketch", "photo", "other", None]},
         "material_notes": {"type": ["string", "null"]},
+        "material": {"type": ["string", "null"]},
+        "background_color": {"type": ["string", "null"]},
+        "text_color": {"type": ["string", "null"]},
+        "fixing": {"type": ["string", "null"]},
+        # A single letter size that applies to ALL text (e.g. "Letter Size: 5mm").
+        "default_size_mm": {"type": ["number", "null"]},
+        # Per-line letter heights when the draft lists them individually
+        # (e.g. "20mm 1st Line", "10mm 2nd Line").
+        "line_sizes": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "line": {"type": "integer"},
+                    "size_mm": {"type": "number"},
+                },
+                "required": ["line", "size_mm"],
+                "additionalProperties": False,
+            },
+        },
     },
-    "required": ["draft_type", "material_notes"],
+    "required": [
+        "draft_type", "material_notes", "material", "background_color",
+        "text_color", "fixing", "default_size_mm", "line_sizes",
+    ],
     "additionalProperties": False,
 }
 
