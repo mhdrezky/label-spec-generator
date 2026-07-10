@@ -156,6 +156,45 @@ DECOMPOSE_SCHEMA = {
     "additionalProperties": False,
 }
 
+# Cheap coarse plate-count yardstick (integer only, no geometry). Reused by the
+# Phase-2 gate and the Phase-3 QC arbiter — computed once per run.
+PLATE_COUNT_SCHEMA = {
+    "type": "object",
+    "properties": {"plate_count": {"type": "integer"}},
+    "required": ["plate_count"],
+    "additionalProperties": False,
+}
+
+# LLM decompose fallback. Coordinates are FRACTIONS of the image in [0, 1] — the
+# model never emits absolute pixels (that path hallucinated coords past the
+# canvas). Code converts frac→px against the known image size and rejects any
+# out-of-range box (see nodes/decompose._llm_decompose).
+PLATE_REGION_FRAC_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "id": {"type": "integer"},
+        "bbox_frac": {
+            "type": "array",
+            "items": {"type": "number", "minimum": 0, "maximum": 1},
+            "minItems": 4,
+            "maxItems": 4,
+        },
+        "width_mm": {"type": ["number", "null"]},
+        "height_mm": {"type": ["number", "null"]},
+    },
+    "required": ["id", "bbox_frac", "width_mm", "height_mm"],
+    "additionalProperties": False,
+}
+
+DECOMPOSE_FRAC_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "plates": {"type": "array", "items": PLATE_REGION_FRAC_SCHEMA},
+    },
+    "required": ["plates"],
+    "additionalProperties": False,
+}
+
 PLATE_DIMS_SCHEMA = {
     "type": "object",
     "properties": {

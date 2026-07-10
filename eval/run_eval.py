@@ -157,6 +157,11 @@ def main() -> None:
             set_run_cache_dir(cache_dir)
             ctx = run_pipeline(image)
             measured = ctx.to_spec_dict()
+            # Method attribution: so CV regressions are not hidden behind LLM
+            # rescues (and vice versa) when reading scores.
+            measured["decompose_method"] = ctx.decompose_method
+            measured["llm_count"] = ctx.llm_count
+            measured["gate"] = ctx.gate
             raw = {
                 "unit": ctx.unit,
                 "image_px": ctx.image_px,
@@ -171,7 +176,9 @@ def main() -> None:
             )
 
         expected = json.loads(expected_path.read_text(encoding="utf-8"))
-        rows.append((image.name, score_image(expected, raw, measured)))
+        score = score_image(expected, raw, measured)
+        score["method"] = measured.get("decompose_method") or "?"
+        rows.append((image.name, score))
 
     if skipped:
         print(
@@ -187,14 +194,17 @@ def main() -> None:
         sys.exit(1)
 
     name_width = max(len(name) for name, _ in rows)
-    header = f"{'image'.ljust(name_width)}  {'labels':<14} {'text':<14} {'position':<14} {'null':<14}"
+    header = (
+        f"{'image'.ljust(name_width)}  {'method':<8} {'labels':<14} {'text':<14} "
+        f"{'position':<14} {'null':<14}"
+    )
     print()
     print(header)
     print("-" * len(header))
     for name, score in rows:
         print(
-            f"{name.ljust(name_width)}  {score['labels']:<14} {score['text']:<14} "
-            f"{score['position']:<14} {score['null']:<14}"
+            f"{name.ljust(name_width)}  {score['method']:<8} {score['labels']:<14} "
+            f"{score['text']:<14} {score['position']:<14} {score['null']:<14}"
         )
 
 

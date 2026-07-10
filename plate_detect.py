@@ -13,6 +13,15 @@ MIN_PLATE_AREA = 800
 LINE_THRESHOLD_FRAC = 0.22
 EDGE_MARGIN_PX = 10
 INNER_PAD_PX = 2
+# A plate outline spans at least this fraction of the drawing width. The old
+# 0.45/0.55 two-branch gate (coupled to an absolute bh>=50/<=50 split) assumed
+# every plate was ~half the sheet wide and killed CAD sheets whose plate column
+# sits inside a margin (marshall plates measured 0.43w -> all dropped). Phase-1
+# attrition confirmed the strip gate, not MIN_*, was the killer; this single
+# relative gate is the de-overfit. Narrower grids (traffolyte/mla) that still
+# fall below it are the Phase-2 gate's job to route to the LLM, not a place to
+# add per-layout branches here.
+STRIP_MIN_WIDTH_FRAC = 0.33
 
 
 def _cluster_positions(indices: np.ndarray, min_gap: int = 4) -> list[int]:
@@ -135,11 +144,12 @@ def detect_plates(image_path: str | Path) -> tuple[list[dict], dict]:
 
     for box in boxes:
         bw = box[2] - box[0]
-        bh = box[3] - box[1]
-        if bw > w * 0.55 and bh >= 50:
-            plates.extend(_split_top_band(binary, box))
-        elif bw > w * 0.45 and bh <= 50:
-            plates.append(box)
+        if bw <= w * STRIP_MIN_WIDTH_FRAC:
+            continue
+        # Always attempt a column split; _split_top_band returns [box] unchanged
+        # when it finds fewer than two vertical guides, so short strips without
+        # guides stay a single plate (no bh threshold needed).
+        plates.extend(_split_top_band(binary, box))
 
     plates.sort(key=lambda b: (b[1], b[0]))
 

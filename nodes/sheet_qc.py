@@ -18,13 +18,22 @@ Check:
 - plate_ids: list of plate ids needing position/size fix (null if pass/decompose)
 - notes: one short sentence or null
 
+The counts below (detector output + an independent rough count) are aids — trust
+what you SEE in the image over either number; use them only to spot gross
+mismatches. Do not produce your own separate count.
+
 Spec summary:
 {spec_summary}
 """
 
 
 def _spec_summary(ctx: SheetContext) -> str:
-    lines = [f"Plates: {len(ctx.labels)}"]
+    cv_count = (ctx.gate or {}).get("cv_count")
+    lines = [
+        f"Decompose source: {ctx.decompose_method or '?'}; "
+        f"detector plate count: {cv_count}; independent rough count: {ctx.llm_count}",
+        f"Plates: {len(ctx.labels)}",
+    ]
     for label in ctx.labels[:30]:
         texts = ", ".join(
             (ln.get("text") or "")[:20] for ln in (label.get("lines") or [])[:4]

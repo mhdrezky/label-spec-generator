@@ -58,11 +58,22 @@ def _apply_qc_retry(
 
     fix = qc.get("fix")
     if fix == "decompose" and retries_used.get("decompose", 0) < MAX_QC_RETRIES:
+        # Arbiter, not a retry: only switching the SOURCE of outlines helps.
+        # Re-running the deterministic CV detector reproduces identical output,
+        # so if plates already came from the LLM there is nothing to gain.
+        if ctx.decompose_method != "opencv":
+            ctx.warnings.append(
+                "QC flagged decompose but source is already LLM — not re-running "
+                "an identical detector"
+            )
+            return ctx
         retries_used["decompose"] = retries_used.get("decompose", 0) + 1
-        ctx.warnings.append("QC retry: re-running decompose + per-plate nodes")
+        ctx.warnings.append(
+            "QC arbiter: switching decompose CV→LLM (forced) + re-running per-plate nodes"
+        )
         ctx.labels = []
         qc_hint = (ctx.qc_result or {}).get("notes")
-        ctx = run_decompose(image_path, ctx, qc_hint=qc_hint)
+        ctx = run_decompose(image_path, ctx, force_llm=True, qc_hint=qc_hint)
         _snapshot_stage(stage_dir, "03_decompose", ctx)
         ctx = run_all_plates(image_path, ctx)
         _snapshot_stage(stage_dir, "06_size", ctx)

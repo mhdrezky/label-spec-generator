@@ -19,6 +19,12 @@ class SheetContext:
     qc_result: dict | None = None
     pre_measure_labels: list[dict] | None = None
     unit: str = "mm"
+    # decompose routing (Phase 2): which source produced plate_regions, the cheap
+    # LLM plate-count yardstick (computed once, reused by the gate and QC), and
+    # the gate's decision record.
+    decompose_method: str | None = None
+    llm_count: int | None = None
+    gate: dict | None = None
 
     def to_spec_dict(self) -> dict[str, Any]:
         """Output shape compatible with editor and render_md."""
