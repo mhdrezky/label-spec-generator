@@ -1,15 +1,7 @@
 """JSON Schema (draft-07) for label specs.
 
-Used twice:
-1. Sent to vLLM as ``response_format: json_schema`` (constrained decoding).
-2. Local structural validation of the parsed response.
-
-Principle: every numeric mm field is nullable at extraction time. ``null``
-means "not annotated in the drawing" — never a guess. The model additionally
-returns pixel bounding boxes (``bbox_px``, [x1, y1, x2, y2] in image pixels)
-for every plate and text line; calibrate.py converts those to mm using
-annotated dimensions as the scale reference, and postprocess.py fills any
-remaining gaps deterministically.
+Used for vLLM ``response_format: json_schema`` (constrained decoding) and
+optional local structural validation.
 """
 
 BBOX_SCHEMA = {
@@ -121,10 +113,110 @@ LABEL_SPEC_SCHEMA = {
 }
 
 # ─────────────────────────────────────────────────────────────────────────
-# Per-crop geometry stages (layered.py) — each its own tiny vision call, run
-# only on plates flagged for refinement. Decomposition + text come from
-# extract.py's LABEL_SPEC_SCHEMA above, so these stages only ask about size,
-# position, and a visual review.
+# Designer pipeline — one small schema per node
+# ─────────────────────────────────────────────────────────────────────────
+
+SURVEY_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "draft_type": {"enum": ["cad", "sketch", "photo", "other", None]},
+        "material_notes": {"type": ["string", "null"]},
+    },
+    "required": ["draft_type", "material_notes"],
+    "additionalProperties": False,
+}
+
+DIMENSIONS_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "dimension_annotations": {"type": "array", "items": DIMENSION_SCHEMA},
+    },
+    "required": ["dimension_annotations"],
+    "additionalProperties": False,
+}
+
+PLATE_REGION_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "id": {"type": "integer"},
+        "bbox_px": BBOX_SCHEMA,
+        "width_mm": {"type": ["number", "null"]},
+        "height_mm": {"type": ["number", "null"]},
+    },
+    "required": ["id", "bbox_px", "width_mm", "height_mm"],
+    "additionalProperties": False,
+}
+
+DECOMPOSE_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "plates": {"type": "array", "items": PLATE_REGION_SCHEMA},
+    },
+    "required": ["plates"],
+    "additionalProperties": False,
+}
+
+PLATE_DIMS_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "plates": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {"type": "integer"},
+                    "width_mm": {"type": ["number", "null"]},
+                    "height_mm": {"type": ["number", "null"]},
+                },
+                "required": ["id", "width_mm", "height_mm"],
+                "additionalProperties": False,
+            },
+        }
+    },
+    "required": ["plates"],
+    "additionalProperties": False,
+}
+
+TRANSCRIBE_LINE_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "text": {"type": "string"},
+        "bbox_px": BBOX_SCHEMA,
+    },
+    "required": ["text", "bbox_px"],
+    "additionalProperties": False,
+}
+
+TRANSCRIBE_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "lines": {"type": "array", "items": TRANSCRIBE_LINE_SCHEMA},
+    },
+    "required": ["lines"],
+    "additionalProperties": False,
+}
+
+SHEET_QC_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "plate_count_ok": {"type": "boolean"},
+        "decompose_ok": {"type": "boolean"},
+        "verdict": {"enum": ["pass", "revise"]},
+        "fix": {"enum": ["decompose", "position", "size", None]},
+        "plate_ids": {
+            "type": ["array", "null"],
+            "items": {"type": "integer"},
+        },
+        "notes": {"type": ["string", "null"]},
+    },
+    "required": [
+        "plate_count_ok", "decompose_ok", "verdict", "fix", "plate_ids", "notes",
+    ],
+    "additionalProperties": False,
+}
+
+# ─────────────────────────────────────────────────────────────────────────
+# Per-plate geometry nodes
 # ─────────────────────────────────────────────────────────────────────────
 
 # size: capital-letter height per text, relative to the plate.
@@ -169,25 +261,6 @@ POSITION_SCHEMA = {
         }
     },
     "required": ["lines"],
-    "additionalProperties": False,
-}
-
-# Stage 4 — review: checklist comparing a render of the spec against the crop.
-REVIEW_SCHEMA = {
-    "type": "object",
-    "properties": {
-        "plate_size_ok": {"type": "boolean"},
-        "text_count_ok": {"type": "boolean"},
-        "text_size_ok": {"type": "boolean"},
-        "spacing_ok": {"type": "boolean"},
-        "verdict": {"enum": ["pass", "revise"]},
-        "fix": {"enum": ["detect", "size", "position", None]},
-        "notes": {"type": ["string", "null"]},
-    },
-    "required": [
-        "plate_size_ok", "text_count_ok", "text_size_ok", "spacing_ok",
-        "verdict", "fix", "notes",
-    ],
     "additionalProperties": False,
 }
 
@@ -236,8 +309,8 @@ def _check(value, schema: dict, path: str, errors: list[str]) -> None:
             _check(item, schema["items"], f"{path}[{i}]", errors)
 
 
-def validate_against_schema(data: dict) -> list[str]:
+def validate_against_schema(data: dict, schema: dict = LABEL_SPEC_SCHEMA) -> list[str]:
     """Return a list of structural errors (empty = valid)."""
     errors: list[str] = []
-    _check(data, LABEL_SPEC_SCHEMA, "$", errors)
+    _check(data, schema, "$", errors)
     return errors

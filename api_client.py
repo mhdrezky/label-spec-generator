@@ -21,7 +21,6 @@ API_MAX_RETRIES = int(os.environ.get("API_MAX_RETRIES", "3"))
 API_WARMUP_TIMEOUT = int(os.environ.get("API_WARMUP_TIMEOUT", "120"))
 API_HEALTH_TIMEOUT = int(os.environ.get("API_HEALTH_TIMEOUT", "15"))
 API_MAX_TOKENS = int(os.environ.get("API_MAX_TOKENS", "4096"))
-API_EXTRACT_MAX_TOKENS = int(os.environ.get("API_EXTRACT_MAX_TOKENS", "16000"))
 HEARTBEAT_INTERVAL = int(os.environ.get("HEARTBEAT_INTERVAL", "15"))
 API_ENABLE_THINKING = os.environ.get("API_ENABLE_THINKING", "false").lower() == "true"
 
@@ -131,6 +130,54 @@ def describe_empty_response(data: dict) -> str:
         return "empty response (unexpected API format)"
 
 
+def salvage_plates_array(content: str) -> list[dict]:
+    """Extract complete plate objects from truncated decompose JSON."""
+    match = re.search(r'"plates"\s*:\s*\[', content)
+    if not match:
+        return []
+
+    plates: list[dict] = []
+    i = match.end()
+    n = len(content)
+    while i < n:
+        while i < n and content[i] in " \t\n\r,":
+            i += 1
+        if i >= n or content[i] != "{":
+            break
+
+        depth = 0
+        in_str = False
+        escape = False
+        obj_start = i
+        for j in range(i, n):
+            ch = content[j]
+            if escape:
+                escape = False
+                continue
+            if ch == "\\" and in_str:
+                escape = True
+                continue
+            if ch == '"':
+                in_str = not in_str
+                continue
+            if in_str:
+                continue
+            if ch == "{":
+                depth += 1
+            elif ch == "}":
+                depth -= 1
+                if depth == 0:
+                    try:
+                        plates.append(json.loads(content[obj_start : j + 1]))
+                    except json.JSONDecodeError:
+                        pass
+                    i = j + 1
+                    break
+        else:
+            break
+    return plates
+
+
 def parse_json_response(content: str) -> dict:
     content = content.strip()
 
@@ -153,6 +200,10 @@ def parse_json_response(content: str) -> dict:
         except json.JSONDecodeError:
             pass
 
+    salvaged = salvage_plates_array(content)
+    if salvaged:
+        return {"plates": salvaged, "_salvaged": True}
+
     return {"error": "parse_failed", "raw_response": content}
 
 
@@ -162,10 +213,12 @@ def call_chat(
     label: str = "chat",
     max_tokens: int | None = None,
     json_schema: dict | None = None,
-) -> str:
+) -> tuple[str, dict]:
     """Call the chat endpoint. When ``json_schema`` is given, output is
     constrained to that schema via vLLM structured output (response_format
-    json_schema), guaranteeing structurally valid JSON."""
+    json_schema), guaranteeing structurally valid JSON.
+
+    Returns ``(content, meta)`` where meta includes finish_reason."""
     resolved_tokens = max_tokens if max_tokens is not None else API_MAX_TOKENS
     payload = build_api_payload(
         model=MODEL,
@@ -188,7 +241,7 @@ def call_chat(
         cached = load_cache(cache_path)
         if cached is not None:
             print(f"{label} response from cache ({cache_path.name}, {len(cached)} chars).")
-            return cached
+            return cached, {"finish_reason": "cache", "max_tokens": resolved_tokens}
 
     timeout = (API_CONNECT_TIMEOUT, API_READ_TIMEOUT)
     last_error: Exception | None = None
@@ -218,7 +271,11 @@ def call_chat(
             if cache_path is not None:
                 save_cache(cache_path, label, content)
 
-            return content
+            return content, {
+                "finish_reason": finish_reason,
+                "completion_tokens": completion_tokens,
+                "max_tokens": resolved_tokens,
+            }
         except ReadTimeout as exc:
             last_error = exc
             print(

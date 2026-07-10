@@ -3,25 +3,14 @@
     python eval/run_eval.py [--cached]
 
 For every image in eval/images/ with a hand-verified ground truth in
-eval/expected/<name>.json (same schema as the RAW extraction — annotated
-values only, null where the draft has no annotation), this runs the vision
-extraction and scores it. Predictions are saved to eval/predictions/.
-
-Rule of the game: every prompt/schema change must be scored against ALL
-images here, never against a single one — that is how the previous pipeline
-ended up overfitted.
+eval/expected/<name>.json, runs the designer pipeline and scores output.
+Predictions are saved to eval/predictions/.
 
 Scores per image:
 - labels:    predicted label count == expected label count
 - text:      % of expected text lines found (normalized exact match)
-- position:  % of expected non-null mm values within +/-2mm (incl. w/h),
-             scored AFTER bbox calibration (calibrate.py) — measures the
-             full geometry pipeline
-- null:      % of expected-null numeric fields also null in the RAW model
-             output, BEFORE calibration fills them (catches invented numbers)
-
---cached reuses eval/predictions/*.json (raw model output) instead of
-calling the API.
+- position:  % of expected non-null mm values within +/-2mm (after measure)
+- null:      % of expected-null fields still null before measure step
 """
 
 import copy
@@ -32,8 +21,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from calibrate import calibrate  # noqa: E402
-from extract import extract_specs  # noqa: E402
+from llm_cache import set_run_cache_dir  # noqa: E402
+from pipeline import run_pipeline  # noqa: E402
 
 EVAL_DIR = Path(__file__).resolve().parent
 IMAGES_DIR = EVAL_DIR / "images"
@@ -55,7 +44,6 @@ def label_texts(label: dict) -> set[str]:
 
 
 def pair_labels(expected: list[dict], predicted: list[dict]) -> list[tuple[dict, dict]]:
-    """Greedy pairing by shared line texts."""
     pairs: list[tuple[dict, dict]] = []
     remaining = list(predicted)
     for exp in expected:
@@ -71,11 +59,9 @@ def pair_labels(expected: list[dict], predicted: list[dict]) -> list[tuple[dict,
     return pairs
 
 
-def score_image(expected: dict, raw: dict, calibrated: dict) -> dict:
-    """Position accuracy uses the calibrated spec; null precision uses the
-    raw model output (before calibration fills unannotated fields)."""
+def score_image(expected: dict, raw: dict, measured: dict) -> dict:
     exp_labels = expected.get("labels") or []
-    cal_labels = calibrated.get("labels") or []
+    cal_labels = measured.get("labels") or []
     raw_labels = raw.get("labels") or []
 
     text_total = text_hit = 0
@@ -160,21 +146,32 @@ def main() -> None:
             continue
 
         prediction_path = PREDICTIONS_DIR / f"{image.stem}.json"
+        raw_path = PREDICTIONS_DIR / f"{image.stem}.raw.json"
+
         if use_cached and prediction_path.exists():
-            predicted = json.loads(prediction_path.read_text(encoding="utf-8"))
+            measured = json.loads(prediction_path.read_text(encoding="utf-8"))
+            raw = json.loads(raw_path.read_text(encoding="utf-8")) if raw_path.exists() else measured
         else:
-            print(f"Extracting {image.name}...")
-            predicted, schema_errors = extract_specs(image)
-            for error in schema_errors:
-                print(f"  schema warning: {error}", file=sys.stderr)
+            print(f"Running pipeline on {image.name}...")
+            cache_dir = PREDICTIONS_DIR / "llm" / image.stem
+            set_run_cache_dir(cache_dir)
+            ctx = run_pipeline(image)
+            measured = ctx.to_spec_dict()
+            raw = {
+                "unit": ctx.unit,
+                "image_px": ctx.image_px,
+                "dimension_annotations": ctx.dimension_annotations,
+                "labels": ctx.pre_measure_labels or ctx.labels,
+            }
             prediction_path.write_text(
-                json.dumps(predicted, indent=2, ensure_ascii=False), encoding="utf-8"
+                json.dumps(measured, indent=2, ensure_ascii=False), encoding="utf-8"
+            )
+            raw_path.write_text(
+                json.dumps(raw, indent=2, ensure_ascii=False), encoding="utf-8"
             )
 
         expected = json.loads(expected_path.read_text(encoding="utf-8"))
-        calibrated = copy.deepcopy(predicted)
-        calibrate(calibrated, [])
-        rows.append((image.name, score_image(expected, predicted, calibrated)))
+        rows.append((image.name, score_image(expected, raw, measured)))
 
     if skipped:
         print(
@@ -184,8 +181,7 @@ def main() -> None:
 
     if not rows:
         print(
-            "No image has a ground truth yet. Create eval/expected/<name>.json "
-            "(run the pipeline once, then hand-correct the raw extraction).",
+            "No image has a ground truth yet. Create eval/expected/<name>.json",
             file=sys.stderr,
         )
         sys.exit(1)

@@ -9,6 +9,23 @@ from PIL import Image
 from api_client import call_chat, parse_json_response
 
 
+def call_text(
+    prompt: str,
+    *,
+    schema: dict,
+    label: str,
+    max_tokens: int = 2000,
+) -> dict:
+    """Schema-constrained text-only LLM call (no image)."""
+    raw, _meta = call_chat(
+        [{"role": "user", "content": prompt}],
+        label=label,
+        max_tokens=max_tokens,
+        json_schema=schema,
+    )
+    return parse_json_response(raw)
+
+
 def image_to_base64(path: str | Path) -> str:
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
@@ -38,20 +55,39 @@ def call_vision(
     schema: dict,
     label: str,
     max_tokens: int = 8000,
-) -> dict:
+    return_meta: bool = False,
+) -> dict | tuple[dict, dict]:
     """One schema-constrained vision call.
 
     ``images`` is a list of (base64, mime) blocks, shown after the prompt in
     order. Returns the parsed JSON (or {"error": "parse_failed", ...})."""
     content = [{"type": "text", "text": prompt}]
     content += [_image_block(b64, mime) for b64, mime in images]
-    raw = call_chat(
+    raw, meta = call_chat(
         [{"role": "user", "content": content}],
         label=label,
         max_tokens=max_tokens,
         json_schema=schema,
     )
-    return parse_json_response(raw)
+    result = parse_json_response(raw)
+
+    if (
+        result.get("error") == "parse_failed"
+        and meta.get("finish_reason") == "length"
+        and max_tokens < 16000
+    ):
+        print(f"{label}: retrying with max_tokens=16000 after truncation...")
+        raw, meta = call_chat(
+            [{"role": "user", "content": content}],
+            label=label,
+            max_tokens=16000,
+            json_schema=schema,
+        )
+        result = parse_json_response(raw)
+
+    if return_meta:
+        return result, meta
+    return result
 
 
 def rescale_bbox(bbox: list, image: Image.Image, stated_px: dict | None) -> list:
@@ -73,7 +109,14 @@ def rescale_bbox(bbox: list, image: Image.Image, stated_px: dict | None) -> list
 def crop_plate(
     image: Image.Image, bbox: list, stated_px: dict | None, pad_fraction: float = 0.06
 ) -> Image.Image:
-    x1, y1, x2, y2 = rescale_bbox(bbox, image, stated_px)
+    """Crop using bbox_px in file pixel coordinates (no model-space rescale)."""
+    if not (
+        isinstance(bbox, (list, tuple))
+        and len(bbox) == 4
+        and all(isinstance(v, (int, float)) for v in bbox)
+    ):
+        return image
+    x1, y1, x2, y2 = (float(v) for v in bbox)
     pad_x = (x2 - x1) * pad_fraction
     pad_y = (y2 - y1) * pad_fraction
     left = max(0, int(x1 - pad_x))

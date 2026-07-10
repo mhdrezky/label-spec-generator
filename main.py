@@ -1,11 +1,11 @@
-"""Label extractor pipeline orchestrator (hybrid).
+"""Label extractor pipeline orchestrator (designer-style).
 
     python main.py [image_path]
 
-extract.py does the single-call decomposition + text, postprocess.py/calibrate
-is the geometry baseline, and only plates whose geometry is flagged impossible
-get re-measured by the per-crop layered stages (layered.refine_with_layers) —
-everything simple keeps the proven path.
+Sheet nodes: survey → dimensions → decompose
+Per-plate nodes: transcribe → position → size
+Deterministic: measure (px→mm)
+QC: sheet-level review with optional one retry
 """
 
 import json
@@ -13,7 +13,6 @@ import os
 import sys
 from datetime import datetime
 
-# Windows consoles default to cp1252 and choke on em-dash / arrows in output.
 for _stream in (sys.stdout, sys.stderr):
     if hasattr(_stream, "reconfigure"):
         _stream.reconfigure(encoding="utf-8", errors="replace")
@@ -26,7 +25,7 @@ from api_client import (
     warmup_model,
 )
 from llm_cache import set_run_cache_dir
-from postprocess import postprocess
+from pipeline import run_pipeline
 from render_md import render_markdown
 
 IMAGE_FILE = "draft.png"
@@ -70,7 +69,7 @@ def main() -> None:
     print(f"Extracting label specs from {image_path}...")
     print(f"API: {API_URL}")
     print(f"Model: {MODEL}")
-    print("Pipeline: hybrid (extract + calibrate baseline, layered refine on flagged plates)")
+    print("Pipeline: designer (survey → dimensions → decompose → per-plate → measure → QC)")
     print(f"Timeout: read={API_READ_TIMEOUT}s, structured_output=json_schema")
 
     output_dir = create_result_dir()
@@ -80,34 +79,16 @@ def main() -> None:
     if not check_api_health() or not warmup_model():
         sys.exit(1)
 
-    from extract import extract_specs
-
     try:
-        raw_spec, schema_errors = extract_specs(image_path)
+        ctx = run_pipeline(image_path, stage_dir=os.path.join(output_dir, "stages"))
     except Exception as exc:
-        print(f"Extraction failed: {exc}", file=sys.stderr)
+        print(f"Pipeline failed: {exc}", file=sys.stderr)
         sys.exit(1)
-    for error in schema_errors:
-        print(f"Schema warning: {error}", file=sys.stderr)
 
+    print(f"Stage snapshots saved to {os.path.join(output_dir, 'stages')}")
+
+    spec = ctx.to_spec_dict()
     specs_path = os.path.join(output_dir, SPECS_FILENAME)
-
-    if raw_spec.get("error") == "parse_failed":
-        save_json(specs_path, {"source_image": image_path, **raw_spec})
-        print(f"Error: response is not valid JSON. Saved to {specs_path}", file=sys.stderr)
-        sys.exit(1)
-
-    def refiner(spec_ref: dict, warnings: list[str]) -> None:
-        from layered import refine_with_layers
-
-        n = refine_with_layers(spec_ref, image_path, warnings)
-        if n:
-            print(f"Refined {n} flagged plate(s) via per-crop layered geometry.")
-
-    stage_dir = os.path.join(output_dir, "stages")
-    spec = postprocess(raw_spec, refiner=refiner, stage_dir=stage_dir)
-    print(f"Stage snapshots saved to {stage_dir}")
-
     save_json(
         specs_path,
         {
@@ -121,7 +102,6 @@ def main() -> None:
     with open(md_path, "w", encoding="utf-8") as f:
         f.write(render_markdown(spec, image_path))
 
-    # copy for the editor preview, which auto-loads this file on open
     if os.path.isdir(os.path.dirname(EDITOR_LATEST)):
         save_json(
             EDITOR_LATEST,
@@ -144,6 +124,10 @@ def main() -> None:
         print(f"Warnings ({len(warnings)}):")
         for warning in warnings:
             print(f"  ! {warning}")
+
+    if not spec.get("labels"):
+        print("Error: pipeline produced no labels — specs are not usable in the editor.", file=sys.stderr)
+        sys.exit(2)
 
 
 if __name__ == "__main__":

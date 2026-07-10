@@ -1,0 +1,655 @@
+{
+  "unit": "mm",
+  "image_px": null,
+  "dimension_annotations": [],
+  "labels": [
+    {
+      "label_number": 1,
+      "width_mm": 65,
+      "height_mm": 40,
+      "quantity": null,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": null,
+      "holes": [],
+      "lines": [
+        {
+          "text": "ROOM 31",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        }
+      ]
+    },
+    {
+      "label_number": 2,
+      "width_mm": 65,
+      "height_mm": 40,
+      "quantity": null,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": null,
+      "holes": [],
+      "lines": [
+        {
+          "text": "ROOM 32",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        }
+      ]
+    },
+    {
+      "label_number": 3,
+      "width_mm": 65,
+      "height_mm": 40,
+      "quantity": null,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": null,
+      "holes": [],
+      "lines": [
+        {
+          "text": "ROOM 33",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        }
+      ]
+    },
+    {
+      "label_number": 4,
+      "width_mm": 65,
+      "height_mm": 40,
+      "quantity": null,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": null,
+      "holes": [],
+      "lines": [
+        {
+          "text": "ROOM 34",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        }
+      ]
+    },
+    {
+      "label_number": 5,
+      "width_mm": null,
+      "height_mm": 20,
+      "quantity": null,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": null,
+      "holes": [],
+      "lines": [
+        {
+          "text": "ROOM",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "DISABLE",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "ENABLE",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "FANS",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "LOW",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "HIGH",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "SUCTION",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "LOW",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "HIGH",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        }
+      ]
+    },
+    {
+      "label_number": 6,
+      "width_mm": null,
+      "height_mm": 20,
+      "quantity": null,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": null,
+      "holes": [],
+      "lines": [
+        {
+          "text": "ROOM",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "DISABLE",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "ENABLE",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "FANS",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "LOW",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "HIGH",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "SUCTION",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "LOW",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "HIGH",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        }
+      ]
+    },
+    {
+      "label_number": 7,
+      "width_mm": null,
+      "height_mm": 20,
+      "quantity": null,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": null,
+      "holes": [],
+      "lines": [
+        {
+          "text": "ROOM",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "DISABLE",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "ENABLE",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "FANS",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "LOW",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "HIGH",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "SUCTION",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "LOW",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "HIGH",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        }
+      ]
+    },
+    {
+      "label_number": 8,
+      "width_mm": null,
+      "height_mm": 20,
+      "quantity": null,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": null,
+      "holes": [],
+      "lines": [
+        {
+          "text": "ROOM",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "DISABLE",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "ENABLE",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "FANS",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "LOW",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "HIGH",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "SUCTION",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "LOW",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "HIGH",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        }
+      ]
+    },
+    {
+      "label_number": 9,
+      "width_mm": null,
+      "height_mm": 20,
+      "quantity": null,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": null,
+      "holes": [],
+      "lines": [
+        {
+          "text": "CALLING",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "FAULT",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "DEFROST",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        }
+      ]
+    },
+    {
+      "label_number": 10,
+      "width_mm": null,
+      "height_mm": 20,
+      "quantity": null,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": null,
+      "holes": [],
+      "lines": [
+        {
+          "text": "CALLING",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "FAULT",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "DEFROST",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        }
+      ]
+    },
+    {
+      "label_number": 11,
+      "width_mm": null,
+      "height_mm": 20,
+      "quantity": null,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": null,
+      "holes": [],
+      "lines": [
+        {
+          "text": "CALLING",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "FAULT",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "DEFROST",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        }
+      ]
+    },
+    {
+      "label_number": 12,
+      "width_mm": null,
+      "height_mm": 20,
+      "quantity": null,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": null,
+      "holes": [],
+      "lines": [
+        {
+          "text": "CALLING",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "FAULT",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "DEFROST",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        }
+      ]
+    }
+  ]
+}
