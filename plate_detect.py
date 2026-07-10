@@ -22,6 +22,13 @@ INNER_PAD_PX = 2
 # fall below it are the Phase-2 gate's job to route to the LLM, not a place to
 # add per-layout branches here.
 STRIP_MIN_WIDTH_FRAC = 0.33
+# Reject a box larger than this fraction of the sheet: it is almost always a
+# FRAME enclosing the real plates (image003's lower grid bbox = 0.65, marshall's
+# table border = 0.79), not a plate. But a single-plate draft's plate legitimately
+# fills up to half the sheet (drawing.png = 0.50), which the old 0.35 cap wrongly
+# dropped → CV returned 0 → LLM fallback mis-boxed it and lost the "Switchboard"
+# line. 0.60 sits in the gap: keeps single plates (≤0.50), rejects frames (≥0.65).
+MAX_PLATE_AREA_FRAC = 0.60
 
 
 def _cluster_positions(indices: np.ndarray, min_gap: int = 4) -> list[int]:
@@ -123,7 +130,7 @@ def _find_contour_boxes(binary: np.ndarray, w: int, h: int) -> list[tuple[int, i
     raw.sort(key=lambda b: _area(b), reverse=True)
     kept: list[tuple[int, int, int, int]] = []
     for box in raw:
-        if _area(box) > 0.35 * w * h:
+        if _area(box) > MAX_PLATE_AREA_FRAC * w * h:
             continue
         kept.append(box)
     return kept

@@ -11,7 +11,11 @@ a noisy yardstick would reject correct CV output (e.g. image003).
 
 from __future__ import annotations
 
-GATE_MIN_PLATES = 2
+# Reject only an EMPTY detection. A single-plate draft legitimately has cv_count
+# == 1 (drawing.png), so 1 is valid; the count cross-check below (cv=1 vs llm≫1)
+# is what catches a CV that found only a frame and missed the real plates — an
+# absolute floor of 2 wrongly rejected genuine single plates.
+GATE_MIN_PLATES = 1
 # |cv - llm| / llm above this => distrust. Loose on purpose (llm_count is noisy):
 # image003 cv=12 vs llm=8 is a 50% gap yet CV is correct, so it must stay under
 # the bar; marshall p6 cv=3 vs llm=18 (83%) is a real CV failure and must trip it.
