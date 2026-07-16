@@ -1,11 +1,8 @@
-"""Label extractor pipeline orchestrator (designer-style).
+"""Label extractor — dual-call pipeline (structure -> content -> measure).
 
     python main.py [image_path]
 
-Sheet nodes: survey → dimensions → decompose
-Per-plate nodes: transcribe → position → size
-Deterministic: measure (px→mm)
-QC: sheet-level review with optional one retry
+Two LLM calls on the full sheet, then deterministic px->mm merge.
 """
 
 import json
@@ -13,21 +10,22 @@ import os
 import sys
 import time
 from datetime import datetime
+from pathlib import Path
 
 for _stream in (sys.stdout, sys.stderr):
     if hasattr(_stream, "reconfigure"):
         _stream.reconfigure(encoding="utf-8", errors="replace")
 
 from api_client import (
-    AGENTIC_EXTRACT_MAX_CONCURRENT,
     API_READ_TIMEOUT,
     API_URL,
     MODEL,
     check_api_health,
     warmup_model,
 )
+from dual_call.extract import run_dual
+from llm_cache import save as save_llm_cache
 from llm_cache import set_run_cache_dir
-from pipeline import run_pipeline
 from render_md import render_markdown
 
 IMAGE_FILE = "draft.png"
@@ -71,6 +69,19 @@ def _format_elapsed(seconds: float) -> str:
     return f"{hours}h {minutes}m {secs}s ({seconds:.1f}s)"
 
 
+def save_llm_snapshots(output_dir: str, result: dict) -> None:
+    """Persist raw LLM JSON under results/<ts>/llm/ for inspection."""
+    llm_dir = os.path.join(output_dir, "llm")
+    os.makedirs(llm_dir, exist_ok=True)
+    for label, key in (("dual-structure", "structure"), ("dual-content", "content")):
+        path = Path(llm_dir) / f"{label}.json"
+        if path.is_file():
+            continue
+        payload = result.get(key)
+        if isinstance(payload, dict):
+            save_llm_cache(path, label, json.dumps(payload, ensure_ascii=False))
+
+
 def main() -> None:
     started = time.monotonic()
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
@@ -83,11 +94,8 @@ def main() -> None:
     print(f"Extracting label specs from {image_path}...")
     print(f"API: {API_URL}")
     print(f"Model: {MODEL}")
-    print("Pipeline: designer (survey → dimensions → decompose → per-plate → measure → QC)")
-    print(
-        f"Timeout: read={API_READ_TIMEOUT}s, structured_output=json_schema, "
-        f"max_concurrent={AGENTIC_EXTRACT_MAX_CONCURRENT}"
-    )
+    print("Pipeline: structure -> content -> measure")
+    print(f"Timeout: read={API_READ_TIMEOUT}s, structured_output=json_schema")
 
     output_dir = create_result_dir()
     set_run_cache_dir(os.path.join(output_dir, "llm"))
@@ -96,39 +104,40 @@ def main() -> None:
     if not check_api_health() or not warmup_model():
         sys.exit(1)
 
+    stage_dir = os.path.join(output_dir, "stages")
+    os.makedirs(stage_dir, exist_ok=True)
+
     try:
-        ctx = run_pipeline(image_path, stage_dir=os.path.join(output_dir, "stages"))
+        result = run_dual(image_path)
     except Exception as exc:
-        print(f"Pipeline failed: {exc}", file=sys.stderr)
+        print(f"Extract failed: {exc}", file=sys.stderr)
         print(f"Wall clock: {_format_elapsed(time.monotonic() - started)}")
         sys.exit(1)
 
-    print(f"Stage snapshots saved to {os.path.join(output_dir, 'stages')}")
+    save_json(os.path.join(stage_dir, "01_structure.json"), result["structure"])
+    save_json(os.path.join(stage_dir, "02_content.json"), result["content"])
+    save_json(os.path.join(stage_dir, "03_measure.json"), result["spec"])
+    save_llm_snapshots(output_dir, result)
+    print(f"Stage snapshots saved to {stage_dir}")
+    print(f"LLM snapshots saved to {os.path.join(output_dir, 'llm')}")
 
-    spec = ctx.to_spec_dict()
+    spec = result["spec"]
     specs_path = os.path.join(output_dir, SPECS_FILENAME)
-    save_json(
-        specs_path,
-        {
-            "source_image": image_path,
-            "generated_at": datetime.now().isoformat(timespec="seconds"),
-            **spec,
-        },
-    )
+    specs_payload = {
+        "source_image": image_path,
+        "generated_at": datetime.now().isoformat(timespec="seconds"),
+        "extract_method": "dual_call",
+        **{k: v for k, v in spec.items() if k != "warnings"},
+        "warnings": spec.get("warnings") or result.get("warnings") or [],
+    }
+    save_json(specs_path, specs_payload)
 
     md_path = os.path.join(output_dir, OUTPUT_MD)
     with open(md_path, "w", encoding="utf-8") as f:
         f.write(render_markdown(spec, image_path))
 
     if os.path.isdir(os.path.dirname(EDITOR_LATEST)):
-        save_json(
-            EDITOR_LATEST,
-            {
-                "source_image": image_path,
-                "generated_at": datetime.now().isoformat(timespec="seconds"),
-                **spec,
-            },
-        )
+        save_json(EDITOR_LATEST, specs_payload)
         print(f"Editor preview copy saved to {EDITOR_LATEST}")
 
     print(f"Specs saved to {specs_path}")
@@ -137,7 +146,7 @@ def main() -> None:
     for label in spec.get("labels") or []:
         print(f"  - {format_label_summary(label)}")
 
-    warnings = spec.get("warnings") or []
+    warnings = spec.get("warnings") or result.get("warnings") or []
     if warnings:
         print(f"Warnings ({len(warnings)}):")
         for warning in warnings:
@@ -146,7 +155,7 @@ def main() -> None:
     print(f"Wall clock: {_format_elapsed(time.monotonic() - started)}")
 
     if not spec.get("labels"):
-        print("Error: pipeline produced no labels — specs are not usable in the editor.", file=sys.stderr)
+        print("Error: extract produced no labels.", file=sys.stderr)
         sys.exit(2)
 
 

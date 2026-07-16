@@ -1,10 +1,10 @@
-"""Anti-overfitting eval harness.
+"""Regression benchmark against hand-verified ground truths.
 
-    python eval/run_eval.py [--cached]
+    python benchmark/run_benchmark.py [--cached]
 
-For every image in eval/images/ with a hand-verified ground truth in
-eval/expected/<name>.json, runs the designer pipeline and scores output.
-Predictions are saved to eval/predictions/.
+For every image in sample-data/ with a ground truth in
+benchmark/expected/<name>.json, runs the dual-call pipeline and scores output.
+Predictions are saved to benchmark/predictions/.
 
 Scores per image:
 - labels:    predicted label count == expected label count
@@ -21,13 +21,14 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+from dual_call.extract import run_dual  # noqa: E402
 from llm_cache import set_run_cache_dir  # noqa: E402
-from pipeline import run_pipeline  # noqa: E402
 
-EVAL_DIR = Path(__file__).resolve().parent
-IMAGES_DIR = EVAL_DIR / "images"
-EXPECTED_DIR = EVAL_DIR / "expected"
-PREDICTIONS_DIR = EVAL_DIR / "predictions"
+BENCHMARK_DIR = Path(__file__).resolve().parent
+PROJECT_ROOT = BENCHMARK_DIR.parent
+IMAGES_DIR = PROJECT_ROOT / "sample-data"
+EXPECTED_DIR = BENCHMARK_DIR / "expected"
+PREDICTIONS_DIR = BENCHMARK_DIR / "predictions"
 
 IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".webp"}
 POSITION_TOLERANCE_MM = 2.0
@@ -150,23 +151,28 @@ def main() -> None:
 
         if use_cached and prediction_path.exists():
             measured = json.loads(prediction_path.read_text(encoding="utf-8"))
-            raw = json.loads(raw_path.read_text(encoding="utf-8")) if raw_path.exists() else measured
+            raw = (
+                json.loads(raw_path.read_text(encoding="utf-8"))
+                if raw_path.exists()
+                else measured
+            )
         else:
-            print(f"Running pipeline on {image.name}...")
+            print(f"Running extract on {image.name}...")
             cache_dir = PREDICTIONS_DIR / "llm" / image.stem
             set_run_cache_dir(cache_dir)
-            ctx = run_pipeline(image)
-            measured = ctx.to_spec_dict()
-            # Method attribution: so CV regressions are not hidden behind LLM
-            # rescues (and vice versa) when reading scores.
-            measured["decompose_method"] = ctx.decompose_method
-            measured["llm_count"] = ctx.llm_count
-            measured["gate"] = ctx.gate
+            result = run_dual(image)
+            measured = copy.deepcopy(result["spec"])
+            raw_labels = []
+            for lab in measured.get("labels") or []:
+                raw_lab = copy.deepcopy(lab)
+                for ln in raw_lab.get("lines") or []:
+                    ln.pop("measured_fields", None)
+                raw_labels.append(raw_lab)
             raw = {
-                "unit": ctx.unit,
-                "image_px": ctx.image_px,
-                "dimension_annotations": ctx.dimension_annotations,
-                "labels": ctx.pre_measure_labels or ctx.labels,
+                "unit": measured.get("unit"),
+                "image_px": measured.get("image_px"),
+                "dimension_annotations": measured.get("dimension_annotations"),
+                "labels": raw_labels,
             }
             prediction_path.write_text(
                 json.dumps(measured, indent=2, ensure_ascii=False), encoding="utf-8"
@@ -177,7 +183,7 @@ def main() -> None:
 
         expected = json.loads(expected_path.read_text(encoding="utf-8"))
         score = score_image(expected, raw, measured)
-        score["method"] = measured.get("decompose_method") or "?"
+        score["method"] = "dual"
         rows.append((image.name, score))
 
     if skipped:
@@ -188,7 +194,7 @@ def main() -> None:
 
     if not rows:
         print(
-            "No image has a ground truth yet. Create eval/expected/<name>.json",
+            "No image has a ground truth yet. Create benchmark/expected/<name>.json",
             file=sys.stderr,
         )
         sys.exit(1)

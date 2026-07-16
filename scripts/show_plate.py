@@ -10,7 +10,7 @@ from dual_call.postprocess import merge_to_spec
 def main() -> None:
     run_id = sys.argv[1]
     pids = [int(x) for x in sys.argv[2:]] if len(sys.argv) > 2 else [5]
-    base = Path("results-dual") / run_id
+    base = Path("results") / run_id
     structure = json.loads((base / "stages/01_structure.json").read_text(encoding="utf-8"))
     content = json.loads((base / "stages/02_content.json").read_text(encoding="utf-8"))
     specs = json.loads((base / "specs.json").read_text(encoding="utf-8"))

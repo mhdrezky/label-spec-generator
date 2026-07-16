@@ -1,4 +1,4 @@
-"""OpenCV plate hints for dual-call structure (reuse pipeline gate logic)."""
+"""OpenCV plate hints for dual-call structure."""
 
 from __future__ import annotations
 

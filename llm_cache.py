@@ -79,20 +79,3 @@ def save(path: Path, label: str, content: str) -> None:
         "content": _content_from_str(content),
     }
     path.write_text(json.dumps(entry, indent=2, ensure_ascii=False), encoding="utf-8")
-
-
-def repair_cache_file(path: Path) -> bool:
-    """Re-write a cache file whose ``content`` is a JSON string instead of an object."""
-    try:
-        data = json.loads(path.read_text(encoding="utf-8"))
-    except (json.JSONDecodeError, OSError):
-        return False
-    content = data.get("content")
-    if not isinstance(content, str):
-        return False
-    parsed = _content_from_str(content)
-    if isinstance(parsed, str):
-        return False
-    data["content"] = parsed
-    path.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
-    return True

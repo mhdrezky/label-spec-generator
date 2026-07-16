@@ -789,8 +789,8 @@ function renderAll() {
 }
 
 /* ── result picker ──────────────────────────────
-   Lists specs.json from ../results/ (pipeline) and ../results-dual/
-   (dual-call), newest first. Falls back to editor/latest-specs.json. */
+   Lists specs.json from ../results/ and ../results/archieve/,
+   newest first. Falls back to editor/latest-specs.json when empty. */
 async function loadFromUrl(url, name) {
   try {
     const res = await fetch(url, { cache: "no-store" });
@@ -825,25 +825,27 @@ async function listResultDirs(basePath, tag) {
 
 async function populateResultPicker() {
   const picker = $("result-picker");
-  const pipeline = await listResultDirs("../results/", "pipeline");
-  const dual = await listResultDirs("../results-dual/", "dual");
-  const all = [...pipeline, ...dual].sort((a, b) => b.ts.localeCompare(a.ts));
+  const [current, archived] = await Promise.all([
+    listResultDirs("../results/", "current"),
+    listResultDirs("../results/archieve/", "archive"),
+  ]);
+  const runs = [...current, ...archived].sort((a, b) => b.ts.localeCompare(a.ts));
 
   picker.innerHTML = "";
-  if (!all.length) {
+  if (!runs.length) {
     picker.innerHTML = '<option value="latest-specs.json">latest-specs.json</option>';
     picker.value = "latest-specs.json";
     loadFromUrl("latest-specs.json", "latest-specs.json");
     return;
   }
-  for (const entry of all) {
+  for (const entry of runs) {
     const opt = document.createElement("option");
     opt.value = entry.url;
     opt.textContent = entry.label;
     picker.appendChild(opt);
   }
   picker.value = picker.options[0].value;
-  loadFromUrl(picker.value, all[0].label);
+  loadFromUrl(picker.value, runs[0].label);
 }
 
 $("result-picker").addEventListener("change", (e) => {
