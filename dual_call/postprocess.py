@@ -2,6 +2,15 @@
 
 from __future__ import annotations
 
+from dual_call.plate_resolve import (
+    RESOLUTION_CONTENT,
+    RESOLUTION_DERIVED,
+    build_content_complete_lines,
+    build_derived_lines,
+    fit_single_line_plate,
+    refine_line_y_positions,
+    resolve_plate_mode,
+)
 from measure import run_measure
 
 COORD_SLACK = 0.05
@@ -13,6 +22,19 @@ SINGLE_ROW_MAX_BBOX_HEIGHT_FRAC = 0.45
 MERGED_LINE_MIN_HEIGHT_FRAC = 0.45
 MERGED_HEADER_ROW_FRAC = 0.42
 WIDE_PLATE_ASPECT = 4.0
+STATED_CELL_SCALE_TOLERANCE = 0.35
+TABLE_CELL_AR_RATIO = 1.35
+
+_TABLE_HEADER_TEXTS = frozenset({
+    "LABEL DESCRIPTION",
+    "FONT",
+    "SIZE",
+    "COLOUR",
+    "COLOR",
+    "QUANTITY REQUIRED",
+    "QUANTITY",
+    "QTY",
+})
 
 
 def _is_num(value) -> bool:
@@ -111,95 +133,6 @@ def _x_overlap_ratio(a: list, b: list) -> float:
         return 0.0
     narrow = min(a[2] - a[0], b[2] - b[0])
     return inter / narrow if narrow > 0 else 0.0
-
-
-def _line_cy_px(line: dict, plate_bbox: list) -> float | None:
-    bbox = line.get("bbox_px")
-    if not _valid_bbox_px(bbox):
-        return None
-    return (bbox[1] + bbox[3]) / 2.0
-
-
-def _cluster_lines_by_row(
-    lines: list[dict], plate_bbox: list
-) -> list[list[dict]]:
-    ph = plate_bbox[3] - plate_bbox[1]
-    if ph <= 0:
-        return [[ln] for ln in lines]
-    tol = max(4.0, ROW_CLUSTER_FRAC * ph)
-
-    ordered: list[tuple[float, dict]] = []
-    for ln in lines:
-        cy = _line_cy_px(ln, plate_bbox)
-        if cy is None:
-            continue
-        ordered.append((cy, ln))
-    if not ordered:
-        return [[ln] for ln in lines]
-    ordered.sort(key=lambda item: item[0])
-
-    clusters: list[list[dict]] = [[ordered[0][1]]]
-    centers: list[float] = [ordered[0][0]]
-    for cy, ln in ordered[1:]:
-        if cy - centers[-1] <= tol:
-            clusters[-1].append(ln)
-            centers[-1] = sum(_line_cy_px(x, plate_bbox) or 0 for x in clusters[-1]) / len(
-                clusters[-1]
-            )
-        else:
-            clusters.append([ln])
-            centers.append(cy)
-    return clusters
-
-
-def _merge_orphan_row_clusters(clusters: list[list[dict]]) -> list[list[dict]]:
-    if len(clusters) <= 1:
-        return clusters
-    merged = [clusters[0]]
-    for cluster in clusters[1:]:
-        if len(cluster) == 1 and len(merged[-1]) >= 2:
-            orphan = cluster[0]
-            ob = orphan.get("bbox_px") or []
-            if any(_x_overlap_ratio(ob, ln.get("bbox_px") or []) >= X_OVERLAP_MERGE for ln in merged[-1]):
-                merged[-1].extend(cluster)
-                continue
-        merged.append(cluster)
-    return merged
-
-
-def _snap_cluster_y_mm(
-    cluster: list[dict],
-    plate_bbox: list,
-    width_mm: float,
-    height_mm: float,
-) -> float | None:
-    ys: list[float] = []
-    for ln in cluster:
-        bbox = ln.get("bbox_px")
-        if not _valid_bbox_px(bbox):
-            if _is_num(ln.get("y_mm")):
-                ys.append(float(ln["y_mm"]))
-            continue
-        _, y_mm = _position_from_bbox(bbox, plate_bbox, width_mm, height_mm)
-        if _is_num(y_mm):
-            ys.append(float(y_mm))
-    if not ys:
-        return None
-    ys.sort()
-    return _round_step(ys[len(ys) // 2])
-
-
-def _lines_have_compact_bbox_height(lines: list[dict], plate_bbox: list) -> bool:
-    ph = plate_bbox[3] - plate_bbox[1]
-    if ph <= 0:
-        return False
-    for ln in lines:
-        bbox = ln.get("bbox_px")
-        if not _valid_bbox_px(bbox):
-            return False
-        if (bbox[3] - bbox[1]) / ph > SINGLE_ROW_MAX_BBOX_HEIGHT_FRAC:
-            return False
-    return True
 
 
 def _plate_aspect_ratio(
@@ -328,65 +261,6 @@ def _content_plate_meta(content: dict) -> dict[int, dict]:
                 "height_mm": plate.get("height_mm"),
             }
     return meta
-
-
-def _refine_line_y_positions(label: dict, warnings: list[str]) -> None:
-    """Cluster rows from bbox, merge column orphans, center single-row plates."""
-    lines = label.get("lines") or []
-    plate_bbox = label.get("bbox_px") or []
-    width_mm = label.get("width_mm")
-    height_mm = label.get("height_mm")
-    if (
-        len(lines) <= 1
-        or not _valid_bbox_px(plate_bbox)
-        or not (_is_num(width_mm) and width_mm > 0)
-        or not (_is_num(height_mm) and height_mm > 0)
-    ):
-        return
-
-    clusters = _cluster_lines_by_row(lines, plate_bbox)
-    before = len(clusters)
-    clusters = _merge_orphan_row_clusters(clusters)
-    if len(clusters) < before:
-        num = label.get("label_number", "?")
-        warnings.append(
-            f"plate #{num}: merged {before - len(clusters)} orphan row(s) "
-            f"into adjacent row (side-by-side text)"
-        )
-
-    row_ys: list[float] = []
-    for cluster in clusters:
-        y_mm = _snap_cluster_y_mm(cluster, plate_bbox, float(width_mm), float(height_mm))
-        if not _is_num(y_mm):
-            continue
-        row_ys.append(y_mm)
-        for ln in cluster:
-            ln["y_mm"] = y_mm
-
-    if len(clusters) != 1 or not row_ys:
-        return
-    if not _lines_have_compact_bbox_height(lines, plate_bbox):
-        return
-
-    max_y = max(row_ys)
-    sizes = [ln.get("size_mm") for ln in lines if _is_num(ln.get("size_mm"))]
-    text_h = max(sizes) if sizes else None
-    if not (_is_num(text_h) and text_h > 0):
-        return
-    if max_y > height_mm * SINGLE_ROW_TOP_FRAC:
-        return
-    if height_mm < text_h * 2.2:
-        return
-
-    centered = _round_step(float(height_mm) / 2.0)
-    num = label.get("label_number", "?")
-    if abs(max_y - centered) > POSITION_STEP_MM:
-        warnings.append(
-            f"plate #{num}: single text row hugging top (y={max_y:g}mm) "
-            f"— centered at {centered:g}mm"
-        )
-        for ln in lines:
-            ln["y_mm"] = centered
 
 
 def _stated_size_by_line(structure: dict) -> dict[int, float]:
@@ -588,6 +462,203 @@ def _best_tiled_dim_sum_for_edge(
     return best_sum
 
 
+def _union_line_bbox(lines: list[dict]) -> list[float] | None:
+    union = None
+    for ln in lines:
+        bbox = ln.get("bbox_px")
+        if not _valid_bbox_px(bbox):
+            continue
+        if union is None:
+            union = [float(v) for v in bbox]
+        else:
+            union = [
+                min(union[0], bbox[0]),
+                min(union[1], bbox[1]),
+                max(union[2], bbox[2]),
+                max(union[3], bbox[3]),
+            ]
+    return union
+
+
+def _is_table_header_plate(lines: list[dict]) -> bool:
+    texts = {(ln.get("text") or "").strip().upper() for ln in lines}
+    if texts & _TABLE_HEADER_TEXTS:
+        return True
+    for text in texts:
+        if text.startswith("PROJECT:"):
+            return True
+        if "PAGE" in text and " OF " in text:
+            return True
+        if text.startswith("DRAWING REFERENCE"):
+            return True
+    return False
+
+
+def _stated_dims_cell_context(
+    bbox_px: list,
+    width_mm,
+    height_mm,
+) -> bool:
+    """Table/spec sheet cell: bbox spans a wide column but SIZE states the real plate."""
+    if not (
+        _valid_bbox_px(bbox_px)
+        and _is_num(width_mm)
+        and _is_num(height_mm)
+        and width_mm > 0
+        and height_mm > 0
+    ):
+        return False
+    w_px = bbox_px[2] - bbox_px[0]
+    h_px = bbox_px[3] - bbox_px[1]
+    if w_px <= 0 or h_px <= 0:
+        return False
+    sx = w_px / float(width_mm)
+    sy = h_px / float(height_mm)
+    if sx <= 0 or sy <= 0:
+        return False
+    scale_err = abs(sx - sy) / max(sx, sy)
+    if scale_err > STATED_CELL_SCALE_TOLERANCE:
+        return True
+    # Tall table row cell: height bbox spans more than the label preview block.
+    if sy / sx > 1.35:
+        return True
+    bbox_ar = w_px / h_px
+    stated_ar = float(width_mm) / float(height_mm)
+    return bbox_ar > stated_ar * TABLE_CELL_AR_RATIO
+
+
+def _tighten_plate_bbox_for_table_cell(
+    plate_bbox: list,
+    lines: list[dict],
+) -> list:
+    union = _union_line_bbox(lines)
+    if union is None:
+        return plate_bbox
+    text_h = union[3] - union[1]
+    text_w = union[2] - union[0]
+    pad_y = max(4.0, 0.12 * text_h)
+    pad_x = max(4.0, 0.06 * text_w)
+    tight = [
+        union[0] - pad_x,
+        union[1] - pad_y,
+        union[2] + pad_x,
+        union[3] + pad_y,
+    ]
+    plate_h = plate_bbox[3] - plate_bbox[1]
+    if text_h <= 0 or plate_h <= 0:
+        return plate_bbox
+    if text_h / plate_h > 0.55:
+        return plate_bbox
+    return [round(v) for v in tight]
+
+
+def _is_spec_table_sheet(content_by_plate: dict[int, list[dict]]) -> bool:
+    """True when the sheet has spec-table column header rows."""
+    for lines in content_by_plate.values():
+        if _is_table_header_plate(lines):
+            return True
+    return False
+
+
+def _merge_plate_lines(
+    pid: int,
+    content_by_plate: dict[int, list[dict]],
+    lines_by_plate: dict[int, list[dict]],
+    meta: dict,
+    warnings: list[str],
+) -> list[dict]:
+    """Prefer content grouping; recover lines only when content is incomplete."""
+    primary = list(content_by_plate.get(pid) or [])
+    line_count = meta.get("line_count")
+    if primary and isinstance(line_count, int) and len(primary) >= line_count:
+        return primary
+    if primary and not isinstance(line_count, int):
+        return primary
+    if not lines_by_plate:
+        return primary
+    seen = {
+        (ln.get("text", ""), tuple(ln.get("bbox_px") or ()))
+        for ln in primary
+    }
+    merged = list(primary)
+    extras = 0
+    for ln in lines_by_plate.get(pid) or []:
+        key = (ln.get("text", ""), tuple(ln.get("bbox_px") or ()))
+        if key in seen:
+            continue
+        seen.add(key)
+        merged.append(ln)
+        extras += 1
+    if extras:
+        warnings.append(
+            f"plate #{pid}: recovered {extras} line(s) from bbox assignment"
+        )
+    return merged if merged else list(lines_by_plate.get(pid) or [])
+
+
+def _warn_incomplete_wide_plate(label: dict, warnings: list[str]) -> None:
+    """Warn when a wide plate has too few lines clustered on the left."""
+    width_mm = label.get("width_mm")
+    height_mm = label.get("height_mm")
+    if not (_is_num(width_mm) and _is_num(height_mm) and height_mm > 0):
+        return
+    if width_mm / height_mm < WIDE_PLATE_ASPECT:
+        return
+    lines = label.get("lines") or []
+    if len(lines) >= 5:
+        return
+    xs = [ln.get("x_mm") for ln in lines if _is_num(ln.get("x_mm"))]
+    if not xs:
+        return
+    if max(xs) <= float(width_mm) * 0.35:
+        num = label.get("label_number", "?")
+        warnings.append(
+            f"plate #{num}: wide plate ({width_mm:g}x{height_mm:g}mm) has only "
+            f"{len(lines)} left-column line(s) — transcription likely incomplete"
+        )
+
+
+def _filter_spec_sheet_plates(
+    plates: list[dict],
+    content_by_plate: dict[int, list[dict]],
+    content_meta: dict[int, dict],
+    warnings: list[str],
+) -> tuple[list[dict], dict[int, list[dict]], dict[int, dict]]:
+    """Drop page/header table rows; keep rows with stated plate dimensions."""
+    kept: list[dict] = []
+    old_ids: list[int] = []
+    for plate in plates:
+        pid = plate.get("id")
+        if not isinstance(pid, int):
+            continue
+        lines = content_by_plate.get(pid) or []
+        width_mm = plate.get("width_mm")
+        height_mm = plate.get("height_mm")
+        meta = content_meta.get(pid) or {}
+        if not _is_num(width_mm):
+            width_mm = meta.get("width_mm")
+        if not _is_num(height_mm):
+            height_mm = meta.get("height_mm")
+
+        if _is_table_header_plate(lines):
+            warnings.append(f"structure: dropped plate #{pid} (table/header row)")
+            continue
+        if not (_is_num(width_mm) and _is_num(height_mm)):
+            warnings.append(f"structure: dropped plate #{pid} (no stated plate size)")
+            continue
+        kept.append({**plate, "width_mm": width_mm, "height_mm": height_mm})
+        old_ids.append(pid)
+
+    remapped_plates: list[dict] = []
+    remapped_lines: dict[int, list[dict]] = {}
+    remapped_meta: dict[int, dict] = {}
+    for new_id, (plate, old_id) in enumerate(zip(kept, old_ids), start=1):
+        remapped_plates.append({**plate, "id": new_id})
+        remapped_lines[new_id] = content_by_plate.get(old_id) or []
+        remapped_meta[new_id] = content_meta.get(old_id) or {}
+    return remapped_plates, remapped_lines, remapped_meta
+
+
 def _resolve_plate_width_mm(
     bbox_px: list,
     dimension_annotations: list[dict],
@@ -596,10 +667,14 @@ def _resolve_plate_width_mm(
     spec_stub: dict,
     warnings: list[str],
     label_num: int,
+    spec_table: bool = False,
 ) -> float | None:
     """Pick plate width: tiled dimension sum beats single-segment / column hints."""
     if not _valid_bbox_px(bbox_px):
         return width_mm if _is_num(width_mm) else None
+
+    if spec_table and _stated_dims_cell_context(bbox_px, width_mm, height_mm):
+        return float(width_mm) if _is_num(width_mm) else None
 
     edge = (bbox_px[0], bbox_px[2])
     tiled = _best_tiled_dim_sum_for_edge(
@@ -620,11 +695,13 @@ def _resolve_plate_width_mm(
 
     candidate = tmp.get("width_mm") if _is_num(tmp.get("width_mm")) else width_mm
     if _is_num(tiled):
-        if not _is_num(candidate) or candidate < tiled * 0.85:
-            if _is_num(candidate) and candidate < tiled * 0.85:
+        if not _is_num(candidate):
+            candidate = tiled
+        elif candidate < tiled * 0.85 or candidate > tiled * 1.15:
+            if _is_num(candidate) and candidate != tiled:
                 warnings.append(
-                    f"plate #{label_num}: width_mm={candidate:g} looks like a column "
-                    f"segment — using tiled dimension sum {tiled:g}mm"
+                    f"plate #{label_num}: width_mm={candidate:g} inconsistent with "
+                    f"dimension span sum {tiled:g}mm — using tiled sum"
                 )
             candidate = tiled
 
@@ -648,8 +725,11 @@ def _coerce_plate_dims(
     warnings: list[str],
     label_num: int,
     tiled_width_mm: float | None = None,
+    trust_stated: bool = False,
 ) -> tuple[float | None, float | None]:
     """Reject column-width mistaken for plate width; recover from bbox scale."""
+    if trust_stated and _is_num(width_mm) and _is_num(height_mm):
+        return float(width_mm), float(height_mm)
     if not (_valid_bbox_px(bbox_px) and _is_num(height_mm) and height_mm > 0):
         return width_mm, height_mm
     w_px = bbox_px[2] - bbox_px[0]
@@ -827,8 +907,13 @@ def merge_to_spec(
     plates = _normalize_structure_plates(structure, image_px, warnings)
     content_by_plate = _lines_by_content_plate(content, image_px)
     content_meta = _content_plate_meta(content)
+    spec_table = _is_spec_table_sheet(content_by_plate)
     all_content_lines, content_plate_mm = _merge_content_lines(content, image_px)
     lines_by_plate = _assign_lines_to_plates(all_content_lines, plates)
+    if spec_table:
+        plates, content_by_plate, content_meta = _filter_spec_sheet_plates(
+            plates, content_by_plate, content_meta, warnings
+        )
     orphan_info = lines_by_plate.pop("_orphans", None)
     if orphan_info:
         count = orphan_info[0].get("orphan_count", 0)
@@ -879,6 +964,8 @@ def merge_to_spec(
         if not _is_num(width_mm) and _is_num(mm_hint.get("width_mm")):
             width_mm = mm_hint["width_mm"]
 
+        table_cell = spec_table and _stated_dims_cell_context(bbox, width_mm, height_mm)
+
         width_mm = _resolve_plate_width_mm(
             bbox,
             dimension_annotations,
@@ -887,15 +974,27 @@ def merge_to_spec(
             spec_stub,
             warnings,
             pid,
+            spec_table=spec_table,
         )
         if not _is_num(height_mm):
             _, height_mm = _infer_plate_mm_from_bbox(
                 bbox, dimension_annotations, width_mm, None
             )
+        if table_cell and _is_num(width_mm) and _is_num(height_mm):
+            _, height_mm = _coerce_plate_dims(
+                bbox,
+                width_mm,
+                height_mm,
+                warnings,
+                pid,
+                trust_stated=True,
+            )
         plate = {**plate, "width_mm": width_mm, "height_mm": height_mm}
 
-        plate_lines = content_by_plate.get(pid) or lines_by_plate.get(pid) or []
         meta = content_meta.get(pid) or {}
+        plate_lines = _merge_plate_lines(
+            pid, content_by_plate, lines_by_plate, meta, warnings
+        )
         line_count = meta.get("line_count")
         if isinstance(line_count, int) and line_count != len(plate_lines):
             warnings.append(
@@ -911,45 +1010,45 @@ def merge_to_spec(
             plate.get("height_mm"),
             line_count if isinstance(line_count, int) else None,
         )
-        lines_out: list[dict] = []
-        plate_bbox = plate.get("bbox_px") or []
-        for i, ln in enumerate(plate_lines, start=1):
-            text = ln.get("text", "")
-            line_bbox = ln.get("bbox_px")
-            size_mm = _resolve_size_mm(i, ln, structure, stated_by_line, line_bbox, plate.get("bbox_px"), plate.get("height_mm"))
-
-            bbox_x, bbox_y = _position_from_bbox(
-                line_bbox or [],
-                plate.get("bbox_px") or [],
-                plate.get("width_mm"),
-                plate.get("height_mm"),
+        if table_cell:
+            tight_bbox = _tighten_plate_bbox_for_table_cell(
+                plate.get("bbox_px") or [], plate_lines
             )
-            llm_x, llm_y = _llm_position_in_bounds(
-                ln.get("x_mm"),
-                ln.get("y_mm"),
-                plate.get("width_mm"),
-                plate.get("height_mm"),
-            )
-            x_mm = bbox_x if bbox_x is not None else llm_x
-            y_mm = bbox_y if bbox_y is not None else llm_y
-            if x_mm is None and _is_num(ln.get("x_mm")):
-                warnings.append(
-                    f"plate #{pid} '{text}': x_mm={ln.get('x_mm')} outside plate - null"
-                )
-            if y_mm is None and _is_num(ln.get("y_mm")):
-                warnings.append(
-                    f"plate #{pid} '{text}': y_mm={ln.get('y_mm')} outside plate - null"
-                )
+            plate = {**plate, "bbox_px": tight_bbox}
 
-            lines_out.append({
-                "text": text,
-                "x_mm": x_mm,
-                "y_mm": y_mm,
-                "size_mm": size_mm,
-                "alignment": None,
-                "bold": None,
-                "bbox_px": line_bbox,
-            })
+        content_w = mm_hint.get("width_mm")
+        content_h = mm_hint.get("height_mm")
+        plate = {**plate, "_content_w": content_w, "_content_h": content_h}
+
+        mode = resolve_plate_mode(
+            plate_lines,
+            plate.get("bbox_px") or [],
+            plate.get("width_mm"),
+            plate.get("height_mm"),
+            content_w,
+            content_h,
+            spec_table=spec_table,
+            table_cell=table_cell,
+        )
+
+        if mode == RESOLUTION_CONTENT:
+            lines_out = build_content_complete_lines(
+                plate_lines,
+                float(plate["width_mm"]),
+                float(plate["height_mm"]),
+                content_w,
+                content_h,
+            )
+        else:
+            lines_out = build_derived_lines(
+                plate_lines,
+                plate,
+                structure,
+                stated_by_line,
+                table_cell=table_cell,
+                warnings=warnings,
+                pid=pid,
+            )
 
         label = {
             "label_number": pid,
@@ -966,7 +1065,13 @@ def merge_to_spec(
             "holes": [],
         }
         sort_lines_by_y(label)
-        _refine_line_y_positions(label, warnings)
+        if not table_cell and (
+            mode == RESOLUTION_DERIVED or len(lines_out) <= 1
+        ):
+            refine_line_y_positions(label, warnings)
+        if len(lines_out) == 1:
+            fit_single_line_plate(label, warnings)
+        _warn_incomplete_wide_plate(label, warnings)
         labels.append(label)
 
     spec = {

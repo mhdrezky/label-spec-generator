@@ -17,6 +17,16 @@ Use the VISIBLE OUTLINE or BORDER of each piece as the boundary:
 - Do NOT merge multiple bordered boxes into one plate
 - Dimension lines / arrows are NOT plate borders — never use dimension span positions as plate bbox
 
+ONLY IF the image is a SPEC TABLE / SCHEDULE (column headers like LABEL DESCRIPTION, FONT, SIZE, COLOUR, QTY):
+- Each DATA ROW below the header = one plate
+- bbox_frac = label preview in the LABEL DESCRIPTION column only (not SIZE/COLOUR/QTY columns)
+- width_mm / height_mm = copy the SIZE column (e.g. "150 x 70" → 150, 70)
+- Skip page headers and column header rows
+
+If the image is a PHYSICAL PLATE DRAWING (bordered label pieces with text printed on them):
+- bbox_frac = the full bordered plate outline including ALL columns of text on that piece
+- One horizontal strip with ROOM | FANS | SUCTION columns = ONE plate (full strip width)
+
 For each plate return:
 - id: 1, 2, 3... top-to-bottom then left-to-right
 - bbox_frac: [x1, y1, x2, y2] as FRACTIONS of the full image in [0, 1]
@@ -42,6 +52,19 @@ This label draft image is exactly {width}x{height} pixels.
 
 Structure pass detected these plates (use these ids):
 {plate_list}
+
+SHEET TYPE — apply the matching rules:
+
+SPEC TABLE (only if column headers FONT / SIZE / COLOUR / QTY are visible):
+- Transcribe the label preview inside each row's LABEL DESCRIPTION cell only
+- Copy width_mm / height_mm from the SIZE column on that row
+- Do NOT transcribe FONT / SIZE / COLOUR / QTY header cells
+
+PHYSICAL PLATE DRAWING (bordered pieces with text printed on the plate):
+- Transcribe EVERY text string on that physical plate — all columns and rows
+- A wide strip with ROOM | FANS | SUCTION and LOW/HIGH below = one plate, 9+ lines
+- A status strip with CALLING | FAULT | DEFROST = one plate, 3 lines
+- width_mm = FULL plate outline width (entire bordered strip), NOT one column width
 
 For each plate id:
 1. Count how many separate text lines are visible on that plate → set line_count.
