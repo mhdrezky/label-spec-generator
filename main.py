@@ -11,6 +11,7 @@ QC: sheet-level review with optional one retry
 import json
 import os
 import sys
+import time
 from datetime import datetime
 
 for _stream in (sys.stdout, sys.stderr):
@@ -18,6 +19,7 @@ for _stream in (sys.stdout, sys.stderr):
         _stream.reconfigure(encoding="utf-8", errors="replace")
 
 from api_client import (
+    AGENTIC_EXTRACT_MAX_CONCURRENT,
     API_READ_TIMEOUT,
     API_URL,
     MODEL,
@@ -58,7 +60,19 @@ def format_label_summary(label: dict) -> str:
     return f"#{num} ({dims}, qty {qty}): {line_count} lines — {first!r}"
 
 
+def _format_elapsed(seconds: float) -> str:
+    total = int(round(seconds))
+    if total < 60:
+        return f"{seconds:.1f}s"
+    minutes, secs = divmod(total, 60)
+    if minutes < 60:
+        return f"{minutes}m {secs}s ({seconds:.1f}s)"
+    hours, minutes = divmod(minutes, 60)
+    return f"{hours}h {minutes}m {secs}s ({seconds:.1f}s)"
+
+
 def main() -> None:
+    started = time.monotonic()
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     image_path = args[0] if args else IMAGE_FILE
 
@@ -70,7 +84,10 @@ def main() -> None:
     print(f"API: {API_URL}")
     print(f"Model: {MODEL}")
     print("Pipeline: designer (survey → dimensions → decompose → per-plate → measure → QC)")
-    print(f"Timeout: read={API_READ_TIMEOUT}s, structured_output=json_schema")
+    print(
+        f"Timeout: read={API_READ_TIMEOUT}s, structured_output=json_schema, "
+        f"max_concurrent={AGENTIC_EXTRACT_MAX_CONCURRENT}"
+    )
 
     output_dir = create_result_dir()
     set_run_cache_dir(os.path.join(output_dir, "llm"))
@@ -83,6 +100,7 @@ def main() -> None:
         ctx = run_pipeline(image_path, stage_dir=os.path.join(output_dir, "stages"))
     except Exception as exc:
         print(f"Pipeline failed: {exc}", file=sys.stderr)
+        print(f"Wall clock: {_format_elapsed(time.monotonic() - started)}")
         sys.exit(1)
 
     print(f"Stage snapshots saved to {os.path.join(output_dir, 'stages')}")
@@ -124,6 +142,8 @@ def main() -> None:
         print(f"Warnings ({len(warnings)}):")
         for warning in warnings:
             print(f"  ! {warning}")
+
+    print(f"Wall clock: {_format_elapsed(time.monotonic() - started)}")
 
     if not spec.get("labels"):
         print("Error: pipeline produced no labels — specs are not usable in the editor.", file=sys.stderr)

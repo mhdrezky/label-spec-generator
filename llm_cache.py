@@ -3,11 +3,13 @@
 import json
 import os
 import re
+import threading
 from datetime import datetime, timezone
 from pathlib import Path
 
 _run_cache_dir: Path | None = None
 _label_seq: dict[str, int] = {}
+_label_seq_lock = threading.Lock()
 CACHE_ENABLED = os.environ.get("LLM_CACHE", "1").lower() not in ("0", "false", "no")
 SKIP_LABELS = {"warmup"}
 
@@ -15,8 +17,9 @@ SKIP_LABELS = {"warmup"}
 def set_run_cache_dir(path: str | Path | None) -> None:
     """Point cache I/O at ``results/<ts>/llm/`` for the current run."""
     global _run_cache_dir, _label_seq
-    _run_cache_dir = Path(path) if path else None
-    _label_seq = {}
+    with _label_seq_lock:
+        _run_cache_dir = Path(path) if path else None
+        _label_seq = {}
 
 
 def _safe_stage_name(label: str) -> str:
@@ -32,10 +35,12 @@ def stage_cache_path(label: str) -> tuple[Path | None, bool]:
     if not CACHE_ENABLED or _run_cache_dir is None or label in SKIP_LABELS:
         return None, False
     base = _safe_stage_name(label)
-    seq = _label_seq.get(label, 0) + 1
-    _label_seq[label] = seq
+    with _label_seq_lock:
+        seq = _label_seq.get(label, 0) + 1
+        _label_seq[label] = seq
+        cache_dir = _run_cache_dir
     name = f"{base}.json" if seq == 1 else f"{base}-{seq}.json"
-    return _run_cache_dir / name, seq == 1
+    return cache_dir / name, seq == 1
 
 
 def _content_to_str(content) -> str | None:

@@ -2,10 +2,12 @@
 
 from __future__ import annotations
 
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 from PIL import Image
 
+from api_client import AGENTIC_EXTRACT_MAX_CONCURRENT
 from context import SheetContext
 from schema import POSITION_SCHEMA, SIZE_SCHEMA, TRANSCRIBE_SCHEMA
 from vision import call_text, call_vision, crop_plate, pil_to_base64
@@ -196,39 +198,30 @@ def _position_plate(
 
 
 def _process_one_plate(
-    image: Image.Image,
     ctx: SheetContext,
     region: dict,
+    crop_b64: str,
+    label: dict,
     total: int,
     *,
     transcribe: bool = True,
     position: bool = True,
     size: bool = True,
-) -> dict:
-    crop = crop_plate(
-        image,
-        region.get("bbox_px") or [0, 0, image.width, image.height],
-        ctx.image_px,
-    )
-    crop_b64 = pil_to_base64(crop)
-
-    existing = next(
-        (lab for lab in ctx.labels if lab.get("label_number") == region.get("id")),
-        None,
-    )
-    label = existing or _new_label_from_region(region, ctx)
+) -> tuple[dict, list[str]]:
+    """Run per-plate LLM steps. Returns ``(label, local_warnings)``."""
+    warnings: list[str] = []
 
     if transcribe:
-        label["lines"] = _transcribe_plate(crop_b64, region, total, ctx.warnings)
+        label["lines"] = _transcribe_plate(crop_b64, region, total, warnings)
     if size and label.get("lines"):
-        _size_plate(region, label["lines"], total, ctx.warnings)
+        _size_plate(region, label["lines"], total, warnings)
     if position and label.get("lines"):
-        _position_plate(crop_b64, region, label["lines"], total, ctx.warnings)
+        _position_plate(crop_b64, region, label["lines"], total, warnings)
 
     if label.get("lines"):
         _apply_stated_sizes(label, ctx)
 
-    return label
+    return label, warnings
 
 
 def run_all_plates(
@@ -248,17 +241,46 @@ def run_all_plates(
     image = Image.open(image_path)
 
     labels_by_id = {lab.get("label_number"): lab for lab in ctx.labels}
+    prepared: list[tuple[dict, str, dict]] = []
     for region in regions:
-        label = _process_one_plate(
+        crop = crop_plate(
             image,
+            region.get("bbox_px") or [0, 0, image.width, image.height],
+            ctx.image_px,
+        )
+        crop_b64 = pil_to_base64(crop)
+        existing = labels_by_id.get(region.get("id"))
+        label = existing or _new_label_from_region(region, ctx)
+        prepared.append((region, crop_b64, label))
+
+    workers = min(AGENTIC_EXTRACT_MAX_CONCURRENT, max(1, len(prepared)))
+    print(f"Per-plate: {len(prepared)} plate(s), concurrency={workers}")
+
+    def _work(item: tuple[dict, str, dict]) -> tuple[dict, list[str]]:
+        region, crop_b64, label = item
+        return _process_one_plate(
             ctx,
             region,
+            crop_b64,
+            label,
             total,
             transcribe=transcribe,
             position=position,
             size=size,
         )
+
+    if len(prepared) <= 1 or workers == 1:
+        results = [_work(item) for item in prepared]
+    else:
+        results = []
+        with ThreadPoolExecutor(max_workers=workers) as pool:
+            futures = [pool.submit(_work, item) for item in prepared]
+            for fut in as_completed(futures):
+                results.append(fut.result())
+
+    for label, local_warnings in results:
         labels_by_id[label["label_number"]] = label
+        ctx.warnings.extend(local_warnings)
 
     ctx.labels = [
         labels_by_id[r["id"]]

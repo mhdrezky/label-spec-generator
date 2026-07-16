@@ -46,7 +46,8 @@ flowchart TD
 python main.py [image_path]      # default: draft.png
 ```
 
-Env overrides: `API_URL`, `MODEL`, ... (see `api_client.py`).
+Env overrides: `API_URL`, `MODEL`, `AGENTIC_EXTRACT_MAX_CONCURRENT`
+(default `4` — parallel per-plate LLM requests), ... (see `api_client.py`).
 
 LLM cache under `results/<timestamp>/llm/` (`survey`, `dimensions`, `decompose`,
 `transcribe#3`, `pos#3`, `size#3`, `qc`). Set `LLM_CACHE=0` to disable.

@@ -11,11 +11,14 @@ from requests.exceptions import ConnectionError, ReadTimeout, RequestException
 from llm_cache import load as load_cache, save as save_cache, stage_cache_path
 
 API_URL = os.environ.get(
-    "API_URL", "http://10.65.1.119:5004/v1/chat/completions"
+    "API_URL", "http://213.173.111.113:34087/v1/chat/completions"
+    # "API_URL", "http://10.65.1.119:5004/v1/chat/completions"
     # "API_URL", "http://10.65.1.116:5003/v1/chat/completions"
 )
 API_BASE = API_URL.rsplit("/v1/", 1)[0]
-MODEL = os.environ.get("MODEL", "Qwen/Qwen3-VL-32B-Instruct-FP8")
+MODEL = os.environ.get("MODEL", "Qwen/Qwen3.6-27B")
+# MODEL = os.environ.get("MODEL", "Qwen/Qwen3.6-35B-A3B-FP8")
+# MODEL = os.environ.get("MODEL", "Qwen/Qwen3-VL-32B-Instruct-FP8")
 # MODEL = os.environ.get("MODEL", "cyankiwi/Qwen3.5-9B-AWQ-BF16-INT8")
 API_CONNECT_TIMEOUT = int(os.environ.get("API_CONNECT_TIMEOUT", "30"))
 API_READ_TIMEOUT = int(os.environ.get("API_READ_TIMEOUT", "900"))
@@ -25,6 +28,10 @@ API_HEALTH_TIMEOUT = int(os.environ.get("API_HEALTH_TIMEOUT", "15"))
 API_MAX_TOKENS = int(os.environ.get("API_MAX_TOKENS", "4096"))
 HEARTBEAT_INTERVAL = int(os.environ.get("HEARTBEAT_INTERVAL", "15"))
 API_ENABLE_THINKING = os.environ.get("API_ENABLE_THINKING", "false").lower() == "true"
+AGENTIC_EXTRACT_MAX_CONCURRENT = max(
+    1, int(os.environ.get("AGENTIC_EXTRACT_MAX_CONCURRENT", "4"))
+)
+_api_semaphore = threading.Semaphore(AGENTIC_EXTRACT_MAX_CONCURRENT)
 
 
 def build_api_payload(**kwargs) -> dict:
@@ -46,12 +53,13 @@ def api_post(payload: dict, timeout: tuple[int, int], label: str) -> requests.Re
     thread = threading.Thread(target=heartbeat, daemon=True)
     thread.start()
     try:
-        return requests.post(
-            API_URL,
-            headers={"Content-Type": "application/json"},
-            json=payload,
-            timeout=timeout,
-        )
+        with _api_semaphore:
+            return requests.post(
+                API_URL,
+                headers={"Content-Type": "application/json"},
+                json=payload,
+                timeout=timeout,
+            )
     finally:
         done.set()
 
