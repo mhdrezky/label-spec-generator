@@ -76,7 +76,7 @@
   .menubar .bold-btn:hover { background: #f1f3f5; }
   .menubar .spacer { flex: 1; }
   .menubar .file-name { color: #888; font-size: 12px; }
-  .menubar #result-picker { max-width: 340px; color: #444; }
+  .menubar #result-picker { max-width: 420px; color: #444; }
   .menubar .picker-label { color: #888; font-size: 12px; margin-right: 4px; }
 
   /* ── layout ───────────────────────────────────── */
@@ -789,9 +789,8 @@ function renderAll() {
 }
 
 /* ── result picker ──────────────────────────────
-   Populated from the server's /results/ directory listing (python
-   http.server serves one), newest first. Selecting one loads its
-   specs.json. Falls back to editor/latest-specs.json when no listing. */
+   Lists specs.json from ../results/ (pipeline) and ../results-dual/
+   (dual-call), newest first. Falls back to editor/latest-specs.json. */
 async function loadFromUrl(url, name) {
   try {
     const res = await fetch(url, { cache: "no-store" });
@@ -804,39 +803,47 @@ async function loadFromUrl(url, name) {
   }
 }
 
-async function populateResultPicker() {
-  const picker = $("result-picker");
-  let folders = [];
+async function listResultDirs(basePath, tag) {
+  const entries = [];
   try {
-    const res = await fetch("../results/", { cache: "no-store" });
-    if (res.ok) {
-      const html = await res.text();
-      const doc = new DOMParser().parseFromString(html, "text/html");
-      folders = [...doc.querySelectorAll("a")]
-        .map((a) => a.getAttribute("href"))
-        .map((h) => (h || "").replace(/\/$/, ""))
-        .filter((h) => /^\d{8}_\d{6}$/.test(h))
-        .sort()
-        .reverse();
+    const res = await fetch(basePath, { cache: "no-store" });
+    if (!res.ok) return entries;
+    const html = await res.text();
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    for (const a of doc.querySelectorAll("a")) {
+      const h = (a.getAttribute("href") || "").replace(/\/$/, "");
+      if (!/^\d{8}_\d{6}$/.test(h)) continue;
+      entries.push({
+        ts: h,
+        url: `${basePath}${h}/specs.json`,
+        label: `${h} (${tag})`,
+      });
     }
   } catch { /* directory listing not available */ }
+  return entries;
+}
+
+async function populateResultPicker() {
+  const picker = $("result-picker");
+  const pipeline = await listResultDirs("../results/", "pipeline");
+  const dual = await listResultDirs("../results-dual/", "dual");
+  const all = [...pipeline, ...dual].sort((a, b) => b.ts.localeCompare(a.ts));
 
   picker.innerHTML = "";
-  if (!folders.length) {
-    // fall back to the single latest-specs.json copy
+  if (!all.length) {
     picker.innerHTML = '<option value="latest-specs.json">latest-specs.json</option>';
     picker.value = "latest-specs.json";
     loadFromUrl("latest-specs.json", "latest-specs.json");
     return;
   }
-  for (const f of folders) {
+  for (const entry of all) {
     const opt = document.createElement("option");
-    opt.value = `../results/${f}/specs.json`;
-    opt.textContent = f;
+    opt.value = entry.url;
+    opt.textContent = entry.label;
     picker.appendChild(opt);
   }
   picker.value = picker.options[0].value;
-  loadFromUrl(picker.value, folders[0]);
+  loadFromUrl(picker.value, all[0].label);
 }
 
 $("result-picker").addEventListener("change", (e) => {
