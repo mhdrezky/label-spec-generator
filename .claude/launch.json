@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "label-editor",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8641", "--directory", "."],
+      "port": 8641
+    }
+  ]
+}

@@ -8,20 +8,30 @@ import time
 import requests
 from requests.exceptions import ConnectionError, ReadTimeout, RequestException
 
+from llm_cache import load as load_cache, save as save_cache, stage_cache_path
+
 API_URL = os.environ.get(
-    "API_URL", "http://10.65.1.116:5003/v1/chat/completions"
+    "API_URL", "http://213.173.111.113:18119/v1/chat/completions"
+    # "API_URL", "http://10.65.1.119:5004/v1/chat/completions"
+    # "API_URL", "http://10.65.1.116:5003/v1/chat/completions"
 )
 API_BASE = API_URL.rsplit("/v1/", 1)[0]
-MODEL = os.environ.get("MODEL", "cyankiwi/Qwen3.5-9B-AWQ-BF16-INT8")
+# MODEL = os.environ.get("MODEL", "Qwen/Qwen3.6-27B")
+MODEL = os.environ.get("MODEL", "Qwen/Qwen3.6-35B-A3B-FP8")
+# MODEL = os.environ.get("MODEL", "Qwen/Qwen3-VL-32B-Instruct-FP8")
+# MODEL = os.environ.get("MODEL", "cyankiwi/Qwen3.5-9B-AWQ-BF16-INT8")
 API_CONNECT_TIMEOUT = int(os.environ.get("API_CONNECT_TIMEOUT", "30"))
 API_READ_TIMEOUT = int(os.environ.get("API_READ_TIMEOUT", "900"))
 API_MAX_RETRIES = int(os.environ.get("API_MAX_RETRIES", "3"))
 API_WARMUP_TIMEOUT = int(os.environ.get("API_WARMUP_TIMEOUT", "120"))
 API_HEALTH_TIMEOUT = int(os.environ.get("API_HEALTH_TIMEOUT", "15"))
 API_MAX_TOKENS = int(os.environ.get("API_MAX_TOKENS", "4096"))
-API_SPECS_MAX_TOKENS = int(os.environ.get("API_SPECS_MAX_TOKENS", "24000"))
 HEARTBEAT_INTERVAL = int(os.environ.get("HEARTBEAT_INTERVAL", "15"))
 API_ENABLE_THINKING = os.environ.get("API_ENABLE_THINKING", "false").lower() == "true"
+AGENTIC_EXTRACT_MAX_CONCURRENT = max(
+    1, int(os.environ.get("AGENTIC_EXTRACT_MAX_CONCURRENT", "4"))
+)
+_api_semaphore = threading.Semaphore(AGENTIC_EXTRACT_MAX_CONCURRENT)
 
 
 def build_api_payload(**kwargs) -> dict:
@@ -43,12 +53,13 @@ def api_post(payload: dict, timeout: tuple[int, int], label: str) -> requests.Re
     thread = threading.Thread(target=heartbeat, daemon=True)
     thread.start()
     try:
-        return requests.post(
-            API_URL,
-            headers={"Content-Type": "application/json"},
-            json=payload,
-            timeout=timeout,
-        )
+        with _api_semaphore:
+            return requests.post(
+                API_URL,
+                headers={"Content-Type": "application/json"},
+                json=payload,
+                timeout=timeout,
+            )
     finally:
         done.set()
 
@@ -129,6 +140,54 @@ def describe_empty_response(data: dict) -> str:
         return "empty response (unexpected API format)"
 
 
+def salvage_plates_array(content: str) -> list[dict]:
+    """Extract complete plate objects from truncated decompose JSON."""
+    match = re.search(r'"plates"\s*:\s*\[', content)
+    if not match:
+        return []
+
+    plates: list[dict] = []
+    i = match.end()
+    n = len(content)
+    while i < n:
+        while i < n and content[i] in " \t\n\r,":
+            i += 1
+        if i >= n or content[i] != "{":
+            break
+
+        depth = 0
+        in_str = False
+        escape = False
+        obj_start = i
+        for j in range(i, n):
+            ch = content[j]
+            if escape:
+                escape = False
+                continue
+            if ch == "\\" and in_str:
+                escape = True
+                continue
+            if ch == '"':
+                in_str = not in_str
+                continue
+            if in_str:
+                continue
+            if ch == "{":
+                depth += 1
+            elif ch == "}":
+                depth -= 1
+                if depth == 0:
+                    try:
+                        plates.append(json.loads(content[obj_start : j + 1]))
+                    except json.JSONDecodeError:
+                        pass
+                    i = j + 1
+                    break
+        else:
+            break
+    return plates
+
+
 def parse_json_response(content: str) -> dict:
     content = content.strip()
 
@@ -151,6 +210,10 @@ def parse_json_response(content: str) -> dict:
         except json.JSONDecodeError:
             pass
 
+    salvaged = salvage_plates_array(content)
+    if salvaged:
+        return {"plates": salvaged, "_salvaged": True}
+
     return {"error": "parse_failed", "raw_response": content}
 
 
@@ -159,7 +222,13 @@ def call_chat(
     *,
     label: str = "chat",
     max_tokens: int | None = None,
-) -> str:
+    json_schema: dict | None = None,
+) -> tuple[str, dict]:
+    """Call the chat endpoint. When ``json_schema`` is given, output is
+    constrained to that schema via vLLM structured output (response_format
+    json_schema), guaranteeing structurally valid JSON.
+
+    Returns ``(content, meta)`` where meta includes finish_reason."""
     resolved_tokens = max_tokens if max_tokens is not None else API_MAX_TOKENS
     payload = build_api_payload(
         model=MODEL,
@@ -167,6 +236,22 @@ def call_chat(
         max_tokens=resolved_tokens,
         messages=messages,
     )
+    if json_schema is not None:
+        payload["response_format"] = {
+            "type": "json_schema",
+            "json_schema": {
+                "name": "label_spec",
+                "schema": json_schema,
+                "strict": True,
+            },
+        }
+
+    cache_path, may_load = stage_cache_path(label)
+    if cache_path is not None and may_load:
+        cached = load_cache(cache_path)
+        if cached is not None:
+            print(f"{label} response from cache ({cache_path.name}, {len(cached)} chars).")
+            return cached, {"finish_reason": "cache", "max_tokens": resolved_tokens}
 
     timeout = (API_CONNECT_TIMEOUT, API_READ_TIMEOUT)
     last_error: Exception | None = None
@@ -193,7 +278,14 @@ def call_chat(
                 f"max_tokens={resolved_tokens})."
             )
 
-            return content
+            if cache_path is not None:
+                save_cache(cache_path, label, content)
+
+            return content, {
+                "finish_reason": finish_reason,
+                "completion_tokens": completion_tokens,
+                "max_tokens": resolved_tokens,
+            }
         except ReadTimeout as exc:
             last_error = exc
             print(

@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LabelEditor</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 13px;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #fff;
+  }
+
+  /* ── top menu bar ─────────────────────────────── */
+  .menubar {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 10px;
+    background: #fff;
+    border-bottom: 1px solid #e3e6ea;
+  }
+  .menubar .menu {
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+  }
+  .menubar .menu:hover { background: #f1f3f5; }
+  .menubar .menu .caret { color: #888; font-size: 10px; margin-left: 4px; }
+  .menu-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    background: #fff;
+    border: 1px solid #dfe3e8;
+    border-radius: 6px;
+    box-shadow: 0 6px 20px rgba(0,0,0,.12);
+    z-index: 50;
+    padding: 4px;
+  }
+  .menu.open .menu-dropdown { display: block; }
+  .menu-dropdown div {
+    padding: 7px 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .menu-dropdown div:hover { background: #f1f3f5; }
+  .menubar .sep { width: 1px; height: 24px; background: #e3e6ea; margin: 0 8px; }
+  .menubar select {
+    padding: 5px 8px;
+    border: 1px solid #cfd6dd;
+    border-radius: 4px;
+    background: #fff;
+    font-size: 13px;
+  }
+  .menubar .bold-btn {
+    font-family: Georgia, serif;
+    font-weight: 700;
+    color: #1d9d74;
+    font-size: 15px;
+    padding: 4px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .menubar .bold-btn:hover { background: #f1f3f5; }
+  .menubar .spacer { flex: 1; }
+  .menubar .file-name { color: #888; font-size: 12px; }
+  .menubar #result-picker { max-width: 420px; color: #444; }
+  .menubar .picker-label { color: #888; font-size: 12px; margin-right: 4px; }
+
+  /* ── layout ───────────────────────────────────── */
+  .main { display: flex; flex: 1; min-height: 0; }
+
+  /* left panel */
+  .panel {
+    width: 400px;
+    min-width: 400px;
+    background: #fff;
+    border-right: 1px solid #e3e6ea;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  .add-label {
+    margin: 12px;
+    padding: 11px;
+    background: #2f6fed;
+    color: #fff;
+    border: 0;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .add-label:hover { background: #2559c7; }
+
+  .label-chips { display: none; }
+
+  .tabs {
+    display: flex;
+    border-bottom: 1px solid #e3e6ea;
+    padding: 0 12px;
+    gap: 4px;
+  }
+  .tab {
+    padding: 10px 16px;
+    cursor: pointer;
+    color: #666;
+    border-bottom: 2px solid transparent;
+    user-select: none;
+  }
+  .tab.active {
+    color: #2f6fed;
+    border-bottom-color: #2f6fed;
+    font-weight: 600;
+  }
+
+  /* table — production style: full grid borders, whole-row zebra */
+  .table-wrap { flex: 1; overflow: auto; }
+  table { width: 100%; border-collapse: collapse; }
+  th, td { border: 1px solid #e9ecef; text-align: left; }
+  th {
+    padding: 10px 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #333;
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  td { padding: 0; background: #fff; }
+  tr:nth-child(odd) td { background: #f4f5f7; }
+  td.line-no {
+    padding: 8px;
+    color: #555;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  td input {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    padding: 8px;
+    font-size: 13px;
+    color: #333;
+    outline: none;
+  }
+  td input:focus { background: #eaf1ff; }
+  /* provenance markers: corner triangles, values stay black.
+     orange = computed default, blue = measured from the drawing (bbox) */
+  td.computed {
+    background-image: linear-gradient(225deg, #f0a929 7px, transparent 7px);
+  }
+  td.measured {
+    background-image: linear-gradient(225deg, #4d94e8 7px, transparent 7px);
+  }
+  td .del-btn {
+    border: 0;
+    background: transparent;
+    color: #bbb;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 6px 8px;
+  }
+  td .del-btn:hover { color: #e02d2d; }
+  .add-row {
+    margin: 10px 12px;
+    padding: 7px 12px;
+    background: #fff;
+    border: 1px dashed #b9c2cc;
+    border-radius: 6px;
+    color: #556;
+    cursor: pointer;
+    font-size: 12px;
+  }
+  .add-row:hover { border-color: #2f6fed; color: #2f6fed; }
+
+  .meta {
+    border-top: 1px solid #e3e6ea;
+    padding: 10px 12px;
+    font-size: 12px;
+    color: #555;
+    display: grid;
+    grid-template-columns: auto 1fr auto 1fr;
+    gap: 6px 8px;
+    align-items: center;
+  }
+  .meta label { color: #888; }
+  .meta input {
+    width: 100%;
+    border: 1px solid #dfe3e8;
+    border-radius: 4px;
+    padding: 4px 6px;
+    font-size: 12px;
+  }
+  .legend {
+    padding: 8px 12px;
+    font-size: 11px;
+    color: #b26a00;
+    background: #fff8ec;
+    border-top: 1px solid #f3e2bd;
+  }
+  .legend .swatch {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    background: linear-gradient(225deg, #f0a929 60%, transparent 60%);
+    margin-right: 4px;
+  }
+
+  /* ── canvas area ──────────────────────────────── */
+  .canvas-area {
+    flex: 1;
+    position: relative;
+    min-width: 0;
+    background: #8a8a8a;
+  }
+  .canvas-scroll {
+    position: absolute;
+    inset: 0;
+    overflow: auto;
+  }
+  .sheet-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+  }
+  .plate-wrap {
+    position: relative;
+    display: inline-block;
+    /* top/left padding keeps text that extends past the plate edge visible on gray */
+    padding: 0 120px 40px 0;
+  }
+  .plate-stage { position: relative; cursor: pointer; }
+  .plate-stage.selected { outline: 2px solid #2f6fed; outline-offset: 2px; }
+  .plate { position: absolute; inset: 0; background: #fff; }
+  .txt-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: visible;
+  }
+  .txt-layer .txt {
+    position: absolute;
+    white-space: pre;
+    line-height: 1;
+    color: #111;
+    /* production: x_mm / y_mm are the CENTER of the text box */
+    transform: translate(-50%, -50%);
+  }
+  .hole {
+    position: absolute;
+    border-radius: 50%;
+    background: #8a8a8a;
+    border: 1px solid #666;
+    transform: translate(-50%, -50%);
+  }
+  .badge {
+    position: absolute;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 5px;
+    border-radius: 10px;
+    background: #e02d2d;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,.4);
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+  .canvas-hud {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding: 6px 10px;
+    border-radius: 6px;
+    background: rgba(40,40,40,.55);
+    color: #eee;
+    font-size: 12px;
+    z-index: 5;
+  }
+  .canvas-hud button {
+    width: 26px;
+    height: 26px;
+    border: 0;
+    border-radius: 4px;
+    background: rgba(255,255,255,.9);
+    cursor: pointer;
+    font-size: 14px;
+  }
+  .drop-hint {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ddd;
+    font-size: 15px;
+    pointer-events: none;
+    text-shadow: 0 1px 2px rgba(0,0,0,.4);
+    z-index: 1;
+  }
+  .warnings {
+    background: #fff8ec;
+    border-top: 1px solid #f3e2bd;
+    max-height: 110px;
+    overflow: auto;
+    padding: 6px 14px;
+    font-size: 12px;
+    color: #8a5a00;
+  }
+  .warnings div::before { content: "⚠ "; }
+  input[type=file] { display: none; }
+</style>
+</head>
+<body>
+
+<header class="menubar">
+  <div class="menu" id="menu-file">File <span class="caret">▾</span>
+    <div class="menu-dropdown">
+      <div id="mi-open">Open specs.json…</div>
+      <div id="mi-sample">Load demo spec</div>
+      <div id="mi-export">Download edited specs.json</div>
+    </div>
+  </div>
+  <div class="menu">Object <span class="caret">▾</span></div>
+  <div class="menu">Order <span class="caret">▾</span></div>
+  <div class="menu">Preferences <span class="caret">▾</span></div>
+  <div class="sep"></div>
+  <select id="font-select">
+    <option>Calibri</option>
+    <option>Arial</option>
+    <option>Segoe UI</option>
+    <option>Times New Roman</option>
+  </select>
+  <div class="bold-btn" id="bold-btn" title="Toggle bold for selected label">B</div>
+  <div class="spacer"></div>
+  <span class="picker-label">Result:</span>
+  <select id="result-picker" title="Load a saved result"><option value="">— no results —</option></select>
+  <span class="file-name" id="file-name" style="margin-left:10px"></span>
+</header>
+
+<div class="main">
+  <aside class="panel">
+    <button class="add-label" id="add-label">＋ Add Label</button>
+    <div class="label-chips" id="label-chips"></div>
+    <div class="tabs">
+      <div class="tab active" data-tab="text">Text</div>
+      <div class="tab" data-tab="holes">Holes</div>
+    </div>
+    <div class="table-wrap"><table id="grid"></table></div>
+    <button class="add-row" id="add-row">+ add line</button>
+    <div class="meta" id="meta"></div>
+    <div class="legend" id="legend" hidden><span class="swatch"></span>orange corner = <b>computed</b> default (verify!) · <span class="swatch" style="background:linear-gradient(225deg,#4d94e8 60%,transparent 60%)"></span>blue corner = <b>measured</b> from the drawing · plain = annotated</div>
+  </aside>
+
+  <section class="canvas-area" id="canvas-area">
+    <div class="canvas-scroll" id="canvas-scroll"></div>
+    <div class="drop-hint" id="drop-hint">Drop a specs.json here</div>
+    <div class="canvas-hud">
+      <button id="zoom-out">−</button>
+      <span id="zoom-label"></span>
+      <button id="zoom-in">＋</button>
+      <span id="dims-label"></span>
+    </div>
+  </section>
+</div>
+
+<div class="warnings" id="warnings" hidden></div>
+<input type="file" id="file-input" accept=".json,application/json">
+
+<script>
+"use strict";
+
+/* ── rendering constants ────────────────────────
+   Production maps "Text Size" to the visible capital-letter height.
+   CSS font-size is the em box, whose cap height is ~0.66 em for Calibri,
+   so font-size = size_mm * pxPerMm / CAP_RATIO. */
+const CAP_RATIO = 0.66;
+
+const DEMO_SPEC = {
+  unit: "mm",
+  labels: [{
+    label_number: 1, width_mm: 260, height_mm: 20, quantity: 1,
+    material: null, background_color: "White", text_color: "Black",
+    fixing: null, notes: "demo — matches the original editor screenshot",
+    lines: [
+      { text: "ROOM",    x_mm: 25,  y_mm: 4,  size_mm: 6, alignment: null, bold: null },
+      { text: "FANS",    x_mm: 125, y_mm: 4,  size_mm: 6, alignment: null, bold: null },
+      { text: "SUCTION", x_mm: 225, y_mm: 4,  size_mm: 6, alignment: null, bold: null },
+      { text: "DISABLE", x_mm: 12,  y_mm: 14, size_mm: 4, alignment: null, bold: null },
+      { text: "ENABLE",  x_mm: 38,  y_mm: 14, size_mm: 4, alignment: null, bold: null },
+      { text: "LOW",     x_mm: 112, y_mm: 14, size_mm: 4, alignment: null, bold: null },
+      { text: "HIGH",    x_mm: 138, y_mm: 14, size_mm: 4, alignment: null, bold: null },
+      { text: "LOW",     x_mm: 212, y_mm: 14, size_mm: 4, alignment: null, bold: null },
+      { text: "HIGH",    x_mm: 238, y_mm: 14, size_mm: 4, alignment: null, bold: null }
+    ],
+    holes: []
+  }],
+  warnings: []
+};
+
+const state = {
+  spec: null,
+  current: 0,          // selected label index
+  tab: "text",         // "text" | "holes"
+  pxPerMm: 3.78,       // 96 dpi
+  font: "Calibri",
+};
+
+const $ = (id) => document.getElementById(id);
+
+/* ── loading ────────────────────────────────────── */
+function loadSpec(spec, name) {
+  if (!spec || !Array.isArray(spec.labels) || !spec.labels.length) {
+    alert("File ini tidak berisi labels[] yang valid.");
+    return;
+  }
+  state.spec = spec;
+  state.current = 0;
+  $("file-name").textContent = `${name} — unit: ${spec.unit || "mm"}`;
+  $("drop-hint").style.display = "none";
+  renderAll();
+}
+
+function openFile(file) {
+  const reader = new FileReader();
+  reader.onload = () => {
+    try { loadSpec(JSON.parse(reader.result), file.name); }
+    catch { alert("JSON tidak valid."); }
+  };
+  reader.readAsText(file);
+}
+
+$("file-input").addEventListener("change", (e) => {
+  if (e.target.files[0]) openFile(e.target.files[0]);
+  e.target.value = "";
+});
+
+document.body.addEventListener("dragover", (e) => e.preventDefault());
+document.body.addEventListener("drop", (e) => {
+  e.preventDefault();
+  const file = e.dataTransfer.files[0];
+  if (file) openFile(file);
+});
+
+/* menus */
+$("menu-file").addEventListener("click", (e) => {
+  e.currentTarget.classList.toggle("open");
+});
+document.addEventListener("click", (e) => {
+  if (!e.target.closest("#menu-file")) $("menu-file").classList.remove("open");
+});
+$("mi-open").addEventListener("click", () => $("file-input").click());
+$("mi-sample").addEventListener("click", () =>
+  loadSpec(structuredClone(DEMO_SPEC), "demo spec"));
+$("mi-export").addEventListener("click", () => {
+  if (!state.spec) return;
+  const blob = new Blob([JSON.stringify(state.spec, null, 2)], { type: "application/json" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "specs-edited.json";
+  a.click();
+  URL.revokeObjectURL(a.href);
+});
+
+/* ── helpers ────────────────────────────────────── */
+const label = () => state.spec?.labels[state.current];
+const fmt = (v) => (v === null || v === undefined) ? "" : v;
+
+function numOrNull(text) {
+  const trimmed = text.trim();
+  if (trimmed === "") return null;
+  const value = Number(trimmed);
+  return Number.isFinite(value) ? value : null;
+}
+
+/* ── left panel ─────────────────────────────────── */
+function selectLabel(index) {
+  if (!state.spec || index < 0 || index >= state.spec.labels.length) return;
+  state.current = index;
+  renderGrid();
+  renderMeta();
+  renderCanvas();
+}
+
+function cell(row, value, provenance, onChange) {
+  const td = document.createElement("td");
+  if (provenance === "computed") {
+    td.className = "computed";
+    td.title = "computed by the layout resolver — not annotated in the draft";
+  } else if (provenance === "measured") {
+    td.className = "measured";
+    td.title = "measured from the drawing via pixel calibration";
+  }
+  const input = document.createElement("input");
+  input.value = fmt(value);
+  input.addEventListener("input", () => { onChange(input.value); renderCanvas(); });
+  td.appendChild(input);
+  row.appendChild(td);
+  return td;
+}
+
+function provenanceOf(item, field) {
+  if ((item.computed_fields || []).includes(field)) return "computed";
+  if ((item.measured_fields || []).includes(field)) return "measured";
+  return null;
+}
+
+function renderGrid() {
+  const lab = label();
+  const table = $("grid");
+  table.innerHTML = "";
+
+  const head = document.createElement("tr");
+  const cols = state.tab === "text"
+    ? ["", "Text", "Position from left(mm)", "Position from top(mm)", "Text Size", ""]
+    : ["", "Diameter(mm)", "Position from left(mm)", "Position from top(mm)", ""];
+  cols.forEach((c) => {
+    const th = document.createElement("th");
+    th.textContent = c;
+    head.appendChild(th);
+  });
+  table.appendChild(head);
+
+  const rows = state.tab === "text" ? (lab.lines || []) : (lab.holes || []);
+  rows.forEach((item, i) => {
+    const tr = document.createElement("tr");
+    const no = document.createElement("td");
+    no.className = "line-no";
+    no.textContent = (state.tab === "text" ? "LINE " : "HOLE ") + (i + 1);
+    tr.appendChild(no);
+
+    if (state.tab === "text") {
+      cell(tr, item.text, null, (v) => { item.text = v; });
+      cell(tr, item.x_mm, provenanceOf(item, "x_mm"), (v) => {
+        item.x_mm = numOrNull(v);
+      });
+      cell(tr, item.y_mm, provenanceOf(item, "y_mm"), (v) => {
+        item.y_mm = numOrNull(v);
+      });
+      cell(tr, item.size_mm, provenanceOf(item, "size_mm"), (v) => {
+        item.size_mm = numOrNull(v);
+      });
+    } else {
+      cell(tr, item.diameter_mm, null, (v) => { item.diameter_mm = numOrNull(v); });
+      cell(tr, item.x_mm, null, (v) => { item.x_mm = numOrNull(v); });
+      cell(tr, item.y_mm, null, (v) => { item.y_mm = numOrNull(v); });
+    }
+
+    const tdDel = document.createElement("td");
+    const del = document.createElement("button");
+    del.className = "del-btn";
+    del.textContent = "✕";
+    del.onclick = () => { rows.splice(i, 1); renderAll(); };
+    tdDel.appendChild(del);
+    tr.appendChild(tdDel);
+    table.appendChild(tr);
+  });
+}
+
+function metaField(labelText, obj, key, numeric) {
+  const wrap = $("meta");
+  const lbl = document.createElement("label");
+  lbl.textContent = labelText;
+  const input = document.createElement("input");
+  input.value = fmt(obj[key]);
+  input.addEventListener("input", () => {
+    obj[key] = numeric ? numOrNull(input.value) : (input.value || null);
+    renderCanvas();
+  });
+  wrap.appendChild(lbl);
+  wrap.appendChild(input);
+}
+
+function renderMeta() {
+  const lab = label();
+  $("meta").innerHTML = "";
+  metaField("Width mm", lab, "width_mm", true);
+  metaField("Height mm", lab, "height_mm", true);
+  metaField("Qty", lab, "quantity", true);
+  metaField("Material", lab, "material", false);
+  metaField("Background", lab, "background_color", false);
+  metaField("Text colour", lab, "text_color", false);
+}
+
+/* tabs */
+document.querySelectorAll(".tab").forEach((tab) => {
+  tab.addEventListener("click", () => {
+    document.querySelectorAll(".tab").forEach((t) => t.classList.remove("active"));
+    tab.classList.add("active");
+    state.tab = tab.dataset.tab;
+    renderGrid();
+  });
+});
+
+$("add-row").addEventListener("click", () => {
+  const lab = label();
+  if (!lab) return;
+  if (state.tab === "text") {
+    (lab.lines ||= []).push({ text: "TEXT", x_mm: 5, y_mm: 5, size_mm: 5, alignment: null, bold: null });
+  } else {
+    (lab.holes ||= []).push({ diameter_mm: 4, x_mm: 5, y_mm: 5 });
+  }
+  renderAll();
+});
+
+$("add-label").addEventListener("click", () => {
+  if (!state.spec) loadSpec(structuredClone(DEMO_SPEC), "demo spec");
+  const labels = state.spec.labels;
+  labels.push({
+    label_number: labels.length + 1, width_mm: 100, height_mm: 40, quantity: 1,
+    material: null, background_color: null, text_color: null, fixing: null,
+    notes: null,
+    lines: [{ text: "NEW LABEL", x_mm: 30, y_mm: 14, size_mm: 10, alignment: null, bold: null }],
+    holes: [],
+  });
+  state.current = labels.length - 1;
+  renderAll();
+});
+
+$("bold-btn").addEventListener("click", () => {
+  const lab = label();
+  if (!lab) return;
+  const anyOff = (lab.lines || []).some((line) => !line.bold);
+  (lab.lines || []).forEach((line) => { line.bold = anyOff; });
+  renderCanvas();
+});
+
+$("font-select").addEventListener("change", (e) => {
+  state.font = e.target.value;
+  renderCanvas();
+});
+
+/* ── canvas ─────────────────────────────────────── */
+$("zoom-in").addEventListener("click", () => { state.pxPerMm = Math.min(12, state.pxPerMm * 1.25); renderCanvas(); });
+$("zoom-out").addEventListener("click", () => { state.pxPerMm = Math.max(1, state.pxPerMm / 1.25); renderCanvas(); });
+
+function textHalfPx(line, scale) {
+  return ((line.size_mm ?? 5) * scale / CAP_RATIO) / 2;
+}
+
+function plateOverflowPadding(lab, scale) {
+  let top = 0, left = 0;
+  for (const line of lab.lines || []) {
+    const half = textHalfPx(line, scale);
+    const y = (line.y_mm ?? 0) * scale;
+    const x = (line.x_mm ?? 0) * scale;
+    top = Math.max(top, Math.ceil(half - y));
+    left = Math.max(left, Math.ceil(half - x));
+  }
+  for (const hole of lab.holes || []) {
+    const r = ((hole.diameter_mm ?? 3) * scale) / 2;
+    const y = (hole.y_mm ?? 0) * scale;
+    const x = (hole.x_mm ?? 0) * scale;
+    top = Math.max(top, Math.ceil(r - y));
+    left = Math.max(left, Math.ceil(r - x));
+  }
+  return { top, left };
+}
+
+function buildPlateWrap(lab, labelIndex, scale) {
+  const width = (lab.width_mm ?? 100) * scale;
+  const height = (lab.height_mm ?? 40) * scale;
+  const pad = plateOverflowPadding(lab, scale);
+
+  const wrap = document.createElement("div");
+  wrap.className = "plate-wrap";
+  wrap.style.paddingTop = pad.top + "px";
+  wrap.style.paddingLeft = pad.left + "px";
+
+  const stage = document.createElement("div");
+  stage.className = "plate-stage" + (labelIndex === state.current ? " selected" : "");
+  stage.style.width = width + "px";
+  stage.style.height = height + "px";
+  stage.title = `Label ${lab.label_number ?? labelIndex + 1} — click to edit in sidebar`;
+  stage.addEventListener("click", () => selectLabel(labelIndex));
+
+  const plate = document.createElement("div");
+  plate.className = "plate";
+  if (lab.background_color) plate.style.background = lab.background_color;
+
+  const layer = document.createElement("div");
+  layer.className = "txt-layer";
+
+  (lab.lines || []).forEach((line) => {
+    const span = document.createElement("span");
+    span.className = "txt";
+    span.textContent = line.text ?? "";
+    span.style.left = (line.x_mm ?? 0) * scale + "px";
+    span.style.top = (line.y_mm ?? 0) * scale + "px";
+    span.style.fontSize = ((line.size_mm ?? 5) * scale / CAP_RATIO) + "px";
+    span.style.fontFamily = state.font;
+    if (line.bold) span.style.fontWeight = "700";
+    if (lab.text_color) span.style.color = lab.text_color;
+    layer.appendChild(span);
+  });
+
+  (lab.holes || []).forEach((hole) => {
+    const div = document.createElement("div");
+    div.className = "hole";
+    const d = (hole.diameter_mm ?? 3) * scale;
+    div.style.width = d + "px";
+    div.style.height = d + "px";
+    div.style.left = (hole.x_mm ?? 0) * scale + "px";
+    div.style.top = (hole.y_mm ?? 0) * scale + "px";
+    layer.appendChild(div);
+  });
+
+  const badge = document.createElement("div");
+  badge.className = "badge";
+  badge.textContent = lab.label_number ?? labelIndex + 1;
+  badge.style.left = (pad.left + width) + "px";
+  badge.style.top = (pad.top + height) + "px";
+
+  stage.appendChild(plate);
+  stage.appendChild(layer);
+  wrap.appendChild(stage);
+  wrap.appendChild(badge);
+  return wrap;
+}
+
+function renderCanvas() {
+  const scroll = $("canvas-scroll");
+  scroll.innerHTML = "";
+  if (!state.spec?.labels?.length) return;
+
+  const scale = state.pxPerMm;
+  const sheet = document.createElement("div");
+  sheet.className = "sheet-wrap";
+
+  state.spec.labels.forEach((lab, i) => {
+    sheet.appendChild(buildPlateWrap(lab, i, scale));
+  });
+
+  scroll.appendChild(sheet);
+
+  const labels = state.spec.labels;
+  const lab = label();
+  $("zoom-label").textContent = `${scale.toFixed(2)} px/mm`;
+  $("dims-label").textContent =
+    `${labels.length} label${labels.length === 1 ? "" : "s"}` +
+    (lab ? ` — editing #${lab.label_number ?? state.current + 1}` : "");
+}
+
+function renderWarnings() {
+  const box = $("warnings");
+  const items = state.spec?.warnings || [];
+  box.hidden = !items.length;
+  box.innerHTML = "";
+  items.forEach((w) => {
+    const div = document.createElement("div");
+    div.textContent = w;
+    box.appendChild(div);
+  });
+}
+
+function renderAll() {
+  if (!state.spec) return;
+  renderGrid();
+  renderMeta();
+  renderCanvas();
+  renderWarnings();
+  const hasMarks = (state.spec.labels || []).some((lab) =>
+    (lab.lines || []).some((line) =>
+      (line.computed_fields || []).length || (line.measured_fields || []).length));
+  $("legend").hidden = !hasMarks;
+}
+
+/* ── result picker ──────────────────────────────
+   Lists specs.json from ../results/ and ../results/archieve/,
+   newest first. Falls back to editor/latest-specs.json when empty. */
+async function loadFromUrl(url, name) {
+  try {
+    const res = await fetch(url, { cache: "no-store" });
+    if (!res.ok) throw new Error(String(res.status));
+    const spec = await res.json();
+    const src = spec.source_image ? ` (${spec.source_image})` : "";
+    loadSpec(spec, `${name}${src}`);
+  } catch (e) {
+    $("file-name").textContent = `could not load ${name} (${e.message})`;
+  }
+}
+
+async function listResultDirs(basePath, tag) {
+  const entries = [];
+  try {
+    const res = await fetch(basePath, { cache: "no-store" });
+    if (!res.ok) return entries;
+    const html = await res.text();
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    for (const a of doc.querySelectorAll("a")) {
+      const h = (a.getAttribute("href") || "").replace(/\/$/, "");
+      if (!/^\d{8}_\d{6}$/.test(h)) continue;
+      entries.push({
+        ts: h,
+        url: `${basePath}${h}/specs.json`,
+        label: `${h} (${tag})`,
+      });
+    }
+  } catch { /* directory listing not available */ }
+  return entries;
+}
+
+async function populateResultPicker() {
+  const picker = $("result-picker");
+  const [current, archived] = await Promise.all([
+    listResultDirs("../results/", "current"),
+    listResultDirs("../results/archieve/", "archive"),
+  ]);
+  const runs = [...current, ...archived].sort((a, b) => b.ts.localeCompare(a.ts));
+
+  picker.innerHTML = "";
+  if (!runs.length) {
+    picker.innerHTML = '<option value="latest-specs.json">latest-specs.json</option>';
+    picker.value = "latest-specs.json";
+    loadFromUrl("latest-specs.json", "latest-specs.json");
+    return;
+  }
+  for (const entry of runs) {
+    const opt = document.createElement("option");
+    opt.value = entry.url;
+    opt.textContent = entry.label;
+    picker.appendChild(opt);
+  }
+  picker.value = picker.options[0].value;
+  loadFromUrl(picker.value, runs[0].label);
+}
+
+$("result-picker").addEventListener("change", (e) => {
+  if (e.target.value) {
+    const name = e.target.selectedOptions[0].textContent;
+    loadFromUrl(e.target.value, name);
+  }
+});
+
+populateResultPicker();
+</script>
+</body>
+</html>
