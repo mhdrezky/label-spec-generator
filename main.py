@@ -1,8 +1,7 @@
 """Label extractor — dual-call pipeline (structure -> content -> measure).
 
     python main.py [image_path]
-
-Two LLM calls on the full sheet, then deterministic px->mm merge.
+    python main.py --all
 """
 
 import json
@@ -21,12 +20,14 @@ from api_client import (
     API_URL,
     MODEL,
     check_api_health,
+    model_slug,
     warmup_model,
 )
 from dual_call.extract import run_dual
 from llm_cache import save as save_llm_cache
 from llm_cache import set_run_cache_dir
 from render_md import render_markdown
+from samples import SAMPLE_DIR, sample_paths
 
 IMAGE_FILE = "draft.png"
 RESULT_DIR = "results"
@@ -37,7 +38,8 @@ EDITOR_LATEST = os.path.join("editor", "latest-specs.json")
 
 def create_result_dir() -> str:
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    output_dir = os.path.join(RESULT_DIR, timestamp)
+    folder = f"_{model_slug()}_{timestamp}"
+    output_dir = os.path.join(RESULT_DIR, folder)
     os.makedirs(output_dir, exist_ok=True)
     return output_dir
 
@@ -82,14 +84,13 @@ def save_llm_snapshots(output_dir: str, result: dict) -> None:
             save_llm_cache(path, label, json.dumps(payload, ensure_ascii=False))
 
 
-def main() -> None:
+def run_extract(image_path: str, *, skip_api_check: bool = False) -> int:
+    """Extract one image. Returns process exit code."""
     started = time.monotonic()
-    args = [a for a in sys.argv[1:] if not a.startswith("--")]
-    image_path = args[0] if args else IMAGE_FILE
 
     if not os.path.isfile(image_path):
         print(f"Error: image file not found: {image_path}", file=sys.stderr)
-        sys.exit(1)
+        return 1
 
     print(f"Extracting label specs from {image_path}...")
     print(f"API: {API_URL}")
@@ -101,8 +102,8 @@ def main() -> None:
     set_run_cache_dir(os.path.join(output_dir, "llm"))
     print(f"Output directory: {output_dir}")
 
-    if not check_api_health() or not warmup_model():
-        sys.exit(1)
+    if not skip_api_check and (not check_api_health() or not warmup_model()):
+        return 1
 
     stage_dir = os.path.join(output_dir, "stages")
     os.makedirs(stage_dir, exist_ok=True)
@@ -112,7 +113,7 @@ def main() -> None:
     except Exception as exc:
         print(f"Extract failed: {exc}", file=sys.stderr)
         print(f"Wall clock: {_format_elapsed(time.monotonic() - started)}")
-        sys.exit(1)
+        return 1
 
     save_json(os.path.join(stage_dir, "01_structure.json"), result["structure"])
     save_json(os.path.join(stage_dir, "02_content.json"), result["content"])
@@ -127,6 +128,7 @@ def main() -> None:
         "source_image": image_path,
         "generated_at": datetime.now().isoformat(timespec="seconds"),
         "extract_method": "dual_call",
+        "model": MODEL,
         **{k: v for k, v in spec.items() if k != "warnings"},
         "warnings": spec.get("warnings") or result.get("warnings") or [],
     }
@@ -156,7 +158,46 @@ def main() -> None:
 
     if not spec.get("labels"):
         print("Error: extract produced no labels.", file=sys.stderr)
-        sys.exit(2)
+        return 2
+    return 0
+
+
+def run_all_samples() -> int:
+    """Run extract on every image in sample-data/."""
+    paths = sample_paths(Path.cwd())
+    if not paths:
+        print(f"Error: no images found in {SAMPLE_DIR}/", file=sys.stderr)
+        return 1
+
+    if not check_api_health() or not warmup_model():
+        return 1
+
+    failed: list[str] = []
+    for i, path in enumerate(paths, 1):
+        print(f"\n{'=' * 60}")
+        print(f"[{i}/{len(paths)}] {path}")
+        print("=" * 60)
+        if run_extract(str(path), skip_api_check=True) != 0:
+            failed.append(path.name)
+
+    print(f"\n{'=' * 60}")
+    if failed:
+        print(f"Done with failures ({len(failed)}/{len(paths)}): {', '.join(failed)}")
+        return 1
+    print(f"Done — all {len(paths)} samples finished.")
+    return 0
+
+
+def main() -> None:
+    argv = sys.argv[1:]
+    run_all = "--all" in argv
+    image_args = [a for a in argv if not a.startswith("--")]
+
+    if run_all:
+        sys.exit(run_all_samples())
+
+    image_path = image_args[0] if image_args else IMAGE_FILE
+    sys.exit(run_extract(image_path))
 
 
 if __name__ == "__main__":

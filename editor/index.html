@@ -805,6 +805,7 @@ async function loadFromUrl(url, name) {
 
 async function listResultDirs(basePath, tag) {
   const entries = [];
+  const runDir = /^(?:_[^/]+_)?\d{8}_\d{6}$/;
   try {
     const res = await fetch(basePath, { cache: "no-store" });
     if (!res.ok) return entries;
@@ -812,9 +813,9 @@ async function listResultDirs(basePath, tag) {
     const doc = new DOMParser().parseFromString(html, "text/html");
     for (const a of doc.querySelectorAll("a")) {
       const h = (a.getAttribute("href") || "").replace(/\/$/, "");
-      if (!/^\d{8}_\d{6}$/.test(h)) continue;
+      if (!runDir.test(h)) continue;
       entries.push({
-        ts: h,
+        ts: h.match(/\d{8}_\d{6}$/)[0],
         url: `${basePath}${h}/specs.json`,
         label: `${h} (${tag})`,
       });

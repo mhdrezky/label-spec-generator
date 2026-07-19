@@ -38,14 +38,15 @@ flowchart TD
 
 ```
 python main.py [image_path]      # e.g. sample-data/drawing.png
+python main.py --all             # every image in sample-data/
 ```
 
 Env overrides: `API_URL`, `MODEL`, `AGENTIC_EXTRACT_MAX_CONCURRENT`, ... (see `api_client.py`).
 
-LLM cache under `results/<timestamp>/llm/` (`dual-structure`, `dual-content`).
+LLM cache under `results/_<model>_<timestamp>/llm/` (`dual-structure`, `dual-content`).
 Set `LLM_CACHE=0` to disable.
 
-Stage snapshots under `results/<timestamp>/stages/`:
+Stage snapshots under `results/_<model>_<timestamp>/stages/`:
 
 | File | After |
 |------|--------|
@@ -57,6 +58,12 @@ Reprocess cached stages without new LLM calls:
 
 ```
 python scripts/reprocess.py <run_id>
+```
+
+Run every image in `sample-data/` (same as `main.py --all`):
+
+```
+uv run main.py --all
 ```
 
 ## Editor preview

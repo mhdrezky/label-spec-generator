@@ -11,15 +11,25 @@ from requests.exceptions import ConnectionError, ReadTimeout, RequestException
 from llm_cache import load as load_cache, save as save_cache, stage_cache_path
 
 API_URL = os.environ.get(
-    "API_URL", "http://213.173.111.113:18119/v1/chat/completions"
+    "API_URL", "http://213.192.6.101:40153/v1/chat/completions"
     # "API_URL", "http://10.65.1.119:5004/v1/chat/completions"
     # "API_URL", "http://10.65.1.116:5003/v1/chat/completions"
 )
 API_BASE = API_URL.rsplit("/v1/", 1)[0]
-# MODEL = os.environ.get("MODEL", "Qwen/Qwen3.6-27B")
 MODEL = os.environ.get("MODEL", "Qwen/Qwen3.6-35B-A3B-FP8")
 # MODEL = os.environ.get("MODEL", "Qwen/Qwen3-VL-32B-Instruct-FP8")
 # MODEL = os.environ.get("MODEL", "cyankiwi/Qwen3.5-9B-AWQ-BF16-INT8")
+
+
+def model_slug(model: str | None = None) -> str:
+    """Filesystem-safe short name from MODEL (org/ prefix stripped)."""
+    raw = (model or MODEL).strip()
+    if not raw:
+        return "unknown"
+    if "/" in raw:
+        raw = raw.rsplit("/", 1)[-1]
+    slug = re.sub(r"[^\w.\-+]+", "-", raw).strip("-")
+    return slug or "unknown"
 API_CONNECT_TIMEOUT = int(os.environ.get("API_CONNECT_TIMEOUT", "30"))
 API_READ_TIMEOUT = int(os.environ.get("API_READ_TIMEOUT", "900"))
 API_MAX_RETRIES = int(os.environ.get("API_MAX_RETRIES", "3"))
