@@ -12,11 +12,13 @@ from llm_cache import load as load_cache, save as save_cache, stage_cache_path
 
 API_URL = os.environ.get(
     "API_URL", "http://213.192.6.101:40153/v1/chat/completions"
+    # "API_URL", "http://213.192.6.101:40187/v1/chat/completions"
     # "API_URL", "http://10.65.1.119:5004/v1/chat/completions"
     # "API_URL", "http://10.65.1.116:5003/v1/chat/completions"
 )
 API_BASE = API_URL.rsplit("/v1/", 1)[0]
-MODEL = os.environ.get("MODEL", "Qwen/Qwen3.6-35B-A3B-FP8")
+MODEL = os.environ.get("MODEL", "Qwen/Qwen3.6-27B")
+# MODEL = os.environ.get("MODEL", "Qwen/Qwen3.6-35B-A3B-FP8")
 # MODEL = os.environ.get("MODEL", "Qwen/Qwen3-VL-32B-Instruct-FP8")
 # MODEL = os.environ.get("MODEL", "cyankiwi/Qwen3.5-9B-AWQ-BF16-INT8")
 

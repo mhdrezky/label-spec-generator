@@ -15,6 +15,16 @@ Use the VISIBLE OUTLINE or BORDER of each piece as the boundary:
 - A single horizontal row outline with column guides but NO per-cell borders = one plate for the whole row
 - Do NOT split one bordered box into multiple plates
 - Do NOT merge multiple bordered boxes into one plate
+- A tall bordered STRIP subdivided by internal horizontal lines where every
+  cell holds ONLY a single sequential number (e.g. 73,74,75...84) is ONE
+  plate — the whole strip; the numbers become its text lines, never one
+  plate per number.
+- This number-strip rule applies ONLY to pure number sequences. Stacked
+  bordered cells that each contain their own distinct label WORDS
+  (e.g. "GEOMETRY REJECTS" above "PINHOLE REJECTS") are SEPARATE plates —
+  one plate per cell. When in doubt, keep bordered cells separate.
+- Every plate you return MUST correspond to an outline you can actually see in the image —
+  never invent an extra plate that has no visible border at all
 - Dimension lines / arrows are NOT plate borders — never use dimension span positions as plate bbox
 
 ONLY IF the image is a SPEC TABLE / SCHEDULE (column headers like LABEL DESCRIPTION, FONT, SIZE, COLOUR, QTY):
@@ -22,10 +32,29 @@ ONLY IF the image is a SPEC TABLE / SCHEDULE (column headers like LABEL DESCRIPT
 - bbox_frac = label preview in the LABEL DESCRIPTION column only (not SIZE/COLOUR/QTY columns)
 - width_mm / height_mm = copy the SIZE column (e.g. "150 x 70" → 150, 70)
 - Skip page headers and column header rows
+- FIRST count the total number of data rows N and report it, THEN return
+  exactly N plates — one plate per DATA ROW. Work top-to-bottom without
+  stopping; the final row MUST be included, and do NOT skip near-identical
+  rows. But NEVER duplicate a row to match its QTY column value — a row
+  with QTY 3 is still ONE plate (quantity is metadata, not extra plates)
 
 If the image is a PHYSICAL PLATE DRAWING (bordered label pieces with text printed on them):
 - bbox_frac = the full bordered plate outline including ALL columns of text on that piece
 - One horizontal strip with ROOM | FANS | SUCTION columns = ONE plate (full strip width)
+
+HAND-DRAWN SKETCH quantities & lists:
+- GATE: apply this section ONLY to a rough hand-drawn/pencil sketch that has
+  NO column headers anywhere. If the sheet shows ANY of FONT / SIZE / COLOUR /
+  QTY column headers, it is a SPEC TABLE — SKIP this whole section, never
+  expand or duplicate rows, and never turn a QTY value or a number range like
+  "(12-20)" into extra plates.
+- On a qualifying sketch, a quantity note written beside a plate ("x3", "3x")
+  means make that many IDENTICAL plates — emit that many separate entries,
+  each reusing that plate's bbox_frac and dims.
+- On a qualifying sketch, a dashed / bulleted list of names beside or below one
+  drawn example box (e.g. "- Room 28   - Room 29   - Room 30") means one plate
+  PER list item — emit one plate per name, reusing the drawn example box's dims
+  (width_mm / height_mm). The example box is not an extra plate beyond the list.
 
 For each plate return:
 - id: 1, 2, 3... top-to-bottom then left-to-right
@@ -58,7 +87,12 @@ SHEET TYPE — apply the matching rules:
 SPEC TABLE (only if column headers FONT / SIZE / COLOUR / QTY are visible):
 - Transcribe the label preview inside each row's LABEL DESCRIPTION cell only
 - Copy width_mm / height_mm from the SIZE column on that row
-- Do NOT transcribe FONT / SIZE / COLOUR / QTY header cells
+- Do NOT transcribe the FONT / SIZE / COLOUR / QTY columns at all — neither the
+  header cells NOR their data VALUES (e.g. "STD 4mm", "30 x 15", "W/B", "2").
+  Only the LABEL DESCRIPTION text becomes lines.
+- A row whose LABEL DESCRIPTION cell holds 2-3 stacked text lines is still ONE
+  row; transcribe all its lines. Cover EVERY row from the structure plate list,
+  including the multi-line rows at the top — never drop them.
 
 PHYSICAL PLATE DRAWING (bordered pieces with text printed on the plate):
 - Transcribe EVERY text string on that physical plate — all columns and rows
@@ -72,9 +106,17 @@ For each plate id:
 
 Line counting rules:
 - One printed title block = one line (e.g. "ROOM 31" → line_count 1, text="ROOM 31").
+- A single printed phrase stays ONE line even if it contains spaces or numbers
+  (e.g. "CIRCUITS 1 TO 72" = one line, not four). Only split text that sits in
+  physically separate columns.
 - Side-by-side words in different columns = separate lines (e.g. CALLING | FAULT | DEFROST → 3).
 - Stacked rows in a column = separate lines (e.g. ROOM, DISABLE, ENABLE → 3).
 - Never merge words from different columns into one line text field.
+- Transcribe EVERY visible line including faint, small, or handwritten secondary
+  lines. A stacked warning plate (WARNING / TO BE ACCESSED BY / AUTHORISED
+  PERSONNEL / ONLY) has 4 lines — never drop the hard-to-read ones.
+- Keep punctuation exactly as printed; write slashed values with no added spaces
+  (e.g. "MAX/250A", not "MAX / 250A").
 
 If written mm dimensions for that plate are visible, set width_mm / height_mm:
 - width_mm = TOTAL width of the full plate outline (left to right edge),
