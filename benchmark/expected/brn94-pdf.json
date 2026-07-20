@@ -5,7 +5,7 @@
   "labels": [
     {
       "label_number": 1,
-      "width_mm": 65,
+      "width_mm": 70,
       "height_mm": 40,
       "quantity": null,
       "material": null,
@@ -17,7 +17,7 @@
       "holes": [],
       "lines": [
         {
-          "text": "ROOM 31",
+          "text": "Room 28",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,
@@ -29,7 +29,7 @@
     },
     {
       "label_number": 2,
-      "width_mm": 65,
+      "width_mm": 70,
       "height_mm": 40,
       "quantity": null,
       "material": null,
@@ -41,7 +41,7 @@
       "holes": [],
       "lines": [
         {
-          "text": "ROOM 32",
+          "text": "Room 29",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,
@@ -53,7 +53,7 @@
     },
     {
       "label_number": 3,
-      "width_mm": 65,
+      "width_mm": 70,
       "height_mm": 40,
       "quantity": null,
       "material": null,
@@ -65,7 +65,7 @@
       "holes": [],
       "lines": [
         {
-          "text": "ROOM 33",
+          "text": "Room 30",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,
@@ -77,8 +77,8 @@
     },
     {
       "label_number": 4,
-      "width_mm": 65,
-      "height_mm": 40,
+      "width_mm": 250,
+      "height_mm": 20,
       "quantity": null,
       "material": null,
       "background_color": null,
@@ -89,7 +89,25 @@
       "holes": [],
       "lines": [
         {
-          "text": "ROOM 34",
+          "text": "CALLING",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "FAULT",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "DEFROST",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,
@@ -113,7 +131,7 @@
       "holes": [],
       "lines": [
         {
-          "text": "ROOM",
+          "text": "CALLING",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,
@@ -122,7 +140,7 @@
           "bbox_px": null
         },
         {
-          "text": "DISABLE",
+          "text": "FAULT",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,
@@ -131,61 +149,7 @@
           "bbox_px": null
         },
         {
-          "text": "ENABLE",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "FANS",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "LOW",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "HIGH",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "SUCTION",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "LOW",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "HIGH",
+          "text": "DEFROST",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,
@@ -209,7 +173,7 @@
       "holes": [],
       "lines": [
         {
-          "text": "ROOM",
+          "text": "CALLING",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,
@@ -218,7 +182,7 @@
           "bbox_px": null
         },
         {
-          "text": "DISABLE",
+          "text": "FAULT",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,
@@ -227,61 +191,7 @@
           "bbox_px": null
         },
         {
-          "text": "ENABLE",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "FANS",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "LOW",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "HIGH",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "SUCTION",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "LOW",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "HIGH",
+          "text": "DEFROST",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,
@@ -314,6 +224,24 @@
           "bbox_px": null
         },
         {
+          "text": "FANS",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "SUCTION",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
           "text": "DISABLE",
           "x_mm": null,
           "y_mm": null,
@@ -332,15 +260,6 @@
           "bbox_px": null
         },
         {
-          "text": "FANS",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
           "text": "LOW",
           "x_mm": null,
           "y_mm": null,
@@ -351,15 +270,6 @@
         },
         {
           "text": "HIGH",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "SUCTION",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,
@@ -410,6 +320,24 @@
           "bbox_px": null
         },
         {
+          "text": "FANS",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "SUCTION",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
           "text": "DISABLE",
           "x_mm": null,
           "y_mm": null,
@@ -428,15 +356,6 @@
           "bbox_px": null
         },
         {
-          "text": "FANS",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
           "text": "LOW",
           "x_mm": null,
           "y_mm": null,
@@ -447,15 +366,6 @@
         },
         {
           "text": "HIGH",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "SUCTION",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,
@@ -497,7 +407,7 @@
       "holes": [],
       "lines": [
         {
-          "text": "CALLING",
+          "text": "ROOM",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,
@@ -506,7 +416,7 @@
           "bbox_px": null
         },
         {
-          "text": "FAULT",
+          "text": "FANS",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,
@@ -515,31 +425,7 @@
           "bbox_px": null
         },
         {
-          "text": "DEFROST",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        }
-      ]
-    },
-    {
-      "label_number": 10,
-      "width_mm": 250,
-      "height_mm": 20,
-      "quantity": null,
-      "material": null,
-      "background_color": null,
-      "text_color": null,
-      "fixing": null,
-      "notes": null,
-      "bbox_px": null,
-      "holes": [],
-      "lines": [
-        {
-          "text": "CALLING",
+          "text": "SUCTION",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,
@@ -548,7 +434,7 @@
           "bbox_px": null
         },
         {
-          "text": "FAULT",
+          "text": "DISABLE",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,
@@ -557,31 +443,7 @@
           "bbox_px": null
         },
         {
-          "text": "DEFROST",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        }
-      ]
-    },
-    {
-      "label_number": 11,
-      "width_mm": 250,
-      "height_mm": 20,
-      "quantity": null,
-      "material": null,
-      "background_color": null,
-      "text_color": null,
-      "fixing": null,
-      "notes": null,
-      "bbox_px": null,
-      "holes": [],
-      "lines": [
-        {
-          "text": "CALLING",
+          "text": "ENABLE",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,
@@ -590,7 +452,7 @@
           "bbox_px": null
         },
         {
-          "text": "FAULT",
+          "text": "LOW",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,
@@ -599,31 +461,7 @@
           "bbox_px": null
         },
         {
-          "text": "DEFROST",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        }
-      ]
-    },
-    {
-      "label_number": 12,
-      "width_mm": 250,
-      "height_mm": 20,
-      "quantity": null,
-      "material": null,
-      "background_color": null,
-      "text_color": null,
-      "fixing": null,
-      "notes": null,
-      "bbox_px": null,
-      "holes": [],
-      "lines": [
-        {
-          "text": "CALLING",
+          "text": "HIGH",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,
@@ -632,7 +470,7 @@
           "bbox_px": null
         },
         {
-          "text": "FAULT",
+          "text": "LOW",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,
@@ -641,7 +479,7 @@
           "bbox_px": null
         },
         {
-          "text": "DEFROST",
+          "text": "HIGH",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,

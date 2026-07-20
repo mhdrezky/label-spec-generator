@@ -1,0 +1,153 @@
+{
+  "unit": "mm",
+  "image_px": null,
+  "dimension_annotations": [],
+  "labels": [
+    {
+      "label_number": 1,
+      "width_mm": 160,
+      "height_mm": 60,
+      "quantity": null,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": "blank/orange plate",
+      "bbox_px": null,
+      "holes": [],
+      "lines": []
+    },
+    {
+      "label_number": 2,
+      "width_mm": 120,
+      "height_mm": 60,
+      "quantity": null,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": null,
+      "holes": [],
+      "lines": [
+        {
+          "text": "DUAL SUPPLY",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "FED FROM MSSB-S/SB",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        }
+      ]
+    },
+    {
+      "label_number": 3,
+      "width_mm": 120,
+      "height_mm": 60,
+      "quantity": null,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": null,
+      "holes": [],
+      "lines": [
+        {
+          "text": "DUAL SUPPLY",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "FED FROM MSSB-S/SB",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        }
+      ]
+    },
+    {
+      "label_number": 4,
+      "width_mm": 120,
+      "height_mm": 60,
+      "quantity": null,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": null,
+      "holes": [],
+      "lines": [
+        {
+          "text": "DUAL SUPPLY",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "FED FROM MSSB-S/SB",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        }
+      ]
+    },
+    {
+      "label_number": 5,
+      "width_mm": 120,
+      "height_mm": 30,
+      "quantity": null,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": null,
+      "holes": [],
+      "lines": [
+        {
+          "text": "MSSB-S/B CONTROL",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "CB",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        }
+      ]
+    }
+  ]
+}

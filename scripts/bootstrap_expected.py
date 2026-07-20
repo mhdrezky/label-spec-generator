@@ -156,7 +156,7 @@ def ground_truth_data() -> dict[str, dict]:
         _label(2, ["DUAL SUPPLY", "FED FROM MSSB-S/SB"], width_mm=120, height_mm=60),
         _label(3, ["DUAL SUPPLY", "FED FROM MSSB-S/SB"], width_mm=120, height_mm=60),
         _label(4, ["DUAL SUPPLY", "FED FROM MSSB-S/SB"], width_mm=120, height_mm=60),
-        _label(5, ["MSSB-S/B CONTROL", "CB"], width_mm=120, height_mm=None),
+        _label(5, ["MSSB-S/B CONTROL", "CB"], width_mm=120, height_mm=30),
     ])
 
     kiso2 = _wrap([

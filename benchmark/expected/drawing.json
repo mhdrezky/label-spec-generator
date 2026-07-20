@@ -1,0 +1,40 @@
+{
+  "unit": "mm",
+  "image_px": null,
+  "dimension_annotations": [],
+  "labels": [
+    {
+      "label_number": 1,
+      "width_mm": 280,
+      "height_mm": 80,
+      "quantity": null,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": null,
+      "holes": [],
+      "lines": [
+        {
+          "text": "7000-SWC-20001",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "Switchboard",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        }
+      ]
+    }
+  ]
+}

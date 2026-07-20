@@ -5,8 +5,8 @@
   "labels": [
     {
       "label_number": 1,
-      "width_mm": 65,
-      "height_mm": 40,
+      "width_mm": 150,
+      "height_mm": 70,
       "quantity": null,
       "material": null,
       "background_color": null,
@@ -17,7 +17,97 @@
       "holes": [],
       "lines": [
         {
-          "text": "ROOM 31",
+          "text": "M P E",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "custom switchboards",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "SMITHFIELD NSW 2164 (02) 9721 1698",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "SWITCHBOARD BUILT TO AS/NZS 61439.1/2 : 2016",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "AS/NZS 3000 : 2018",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "SEGREGATION : FORM 3b/3bih",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "DEGREE OF PROTECTION : IP42",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "RATED : 415v 50Hz",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "FAULT LEVEL : 40kA / 1 sec",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "DATE OF MANUFACTURE : JULY 2026",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "REFERENCE : M6339",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,
@@ -29,8 +119,8 @@
     },
     {
       "label_number": 2,
-      "width_mm": 65,
-      "height_mm": 40,
+      "width_mm": 130,
+      "height_mm": 30,
       "quantity": null,
       "material": null,
       "background_color": null,
@@ -41,7 +131,7 @@
       "holes": [],
       "lines": [
         {
-          "text": "ROOM 32",
+          "text": "MAIN SWITCHBOARD 1",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,
@@ -53,8 +143,8 @@
     },
     {
       "label_number": 3,
-      "width_mm": 65,
-      "height_mm": 40,
+      "width_mm": 80,
+      "height_mm": 20,
       "quantity": null,
       "material": null,
       "background_color": null,
@@ -65,7 +155,16 @@
       "holes": [],
       "lines": [
         {
-          "text": "ROOM 33",
+          "text": "SERVICE PROTECTION",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "DEVICE",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,
@@ -77,8 +176,8 @@
     },
     {
       "label_number": 4,
-      "width_mm": 65,
-      "height_mm": 40,
+      "width_mm": 80,
+      "height_mm": 20,
       "quantity": null,
       "material": null,
       "background_color": null,
@@ -89,7 +188,16 @@
       "holes": [],
       "lines": [
         {
-          "text": "ROOM 34",
+          "text": "PRIVATE METERING",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "TOWER 1",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,
@@ -101,7 +209,7 @@
     },
     {
       "label_number": 5,
-      "width_mm": 250,
+      "width_mm": 80,
       "height_mm": 20,
       "quantity": null,
       "material": null,
@@ -113,7 +221,7 @@
       "holes": [],
       "lines": [
         {
-          "text": "ROOM",
+          "text": "HOUSE SERVICES",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,
@@ -122,70 +230,7 @@
           "bbox_px": null
         },
         {
-          "text": "DISABLE",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "ENABLE",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "FANS",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "LOW",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "HIGH",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "SUCTION",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "LOW",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "HIGH",
+          "text": "SECTION",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,
@@ -197,7 +242,7 @@
     },
     {
       "label_number": 6,
-      "width_mm": 250,
+      "width_mm": 80,
       "height_mm": 20,
       "quantity": null,
       "material": null,
@@ -209,7 +254,7 @@
       "holes": [],
       "lines": [
         {
-          "text": "ROOM",
+          "text": "HOUSE SERVICES",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,
@@ -218,70 +263,7 @@
           "bbox_px": null
         },
         {
-          "text": "DISABLE",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "ENABLE",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "FANS",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "LOW",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "HIGH",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "SUCTION",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "LOW",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "HIGH",
+          "text": "TOWER 1 SECTION",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,
@@ -293,7 +275,7 @@
     },
     {
       "label_number": 7,
-      "width_mm": 250,
+      "width_mm": 80,
       "height_mm": 20,
       "quantity": null,
       "material": null,
@@ -305,7 +287,7 @@
       "holes": [],
       "lines": [
         {
-          "text": "ROOM",
+          "text": "HOUSE SERVICES",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,
@@ -314,70 +296,7 @@
           "bbox_px": null
         },
         {
-          "text": "DISABLE",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "ENABLE",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "FANS",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "LOW",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "HIGH",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "SUCTION",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "LOW",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "HIGH",
+          "text": "TOWER 2 SECTION",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,
@@ -389,7 +308,7 @@
     },
     {
       "label_number": 8,
-      "width_mm": 250,
+      "width_mm": 80,
       "height_mm": 20,
       "quantity": null,
       "material": null,
@@ -401,7 +320,7 @@
       "holes": [],
       "lines": [
         {
-          "text": "ROOM",
+          "text": "SAFETY SERVICES",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,
@@ -410,70 +329,7 @@
           "bbox_px": null
         },
         {
-          "text": "DISABLE",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "ENABLE",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "FANS",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "LOW",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "HIGH",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "SUCTION",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "LOW",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "HIGH",
+          "text": "TOWER 1 SECTION",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,
@@ -485,7 +341,7 @@
     },
     {
       "label_number": 9,
-      "width_mm": 250,
+      "width_mm": 80,
       "height_mm": 20,
       "quantity": null,
       "material": null,
@@ -497,7 +353,7 @@
       "holes": [],
       "lines": [
         {
-          "text": "CALLING",
+          "text": "EV SECTION",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,
@@ -506,16 +362,7 @@
           "bbox_px": null
         },
         {
-          "text": "FAULT",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "DEFROST",
+          "text": "TOWER 2",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,
@@ -527,7 +374,7 @@
     },
     {
       "label_number": 10,
-      "width_mm": 250,
+      "width_mm": 80,
       "height_mm": 20,
       "quantity": null,
       "material": null,
@@ -539,7 +386,7 @@
       "holes": [],
       "lines": [
         {
-          "text": "CALLING",
+          "text": "SOLAR",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,
@@ -548,16 +395,7 @@
           "bbox_px": null
         },
         {
-          "text": "FAULT",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "DEFROST",
+          "text": "SECTION",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,
@@ -569,7 +407,7 @@
     },
     {
       "label_number": 11,
-      "width_mm": 250,
+      "width_mm": 80,
       "height_mm": 20,
       "quantity": null,
       "material": null,
@@ -581,7 +419,7 @@
       "holes": [],
       "lines": [
         {
-          "text": "CALLING",
+          "text": "RETAIL METERING",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,
@@ -590,16 +428,7 @@
           "bbox_px": null
         },
         {
-          "text": "FAULT",
-          "x_mm": null,
-          "y_mm": null,
-          "size_mm": null,
-          "alignment": null,
-          "bold": null,
-          "bbox_px": null
-        },
-        {
-          "text": "DEFROST",
+          "text": "SECTION",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,
@@ -611,7 +440,124 @@
     },
     {
       "label_number": 12,
-      "width_mm": 250,
+      "width_mm": 80,
+      "height_mm": 30,
+      "quantity": null,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": null,
+      "holes": [],
+      "lines": [
+        {
+          "text": "ACCREDITED METERING",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "PROVIDER METERING",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "CT'S MOUNTED BEHIND",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        }
+      ]
+    },
+    {
+      "label_number": 13,
+      "width_mm": 80,
+      "height_mm": 30,
+      "quantity": null,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": null,
+      "holes": [],
+      "lines": [
+        {
+          "text": "WARNING",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "TO BE ACCESSED BY",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "AUTHORISED PERSONNEL",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "ONLY",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        }
+      ]
+    },
+    {
+      "label_number": 14,
+      "width_mm": 70,
+      "height_mm": 15,
+      "quantity": null,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": null,
+      "holes": [],
+      "lines": [
+        {
+          "text": "SURGE DIVERTER",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        }
+      ]
+    },
+    {
+      "label_number": 15,
+      "width_mm": 80,
       "height_mm": 20,
       "quantity": null,
       "material": null,
@@ -623,7 +569,7 @@
       "holes": [],
       "lines": [
         {
-          "text": "CALLING",
+          "text": "SURGE DIVERTER",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,
@@ -632,7 +578,31 @@
           "bbox_px": null
         },
         {
-          "text": "FAULT",
+          "text": "MOUNTED BEHIND",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        }
+      ]
+    },
+    {
+      "label_number": 16,
+      "width_mm": 80,
+      "height_mm": 30,
+      "quantity": null,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": null,
+      "holes": [],
+      "lines": [
+        {
+          "text": "ACCREDITED METERING",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,
@@ -641,7 +611,16 @@
           "bbox_px": null
         },
         {
-          "text": "DEFROST",
+          "text": "PROVIDER EQUIPMENT",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "MOUNTED BEHIND",
           "x_mm": null,
           "y_mm": null,
           "size_mm": null,

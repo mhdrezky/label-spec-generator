@@ -1,0 +1,286 @@
+{
+  "unit": "mm",
+  "image_px": null,
+  "dimension_annotations": [],
+  "labels": [
+    {
+      "label_number": 1,
+      "width_mm": 160,
+      "height_mm": 80,
+      "quantity": null,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": null,
+      "holes": [],
+      "lines": [
+        {
+          "text": "BELMONT",
+          "x_mm": null,
+          "y_mm": 15,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "PINHOLE",
+          "x_mm": null,
+          "y_mm": 42,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "REJECTS",
+          "x_mm": null,
+          "y_mm": 58,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        }
+      ]
+    },
+    {
+      "label_number": 2,
+      "width_mm": 160,
+      "height_mm": 34,
+      "quantity": null,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": null,
+      "holes": [],
+      "lines": [
+        {
+          "text": "GEOMETRY",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "REJECTS",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        }
+      ]
+    },
+    {
+      "label_number": 3,
+      "width_mm": 160,
+      "height_mm": 34,
+      "quantity": null,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": null,
+      "holes": [],
+      "lines": [
+        {
+          "text": "GEOMETRY",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "REJECTS",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        }
+      ]
+    },
+    {
+      "label_number": 4,
+      "width_mm": 160,
+      "height_mm": 34,
+      "quantity": null,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": null,
+      "holes": [],
+      "lines": [
+        {
+          "text": "GEOMETRY",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "REJECTS",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        }
+      ]
+    },
+    {
+      "label_number": 5,
+      "width_mm": 160,
+      "height_mm": 34,
+      "quantity": null,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": null,
+      "holes": [],
+      "lines": [
+        {
+          "text": "PINHOLE",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "REJECTS",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        }
+      ]
+    },
+    {
+      "label_number": 6,
+      "width_mm": 160,
+      "height_mm": 34,
+      "quantity": null,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": null,
+      "holes": [],
+      "lines": [
+        {
+          "text": "PINHOLE",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        },
+        {
+          "text": "REJECTS",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        }
+      ]
+    },
+    {
+      "label_number": 7,
+      "width_mm": 60,
+      "height_mm": 8,
+      "quantity": null,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": null,
+      "holes": [],
+      "lines": [
+        {
+          "text": "REJECTS",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        }
+      ]
+    },
+    {
+      "label_number": 8,
+      "width_mm": null,
+      "height_mm": 8,
+      "quantity": null,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": null,
+      "holes": [],
+      "lines": [
+        {
+          "text": "REJECTS",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        }
+      ]
+    },
+    {
+      "label_number": 9,
+      "width_mm": null,
+      "height_mm": 8,
+      "quantity": null,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": null,
+      "holes": [],
+      "lines": [
+        {
+          "text": "REJECTS",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": null,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null
+        }
+      ]
+    }
+  ]
+}
