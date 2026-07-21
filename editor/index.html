@@ -789,8 +789,9 @@ function renderAll() {
 }
 
 /* ── result picker ──────────────────────────────
-   Lists specs.json from ../results/ and ../results/archieve/,
-   newest first. Falls back to editor/latest-specs.json when empty. */
+   Lists specs.json from ../results/, ../results/archieve/ and
+   ../results/compare/, newest first. Falls back to
+   editor/latest-specs.json when empty. */
 async function loadFromUrl(url, name) {
   try {
     const res = await fetch(url, { cache: "no-store" });
@@ -826,11 +827,12 @@ async function listResultDirs(basePath, tag) {
 
 async function populateResultPicker() {
   const picker = $("result-picker");
-  const [current, archived] = await Promise.all([
+  const [current, archived, compared] = await Promise.all([
     listResultDirs("../results/", "current"),
     listResultDirs("../results/archieve/", "archive"),
+    listResultDirs("../results/compare/", "compare"),
   ]);
-  const runs = [...current, ...archived].sort((a, b) => b.ts.localeCompare(a.ts));
+  const runs = [...current, ...archived, ...compared].sort((a, b) => b.ts.localeCompare(a.ts));
 
   picker.innerHTML = "";
   if (!runs.length) {

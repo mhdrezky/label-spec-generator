@@ -25,9 +25,17 @@ Use the VISIBLE OUTLINE or BORDER of each piece as the boundary:
   one plate per cell. When in doubt, keep bordered cells separate.
 - Every plate you return MUST correspond to an outline you can actually see in the image —
   never invent an extra plate that has no visible border at all
+- OVER-SPLIT CHECK: if your plate count is far larger than the visible boxes — or
+  more than ~50% above the CV pre-scan hint above — you are splitting a repeated
+  grid or a numbering strip into pieces. Stop and collapse it back to whole plates.
 - Dimension lines / arrows are NOT plate borders — never use dimension span positions as plate bbox
 
-ONLY IF the image is a SPEC TABLE / SCHEDULE (column headers like LABEL DESCRIPTION, FONT, SIZE, COLOUR, QTY):
+Treat the image as a SPEC TABLE / SCHEDULE if it is a bordered grid whose rows
+repeat one column layout — a description column plus attribute columns (LABEL
+DESCRIPTION, FONT, SIZE, COLOUR, QTY). This holds EVEN WHEN the header row is not
+visible (e.g. a continuation page): infer the columns from the repeating row
+layout, where the SIZE column is the cell holding a value like "150 x 70". When
+it is a spec table:
 - Each DATA ROW below the header = one plate
 - bbox_frac = label preview in the LABEL DESCRIPTION column only (not SIZE/COLOUR/QTY columns)
 - width_mm / height_mm = copy the SIZE column (e.g. "150 x 70" → 150, 70)
@@ -45,7 +53,8 @@ If the image is a PHYSICAL PLATE DRAWING (bordered label pieces with text printe
 HAND-DRAWN SKETCH quantities & lists:
 - GATE: apply this section ONLY to a rough hand-drawn/pencil sketch that has
   NO column headers anywhere. If the sheet shows ANY of FONT / SIZE / COLOUR /
-  QTY column headers, it is a SPEC TABLE — SKIP this whole section, never
+  QTY column headers — OR is a printed/CAD grid with repeating attribute columns
+  even without headers — it is a SPEC TABLE: SKIP this whole section, never
   expand or duplicate rows, and never turn a QTY value or a number range like
   "(12-20)" into extra plates.
 - On a qualifying sketch, a quantity note written beside a plate ("x3", "3x")
@@ -84,15 +93,22 @@ Structure pass detected these plates (use these ids):
 
 SHEET TYPE — apply the matching rules:
 
-SPEC TABLE (only if column headers FONT / SIZE / COLOUR / QTY are visible):
+GLOBAL (all sheet types): never transcribe column-header words (LABEL
+DESCRIPTION / FONT / SIZE / COLOUR / QTY) or bare attribute values (e.g.
+"STD 4mm", "BOLD 3mm", "30 x 15", "W/B", "2") as label text — only the actual
+finished label wording becomes lines.
+
+SPEC TABLE (rows share a description column plus attribute columns FONT / SIZE /
+COLOUR / QTY — even if the header row is not visible, e.g. a continuation page):
 - Transcribe the label preview inside each row's LABEL DESCRIPTION cell only
 - Copy width_mm / height_mm from the SIZE column on that row
 - Do NOT transcribe the FONT / SIZE / COLOUR / QTY columns at all — neither the
   header cells NOR their data VALUES (e.g. "STD 4mm", "30 x 15", "W/B", "2").
   Only the LABEL DESCRIPTION text becomes lines.
 - A row whose LABEL DESCRIPTION cell holds 2-3 stacked text lines is still ONE
-  row; transcribe all its lines. Cover EVERY row from the structure plate list,
-  including the multi-line rows at the top — never drop them.
+  row; transcribe all its lines as SEPARATE line entries — never join them into
+  one blob. Cover EVERY row from the structure plate list, including the
+  multi-line rows at the top — never drop them.
 
 PHYSICAL PLATE DRAWING (bordered pieces with text printed on the plate):
 - Transcribe EVERY text string on that physical plate — all columns and rows
@@ -107,11 +123,15 @@ For each plate id:
 Line counting rules:
 - One printed title block = one line (e.g. "ROOM 31" → line_count 1, text="ROOM 31").
 - A single printed phrase stays ONE line even if it contains spaces or numbers
-  (e.g. "CIRCUITS 1 TO 72" = one line, not four). Only split text that sits in
-  physically separate columns.
+  (e.g. "CIRCUITS 1 TO 72" = one line, not four) — but ONLY within a single
+  physical line. This NEVER licenses merging text from different rows.
 - Side-by-side words in different columns = separate lines (e.g. CALLING | FAULT | DEFROST → 3).
 - Stacked rows in a column = separate lines (e.g. ROOM, DISABLE, ENABLE → 3).
-- Never merge words from different columns into one line text field.
+- Every physically separate line is its OWN entry — including each line of a
+  stacked multi-line block (an address, compliance panel, or notice). A block
+  with N visible stacked lines = N line entries, NEVER one merged blob.
+- Never merge words from different columns into one line text field, and never
+  join stacked lines into a single entry.
 - Transcribe EVERY visible line including faint, small, or handwritten secondary
   lines. A stacked warning plate (WARNING / TO BE ACCESSED BY / AUTHORISED
   PERSONNEL / ONLY) has 4 lines — never drop the hard-to-read ones.
