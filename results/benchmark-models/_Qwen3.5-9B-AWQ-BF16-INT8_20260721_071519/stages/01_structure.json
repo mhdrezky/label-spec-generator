@@ -1,0 +1,192 @@
+{
+  "draft_type": "sketch",
+  "material": "White",
+  "background_color": "White",
+  "text_color": "Black",
+  "fixing": "None",
+  "default_size_mm": 5,
+  "line_sizes": [
+    {
+      "line": 1,
+      "size_mm": 5
+    }
+  ],
+  "dimension_annotations": [
+    {
+      "value_mm": 20,
+      "axis": "horizontal",
+      "span_frac": [
+        0.1319,
+        0.205
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "horizontal",
+      "span_frac": [
+        0.305,
+        0.3781
+      ]
+    },
+    {
+      "value_mm": 216,
+      "axis": "vertical",
+      "span_frac": [
+        0.305,
+        0.4662
+      ]
+    },
+    {
+      "value_mm": 24,
+      "axis": "vertical",
+      "span_frac": [
+        0.205,
+        0.2222
+      ]
+    },
+    {
+      "value_mm": 52,
+      "axis": "vertical",
+      "span_frac": [
+        0.205,
+        0.2222
+      ]
+    },
+    {
+      "value_mm": 80,
+      "axis": "vertical",
+      "span_frac": [
+        0.205,
+        0.2222
+      ]
+    },
+    {
+      "value_mm": 108,
+      "axis": "vertical",
+      "span_frac": [
+        0.205,
+        0.2222
+      ]
+    },
+    {
+      "value_mm": 136,
+      "axis": "vertical",
+      "span_frac": [
+        0.205,
+        0.2222
+      ]
+    },
+    {
+      "value_mm": 164,
+      "axis": "vertical",
+      "span_frac": [
+        0.205,
+        0.2222
+      ]
+    },
+    {
+      "value_mm": 192,
+      "axis": "vertical",
+      "span_frac": [
+        0.205,
+        0.2222
+      ]
+    },
+    {
+      "value_mm": 24,
+      "axis": "vertical",
+      "span_frac": [
+        0.305,
+        0.3222
+      ]
+    },
+    {
+      "value_mm": 52,
+      "axis": "vertical",
+      "span_frac": [
+        0.305,
+        0.3222
+      ]
+    },
+    {
+      "value_mm": 80,
+      "axis": "vertical",
+      "span_frac": [
+        0.305,
+        0.3222
+      ]
+    },
+    {
+      "value_mm": 108,
+      "axis": "vertical",
+      "span_frac": [
+        0.305,
+        0.3222
+      ]
+    },
+    {
+      "value_mm": 136,
+      "axis": "vertical",
+      "span_frac": [
+        0.305,
+        0.3222
+      ]
+    },
+    {
+      "value_mm": 164,
+      "axis": "vertical",
+      "span_frac": [
+        0.305,
+        0.3222
+      ]
+    },
+    {
+      "value_mm": 192,
+      "axis": "vertical",
+      "span_frac": [
+        0.305,
+        0.3222
+      ]
+    }
+  ],
+  "plates": [
+    {
+      "id": 1,
+      "bbox_frac": [
+        0.1319,
+        0.1167,
+        0.205,
+        0.4662
+      ],
+      "width_mm": 20,
+      "height_mm": 216
+    },
+    {
+      "id": 2,
+      "bbox_frac": [
+        0.305,
+        0.1167,
+        0.3781,
+        0.4662
+      ],
+      "width_mm": 20,
+      "height_mm": 216
+    }
+  ],
+  "gate": {
+    "trust_cv": false,
+    "cv_count": 4,
+    "llm_count": 2,
+    "reasons": [
+      "count gap 100% (cv=4, llm=2) > 60%"
+    ]
+  },
+  "cv_meta": {
+    "size": [
+      1600,
+      1200
+    ],
+    "method": "opencv",
+    "count": 4
+  }
+}

@@ -1,0 +1,611 @@
+{
+  "unit": "mm",
+  "image_px": {
+    "width": 1191,
+    "height": 1684
+  },
+  "dimension_annotations": [],
+  "labels": [
+    {
+      "label_number": 1,
+      "width_mm": 150.0,
+      "height_mm": 70.0,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        66.0,
+        248.0,
+        573.0,
+        277.0
+      ],
+      "lines": [
+        {
+          "text": "Logo-Compliance Label MSB- MSB",
+          "x_mm": 75.0,
+          "y_mm": 35.0,
+          "size_mm": 6.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            66,
+            248,
+            573,
+            277
+          ],
+          "_content_y": null,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 2,
+      "width_mm": 150.0,
+      "height_mm": 70.0,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        65.0,
+        277.0,
+        573.0,
+        604.0
+      ],
+      "lines": [
+        {
+          "text": "MPE custom switchboards\nSMITHFIELD NSW 2164 (02) 9721 1698\nSWITCHBOARD BUILT TO AS/NZS 61439.1/2 : 2016\nAS/NZS 3000 : 2018\nSEGREGATION : FORM 3b/3bih\nDEGREE OF PROTECTION : IP42\nRATED : 415v 50Hz\nFAULT LEVEL : 40kA / 1 sec\nDATE OF MANUFACTURE : JULY 2026\nREFERENCE : M6339",
+          "x_mm": 75.0,
+          "y_mm": 35.0,
+          "size_mm": 0.5,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            65,
+            277,
+            573,
+            604
+          ],
+          "_content_y": null,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 3,
+      "width_mm": 130.0,
+      "height_mm": 30.0,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        65.0,
+        605.0,
+        573.0,
+        674.0
+      ],
+      "lines": [
+        {
+          "text": "MAIN SWITCHBOARD 1",
+          "x_mm": 65.0,
+          "y_mm": 15.0,
+          "size_mm": 8.5,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            65,
+            605,
+            573,
+            674
+          ],
+          "_content_y": null,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 4,
+      "width_mm": 80.0,
+      "height_mm": 20.0,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        65.0,
+        674.0,
+        573.0,
+        732.0
+      ],
+      "lines": [
+        {
+          "text": "SERVICE PROTECTION DEVICE",
+          "x_mm": 40.0,
+          "y_mm": 10.0,
+          "size_mm": 3.5,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            65,
+            674,
+            573,
+            732
+          ],
+          "_content_y": null,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 5,
+      "width_mm": 80.0,
+      "height_mm": 20.0,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        65.0,
+        732.0,
+        573.0,
+        790.0
+      ],
+      "lines": [
+        {
+          "text": "PRIVATE METERING TOWER 1",
+          "x_mm": 40.0,
+          "y_mm": 10.0,
+          "size_mm": 4.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            65,
+            732,
+            573,
+            790
+          ],
+          "_content_y": null,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 6,
+      "width_mm": 80.0,
+      "height_mm": 20.0,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        65.0,
+        790.0,
+        573.0,
+        848.0
+      ],
+      "lines": [
+        {
+          "text": "HOUSE SERVICES SECTION",
+          "x_mm": 40.0,
+          "y_mm": 10.0,
+          "size_mm": 4.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            65,
+            790,
+            573,
+            848
+          ],
+          "_content_y": null,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 7,
+      "width_mm": 80.0,
+      "height_mm": 20.0,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        65.0,
+        848.0,
+        573.0,
+        906.0
+      ],
+      "lines": [
+        {
+          "text": "HOUSE SERVICES TOWER 1 SECTION",
+          "x_mm": 40.0,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            65,
+            848,
+            573,
+            906
+          ],
+          "_content_y": null,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 8,
+      "width_mm": 80.0,
+      "height_mm": 20.0,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        65.0,
+        907.0,
+        573.0,
+        965.0
+      ],
+      "lines": [
+        {
+          "text": "HOUSE SERVICES TOWER 2 SECTION",
+          "x_mm": 40.0,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            65,
+            907,
+            573,
+            965
+          ],
+          "_content_y": null,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 9,
+      "width_mm": 80.0,
+      "height_mm": 20.0,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        65.0,
+        965.0,
+        573.0,
+        1023.0
+      ],
+      "lines": [
+        {
+          "text": "SAFETY SERVICES TOWER 1 SECTION",
+          "x_mm": 40.0,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            65,
+            965,
+            573,
+            1023
+          ],
+          "_content_y": null,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 10,
+      "width_mm": 80.0,
+      "height_mm": 20.0,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        65.0,
+        1023.0,
+        573.0,
+        1081.0
+      ],
+      "lines": [
+        {
+          "text": "EV SECTION TOWER 2",
+          "x_mm": 40.0,
+          "y_mm": 10.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            65,
+            1023,
+            573,
+            1081
+          ],
+          "_content_y": null,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 11,
+      "width_mm": 80.0,
+      "height_mm": 20.0,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        65.0,
+        1081.0,
+        573.0,
+        1139.0
+      ],
+      "lines": [
+        {
+          "text": "SOLAR SECTION",
+          "x_mm": 40.0,
+          "y_mm": 10.0,
+          "size_mm": 7.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            65,
+            1081,
+            573,
+            1139
+          ],
+          "_content_y": null,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 12,
+      "width_mm": 80.0,
+      "height_mm": 20.0,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        65.0,
+        1139.0,
+        573.0,
+        1197.0
+      ],
+      "lines": [
+        {
+          "text": "RETAIL METERING SECTION",
+          "x_mm": 40.0,
+          "y_mm": 10.0,
+          "size_mm": 4.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            65,
+            1139,
+            573,
+            1197
+          ],
+          "_content_y": null,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 13,
+      "width_mm": 80.0,
+      "height_mm": 30.0,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        65.0,
+        1197.0,
+        573.0,
+        1284.0
+      ],
+      "lines": [
+        {
+          "text": "ACCREDITED METERING PROVIDER METERING CT'S MOUNTED BEHIND",
+          "x_mm": 40.0,
+          "y_mm": 15.0,
+          "size_mm": 1.5,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            65,
+            1197,
+            573,
+            1284
+          ],
+          "_content_y": null,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 14,
+      "width_mm": 70.0,
+      "height_mm": 15.0,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        65.0,
+        1392.0,
+        573.0,
+        1421.0
+      ],
+      "lines": [
+        {
+          "text": "SURGE DIVERter",
+          "x_mm": 35.0,
+          "y_mm": 7.5,
+          "size_mm": 5.5,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            65,
+            1392,
+            573,
+            1421
+          ],
+          "_content_y": null,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 15,
+      "width_mm": 80.0,
+      "height_mm": 20.0,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        65.0,
+        1421.0,
+        573.0,
+        1479.0
+      ],
+      "lines": [
+        {
+          "text": "SURGE DIVERter MOUNTED BEHIND",
+          "x_mm": 40.0,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            65,
+            1421,
+            573,
+            1479
+          ],
+          "_content_y": null,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 16,
+      "width_mm": 80.0,
+      "height_mm": 30.0,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        65.0,
+        1479.0,
+        573.0,
+        1566.0
+      ],
+      "lines": [
+        {
+          "text": "ACCREDITED METERING PROVIDER EQUIPMENT MOUNTED BEHIND",
+          "x_mm": 40.0,
+          "y_mm": 15.0,
+          "size_mm": 1.5,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            65,
+            1479,
+            573,
+            1566
+          ],
+          "_content_y": null,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    }
+  ],
+  "total_labels": 16,
+  "warnings": [
+    "structure: using CV plate outlines (20 plates, gate trusted)",
+    "structure: dropped plate #1 (table/header row)",
+    "structure: dropped plate #2 (table/header row)",
+    "structure: dropped plate #3 (table/header row)",
+    "structure: dropped plate #5 (table/header row)",
+    "content: 1 line(s) could not be assigned to any plate bbox",
+    "plate #1: text 'Logo-Compliance Label MSB- MSB' too wide at 70mm — reduced to 6mm",
+    "plate #2: text 'MPE custom switchboards\\nSMITHFIELD NSW 2164 (02) 9721 1698\\nSWITCHBOARD BUILT TO AS/NZS 61439.1/2 : 2016\\nAS/NZS 3000 : 2018\\nSEGREGATION : FORM 3b/3bih\\nDEGREE OF PROTECTION : IP42\\nRATED : 415v 50Hz\\nFAULT LEVEL : 40kA / 1 sec\\nDATE OF MANUFACTURE : JULY 2026\\nREFERENCE : M6339' too wide at 70mm — reduced to 0.5mm",
+    "plate #3: text 'MAIN SWITCHBOARD 1' too wide at 30mm — reduced to 8.5mm",
+    "plate #4: text 'SERVICE PROTECTION DEVICE' too wide at 20mm — reduced to 3.5mm",
+    "plate #5: text 'PRIVATE METERING TOWER 1' too wide at 20mm — reduced to 4mm",
+    "plate #6: text 'HOUSE SERVICES SECTION' too wide at 20mm — reduced to 4mm",
+    "plate #7: text 'HOUSE SERVICES TOWER 1 SECTION' too wide at 20mm — reduced to 3mm",
+    "plate #8: text 'HOUSE SERVICES TOWER 2 SECTION' too wide at 20mm — reduced to 3mm",
+    "plate #9: text 'SAFETY SERVICES TOWER 1 SECTION' too wide at 20mm — reduced to 3mm",
+    "plate #10: text 'EV SECTION TOWER 2' too wide at 20mm — reduced to 5mm",
+    "plate #11: text 'SOLAR SECTION' too wide at 20mm — reduced to 7mm",
+    "plate #12: text 'RETAIL METERING SECTION' too wide at 20mm — reduced to 4mm",
+    "plate #13: text \"ACCREDITED METERING PROVIDER METERING CT'S MOUNTED BEHIND\" too wide at 30mm — reduced to 1.5mm",
+    "plate #14: text 'SURGE DIVERter' too wide at 15mm — reduced to 5.5mm",
+    "plate #15: text 'SURGE DIVERter MOUNTED BEHIND' too wide at 20mm — reduced to 3mm",
+    "plate #16: text 'ACCREDITED METERING PROVIDER EQUIPMENT MOUNTED BEHIND' too wide at 30mm — reduced to 1.5mm"
+  ]
+}

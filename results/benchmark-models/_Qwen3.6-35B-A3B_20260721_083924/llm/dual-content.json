@@ -1,0 +1,28 @@
+{
+  "cached_at": "2026-07-21T00:39:28+00:00",
+  "stage": "dual-content",
+  "content": {
+    "plates": [
+      {
+        "id": 1,
+        "line_count": 1,
+        "width_mm": 70,
+        "height_mm": 20,
+        "lines": [
+          {
+            "text": "7000-SEN-20001",
+            "x_mm": 35,
+            "y_mm": 10,
+            "size_mm": 8,
+            "bbox_frac": [
+              0.21,
+              0.18,
+              0.79,
+              0.36
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

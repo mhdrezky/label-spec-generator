@@ -1,0 +1,48 @@
+{
+  "plates": [
+    {
+      "id": 1,
+      "line_count": 3,
+      "width_mm": 200,
+      "height_mm": 35,
+      "lines": [
+        {
+          "text": "FED FROM MCC1 TIER 1",
+          "x_mm": 100,
+          "y_mm": 12,
+          "size_mm": 10,
+          "bbox_frac": [
+            0.2256,
+            0.4367,
+            0.8319,
+            0.5
+          ]
+        },
+        {
+          "text": "STP008-2000-SLV-003 XA.02",
+          "x_mm": 100,
+          "y_mm": 23,
+          "size_mm": 10,
+          "bbox_frac": [
+            0.2256,
+            0.5,
+            0.8319,
+            0.57
+          ]
+        },
+        {
+          "text": "Stainless Steel",
+          "x_mm": 100,
+          "y_mm": 30,
+          "size_mm": 10,
+          "bbox_frac": [
+            0.2256,
+            0.6,
+            0.8319,
+            0.67
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "plates": [
+    {
+      "id": 1,
+      "line_count": 6,
+      "width_mm": 280,
+      "height_mm": 80,
+      "lines": [
+        {
+          "text": "7000-SWC-20001",
+          "x_mm": 140,
+          "y_mm": 100,
+          "size_mm": 20,
+          "bbox_frac": [
+            0.218564,
+            0.293255,
+            0.781436,
+            0.448686
+          ]
+        },
+        {
+          "text": "Switchboard",
+          "x_mm": 140,
+          "y_mm": 130,
+          "size_mm": 10,
+          "bbox_frac": [
+            0.218564,
+            0.381232,
+            0.781436,
+            0.469209
+          ]
+        },
+        {
+          "text": "Letter Size: 20mm BOLD (1st Line)",
+          "x_mm": 140,
+          "y_mm": 200,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.218564,
+            0.58651,
+            0.781436,
+            0.631525
+          ]
+        },
+        {
+          "text": "Letter Size: 10mm BOLD (2nd Line)",
+          "x_mm": 140,
+          "y_mm": 220,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.218564,
+            0.645161,
+            0.781436,
+            0.690176
+          ]
+        },
+        {
+          "text": "Material: Traffolyte or SS316",
+          "x_mm": 140,
+          "y_mm": 240,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.218564,
+            0.703812,
+            0.781436,
+            0.748828
+          ]
+        },
+        {
+          "text": "Background Colour: Yellow (For Traffolyte)",
+          "x_mm": 140,
+          "y_mm": 260,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.218564,
+            0.762463,
+            0.781436,
+            0.807479
+          ]
+        }
+      ]
+    }
+  ]
+}

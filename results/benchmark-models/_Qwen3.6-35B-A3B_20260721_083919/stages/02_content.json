@@ -1,0 +1,24 @@
+{
+  "plates": [
+    {
+      "id": 1,
+      "line_count": 1,
+      "width_mm": 37,
+      "height_mm": 10,
+      "lines": [
+        {
+          "text": "7000-FEE-20001",
+          "x_mm": 18.5,
+          "y_mm": 5,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.26,
+            0.13,
+            0.63,
+            0.23
+          ]
+        }
+      ]
+    }
+  ]
+}

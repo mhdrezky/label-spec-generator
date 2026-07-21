@@ -1,0 +1,56 @@
+{
+  "plates": [
+    {
+      "id": 1,
+      "line_count": 2,
+      "width_mm": 200,
+      "height_mm": 35,
+      "lines": [
+        {
+          "text": "FED FROM MCC1 TIER 1",
+          "x_mm": 100,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.235,
+            0.302,
+            0.742,
+            0.332
+          ]
+        },
+        {
+          "text": "STP008-2000-SLV-003 XA.02",
+          "x_mm": 100,
+          "y_mm": 25,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.152,
+            0.342,
+            0.822,
+            0.378
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "line_count": 1,
+      "width_mm": 100,
+      "height_mm": 17,
+      "lines": [
+        {
+          "text": "POWER MONITOR",
+          "x_mm": 50,
+          "y_mm": 8.5,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.262,
+            0.565,
+            0.585,
+            0.602
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,502 @@
+{
+  "unit": "mm",
+  "image_px": {
+    "width": 1684,
+    "height": 1190
+  },
+  "dimension_annotations": [
+    {
+      "value_mm": 160.0,
+      "axis": "horizontal",
+      "span_px": [
+        94.304,
+        599.504
+      ]
+    },
+    {
+      "value_mm": 160.0,
+      "axis": "horizontal",
+      "span_px": [
+        599.504,
+        1104.704
+      ]
+    },
+    {
+      "value_mm": 160.0,
+      "axis": "horizontal",
+      "span_px": [
+        1104.704,
+        1609.904
+      ]
+    },
+    {
+      "value_mm": 80.0,
+      "axis": "vertical",
+      "span_px": [
+        0.0,
+        297.5
+      ]
+    },
+    {
+      "value_mm": 34.0,
+      "axis": "vertical",
+      "span_px": [
+        297.5,
+        416.5
+      ]
+    },
+    {
+      "value_mm": 34.0,
+      "axis": "vertical",
+      "span_px": [
+        416.5,
+        535.5
+      ]
+    },
+    {
+      "value_mm": 8.0,
+      "axis": "vertical",
+      "span_px": [
+        535.5,
+        559.3
+      ]
+    },
+    {
+      "value_mm": 60.0,
+      "axis": "horizontal",
+      "span_px": [
+        94.304,
+        262.704
+      ]
+    },
+    {
+      "value_mm": 34.0,
+      "axis": "vertical",
+      "span_px": [
+        780.64,
+        899.64
+      ]
+    },
+    {
+      "value_mm": 34.0,
+      "axis": "vertical",
+      "span_px": [
+        1137.6399999999999,
+        1190.0
+      ]
+    }
+  ],
+  "labels": [
+    {
+      "label_number": 1,
+      "width_mm": 160.0,
+      "height_mm": 80.0,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": "blue",
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        94,
+        298,
+        600,
+        536
+      ],
+      "lines": [
+        {
+          "text": "BELMONT",
+          "x_mm": 80.0,
+          "y_mm": 20.0,
+          "size_mm": 12.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            94,
+            298,
+            600,
+            357
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "PINHOLE",
+          "x_mm": 80.0,
+          "y_mm": 35.0,
+          "size_mm": 12.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            94,
+            357,
+            600,
+            416
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "REJECTS",
+          "x_mm": 80.0,
+          "y_mm": 50.0,
+          "size_mm": 12.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            94,
+            416,
+            600,
+            476
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 2,
+      "width_mm": 160.0,
+      "height_mm": 34.0,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": "blue",
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        94,
+        416,
+        600,
+        536
+      ],
+      "lines": [
+        {
+          "text": "GEOMETRY",
+          "x_mm": 80.0,
+          "y_mm": null,
+          "size_mm": 10.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            94,
+            416,
+            600,
+            452
+          ],
+          "_content_y": 35.0,
+          "measured_fields": []
+        },
+        {
+          "text": "REJECTS",
+          "x_mm": 80.0,
+          "y_mm": null,
+          "size_mm": 10.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            94,
+            452,
+            600,
+            488
+          ],
+          "_content_y": 45.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 3,
+      "width_mm": 160.0,
+      "height_mm": 34.0,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": "blue",
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        94,
+        536,
+        600,
+        654
+      ],
+      "lines": [
+        {
+          "text": "PINHOLE",
+          "x_mm": 80.0,
+          "y_mm": null,
+          "size_mm": 10.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            94,
+            536,
+            600,
+            571
+          ],
+          "_content_y": 35.0,
+          "measured_fields": []
+        },
+        {
+          "text": "REJECTS",
+          "x_mm": 80.0,
+          "y_mm": null,
+          "size_mm": 10.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            94,
+            571,
+            600,
+            607
+          ],
+          "_content_y": 45.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 4,
+      "width_mm": 60.0,
+      "height_mm": 8.0,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": "blue",
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        94,
+        559,
+        263,
+        583
+      ],
+      "lines": [
+        {
+          "text": "REJECTS",
+          "x_mm": 30.0,
+          "y_mm": null,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            94,
+            559,
+            263,
+            571
+          ],
+          "_content_y": 47.0,
+          "measured_fields": []
+        },
+        {
+          "text": "REJECTS",
+          "x_mm": 50.0,
+          "y_mm": null,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            263,
+            559,
+            431,
+            571
+          ],
+          "_content_y": 47.0,
+          "measured_fields": []
+        },
+        {
+          "text": "REJECTS",
+          "x_mm": null,
+          "y_mm": null,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            431,
+            559,
+            600,
+            571
+          ],
+          "_content_y": 47.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 5,
+      "width_mm": 160.0,
+      "height_mm": 34.0,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": "blue",
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        600,
+        416,
+        1105,
+        536
+      ],
+      "lines": [
+        {
+          "text": "GEOMETRY",
+          "x_mm": 80.0,
+          "y_mm": null,
+          "size_mm": 10.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            600,
+            416,
+            1105,
+            452
+          ],
+          "_content_y": 35.0,
+          "measured_fields": []
+        },
+        {
+          "text": "REJECTS",
+          "x_mm": 80.0,
+          "y_mm": null,
+          "size_mm": 10.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            600,
+            452,
+            1105,
+            488
+          ],
+          "_content_y": 45.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 6,
+      "width_mm": 160.0,
+      "height_mm": 34.0,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": "blue",
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        600,
+        536,
+        1105,
+        654
+      ],
+      "lines": [
+        {
+          "text": "PINHOLE",
+          "x_mm": 80.0,
+          "y_mm": null,
+          "size_mm": 10.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            600,
+            536,
+            1105,
+            571
+          ],
+          "_content_y": 35.0,
+          "measured_fields": []
+        },
+        {
+          "text": "REJECTS",
+          "x_mm": 80.0,
+          "y_mm": null,
+          "size_mm": 10.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            600,
+            571,
+            1105,
+            607
+          ],
+          "_content_y": 45.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 7,
+      "width_mm": 160.0,
+      "height_mm": 34.0,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": "blue",
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        1105,
+        416,
+        1610,
+        536
+      ],
+      "lines": [
+        {
+          "text": "GEOMETRY",
+          "x_mm": 80.0,
+          "y_mm": null,
+          "size_mm": 10.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            1105,
+            416,
+            1610,
+            452
+          ],
+          "_content_y": 35.0,
+          "measured_fields": []
+        },
+        {
+          "text": "REJECTS",
+          "x_mm": 80.0,
+          "y_mm": null,
+          "size_mm": 10.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            1105,
+            452,
+            1610,
+            488
+          ],
+          "_content_y": 45.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    }
+  ],
+  "total_labels": 7,
+  "warnings": [
+    "structure: using LLM plate outlines (CV gate: cv=1, llm=7, trust_cv=False)",
+    "plate #4 'REJECTS': x_mm=70.0 outside plate - null",
+    "label #2 (GEOMETRY): 'GEOMETRY' y_mm=35.0 outside plate (34.0mm) — dropped",
+    "label #2 (GEOMETRY): 'REJECTS' y_mm=45.0 outside plate (34.0mm) — dropped",
+    "label #3 (PINHOLE): 'PINHOLE' y_mm=35.0 outside plate (34.0mm) — dropped",
+    "label #3 (PINHOLE): 'REJECTS' y_mm=45.0 outside plate (34.0mm) — dropped",
+    "label #4 (REJECTS): 'REJECTS' y_mm=47.0 outside plate (8.0mm) — dropped",
+    "label #4 (REJECTS): 'REJECTS' y_mm=47.0 outside plate (8.0mm) — dropped",
+    "label #4 (REJECTS): 'REJECTS' y_mm=47.0 outside plate (8.0mm) — dropped",
+    "label #5 (GEOMETRY): 'GEOMETRY' y_mm=35.0 outside plate (34.0mm) — dropped",
+    "label #5 (GEOMETRY): 'REJECTS' y_mm=45.0 outside plate (34.0mm) — dropped",
+    "label #6 (PINHOLE): 'PINHOLE' y_mm=35.0 outside plate (34.0mm) — dropped",
+    "label #6 (PINHOLE): 'REJECTS' y_mm=45.0 outside plate (34.0mm) — dropped",
+    "label #7 (GEOMETRY): 'GEOMETRY' y_mm=35.0 outside plate (34.0mm) — dropped",
+    "label #7 (GEOMETRY): 'REJECTS' y_mm=45.0 outside plate (34.0mm) — dropped"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "unit": "mm",
+  "image_px": {
+    "width": 1155,
+    "height": 1649
+  },
+  "dimension_annotations": [],
+  "labels": [],
+  "total_labels": 0,
+  "warnings": [
+    "structure: using LLM plate outlines (CV gate: cv=0, llm=126, trust_cv=False)",
+    "structure: dropped 126 plate(s) with invalid bbox",
+    "content: 9 line(s) could not be assigned to any plate bbox"
+  ]
+}

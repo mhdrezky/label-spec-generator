@@ -1,0 +1,148 @@
+{
+  "plates": [
+    {
+      "id": 1,
+      "line_count": 1,
+      "width_mm": 70,
+      "height_mm": 40,
+      "lines": [
+        {
+          "text": "Room 28",
+          "x_mm": 35,
+          "y_mm": 20,
+          "size_mm": 10,
+          "bbox_frac": [
+            0.24,
+            1.08,
+            0.76,
+            1.48
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "line_count": 3,
+      "width_mm": 250,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "CALLING",
+          "x_mm": 83,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.06,
+            1.82,
+            0.94,
+            1.98
+          ]
+        },
+        {
+          "text": "FAULT",
+          "x_mm": 167,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.06,
+            1.82,
+            0.94,
+            1.98
+          ]
+        },
+        {
+          "text": "DEFROST",
+          "x_mm": 250,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.06,
+            1.82,
+            0.94,
+            1.98
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "line_count": 3,
+      "width_mm": 250,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "ROOM",
+          "x_mm": 83,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.06,
+            1.82,
+            0.94,
+            1.98
+          ]
+        },
+        {
+          "text": "DISABLE ENABLE",
+          "x_mm": 83,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.06,
+            1.82,
+            0.94,
+            1.98
+          ]
+        },
+        {
+          "text": "FANS",
+          "x_mm": 167,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.06,
+            1.82,
+            0.94,
+            1.98
+          ]
+        },
+        {
+          "text": "LOW HIGH",
+          "x_mm": 167,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.06,
+            1.82,
+            0.94,
+            1.98
+          ]
+        },
+        {
+          "text": "SUCTION",
+          "x_mm": 250,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.06,
+            1.82,
+            0.94,
+            1.98
+          ]
+        },
+        {
+          "text": "LOW HIGH",
+          "x_mm": 250,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.06,
+            1.82,
+            0.94,
+            1.98
+          ]
+        }
+      ]
+    }
+  ]
+}

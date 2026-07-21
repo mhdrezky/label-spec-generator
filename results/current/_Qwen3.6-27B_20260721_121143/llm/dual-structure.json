@@ -1,0 +1,119 @@
+{
+  "cached_at": "2026-07-21T04:12:08+00:00",
+  "stage": "dual-structure",
+  "content": {
+    "draft_type": "sketch",
+    "material": null,
+    "background_color": "White",
+    "text_color": "Black",
+    "fixing": null,
+    "default_size_mm": 5,
+    "line_sizes": [],
+    "dimension_annotations": [
+      {
+        "value_mm": 20,
+        "axis": "horizontal",
+        "span_frac": [
+          0.125,
+          0.2938
+        ]
+      },
+      {
+        "value_mm": 20,
+        "axis": "horizontal",
+        "span_frac": [
+          0.3938,
+          0.5625
+        ]
+      },
+      {
+        "value_mm": 216,
+        "axis": "vertical",
+        "span_frac": [
+          0.3125,
+          0.8125
+        ]
+      },
+      {
+        "value_mm": 24,
+        "axis": "vertical",
+        "span_frac": [
+          0.3125,
+          0.35
+        ]
+      },
+      {
+        "value_mm": 52,
+        "axis": "vertical",
+        "span_frac": [
+          0.35,
+          0.3958
+        ]
+      },
+      {
+        "value_mm": 80,
+        "axis": "vertical",
+        "span_frac": [
+          0.3958,
+          0.4417
+        ]
+      },
+      {
+        "value_mm": 108,
+        "axis": "vertical",
+        "span_frac": [
+          0.4417,
+          0.4875
+        ]
+      },
+      {
+        "value_mm": 136,
+        "axis": "vertical",
+        "span_frac": [
+          0.4875,
+          0.5333
+        ]
+      },
+      {
+        "value_mm": 164,
+        "axis": "vertical",
+        "span_frac": [
+          0.5333,
+          0.5792
+        ]
+      },
+      {
+        "value_mm": 192,
+        "axis": "vertical",
+        "span_frac": [
+          0.5792,
+          0.625
+        ]
+      }
+    ],
+    "plates": [
+      {
+        "id": 1,
+        "bbox_frac": [
+          0.125,
+          0.3125,
+          0.2938,
+          0.8125
+        ],
+        "width_mm": 20,
+        "height_mm": 216
+      },
+      {
+        "id": 2,
+        "bbox_frac": [
+          0.3938,
+          0.3125,
+          0.5625,
+          0.8125
+        ],
+        "width_mm": 20,
+        "height_mm": 216
+      }
+    ]
+  }
+}

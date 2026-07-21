@@ -1,0 +1,1056 @@
+{
+  "cached_at": "2026-07-21T00:54:58+00:00",
+  "stage": "dual-structure",
+  "content": {
+    "draft_type": "photo",
+    "material": null,
+    "background_color": null,
+    "text_color": null,
+    "fixing": null,
+    "default_size_mm": null,
+    "line_sizes": [],
+    "dimension_annotations": [
+      {
+        "value_mm": 140,
+        "axis": "horizontal",
+        "span_frac": [
+          0.0,
+          0.288
+        ]
+      },
+      {
+        "value_mm": 40,
+        "axis": "vertical",
+        "span_frac": [
+          0.288,
+          0.308
+        ]
+      },
+      {
+        "value_mm": 100,
+        "axis": "horizontal",
+        "span_frac": [
+          0.0,
+          0.227
+        ]
+      },
+      {
+        "value_mm": 40,
+        "axis": "vertical",
+        "span_frac": [
+          0.308,
+          0.328
+        ]
+      },
+      {
+        "value_mm": 100,
+        "axis": "horizontal",
+        "span_frac": [
+          0.0,
+          0.227
+        ]
+      },
+      {
+        "value_mm": 40,
+        "axis": "vertical",
+        "span_frac": [
+          0.328,
+          0.348
+        ]
+      },
+      {
+        "value_mm": 100,
+        "axis": "horizontal",
+        "span_frac": [
+          0.0,
+          0.227
+        ]
+      },
+      {
+        "value_mm": 40,
+        "axis": "vertical",
+        "span_frac": [
+          0.348,
+          0.368
+        ]
+      },
+      {
+        "value_mm": 100,
+        "axis": "horizontal",
+        "span_frac": [
+          0.0,
+          0.227
+        ]
+      },
+      {
+        "value_mm": 40,
+        "axis": "vertical",
+        "span_frac": [
+          0.368,
+          0.388
+        ]
+      },
+      {
+        "value_mm": 100,
+        "axis": "horizontal",
+        "span_frac": [
+          0.0,
+          0.227
+        ]
+      },
+      {
+        "value_mm": 20,
+        "axis": "vertical",
+        "span_frac": [
+          0.388,
+          0.408
+        ]
+      },
+      {
+        "value_mm": 100,
+        "axis": "horizontal",
+        "span_frac": [
+          0.0,
+          0.227
+        ]
+      },
+      {
+        "value_mm": 20,
+        "axis": "vertical",
+        "span_frac": [
+          0.408,
+          0.428
+        ]
+      },
+      {
+        "value_mm": 100,
+        "axis": "horizontal",
+        "span_frac": [
+          0.0,
+          0.227
+        ]
+      },
+      {
+        "value_mm": 20,
+        "axis": "vertical",
+        "span_frac": [
+          0.428,
+          0.448
+        ]
+      },
+      {
+        "value_mm": 100,
+        "axis": "horizontal",
+        "span_frac": [
+          0.0,
+          0.227
+        ]
+      },
+      {
+        "value_mm": 20,
+        "axis": "vertical",
+        "span_frac": [
+          0.448,
+          0.468
+        ]
+      },
+      {
+        "value_mm": 100,
+        "axis": "horizontal",
+        "span_frac": [
+          0.0,
+          0.227
+        ]
+      },
+      {
+        "value_mm": 20,
+        "axis": "vertical",
+        "span_frac": [
+          0.468,
+          0.488
+        ]
+      },
+      {
+        "value_mm": 100,
+        "axis": "horizontal",
+        "span_frac": [
+          0.0,
+          0.227
+        ]
+      },
+      {
+        "value_mm": 20,
+        "axis": "vertical",
+        "span_frac": [
+          0.488,
+          0.508
+        ]
+      },
+      {
+        "value_mm": 100,
+        "axis": "horizontal",
+        "span_frac": [
+          0.0,
+          0.227
+        ]
+      },
+      {
+        "value_mm": 20,
+        "axis": "vertical",
+        "span_frac": [
+          0.508,
+          0.528
+        ]
+      },
+      {
+        "value_mm": 100,
+        "axis": "horizontal",
+        "span_frac": [
+          0.0,
+          0.227
+        ]
+      },
+      {
+        "value_mm": 20,
+        "axis": "vertical",
+        "span_frac": [
+          0.528,
+          0.548
+        ]
+      },
+      {
+        "value_mm": 100,
+        "axis": "horizontal",
+        "span_frac": [
+          0.0,
+          0.227
+        ]
+      },
+      {
+        "value_mm": 20,
+        "axis": "vertical",
+        "span_frac": [
+          0.548,
+          0.568
+        ]
+      },
+      {
+        "value_mm": 20,
+        "axis": "horizontal",
+        "span_frac": [
+          0.427,
+          0.447
+        ]
+      },
+      {
+        "value_mm": 215,
+        "axis": "vertical",
+        "span_frac": [
+          0.447,
+          0.662
+        ]
+      },
+      {
+        "value_mm": 20,
+        "axis": "horizontal",
+        "span_frac": [
+          0.608,
+          0.628
+        ]
+      },
+      {
+        "value_mm": 215,
+        "axis": "vertical",
+        "span_frac": [
+          0.628,
+          0.843
+        ]
+      },
+      {
+        "value_mm": 20,
+        "axis": "horizontal",
+        "span_frac": [
+          0.777,
+          0.797
+        ]
+      },
+      {
+        "value_mm": 215,
+        "axis": "vertical",
+        "span_frac": [
+          0.797,
+          1.012
+        ]
+      },
+      {
+        "value_mm": 100,
+        "axis": "horizontal",
+        "span_frac": [
+          0.388,
+          0.603
+        ]
+      },
+      {
+        "value_mm": 20,
+        "axis": "vertical",
+        "span_frac": [
+          0.662,
+          0.682
+        ]
+      },
+      {
+        "value_mm": 100,
+        "axis": "horizontal",
+        "span_frac": [
+          0.388,
+          0.603
+        ]
+      },
+      {
+        "value_mm": 20,
+        "axis": "vertical",
+        "span_frac": [
+          0.682,
+          0.702
+        ]
+      },
+      {
+        "value_mm": 100,
+        "axis": "horizontal",
+        "span_frac": [
+          0.388,
+          0.603
+        ]
+      },
+      {
+        "value_mm": 20,
+        "axis": "vertical",
+        "span_frac": [
+          0.702,
+          0.722
+        ]
+      },
+      {
+        "value_mm": 100,
+        "axis": "horizontal",
+        "span_frac": [
+          0.388,
+          0.603
+        ]
+      },
+      {
+        "value_mm": 20,
+        "axis": "vertical",
+        "span_frac": [
+          0.722,
+          0.742
+        ]
+      },
+      {
+        "value_mm": 100,
+        "axis": "horizontal",
+        "span_frac": [
+          0.388,
+          0.603
+        ]
+      },
+      {
+        "value_mm": 20,
+        "axis": "vertical",
+        "span_frac": [
+          0.742,
+          0.762
+        ]
+      },
+      {
+        "value_mm": 100,
+        "axis": "horizontal",
+        "span_frac": [
+          0.388,
+          0.603
+        ]
+      },
+      {
+        "value_mm": 20,
+        "axis": "vertical",
+        "span_frac": [
+          0.762,
+          0.782
+        ]
+      },
+      {
+        "value_mm": 100,
+        "axis": "horizontal",
+        "span_frac": [
+          0.388,
+          0.603
+        ]
+      },
+      {
+        "value_mm": 20,
+        "axis": "vertical",
+        "span_frac": [
+          0.782,
+          0.802
+        ]
+      },
+      {
+        "value_mm": 100,
+        "axis": "horizontal",
+        "span_frac": [
+          0.388,
+          0.603
+        ]
+      },
+      {
+        "value_mm": 20,
+        "axis": "vertical",
+        "span_frac": [
+          0.802,
+          0.822
+        ]
+      },
+      {
+        "value_mm": 100,
+        "axis": "horizontal",
+        "span_frac": [
+          0.388,
+          0.603
+        ]
+      },
+      {
+        "value_mm": 20,
+        "axis": "vertical",
+        "span_frac": [
+          0.822,
+          0.842
+        ]
+      },
+      {
+        "value_mm": 100,
+        "axis": "horizontal",
+        "span_frac": [
+          0.388,
+          0.603
+        ]
+      },
+      {
+        "value_mm": 20,
+        "axis": "vertical",
+        "span_frac": [
+          0.842,
+          0.862
+        ]
+      },
+      {
+        "value_mm": 100,
+        "axis": "horizontal",
+        "span_frac": [
+          0.388,
+          0.603
+        ]
+      },
+      {
+        "value_mm": 20,
+        "axis": "vertical",
+        "span_frac": [
+          0.862,
+          0.882
+        ]
+      },
+      {
+        "value_mm": 100,
+        "axis": "horizontal",
+        "span_frac": [
+          0.388,
+          0.603
+        ]
+      },
+      {
+        "value_mm": 20,
+        "axis": "vertical",
+        "span_frac": [
+          0.882,
+          0.902
+        ]
+      },
+      {
+        "value_mm": 100,
+        "axis": "horizontal",
+        "span_frac": [
+          0.388,
+          0.603
+        ]
+      },
+      {
+        "value_mm": 20,
+        "axis": "vertical",
+        "span_frac": [
+          0.902,
+          0.922
+        ]
+      },
+      {
+        "value_mm": 100,
+        "axis": "horizontal",
+        "span_frac": [
+          0.388,
+          0.603
+        ]
+      },
+      {
+        "value_mm": 20,
+        "axis": "vertical",
+        "span_frac": [
+          0.922,
+          0.942
+        ]
+      },
+      {
+        "value_mm": 100,
+        "axis": "horizontal",
+        "span_frac": [
+          0.388,
+          0.603
+        ]
+      },
+      {
+        "value_mm": 20,
+        "axis": "vertical",
+        "span_frac": [
+          0.942,
+          0.962
+        ]
+      },
+      {
+        "value_mm": 100,
+        "axis": "horizontal",
+        "span_frac": [
+          0.388,
+          0.603
+        ]
+      },
+      {
+        "value_mm": 20,
+        "axis": "vertical",
+        "span_frac": [
+          0.962,
+          0.982
+        ]
+      },
+      {
+        "value_mm": 100,
+        "axis": "horizontal",
+        "span_frac": [
+          0.388,
+          0.603
+        ]
+      },
+      {
+        "value_mm": 20,
+        "axis": "vertical",
+        "span_frac": [
+          0.982,
+          1.002
+        ]
+      }
+    ],
+    "plates": [
+      {
+        "id": 1,
+        "bbox_frac": [
+          0.0,
+          0.0,
+          0.288,
+          0.088
+        ],
+        "width_mm": 140,
+        "height_mm": 40
+      },
+      {
+        "id": 2,
+        "bbox_frac": [
+          0.0,
+          0.088,
+          0.227,
+          0.176
+        ],
+        "width_mm": 100,
+        "height_mm": 40
+      },
+      {
+        "id": 3,
+        "bbox_frac": [
+          0.0,
+          0.176,
+          0.227,
+          0.264
+        ],
+        "width_mm": 100,
+        "height_mm": 40
+      },
+      {
+        "id": 4,
+        "bbox_frac": [
+          0.0,
+          0.264,
+          0.227,
+          0.352
+        ],
+        "width_mm": 100,
+        "height_mm": 40
+      },
+      {
+        "id": 5,
+        "bbox_frac": [
+          0.0,
+          0.352,
+          0.227,
+          0.44
+        ],
+        "width_mm": 100,
+        "height_mm": 40
+      },
+      {
+        "id": 6,
+        "bbox_frac": [
+          0.0,
+          0.44,
+          0.227,
+          0.528
+        ],
+        "width_mm": 100,
+        "height_mm": 20
+      },
+      {
+        "id": 7,
+        "bbox_frac": [
+          0.0,
+          0.528,
+          0.227,
+          0.616
+        ],
+        "width_mm": 100,
+        "height_mm": 20
+      },
+      {
+        "id": 8,
+        "bbox_frac": [
+          0.0,
+          0.616,
+          0.227,
+          0.704
+        ],
+        "width_mm": 100,
+        "height_mm": 20
+      },
+      {
+        "id": 9,
+        "bbox_frac": [
+          0.0,
+          0.704,
+          0.227,
+          0.792
+        ],
+        "width_mm": 100,
+        "height_mm": 20
+      },
+      {
+        "id": 10,
+        "bbox_frac": [
+          0.0,
+          0.792,
+          0.227,
+          0.88
+        ],
+        "width_mm": 100,
+        "height_mm": 20
+      },
+      {
+        "id": 11,
+        "bbox_frac": [
+          0.0,
+          0.88,
+          0.227,
+          0.968
+        ],
+        "width_mm": 100,
+        "height_mm": 20
+      },
+      {
+        "id": 12,
+        "bbox_frac": [
+          0.388,
+          0.0,
+          0.447,
+          0.088
+        ],
+        "width_mm": 20,
+        "height_mm": 20
+      },
+      {
+        "id": 13,
+        "bbox_frac": [
+          0.388,
+          0.088,
+          0.447,
+          0.176
+        ],
+        "width_mm": 20,
+        "height_mm": 20
+      },
+      {
+        "id": 14,
+        "bbox_frac": [
+          0.388,
+          0.176,
+          0.447,
+          0.264
+        ],
+        "width_mm": 20,
+        "height_mm": 20
+      },
+      {
+        "id": 15,
+        "bbox_frac": [
+          0.388,
+          0.264,
+          0.447,
+          0.352
+        ],
+        "width_mm": 20,
+        "height_mm": 20
+      },
+      {
+        "id": 16,
+        "bbox_frac": [
+          0.388,
+          0.352,
+          0.447,
+          0.44
+        ],
+        "width_mm": 20,
+        "height_mm": 20
+      },
+      {
+        "id": 17,
+        "bbox_frac": [
+          0.388,
+          0.44,
+          0.447,
+          0.528
+        ],
+        "width_mm": 20,
+        "height_mm": 20
+      },
+      {
+        "id": 18,
+        "bbox_frac": [
+          0.388,
+          0.528,
+          0.447,
+          0.616
+        ],
+        "width_mm": 20,
+        "height_mm": 20
+      },
+      {
+        "id": 19,
+        "bbox_frac": [
+          0.388,
+          0.616,
+          0.447,
+          0.704
+        ],
+        "width_mm": 20,
+        "height_mm": 20
+      },
+      {
+        "id": 20,
+        "bbox_frac": [
+          0.388,
+          0.704,
+          0.447,
+          0.792
+        ],
+        "width_mm": 20,
+        "height_mm": 20
+      },
+      {
+        "id": 21,
+        "bbox_frac": [
+          0.388,
+          0.792,
+          0.447,
+          0.88
+        ],
+        "width_mm": 20,
+        "height_mm": 20
+      },
+      {
+        "id": 22,
+        "bbox_frac": [
+          0.388,
+          0.88,
+          0.447,
+          0.968
+        ],
+        "width_mm": 20,
+        "height_mm": 20
+      },
+      {
+        "id": 23,
+        "bbox_frac": [
+          0.608,
+          0.0,
+          0.667,
+          0.088
+        ],
+        "width_mm": 20,
+        "height_mm": 20
+      },
+      {
+        "id": 24,
+        "bbox_frac": [
+          0.608,
+          0.088,
+          0.667,
+          0.176
+        ],
+        "width_mm": 20,
+        "height_mm": 20
+      },
+      {
+        "id": 25,
+        "bbox_frac": [
+          0.608,
+          0.176,
+          0.667,
+          0.264
+        ],
+        "width_mm": 20,
+        "height_mm": 20
+      },
+      {
+        "id": 26,
+        "bbox_frac": [
+          0.608,
+          0.264,
+          0.667,
+          0.352
+        ],
+        "width_mm": 20,
+        "height_mm": 20
+      },
+      {
+        "id": 27,
+        "bbox_frac": [
+          0.608,
+          0.352,
+          0.667,
+          0.44
+        ],
+        "width_mm": 20,
+        "height_mm": 20
+      },
+      {
+        "id": 28,
+        "bbox_frac": [
+          0.608,
+          0.44,
+          0.667,
+          0.528
+        ],
+        "width_mm": 20,
+        "height_mm": 20
+      },
+      {
+        "id": 29,
+        "bbox_frac": [
+          0.608,
+          0.528,
+          0.667,
+          0.616
+        ],
+        "width_mm": 20,
+        "height_mm": 20
+      },
+      {
+        "id": 30,
+        "bbox_frac": [
+          0.608,
+          0.616,
+          0.667,
+          0.704
+        ],
+        "width_mm": 20,
+        "height_mm": 20
+      },
+      {
+        "id": 31,
+        "bbox_frac": [
+          0.608,
+          0.704,
+          0.667,
+          0.792
+        ],
+        "width_mm": 20,
+        "height_mm": 20
+      },
+      {
+        "id": 32,
+        "bbox_frac": [
+          0.608,
+          0.792,
+          0.667,
+          0.88
+        ],
+        "width_mm": 20,
+        "height_mm": 20
+      },
+      {
+        "id": 33,
+        "bbox_frac": [
+          0.608,
+          0.88,
+          0.667,
+          0.968
+        ],
+        "width_mm": 20,
+        "height_mm": 20
+      },
+      {
+        "id": 34,
+        "bbox_frac": [
+          0.777,
+          0.0,
+          0.836,
+          0.088
+        ],
+        "width_mm": 20,
+        "height_mm": 20
+      },
+      {
+        "id": 35,
+        "bbox_frac": [
+          0.777,
+          0.088,
+          0.836,
+          0.176
+        ],
+        "width_mm": 20,
+        "height_mm": 20
+      },
+      {
+        "id": 36,
+        "bbox_frac": [
+          0.777,
+          0.176,
+          0.836,
+          0.264
+        ],
+        "width_mm": 20,
+        "height_mm": 20
+      },
+      {
+        "id": 37,
+        "bbox_frac": [
+          0.777,
+          0.264,
+          0.836,
+          0.352
+        ],
+        "width_mm": 20,
+        "height_mm": 20
+      },
+      {
+        "id": 38,
+        "bbox_frac": [
+          0.777,
+          0.352,
+          0.836,
+          0.44
+        ],
+        "width_mm": 20,
+        "height_mm": 20
+      },
+      {
+        "id": 39,
+        "bbox_frac": [
+          0.777,
+          0.44,
+          0.836,
+          0.528
+        ],
+        "width_mm": 20,
+        "height_mm": 20
+      },
+      {
+        "id": 40,
+        "bbox_frac": [
+          0.777,
+          0.528,
+          0.836,
+          0.616
+        ],
+        "width_mm": 20,
+        "height_mm": 20
+      },
+      {
+        "id": 41,
+        "bbox_frac": [
+          0.777,
+          0.616,
+          0.836,
+          0.704
+        ],
+        "width_mm": 20,
+        "height_mm": 20
+      },
+      {
+        "id": 42,
+        "bbox_frac": [
+          0.777,
+          0.704,
+          0.836,
+          0.792
+        ],
+        "width_mm": 20,
+        "height_mm": 20
+      },
+      {
+        "id": 43,
+        "bbox_frac": [
+          0.777,
+          0.792,
+          0.836,
+          0.88
+        ],
+        "width_mm": 20,
+        "height_mm": 20
+      },
+      {
+        "id": 44,
+        "bbox_frac": [
+          0.777,
+          0.88,
+          0.836,
+          0.968
+        ],
+        "width_mm": 20,
+        "height_mm": 20
+      },
+      {
+        "id": 45,
+        "bbox_frac": [
+          0.388,
+          0.968,
+          0.603,
+          1.056
+        ],
+        "width_mm": 100,
+        "height_mm": 20
+      }
+    ]
+  }
+}

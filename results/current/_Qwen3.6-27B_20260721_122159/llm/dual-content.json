@@ -1,0 +1,272 @@
+{
+  "cached_at": "2026-07-21T04:23:56+00:00",
+  "stage": "dual-content",
+  "content": {
+    "plates": [
+      {
+        "id": 1,
+        "line_count": 3,
+        "width_mm": 160.0,
+        "height_mm": 80.0,
+        "lines": [
+          {
+            "text": "BELMONT",
+            "x_mm": 80.0,
+            "y_mm": 25.0,
+            "size_mm": 12.0,
+            "bbox_frac": [
+              0.0625,
+              0.2679,
+              0.1979,
+              0.2857
+            ]
+          },
+          {
+            "text": "PINHOLE",
+            "x_mm": 80.0,
+            "y_mm": 40.0,
+            "size_mm": 12.0,
+            "bbox_frac": [
+              0.0625,
+              0.2857,
+              0.1979,
+              0.3036
+            ]
+          },
+          {
+            "text": "REJECTS",
+            "x_mm": 80.0,
+            "y_mm": 55.0,
+            "size_mm": 12.0,
+            "bbox_frac": [
+              0.0625,
+              0.3036,
+              0.1979,
+              0.3214
+            ]
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "line_count": 2,
+        "width_mm": 160.0,
+        "height_mm": 34.0,
+        "lines": [
+          {
+            "text": "GEOMETRY",
+            "x_mm": 80.0,
+            "y_mm": 8.5,
+            "size_mm": 8.0,
+            "bbox_frac": [
+              0.0625,
+              0.3214,
+              0.1979,
+              0.3286
+            ]
+          },
+          {
+            "text": "REJECTS",
+            "x_mm": 80.0,
+            "y_mm": 17.0,
+            "size_mm": 8.0,
+            "bbox_frac": [
+              0.0625,
+              0.3286,
+              0.1979,
+              0.3357
+            ]
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "line_count": 2,
+        "width_mm": 160.0,
+        "height_mm": 34.0,
+        "lines": [
+          {
+            "text": "PINHOLE",
+            "x_mm": 80.0,
+            "y_mm": 8.5,
+            "size_mm": 8.0,
+            "bbox_frac": [
+              0.0625,
+              0.3429,
+              0.1979,
+              0.35
+            ]
+          },
+          {
+            "text": "REJECTS",
+            "x_mm": 80.0,
+            "y_mm": 17.0,
+            "size_mm": 8.0,
+            "bbox_frac": [
+              0.0625,
+              0.35,
+              0.1979,
+              0.3571
+            ]
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "line_count": 1,
+        "width_mm": 60.0,
+        "height_mm": 8.0,
+        "lines": [
+          {
+            "text": "REJECTS",
+            "x_mm": 30.0,
+            "y_mm": 4.0,
+            "size_mm": 3.0,
+            "bbox_frac": [
+              0.0521,
+              0.3714,
+              0.0677,
+              0.375
+            ]
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "line_count": 1,
+        "width_mm": 60.0,
+        "height_mm": 8.0,
+        "lines": [
+          {
+            "text": "REJECTS",
+            "x_mm": 30.0,
+            "y_mm": 4.0,
+            "size_mm": 3.0,
+            "bbox_frac": [
+              0.0877,
+              0.3714,
+              0.1033,
+              0.375
+            ]
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "line_count": 1,
+        "width_mm": 60.0,
+        "height_mm": 8.0,
+        "lines": [
+          {
+            "text": "REJECTS",
+            "x_mm": 30.0,
+            "y_mm": 4.0,
+            "size_mm": 3.0,
+            "bbox_frac": [
+              0.1233,
+              0.3714,
+              0.1389,
+              0.375
+            ]
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "line_count": 2,
+        "width_mm": 160.0,
+        "height_mm": 34.0,
+        "lines": [
+          {
+            "text": "GEOMETRY",
+            "x_mm": 80.0,
+            "y_mm": 8.5,
+            "size_mm": 8.0,
+            "bbox_frac": [
+              0.2401,
+              0.3214,
+              0.3755,
+              0.3286
+            ]
+          },
+          {
+            "text": "REJECTS",
+            "x_mm": 80.0,
+            "y_mm": 17.0,
+            "size_mm": 8.0,
+            "bbox_frac": [
+              0.2401,
+              0.3286,
+              0.3755,
+              0.3357
+            ]
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "line_count": 2,
+        "width_mm": 160.0,
+        "height_mm": 34.0,
+        "lines": [
+          {
+            "text": "PINHOLE",
+            "x_mm": 80.0,
+            "y_mm": 8.5,
+            "size_mm": 8.0,
+            "bbox_frac": [
+              0.2401,
+              0.3429,
+              0.3755,
+              0.35
+            ]
+          },
+          {
+            "text": "REJECTS",
+            "x_mm": 80.0,
+            "y_mm": 17.0,
+            "size_mm": 8.0,
+            "bbox_frac": [
+              0.2401,
+              0.35,
+              0.3755,
+              0.3571
+            ]
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "line_count": 2,
+        "width_mm": 160.0,
+        "height_mm": 34.0,
+        "lines": [
+          {
+            "text": "GEOMETRY",
+            "x_mm": 80.0,
+            "y_mm": 8.5,
+            "size_mm": 8.0,
+            "bbox_frac": [
+              0.4182,
+              0.3214,
+              0.5536,
+              0.3286
+            ]
+          },
+          {
+            "text": "REJECTS",
+            "x_mm": 80.0,
+            "y_mm": 17.0,
+            "size_mm": 8.0,
+            "bbox_frac": [
+              0.4182,
+              0.3286,
+              0.5536,
+              0.3357
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "draft_type": "sketch",
+  "material": "Stainless Steel",
+  "background_color": null,
+  "text_color": null,
+  "fixing": null,
+  "default_size_mm": 10,
+  "line_sizes": [],
+  "dimension_annotations": [
+    {
+      "value_mm": 200,
+      "axis": "horizontal",
+      "span_frac": [
+        0.2256,
+        0.8319
+      ]
+    },
+    {
+      "value_mm": 35,
+      "axis": "vertical",
+      "span_frac": [
+        0.4367,
+        0.57
+      ]
+    }
+  ],
+  "plates": [
+    {
+      "id": 1,
+      "bbox_frac": [
+        0.2256,
+        0.4367,
+        0.8319,
+        0.57
+      ],
+      "width_mm": 200,
+      "height_mm": 35
+    }
+  ],
+  "gate": {
+    "trust_cv": false,
+    "cv_count": 7,
+    "llm_count": 1,
+    "reasons": [
+      "count gap 600% (cv=7, llm=1) > 60%"
+    ]
+  },
+  "cv_meta": {
+    "size": [
+      1600,
+      1200
+    ],
+    "method": "opencv",
+    "count": 7
+  }
+}

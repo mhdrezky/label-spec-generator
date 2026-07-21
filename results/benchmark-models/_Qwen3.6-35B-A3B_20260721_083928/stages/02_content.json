@@ -1,0 +1,172 @@
+{
+  "plates": [
+    {
+      "id": 1,
+      "line_count": 2,
+      "width_mm": 160,
+      "height_mm": 60,
+      "lines": [
+        {
+          "text": "160mm",
+          "x_mm": 80,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.004166,
+            0.003125,
+            0.139583,
+            0.053125
+          ]
+        },
+        {
+          "text": "60mm",
+          "x_mm": 150,
+          "y_mm": 30,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.139583,
+            0.003125,
+            0.245833,
+            0.053125
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "line_count": 3,
+      "width_mm": 120,
+      "height_mm": 60,
+      "lines": [
+        {
+          "text": "120mm",
+          "x_mm": 60,
+          "y_mm": 5,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.245833,
+            0.053125,
+            0.352083,
+            0.103125
+          ]
+        },
+        {
+          "text": "DUAL SUPPLY\nFAN FAN AND VFD",
+          "x_mm": 60,
+          "y_mm": 30,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.245833,
+            0.103125,
+            0.458333,
+            0.242188
+          ]
+        },
+        {
+          "text": "60mm",
+          "x_mm": 110,
+          "y_mm": 30,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.458333,
+            0.103125,
+            0.564583,
+            0.153125
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "line_count": 2,
+      "width_mm": 120,
+      "height_mm": 50,
+      "lines": [
+        {
+          "text": "120mm",
+          "x_mm": 60,
+          "y_mm": 5,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.004166,
+            0.710938,
+            0.110417,
+            0.760938
+          ]
+        },
+        {
+          "text": "MSSD 575mm\n68",
+          "x_mm": 60,
+          "y_mm": 25,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.004166,
+            0.760938,
+            0.220833,
+            0.860938
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "line_count": 1,
+      "width_mm": 0,
+      "height_mm": 0,
+      "lines": [
+        {
+          "text": "WHITE\nBLACK LETTERING",
+          "x_mm": 150,
+          "y_mm": 30,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.220833,
+            0.103125,
+            0.433333,
+            0.203125
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "line_count": 1,
+      "width_mm": 0,
+      "height_mm": 0,
+      "lines": [
+        {
+          "text": "WHITE\nBLACK LETTERING",
+          "x_mm": 150,
+          "y_mm": 75,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.220833,
+            0.760938,
+            0.433333,
+            0.860938
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "line_count": 1,
+      "width_mm": 0,
+      "height_mm": 0,
+      "lines": [
+        {
+          "text": "5x LABELS TOTAL",
+          "x_mm": 300,
+          "y_mm": 30,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.433333,
+            0.053125,
+            0.858333,
+            0.153125
+          ]
+        }
+      ]
+    }
+  ]
+}

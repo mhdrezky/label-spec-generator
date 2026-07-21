@@ -1,0 +1,40 @@
+{
+  "cached_at": "2026-07-21T04:11:12+00:00",
+  "stage": "dual-content",
+  "content": {
+    "plates": [
+      {
+        "id": 1,
+        "line_count": 2,
+        "width_mm": 200,
+        "height_mm": 35,
+        "lines": [
+          {
+            "text": "FED FROM MCC1 TIER 1",
+            "x_mm": 100,
+            "y_mm": 12,
+            "size_mm": 10,
+            "bbox_frac": [
+              0.295,
+              0.445,
+              0.765,
+              0.485
+            ]
+          },
+          {
+            "text": "STP008-2000-SLV-003 XA.02",
+            "x_mm": 100,
+            "y_mm": 25,
+            "size_mm": 10,
+            "bbox_frac": [
+              0.225,
+              0.495,
+              0.83,
+              0.565
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

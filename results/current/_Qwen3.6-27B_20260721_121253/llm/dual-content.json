@@ -1,0 +1,780 @@
+{
+  "cached_at": "2026-07-21T04:17:06+00:00",
+  "stage": "dual-content",
+  "content": {
+    "plates": [
+      {
+        "id": 1,
+        "line_count": 1,
+        "width_mm": null,
+        "height_mm": null,
+        "lines": [
+          {
+            "text": "Project: St. Leonards MSB 1",
+            "x_mm": 100,
+            "y_mm": 10,
+            "size_mm": 5,
+            "bbox_frac": [
+              0.054575,
+              0.047505,
+              0.481108,
+              0.114608
+            ]
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "line_count": 3,
+        "width_mm": null,
+        "height_mm": null,
+        "lines": [
+          {
+            "text": "Drawing References & Version",
+            "x_mm": 100,
+            "y_mm": 10,
+            "size_mm": 5,
+            "bbox_frac": [
+              0.481108,
+              0.047505,
+              0.850545,
+              0.06
+            ]
+          },
+          {
+            "text": "Layout - M6339-RH",
+            "x_mm": 100,
+            "y_mm": 20,
+            "size_mm": 5,
+            "bbox_frac": [
+              0.481108,
+              0.06,
+              0.850545,
+              0.08
+            ]
+          },
+          {
+            "text": "SLD - M6339B-RE & M6339A-RC",
+            "x_mm": 100,
+            "y_mm": 30,
+            "size_mm": 5,
+            "bbox_frac": [
+              0.481108,
+              0.08,
+              0.850545,
+              0.114608
+            ]
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "line_count": 1,
+        "width_mm": null,
+        "height_mm": null,
+        "lines": [
+          {
+            "text": "LABEL DESCRIPTION",
+            "x_mm": 100,
+            "y_mm": 10,
+            "size_mm": 5,
+            "bbox_frac": [
+              0.054575,
+              0.114608,
+              0.481108,
+              0.147268
+            ]
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "line_count": 1,
+        "width_mm": null,
+        "height_mm": null,
+        "lines": [
+          {
+            "text": "Logo-Compliance Label MSB- MSB",
+            "x_mm": 100,
+            "y_mm": 10,
+            "size_mm": 5,
+            "bbox_frac": [
+              0.055415,
+              0.147268,
+              0.481108,
+              0.164489
+            ]
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "line_count": 4,
+        "width_mm": null,
+        "height_mm": null,
+        "lines": [
+          {
+            "text": "FONT",
+            "x_mm": 100,
+            "y_mm": 10,
+            "size_mm": 5,
+            "bbox_frac": [
+              0.481108,
+              0.147268,
+              0.6,
+              0.164489
+            ]
+          },
+          {
+            "text": "SIZE",
+            "x_mm": 100,
+            "y_mm": 10,
+            "size_mm": 5,
+            "bbox_frac": [
+              0.6,
+              0.147268,
+              0.7,
+              0.164489
+            ]
+          },
+          {
+            "text": "COLOUR",
+            "x_mm": 100,
+            "y_mm": 10,
+            "size_mm": 5,
+            "bbox_frac": [
+              0.7,
+              0.147268,
+              0.8,
+              0.164489
+            ]
+          },
+          {
+            "text": "QUANTITY REQUIRED",
+            "x_mm": 100,
+            "y_mm": 10,
+            "size_mm": 5,
+            "bbox_frac": [
+              0.8,
+              0.147268,
+              0.942905,
+              0.164489
+            ]
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "line_count": 12,
+        "width_mm": 150,
+        "height_mm": 70,
+        "lines": [
+          {
+            "text": "M P E",
+            "x_mm": 75,
+            "y_mm": 10,
+            "size_mm": 12,
+            "bbox_frac": [
+              0.054575,
+              0.164489,
+              0.481108,
+              0.2
+            ]
+          },
+          {
+            "text": "custom switchboards",
+            "x_mm": 75,
+            "y_mm": 20,
+            "size_mm": 5,
+            "bbox_frac": [
+              0.054575,
+              0.2,
+              0.481108,
+              0.22
+            ]
+          },
+          {
+            "text": "SMITHFIELD NSW 2164 (02) 9721 1698",
+            "x_mm": 75,
+            "y_mm": 30,
+            "size_mm": 3,
+            "bbox_frac": [
+              0.054575,
+              0.22,
+              0.481108,
+              0.24
+            ]
+          },
+          {
+            "text": "SWITCHBOARD BUILT TO AS/NZS 61439.1/2 : 2016",
+            "x_mm": 75,
+            "y_mm": 35,
+            "size_mm": 3,
+            "bbox_frac": [
+              0.054575,
+              0.24,
+              0.481108,
+              0.26
+            ]
+          },
+          {
+            "text": "AS/NZS 3000 : 2018",
+            "x_mm": 75,
+            "y_mm": 40,
+            "size_mm": 3,
+            "bbox_frac": [
+              0.054575,
+              0.26,
+              0.481108,
+              0.28
+            ]
+          },
+          {
+            "text": "SEGREGATION : FORM 3b/3bih",
+            "x_mm": 75,
+            "y_mm": 45,
+            "size_mm": 3,
+            "bbox_frac": [
+              0.054575,
+              0.28,
+              0.481108,
+              0.3
+            ]
+          },
+          {
+            "text": "DEGREE OF PROTECTION : IP42",
+            "x_mm": 75,
+            "y_mm": 50,
+            "size_mm": 3,
+            "bbox_frac": [
+              0.054575,
+              0.3,
+              0.481108,
+              0.32
+            ]
+          },
+          {
+            "text": "RATED : 415v 50Hz",
+            "x_mm": 75,
+            "y_mm": 55,
+            "size_mm": 3,
+            "bbox_frac": [
+              0.054575,
+              0.32,
+              0.481108,
+              0.34
+            ]
+          },
+          {
+            "text": "FAULT LEVEL : 40kA / 1 sec",
+            "x_mm": 75,
+            "y_mm": 60,
+            "size_mm": 3,
+            "bbox_frac": [
+              0.054575,
+              0.34,
+              0.481108,
+              0.36
+            ]
+          },
+          {
+            "text": "DATE OF MANUFACTURE : JULY 2026",
+            "x_mm": 75,
+            "y_mm": 65,
+            "size_mm": 3,
+            "bbox_frac": [
+              0.054575,
+              0.36,
+              0.481108,
+              0.38
+            ]
+          },
+          {
+            "text": "REFERENCE : M6339",
+            "x_mm": 75,
+            "y_mm": 70,
+            "size_mm": 3,
+            "bbox_frac": [
+              0.054575,
+              0.38,
+              0.481108,
+              0.4
+            ]
+          },
+          {
+            "text": "BOLD & 3mm",
+            "x_mm": 75,
+            "y_mm": 10,
+            "size_mm": 5,
+            "bbox_frac": [
+              0.481108,
+              0.164489,
+              0.6,
+              0.2
+            ]
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "line_count": 1,
+        "width_mm": 130,
+        "height_mm": 30,
+        "lines": [
+          {
+            "text": "MAIN SWITCHBOARD 1",
+            "x_mm": 65,
+            "y_mm": 15,
+            "size_mm": 9,
+            "bbox_frac": [
+              0.054575,
+              0.359263,
+              0.481108,
+              0.400237
+            ]
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "line_count": 2,
+        "width_mm": 80,
+        "height_mm": 20,
+        "lines": [
+          {
+            "text": "SERVICE PROTECTION",
+            "x_mm": 40,
+            "y_mm": 10,
+            "size_mm": 6,
+            "bbox_frac": [
+              0.054575,
+              0.400237,
+              0.481108,
+              0.415
+            ]
+          },
+          {
+            "text": "DEVICE",
+            "x_mm": 40,
+            "y_mm": 15,
+            "size_mm": 6,
+            "bbox_frac": [
+              0.054575,
+              0.415,
+              0.481108,
+              0.434679
+            ]
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "line_count": 2,
+        "width_mm": 80,
+        "height_mm": 20,
+        "lines": [
+          {
+            "text": "PRIVATE METERING",
+            "x_mm": 40,
+            "y_mm": 10,
+            "size_mm": 6,
+            "bbox_frac": [
+              0.054575,
+              0.434679,
+              0.481108,
+              0.45
+            ]
+          },
+          {
+            "text": "TOWER 1",
+            "x_mm": 40,
+            "y_mm": 15,
+            "size_mm": 6,
+            "bbox_frac": [
+              0.054575,
+              0.45,
+              0.481108,
+              0.469121
+            ]
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "line_count": 2,
+        "width_mm": 80,
+        "height_mm": 20,
+        "lines": [
+          {
+            "text": "HOUSE SERVICES",
+            "x_mm": 40,
+            "y_mm": 10,
+            "size_mm": 6,
+            "bbox_frac": [
+              0.054575,
+              0.469121,
+              0.481108,
+              0.485
+            ]
+          },
+          {
+            "text": "SECTION",
+            "x_mm": 40,
+            "y_mm": 15,
+            "size_mm": 6,
+            "bbox_frac": [
+              0.054575,
+              0.485,
+              0.481108,
+              0.503562
+            ]
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "line_count": 2,
+        "width_mm": 80,
+        "height_mm": 20,
+        "lines": [
+          {
+            "text": "HOUSE SERVICES",
+            "x_mm": 40,
+            "y_mm": 10,
+            "size_mm": 6,
+            "bbox_frac": [
+              0.054575,
+              0.503562,
+              0.481108,
+              0.52
+            ]
+          },
+          {
+            "text": "TOWER 1 SECTION",
+            "x_mm": 40,
+            "y_mm": 15,
+            "size_mm": 6,
+            "bbox_frac": [
+              0.054575,
+              0.52,
+              0.481108,
+              0.538004
+            ]
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "line_count": 2,
+        "width_mm": 80,
+        "height_mm": 20,
+        "lines": [
+          {
+            "text": "HOUSE SERVICES",
+            "x_mm": 40,
+            "y_mm": 10,
+            "size_mm": 6,
+            "bbox_frac": [
+              0.054575,
+              0.538598,
+              0.481108,
+              0.555
+            ]
+          },
+          {
+            "text": "TOWER 2 SECTION",
+            "x_mm": 40,
+            "y_mm": 15,
+            "size_mm": 6,
+            "bbox_frac": [
+              0.054575,
+              0.555,
+              0.481108,
+              0.57304
+            ]
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "line_count": 2,
+        "width_mm": 80,
+        "height_mm": 20,
+        "lines": [
+          {
+            "text": "SAFETY SERVICES",
+            "x_mm": 40,
+            "y_mm": 10,
+            "size_mm": 6,
+            "bbox_frac": [
+              0.054575,
+              0.57304,
+              0.481108,
+              0.59
+            ]
+          },
+          {
+            "text": "TOWER 1 SECTION",
+            "x_mm": 40,
+            "y_mm": 15,
+            "size_mm": 6,
+            "bbox_frac": [
+              0.054575,
+              0.59,
+              0.481108,
+              0.607482
+            ]
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "line_count": 2,
+        "width_mm": 80,
+        "height_mm": 20,
+        "lines": [
+          {
+            "text": "EV SECTION",
+            "x_mm": 40,
+            "y_mm": 10,
+            "size_mm": 6,
+            "bbox_frac": [
+              0.054575,
+              0.607482,
+              0.481108,
+              0.625
+            ]
+          },
+          {
+            "text": "TOWER 2",
+            "x_mm": 40,
+            "y_mm": 15,
+            "size_mm": 6,
+            "bbox_frac": [
+              0.054575,
+              0.625,
+              0.481108,
+              0.641923
+            ]
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "line_count": 2,
+        "width_mm": 80,
+        "height_mm": 20,
+        "lines": [
+          {
+            "text": "SOLAR",
+            "x_mm": 40,
+            "y_mm": 10,
+            "size_mm": 6,
+            "bbox_frac": [
+              0.054575,
+              0.641923,
+              0.481108,
+              0.66
+            ]
+          },
+          {
+            "text": "SECTION",
+            "x_mm": 40,
+            "y_mm": 15,
+            "size_mm": 6,
+            "bbox_frac": [
+              0.054575,
+              0.66,
+              0.481108,
+              0.676365
+            ]
+          }
+        ]
+      },
+      {
+        "id": 16,
+        "line_count": 2,
+        "width_mm": 80,
+        "height_mm": 20,
+        "lines": [
+          {
+            "text": "RETAIL METERING",
+            "x_mm": 40,
+            "y_mm": 10,
+            "size_mm": 6,
+            "bbox_frac": [
+              0.054575,
+              0.676365,
+              0.481108,
+              0.695
+            ]
+          },
+          {
+            "text": "SECTION",
+            "x_mm": 40,
+            "y_mm": 15,
+            "size_mm": 6,
+            "bbox_frac": [
+              0.054575,
+              0.695,
+              0.481108,
+              0.710807
+            ]
+          }
+        ]
+      },
+      {
+        "id": 17,
+        "line_count": 3,
+        "width_mm": 80,
+        "height_mm": 30,
+        "lines": [
+          {
+            "text": "ACCREDITED METERING",
+            "x_mm": 40,
+            "y_mm": 10,
+            "size_mm": 6,
+            "bbox_frac": [
+              0.054575,
+              0.710807,
+              0.481108,
+              0.73
+            ]
+          },
+          {
+            "text": "PROVIDER METERING",
+            "x_mm": 40,
+            "y_mm": 15,
+            "size_mm": 6,
+            "bbox_frac": [
+              0.054575,
+              0.73,
+              0.481108,
+              0.75
+            ]
+          },
+          {
+            "text": "CT'S MOUNTED BEHIND",
+            "x_mm": 40,
+            "y_mm": 20,
+            "size_mm": 6,
+            "bbox_frac": [
+              0.054575,
+              0.75,
+              0.481108,
+              0.76247
+            ]
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "line_count": 4,
+        "width_mm": 70,
+        "height_mm": 15,
+        "lines": [
+          {
+            "text": "WARNING",
+            "x_mm": 35,
+            "y_mm": 5,
+            "size_mm": 6,
+            "bbox_frac": [
+              0.054575,
+              0.826603,
+              0.481108,
+              0.835
+            ]
+          },
+          {
+            "text": "TO BE ACCESSED BY",
+            "x_mm": 35,
+            "y_mm": 7,
+            "size_mm": 4,
+            "bbox_frac": [
+              0.054575,
+              0.835,
+              0.481108,
+              0.84
+            ]
+          },
+          {
+            "text": "AUTHORISED PERSONNEL",
+            "x_mm": 35,
+            "y_mm": 9,
+            "size_mm": 4,
+            "bbox_frac": [
+              0.054575,
+              0.84,
+              0.481108,
+              0.845
+            ]
+          },
+          {
+            "text": "ONLY",
+            "x_mm": 35,
+            "y_mm": 11,
+            "size_mm": 4,
+            "bbox_frac": [
+              0.054575,
+              0.845,
+              0.481108,
+              0.843824
+            ]
+          }
+        ]
+      },
+      {
+        "id": 19,
+        "line_count": 1,
+        "width_mm": 80,
+        "height_mm": 20,
+        "lines": [
+          {
+            "text": "SURGE DIVERTER",
+            "x_mm": 40,
+            "y_mm": 10,
+            "size_mm": 6,
+            "bbox_frac": [
+              0.054575,
+              0.843824,
+              0.481108,
+              0.86
+            ]
+          }
+        ]
+      },
+      {
+        "id": 20,
+        "line_count": 2,
+        "width_mm": 80,
+        "height_mm": 20,
+        "lines": [
+          {
+            "text": "SURGE DIVERTER",
+            "x_mm": 40,
+            "y_mm": 10,
+            "size_mm": 6,
+            "bbox_frac": [
+              0.054575,
+              0.86,
+              0.481108,
+              0.875
+            ]
+          },
+          {
+            "text": "MOUNTED BEHIND",
+            "x_mm": 40,
+            "y_mm": 15,
+            "size_mm": 6,
+            "bbox_frac": [
+              0.054575,
+              0.875,
+              0.481108,
+              0.878266
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

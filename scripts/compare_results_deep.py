@@ -5,7 +5,12 @@ from pathlib import Path
 
 
 def resolve_run(run: str) -> Path:
-    for base in (Path("results"), Path("results/archieve")):
+    for base in (
+        Path("results/current"),
+        Path("results/benchmark-models"),
+        Path("results/archieve"),
+        Path("results"),
+    ):
         p = base / run if "/" not in run else base / run.split("/", 1)[1]
         if (p / "specs.json").is_file():
             return p

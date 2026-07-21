@@ -10,7 +10,18 @@ from dual_call.postprocess import merge_to_spec
 def main() -> None:
     run_id = sys.argv[1]
     pids = [int(x) for x in sys.argv[2:]] if len(sys.argv) > 2 else [5]
-    base = Path("results") / run_id
+    for base in (
+        Path("results/current"),
+        Path("results/benchmark-models"),
+        Path("results/archieve"),
+        Path("results"),
+    ):
+        candidate = base / run_id
+        if candidate.is_dir():
+            base = candidate
+            break
+    else:
+        raise FileNotFoundError(run_id)
     structure = json.loads((base / "stages/01_structure.json").read_text(encoding="utf-8"))
     content = json.loads((base / "stages/02_content.json").read_text(encoding="utf-8"))
     specs = json.loads((base / "specs.json").read_text(encoding="utf-8"))

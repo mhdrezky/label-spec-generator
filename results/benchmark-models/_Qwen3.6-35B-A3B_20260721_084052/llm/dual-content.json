@@ -1,0 +1,420 @@
+{
+  "cached_at": "2026-07-21T00:41:20+00:00",
+  "stage": "dual-content",
+  "content": {
+    "plates": [
+      {
+        "id": 1,
+        "line_count": 1,
+        "width_mm": null,
+        "height_mm": null,
+        "lines": [
+          {
+            "text": "Project: St. Leonards MSB 1",
+            "x_mm": null,
+            "y_mm": null,
+            "size_mm": null,
+            "bbox_frac": [
+              0.054575,
+              0.047506,
+              0.481108,
+              0.065
+            ]
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "line_count": 2,
+        "width_mm": null,
+        "height_mm": null,
+        "lines": [
+          {
+            "text": "Drawing References & Version",
+            "x_mm": null,
+            "y_mm": null,
+            "size_mm": null,
+            "bbox_frac": [
+              0.481108,
+              0.047506,
+              0.850546,
+              0.065
+            ]
+          },
+          {
+            "text": "Layout - M6339-RH\nSLD - M6339B-RE & M6339A-RC",
+            "x_mm": null,
+            "y_mm": null,
+            "size_mm": null,
+            "bbox_frac": [
+              0.481108,
+              0.065,
+              0.850546,
+              0.114608
+            ]
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "line_count": 1,
+        "width_mm": null,
+        "height_mm": null,
+        "lines": [
+          {
+            "text": "LABEL DESCRIPTION",
+            "x_mm": null,
+            "y_mm": null,
+            "size_mm": null,
+            "bbox_frac": [
+              0.054576,
+              0.114608,
+              0.481108,
+              0.147268
+            ]
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "line_count": 1,
+        "width_mm": 150,
+        "height_mm": 70,
+        "lines": [
+          {
+            "text": "Logo-Compliance Label MSB- MSB",
+            "x_mm": null,
+            "y_mm": null,
+            "size_mm": null,
+            "bbox_frac": [
+              0.055416,
+              0.147268,
+              0.481108,
+              0.164489
+            ]
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "line_count": 1,
+        "width_mm": null,
+        "height_mm": null,
+        "lines": [
+          {
+            "text": "Page 1 of 7",
+            "x_mm": null,
+            "y_mm": null,
+            "size_mm": null,
+            "bbox_frac": [
+              0.850546,
+              0.047506,
+              0.942905,
+              0.114608
+            ]
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "line_count": 1,
+        "width_mm": 150,
+        "height_mm": 70,
+        "lines": [
+          {
+            "text": "MPE custom switchboards\nSMITHFIELD NSW 2164 (02) 9721 1698\nSWITCHBOARD BUILT TO AS/NZS 61439.1/2 : 2016\nAS/NZS 3000 : 2018\nSEGREGATION : FORM 3b/3bih\nDEGREE OF PROTECTION : IP42\nRATED : 415v 50Hz\nFAULT LEVEL : 40kA / 1 sec\nDATE OF MANUFACTURE : JULY 2026\nREFERENCE : M6339",
+            "x_mm": null,
+            "y_mm": null,
+            "size_mm": null,
+            "bbox_frac": [
+              0.054576,
+              0.164489,
+              0.481108,
+              0.35867
+            ]
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "line_count": 1,
+        "width_mm": 130,
+        "height_mm": 30,
+        "lines": [
+          {
+            "text": "MAIN SWITCHBOARD 1",
+            "x_mm": null,
+            "y_mm": null,
+            "size_mm": null,
+            "bbox_frac": [
+              0.054576,
+              0.359264,
+              0.481108,
+              0.400238
+            ]
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "line_count": 1,
+        "width_mm": 80,
+        "height_mm": 20,
+        "lines": [
+          {
+            "text": "SERVICE PROTECTION DEVICE",
+            "x_mm": null,
+            "y_mm": null,
+            "size_mm": null,
+            "bbox_frac": [
+              0.054576,
+              0.400238,
+              0.481108,
+              0.434679
+            ]
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "line_count": 1,
+        "width_mm": 80,
+        "height_mm": 20,
+        "lines": [
+          {
+            "text": "PRIVATE METERING TOWER 1",
+            "x_mm": null,
+            "y_mm": null,
+            "size_mm": null,
+            "bbox_frac": [
+              0.054576,
+              0.434679,
+              0.481108,
+              0.469121
+            ]
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "line_count": 1,
+        "width_mm": 80,
+        "height_mm": 20,
+        "lines": [
+          {
+            "text": "HOUSE SERVICES SECTION",
+            "x_mm": null,
+            "y_mm": null,
+            "size_mm": null,
+            "bbox_frac": [
+              0.054576,
+              0.469121,
+              0.481108,
+              0.503563
+            ]
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "line_count": 1,
+        "width_mm": 80,
+        "height_mm": 20,
+        "lines": [
+          {
+            "text": "HOUSE SERVICES TOWER 1 SECTION",
+            "x_mm": null,
+            "y_mm": null,
+            "size_mm": null,
+            "bbox_frac": [
+              0.054576,
+              0.503563,
+              0.481108,
+              0.538005
+            ]
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "line_count": 1,
+        "width_mm": 80,
+        "height_mm": 20,
+        "lines": [
+          {
+            "text": "HOUSE SERVICES TOWER 2 SECTION",
+            "x_mm": null,
+            "y_mm": null,
+            "size_mm": null,
+            "bbox_frac": [
+              0.054576,
+              0.538599,
+              0.481108,
+              0.57304
+            ]
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "line_count": 1,
+        "width_mm": 80,
+        "height_mm": 20,
+        "lines": [
+          {
+            "text": "SAFETY SERVICES TOWER 1 SECTION",
+            "x_mm": null,
+            "y_mm": null,
+            "size_mm": null,
+            "bbox_frac": [
+              0.054576,
+              0.57304,
+              0.481108,
+              0.607482
+            ]
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "line_count": 1,
+        "width_mm": 80,
+        "height_mm": 20,
+        "lines": [
+          {
+            "text": "EV SECTION TOWER 2",
+            "x_mm": null,
+            "y_mm": null,
+            "size_mm": null,
+            "bbox_frac": [
+              0.054576,
+              0.607482,
+              0.481108,
+              0.641924
+            ]
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "line_count": 1,
+        "width_mm": 80,
+        "height_mm": 20,
+        "lines": [
+          {
+            "text": "SOLAR SECTION",
+            "x_mm": null,
+            "y_mm": null,
+            "size_mm": null,
+            "bbox_frac": [
+              0.054576,
+              0.641924,
+              0.481108,
+              0.676366
+            ]
+          }
+        ]
+      },
+      {
+        "id": 16,
+        "line_count": 1,
+        "width_mm": 80,
+        "height_mm": 20,
+        "lines": [
+          {
+            "text": "RETAIL METERING SECTION",
+            "x_mm": null,
+            "y_mm": null,
+            "size_mm": null,
+            "bbox_frac": [
+              0.054576,
+              0.676366,
+              0.481108,
+              0.710808
+            ]
+          }
+        ]
+      },
+      {
+        "id": 17,
+        "line_count": 1,
+        "width_mm": 80,
+        "height_mm": 30,
+        "lines": [
+          {
+            "text": "ACCREDITED METERING PROVIDER METERING CT'S MOUNTED BEHIND",
+            "x_mm": null,
+            "y_mm": null,
+            "size_mm": null,
+            "bbox_frac": [
+              0.054576,
+              0.710808,
+              0.481108,
+              0.76247
+            ]
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "line_count": 1,
+        "width_mm": 70,
+        "height_mm": 15,
+        "lines": [
+          {
+            "text": "SURGE DIVERter",
+            "x_mm": null,
+            "y_mm": null,
+            "size_mm": null,
+            "bbox_frac": [
+              0.054576,
+              0.826603,
+              0.481108,
+              0.843824
+            ]
+          }
+        ]
+      },
+      {
+        "id": 19,
+        "line_count": 1,
+        "width_mm": 80,
+        "height_mm": 20,
+        "lines": [
+          {
+            "text": "SURGE DIVERter MOUNTED BEHIND",
+            "x_mm": null,
+            "y_mm": null,
+            "size_mm": null,
+            "bbox_frac": [
+              0.054576,
+              0.843824,
+              0.481108,
+              0.878266
+            ]
+          }
+        ]
+      },
+      {
+        "id": 20,
+        "line_count": 1,
+        "width_mm": 80,
+        "height_mm": 30,
+        "lines": [
+          {
+            "text": "ACCREDITED METERING PROVIDER EQUIPMENT MOUNTED BEHIND",
+            "x_mm": null,
+            "y_mm": null,
+            "size_mm": null,
+            "bbox_frac": [
+              0.054576,
+              0.878266,
+              0.481108,
+              0.929929
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

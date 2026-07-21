@@ -1,0 +1,648 @@
+{
+  "plates": [
+    {
+      "id": 1,
+      "line_count": 3,
+      "width_mm": 70,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "DIGITAL POWER METER 20",
+          "x_mm": 35,
+          "y_mm": 10,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.054575,
+            0.047506,
+            0.481108,
+            0.057506
+          ]
+        },
+        {
+          "text": "MONITORS LIFT #T2-2",
+          "x_mm": 35,
+          "y_mm": 14,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.054575,
+            0.057506,
+            0.481108,
+            0.067506
+          ]
+        },
+        {
+          "text": "CIRCUITS 61 TO 63",
+          "x_mm": 35,
+          "y_mm": 18,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.054575,
+            0.067506,
+            0.481108,
+            0.077506
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "line_count": 3,
+      "width_mm": 70,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "DIGITAL POWER METER 21",
+          "x_mm": 35,
+          "y_mm": 10,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.481108,
+            0.047506,
+            0.850546,
+            0.057506
+          ]
+        },
+        {
+          "text": "MONITORS LIFT #T2-3",
+          "x_mm": 35,
+          "y_mm": 14,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.481108,
+            0.057506,
+            0.850546,
+            0.067506
+          ]
+        },
+        {
+          "text": "CIRCUITS 64 TO 66",
+          "x_mm": 35,
+          "y_mm": 18,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.481108,
+            0.067506,
+            0.850546,
+            0.077506
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "line_count": 3,
+      "width_mm": 70,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "DIGITAL POWER METER 22",
+          "x_mm": 35,
+          "y_mm": 10,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.054575,
+            0.296318,
+            0.481108,
+            0.306318
+          ]
+        },
+        {
+          "text": "MONITORS LIFT #T1-2",
+          "x_mm": 35,
+          "y_mm": 14,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.054575,
+            0.306318,
+            0.481108,
+            0.316318
+          ]
+        },
+        {
+          "text": "CIRCUITS 67 TO 69",
+          "x_mm": 35,
+          "y_mm": 18,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.054575,
+            0.316318,
+            0.481108,
+            0.326318
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "line_count": 3,
+      "width_mm": 70,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "DIGITAL POWER METER 23",
+          "x_mm": 35,
+          "y_mm": 10,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.054575,
+            0.388955,
+            0.481108,
+            0.398955
+          ]
+        },
+        {
+          "text": "MONITORS DB-FC",
+          "x_mm": 35,
+          "y_mm": 14,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.054575,
+            0.398955,
+            0.481108,
+            0.408955
+          ]
+        },
+        {
+          "text": "CIRCUITS 70 TO 72",
+          "x_mm": 35,
+          "y_mm": 18,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.054575,
+            0.408955,
+            0.481108,
+            0.418955
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "line_count": 3,
+      "width_mm": 90,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "DIGITAL POWER METER 1 EV LOAD",
+          "x_mm": 45,
+          "y_mm": 10,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.054575,
+            0.404988,
+            0.481108,
+            0.414988
+          ]
+        },
+        {
+          "text": "MONITORS MAIN SWITCHBOARD",
+          "x_mm": 45,
+          "y_mm": 14,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.054575,
+            0.414988,
+            0.481108,
+            0.424988
+          ]
+        },
+        {
+          "text": "CIRCUITS 1 TO 72",
+          "x_mm": 45,
+          "y_mm": 18,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.054575,
+            0.424988,
+            0.481108,
+            0.434988
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "line_count": 3,
+      "width_mm": 90,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "DIGITAL POWER METER 2 EV SOLAR",
+          "x_mm": 45,
+          "y_mm": 10,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.054575,
+            0.420428,
+            0.481108,
+            0.430428
+          ]
+        },
+        {
+          "text": "MONITORS SOLAR SYSTEM",
+          "x_mm": 45,
+          "y_mm": 14,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.054575,
+            0.430428,
+            0.481108,
+            0.440428
+          ]
+        },
+        {
+          "text": "CIRCUIT 6",
+          "x_mm": 45,
+          "y_mm": 18,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.054575,
+            0.440428,
+            0.481108,
+            0.450428
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "line_count": 1,
+      "width_mm": 30,
+      "height_mm": 15,
+      "lines": [
+        {
+          "text": "MAX/250A",
+          "x_mm": 15,
+          "y_mm": 7.5,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.054575,
+            0.435867,
+            0.481108,
+            0.445867
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "line_count": 1,
+      "width_mm": 30,
+      "height_mm": 15,
+      "lines": [
+        {
+          "text": "225/250A",
+          "x_mm": 15,
+          "y_mm": 7.5,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.054575,
+            0.451306,
+            0.481108,
+            0.461306
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "line_count": 1,
+      "width_mm": 30,
+      "height_mm": 15,
+      "lines": [
+        {
+          "text": "175/250A",
+          "x_mm": 15,
+          "y_mm": 7.5,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.054575,
+            0.466746,
+            0.481108,
+            0.476746
+          ]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "line_count": 1,
+      "width_mm": 30,
+      "height_mm": 15,
+      "lines": [
+        {
+          "text": "200/250A",
+          "x_mm": 15,
+          "y_mm": 7.5,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.054575,
+            0.482185,
+            0.481108,
+            0.492185
+          ]
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "line_count": 1,
+      "width_mm": 30,
+      "height_mm": 15,
+      "lines": [
+        {
+          "text": "250/250A",
+          "x_mm": 15,
+          "y_mm": 7.5,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.054575,
+            0.498219,
+            0.481108,
+            0.508219
+          ]
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "line_count": 1,
+      "width_mm": 30,
+      "height_mm": 15,
+      "lines": [
+        {
+          "text": "48/80A",
+          "x_mm": 15,
+          "y_mm": 7.5,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.054575,
+            0.513658,
+            0.481108,
+            0.523658
+          ]
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "line_count": 1,
+      "width_mm": 30,
+      "height_mm": 15,
+      "lines": [
+        {
+          "text": "MAX/400A",
+          "x_mm": 15,
+          "y_mm": 7.5,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.054575,
+            0.529097,
+            0.481108,
+            0.539097
+          ]
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "line_count": 1,
+      "width_mm": 30,
+      "height_mm": 15,
+      "lines": [
+        {
+          "text": "800/800A",
+          "x_mm": 15,
+          "y_mm": 7.5,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.054575,
+            0.544537,
+            0.481108,
+            0.554537
+          ]
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "line_count": 1,
+      "width_mm": 30,
+      "height_mm": 15,
+      "lines": [
+        {
+          "text": "280/400A",
+          "x_mm": 15,
+          "y_mm": 7.5,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.054575,
+            0.559976,
+            0.481108,
+            0.569976
+          ]
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "line_count": 1,
+      "width_mm": 30,
+      "height_mm": 15,
+      "lines": [
+        {
+          "text": "1250/1250A",
+          "x_mm": 15,
+          "y_mm": 7.5,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.054575,
+            0.575416,
+            0.481108,
+            0.585416
+          ]
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "line_count": 1,
+      "width_mm": 30,
+      "height_mm": 15,
+      "lines": [
+        {
+          "text": "320/400A",
+          "x_mm": 15,
+          "y_mm": 7.5,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.054575,
+            0.591449,
+            0.481108,
+            0.601449
+          ]
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "line_count": 1,
+      "width_mm": 30,
+      "height_mm": 15,
+      "lines": [
+        {
+          "text": "80/80A",
+          "x_mm": 15,
+          "y_mm": 7.5,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.054575,
+            0.606888,
+            0.481108,
+            0.616888
+          ]
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "line_count": 1,
+      "width_mm": 30,
+      "height_mm": 15,
+      "lines": [
+        {
+          "text": "128/160A",
+          "x_mm": 15,
+          "y_mm": 7.5,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.054575,
+            0.622328,
+            0.481108,
+            0.632328
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "line_count": 1,
+      "width_mm": 30,
+      "height_mm": 15,
+      "lines": [
+        {
+          "text": "162/250A",
+          "x_mm": 15,
+          "y_mm": 7.5,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.054575,
+            0.637767,
+            0.481108,
+            0.647767
+          ]
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "line_count": 1,
+      "width_mm": 30,
+      "height_mm": 15,
+      "lines": [
+        {
+          "text": "40/80A",
+          "x_mm": 15,
+          "y_mm": 7.5,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.054575,
+            0.653207,
+            0.481108,
+            0.663207
+          ]
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "line_count": 1,
+      "width_mm": 30,
+      "height_mm": 15,
+      "lines": [
+        {
+          "text": "200/400A",
+          "x_mm": 15,
+          "y_mm": 7.5,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.054575,
+            0.668646,
+            0.481108,
+            0.678646
+          ]
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "line_count": 1,
+      "width_mm": 30,
+      "height_mm": 15,
+      "lines": [
+        {
+          "text": "80/160A",
+          "x_mm": 15,
+          "y_mm": 7.5,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.054575,
+            0.684679,
+            0.481108,
+            0.694679
+          ]
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "line_count": 1,
+      "width_mm": 30,
+      "height_mm": 15,
+      "lines": [
+        {
+          "text": "1000/1000A",
+          "x_mm": 15,
+          "y_mm": 7.5,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.054575,
+            0.700119,
+            0.481108,
+            0.710119
+          ]
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "line_count": 1,
+      "width_mm": 30,
+      "height_mm": 15,
+      "lines": [
+        {
+          "text": "144/160A",
+          "x_mm": 15,
+          "y_mm": 7.5,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.054575,
+            0.715558,
+            0.481108,
+            0.725558
+          ]
+        }
+      ]
+    }
+  ]
+}

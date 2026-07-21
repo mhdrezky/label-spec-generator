@@ -1,0 +1,53 @@
+{
+  "cached_at": "2026-07-21T00:35:40+00:00",
+  "stage": "dual-structure",
+  "content": {
+    "draft_type": "photo",
+    "material": "Traffolyte or SS316",
+    "background_color": "Yellow (For Traffolyte)",
+    "text_color": "Black",
+    "fixing": "Self-adhesive",
+    "default_size_mm": null,
+    "line_sizes": [
+      {
+        "line": 1,
+        "size_mm": 20
+      },
+      {
+        "line": 2,
+        "size_mm": 10
+      }
+    ],
+    "dimension_annotations": [
+      {
+        "value_mm": 280,
+        "axis": "horizontal",
+        "span_frac": [
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "value_mm": 80,
+        "axis": "vertical",
+        "span_frac": [
+          0.0,
+          1.0
+        ]
+      }
+    ],
+    "plates": [
+      {
+        "id": 1,
+        "bbox_frac": [
+          0.0,
+          0.0,
+          1.0,
+          0.6481
+        ],
+        "width_mm": 280,
+        "height_mm": 80
+      }
+    ]
+  }
+}

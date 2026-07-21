@@ -1,0 +1,69 @@
+{
+  "draft_type": "photo",
+  "material": "Traffolyte or SS316",
+  "background_color": "Yellow (For Traffolyte)",
+  "text_color": "Black",
+  "fixing": "Self-adhesive",
+  "default_size_mm": null,
+  "line_sizes": [
+    {
+      "line": 1,
+      "size_mm": 20
+    },
+    {
+      "line": 2,
+      "size_mm": 10
+    }
+  ],
+  "dimension_annotations": [
+    {
+      "value_mm": 280,
+      "axis": "horizontal",
+      "span_frac": [
+        0.0094,
+        0.9891
+      ]
+    },
+    {
+      "value_mm": 80,
+      "axis": "vertical",
+      "span_frac": [
+        0.1378,
+        0.6481
+      ]
+    }
+  ],
+  "plates": [
+    {
+      "id": 1,
+      "bbox_frac": [
+        0.0093603744149766,
+        0.1378299120234604,
+        0.9890795631825273,
+        0.6480938416422287
+      ],
+      "bbox_px": [
+        6.0,
+        47.0,
+        634.0,
+        221.0
+      ],
+      "width_mm": 280,
+      "height_mm": 80
+    }
+  ],
+  "gate": {
+    "trust_cv": true,
+    "cv_count": 1,
+    "llm_count": 1,
+    "reasons": []
+  },
+  "cv_meta": {
+    "size": [
+      641,
+      341
+    ],
+    "method": "opencv",
+    "count": 1
+  }
+}

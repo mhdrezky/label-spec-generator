@@ -1,0 +1,72 @@
+{
+  "source_image": "D:\\Repositories\\label-extractor\\sample-data\\drawing2.png",
+  "generated_at": "2026-07-21T08:39:24",
+  "extract_method": "dual_call",
+  "model": "Qwen/Qwen3.6-35B-A3B",
+  "unit": "mm",
+  "image_px": {
+    "width": 480,
+    "height": 543
+  },
+  "dimension_annotations": [
+    {
+      "value_mm": 37,
+      "axis": "horizontal",
+      "span_px": [
+        91.008,
+        344.016
+      ]
+    },
+    {
+      "value_mm": 10,
+      "axis": "vertical",
+      "span_px": [
+        17.9733,
+        163.0086
+      ]
+    }
+  ],
+  "labels": [
+    {
+      "label_number": 1,
+      "width_mm": 37.0,
+      "height_mm": 10,
+      "quantity": 1,
+      "material": "Traffolyte",
+      "background_color": "Yellow",
+      "text_color": "Black",
+      "fixing": "Self-adhesive",
+      "notes": null,
+      "bbox_px": [
+        91,
+        18,
+        344,
+        163
+      ],
+      "lines": [
+        {
+          "text": "7000-FEE-20001",
+          "x_mm": 18.5,
+          "y_mm": 5.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            125,
+            71,
+            302,
+            125
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    }
+  ],
+  "total_labels": 1,
+  "warnings": [
+    "structure: using LLM plate outlines (CV gate: cv=2, llm=1, trust_cv=False)",
+    "plate #1: width_mm=37 inconsistent with bbox scale (sx=6.84 sy=14.50) — re-inferring from outline",
+    "plate #1: text '7000-FEE-20001' too wide at 4mm — reduced to 3mm"
+  ]
+}

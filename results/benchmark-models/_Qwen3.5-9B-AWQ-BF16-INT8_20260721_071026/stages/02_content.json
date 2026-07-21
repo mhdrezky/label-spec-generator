@@ -1,0 +1,184 @@
+{
+  "plates": [
+    {
+      "id": 1,
+      "line_count": 1,
+      "width_mm": 70,
+      "height_mm": 40,
+      "lines": [
+        {
+          "text": "ROOM 28",
+          "x_mm": 35,
+          "y_mm": 20,
+          "size_mm": 10,
+          "bbox_frac": [
+            0.29,
+            0.1,
+            0.71,
+            0.29
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "line_count": 3,
+      "width_mm": 250,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "CALLING",
+          "x_mm": 62.5,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.1,
+            0.4,
+            0.35,
+            0.5
+          ]
+        },
+        {
+          "text": "FAULT",
+          "x_mm": 125,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.35,
+            0.4,
+            0.65,
+            0.5
+          ]
+        },
+        {
+          "text": "DEFROST",
+          "x_mm": 187.5,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.65,
+            0.4,
+            0.9,
+            0.5
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "line_count": 6,
+      "width_mm": 250,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "ROOM",
+          "x_mm": 62.5,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.1,
+            0.7,
+            0.35,
+            0.8
+          ]
+        },
+        {
+          "text": "FANS",
+          "x_mm": 125,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.35,
+            0.7,
+            0.65,
+            0.8
+          ]
+        },
+        {
+          "text": "SUCTION",
+          "x_mm": 187.5,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.65,
+            0.7,
+            0.9,
+            0.8
+          ]
+        },
+        {
+          "text": "DISABLE",
+          "x_mm": 62.5,
+          "y_mm": 15,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.1,
+            0.7,
+            0.25,
+            0.8
+          ]
+        },
+        {
+          "text": "ENABLE",
+          "x_mm": 87.5,
+          "y_mm": 15,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.25,
+            0.7,
+            0.4,
+            0.8
+          ]
+        },
+        {
+          "text": "LOW",
+          "x_mm": 125,
+          "y_mm": 15,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.35,
+            0.7,
+            0.5,
+            0.8
+          ]
+        },
+        {
+          "text": "HIGH",
+          "x_mm": 150,
+          "y_mm": 15,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.5,
+            0.7,
+            0.65,
+            0.8
+          ]
+        },
+        {
+          "text": "LOW",
+          "x_mm": 187.5,
+          "y_mm": 15,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.65,
+            0.7,
+            0.8,
+            0.8
+          ]
+        },
+        {
+          "text": "HIGH",
+          "x_mm": 212.5,
+          "y_mm": 15,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.8,
+            0.7,
+            0.9,
+            0.8
+          ]
+        }
+      ]
+    }
+  ]
+}

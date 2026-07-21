@@ -1,0 +1,170 @@
+{
+  "source_image": "D:\\Repositories\\label-extractor\\sample-data\\kiso-handwritten-2.jpeg",
+  "generated_at": "2026-07-21T08:40:31",
+  "extract_method": "dual_call",
+  "model": "Qwen/Qwen3.6-35B-A3B",
+  "unit": "mm",
+  "image_px": {
+    "width": 1600,
+    "height": 1200
+  },
+  "dimension_annotations": [
+    {
+      "value_mm": 200,
+      "axis": "horizontal",
+      "span_px": [
+        360.96,
+        1331.04
+      ]
+    },
+    {
+      "value_mm": 35,
+      "axis": "vertical",
+      "span_px": [
+        524.04,
+        683.9999999999999
+      ]
+    }
+  ],
+  "labels": [
+    {
+      "label_number": 1,
+      "width_mm": 200,
+      "height_mm": 35,
+      "quantity": 1,
+      "material": "Stainless Steel",
+      "background_color": "white",
+      "text_color": "blue",
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        361,
+        524,
+        1331,
+        684
+      ],
+      "lines": [
+        {
+          "text": "FED",
+          "x_mm": 20.0,
+          "y_mm": 23.0,
+          "size_mm": 10.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            361,
+            524,
+            555,
+            600
+          ],
+          "_content_y": null,
+          "measured_fields": []
+        },
+        {
+          "text": "FROM",
+          "x_mm": 60.0,
+          "y_mm": 23.0,
+          "size_mm": 10.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            555,
+            524,
+            749,
+            600
+          ],
+          "_content_y": null,
+          "measured_fields": []
+        },
+        {
+          "text": "MCC1",
+          "x_mm": 100.0,
+          "y_mm": 23.0,
+          "size_mm": 10.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            749,
+            524,
+            943,
+            600
+          ],
+          "_content_y": null,
+          "measured_fields": []
+        },
+        {
+          "text": "TIER",
+          "x_mm": 140.0,
+          "y_mm": 23.0,
+          "size_mm": 10.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            943,
+            524,
+            1137,
+            600
+          ],
+          "_content_y": null,
+          "measured_fields": []
+        },
+        {
+          "text": "1",
+          "x_mm": 180.0,
+          "y_mm": 23.0,
+          "size_mm": 10.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            1137,
+            524,
+            1331,
+            600
+          ],
+          "_content_y": null,
+          "measured_fields": []
+        },
+        {
+          "text": "STP008-2000-SLV-003 XA.02",
+          "x_mm": 100.0,
+          "y_mm": 23.0,
+          "size_mm": 10.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            361,
+            600,
+            1331,
+            684
+          ],
+          "_content_y": 23.0,
+          "measured_fields": []
+        },
+        {
+          "text": "Stainless Steel",
+          "x_mm": 100.0,
+          "y_mm": 23.0,
+          "size_mm": 10.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            361,
+            720,
+            1331,
+            804
+          ],
+          "_content_y": 30.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    }
+  ],
+  "total_labels": 1,
+  "warnings": [
+    "structure: using LLM plate outlines (CV gate: cv=7, llm=1, trust_cv=False)",
+    "content: 1 line(s) could not be assigned to any plate bbox",
+    "plate #1: split 1 merged multi-word line(s) into separate text entries",
+    "plate #1: merged 2 extra row(s) into adjacent row (column stack)"
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "cached_at": "2026-07-21T02:26:06+00:00",
+  "stage": "dual-structure",
+  "content": {
+    "draft_type": "photo",
+    "material": null,
+    "background_color": null,
+    "text_color": null,
+    "fixing": null,
+    "default_size_mm": null,
+    "line_sizes": [],
+    "dimension_annotations": [
+      {
+        "value_mm": 160.0,
+        "axis": "horizontal",
+        "span_frac": [
+          0.0624,
+          0.3622
+        ]
+      },
+      {
+        "value_mm": 80.0,
+        "axis": "vertical",
+        "span_frac": [
+          0.2471,
+          0.4151
+        ]
+      },
+      {
+        "value_mm": 34.0,
+        "axis": "vertical",
+        "span_frac": [
+          0.4151,
+          0.4437
+        ]
+      },
+      {
+        "value_mm": 34.0,
+        "axis": "vertical",
+        "span_frac": [
+          0.4437,
+          0.4723
+        ]
+      },
+      {
+        "value_mm": 8.0,
+        "axis": "vertical",
+        "span_frac": [
+          0.4723,
+          0.479
+        ]
+      },
+      {
+        "value_mm": 60.0,
+        "axis": "horizontal",
+        "span_frac": [
+          0.0624,
+          0.1384
+        ]
+      },
+      {
+        "value_mm": 160.0,
+        "axis": "horizontal",
+        "span_frac": [
+          0.3622,
+          0.6621
+        ]
+      },
+      {
+        "value_mm": 160.0,
+        "axis": "horizontal",
+        "span_frac": [
+          0.6621,
+          0.962
+        ]
+      },
+      {
+        "value_mm": 34.0,
+        "axis": "vertical",
+        "span_frac": [
+          0.4151,
+          0.4437
+        ]
+      },
+      {
+        "value_mm": 34.0,
+        "axis": "vertical",
+        "span_frac": [
+          0.4437,
+          0.4723
+        ]
+      }
+    ],
+    "plates": [
+      {
+        "id": 1,
+        "bbox_frac": [
+          0.0624,
+          0.2471,
+          0.3622,
+          0.4151
+        ],
+        "width_mm": 160.0,
+        "height_mm": 80.0
+      },
+      {
+        "id": 2,
+        "bbox_frac": [
+          0.0624,
+          0.4151,
+          0.3622,
+          0.4437
+        ],
+        "width_mm": 160.0,
+        "height_mm": 34.0
+      },
+      {
+        "id": 3,
+        "bbox_frac": [
+          0.0624,
+          0.4437,
+          0.3622,
+          0.4723
+        ],
+        "width_mm": 160.0,
+        "height_mm": 34.0
+      },
+      {
+        "id": 4,
+        "bbox_frac": [
+          0.0624,
+          0.4723,
+          0.1384,
+          0.479
+        ],
+        "width_mm": 60.0,
+        "height_mm": 8.0
+      },
+      {
+        "id": 5,
+        "bbox_frac": [
+          0.1384,
+          0.4723,
+          0.2144,
+          0.479
+        ],
+        "width_mm": 60.0,
+        "height_mm": 8.0
+      },
+      {
+        "id": 6,
+        "bbox_frac": [
+          0.2144,
+          0.4723,
+          0.2904,
+          0.479
+        ],
+        "width_mm": 60.0,
+        "height_mm": 8.0
+      },
+      {
+        "id": 7,
+        "bbox_frac": [
+          0.3622,
+          0.4151,
+          0.6621,
+          0.4437
+        ],
+        "width_mm": 160.0,
+        "height_mm": 34.0
+      },
+      {
+        "id": 8,
+        "bbox_frac": [
+          0.3622,
+          0.4437,
+          0.6621,
+          0.4723
+        ],
+        "width_mm": 160.0,
+        "height_mm": 34.0
+      },
+      {
+        "id": 9,
+        "bbox_frac": [
+          0.6621,
+          0.4151,
+          0.962,
+          0.4437
+        ],
+        "width_mm": 160.0,
+        "height_mm": 34.0
+      }
+    ]
+  }
+}

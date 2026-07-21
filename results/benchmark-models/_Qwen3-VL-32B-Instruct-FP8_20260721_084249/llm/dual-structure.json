@@ -1,0 +1,175 @@
+{
+  "cached_at": "2026-07-21T00:43:11+00:00",
+  "stage": "dual-structure",
+  "content": {
+    "draft_type": "sketch",
+    "material": null,
+    "background_color": "White",
+    "text_color": "Black",
+    "fixing": null,
+    "default_size_mm": 5,
+    "line_sizes": [],
+    "dimension_annotations": [
+      {
+        "value_mm": 20,
+        "axis": "horizontal",
+        "span_frac": [
+          0.12,
+          0.28
+        ]
+      },
+      {
+        "value_mm": 20,
+        "axis": "horizontal",
+        "span_frac": [
+          0.38,
+          0.54
+        ]
+      },
+      {
+        "value_mm": 216,
+        "axis": "vertical",
+        "span_frac": [
+          0.12,
+          0.28
+        ]
+      },
+      {
+        "value_mm": 24,
+        "axis": "vertical",
+        "span_frac": [
+          0.28,
+          0.32
+        ]
+      },
+      {
+        "value_mm": 52,
+        "axis": "vertical",
+        "span_frac": [
+          0.32,
+          0.36
+        ]
+      },
+      {
+        "value_mm": 80,
+        "axis": "vertical",
+        "span_frac": [
+          0.36,
+          0.4
+        ]
+      },
+      {
+        "value_mm": 108,
+        "axis": "vertical",
+        "span_frac": [
+          0.4,
+          0.44
+        ]
+      },
+      {
+        "value_mm": 136,
+        "axis": "vertical",
+        "span_frac": [
+          0.44,
+          0.48
+        ]
+      },
+      {
+        "value_mm": 164,
+        "axis": "vertical",
+        "span_frac": [
+          0.48,
+          0.52
+        ]
+      },
+      {
+        "value_mm": 192,
+        "axis": "vertical",
+        "span_frac": [
+          0.52,
+          0.56
+        ]
+      },
+      {
+        "value_mm": 24,
+        "axis": "vertical",
+        "span_frac": [
+          0.54,
+          0.58
+        ]
+      },
+      {
+        "value_mm": 52,
+        "axis": "vertical",
+        "span_frac": [
+          0.58,
+          0.62
+        ]
+      },
+      {
+        "value_mm": 80,
+        "axis": "vertical",
+        "span_frac": [
+          0.62,
+          0.66
+        ]
+      },
+      {
+        "value_mm": 108,
+        "axis": "vertical",
+        "span_frac": [
+          0.66,
+          0.7
+        ]
+      },
+      {
+        "value_mm": 136,
+        "axis": "vertical",
+        "span_frac": [
+          0.7,
+          0.74
+        ]
+      },
+      {
+        "value_mm": 164,
+        "axis": "vertical",
+        "span_frac": [
+          0.74,
+          0.78
+        ]
+      },
+      {
+        "value_mm": 192,
+        "axis": "vertical",
+        "span_frac": [
+          0.78,
+          0.82
+        ]
+      }
+    ],
+    "plates": [
+      {
+        "id": 1,
+        "bbox_frac": [
+          0.12,
+          0.28,
+          0.28,
+          0.86
+        ],
+        "width_mm": 20,
+        "height_mm": 216
+      },
+      {
+        "id": 2,
+        "bbox_frac": [
+          0.38,
+          0.28,
+          0.54,
+          0.86
+        ],
+        "width_mm": 20,
+        "height_mm": 216
+      }
+    ]
+  }
+}

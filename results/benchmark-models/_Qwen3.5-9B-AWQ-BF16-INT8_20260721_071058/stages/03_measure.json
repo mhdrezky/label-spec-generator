@@ -1,0 +1,156 @@
+{
+  "unit": "mm",
+  "image_px": {
+    "width": 641,
+    "height": 341
+  },
+  "dimension_annotations": [
+    {
+      "value_mm": 280,
+      "axis": "horizontal",
+      "span_px": [
+        6.0254,
+        634.0131
+      ]
+    },
+    {
+      "value_mm": 80,
+      "axis": "vertical",
+      "span_px": [
+        46.9898,
+        221.0021
+      ]
+    }
+  ],
+  "labels": [
+    {
+      "label_number": 1,
+      "width_mm": 280,
+      "height_mm": 80,
+      "quantity": 1,
+      "material": "Traffolyte or SS316",
+      "background_color": "Yellow (For Traffolyte)",
+      "text_color": "Black",
+      "fixing": "Self-adhesive",
+      "notes": null,
+      "bbox_px": [
+        6.0,
+        47.0,
+        634.0,
+        221.0
+      ],
+      "lines": [
+        {
+          "text": "7000-SWC-20001",
+          "x_mm": 140.0,
+          "y_mm": null,
+          "size_mm": 20.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            140,
+            100,
+            501,
+            153
+          ],
+          "_content_y": 100.0,
+          "measured_fields": []
+        },
+        {
+          "text": "Switchboard",
+          "x_mm": 140.0,
+          "y_mm": null,
+          "size_mm": 10.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            140,
+            130,
+            501,
+            160
+          ],
+          "_content_y": 130.0,
+          "measured_fields": []
+        },
+        {
+          "text": "Letter Size: 20mm BOLD (1st Line)",
+          "x_mm": 140.0,
+          "y_mm": null,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            140,
+            200,
+            501,
+            215
+          ],
+          "_content_y": 200.0,
+          "measured_fields": []
+        },
+        {
+          "text": "Letter Size: 10mm BOLD (2nd Line)",
+          "x_mm": 140.0,
+          "y_mm": null,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            140,
+            220,
+            501,
+            235
+          ],
+          "_content_y": 220.0,
+          "measured_fields": []
+        },
+        {
+          "text": "Material: Traffolyte or SS316",
+          "x_mm": 140.0,
+          "y_mm": null,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            140,
+            240,
+            501,
+            255
+          ],
+          "_content_y": 240.0,
+          "measured_fields": []
+        },
+        {
+          "text": "Background Colour: Yellow (For Traffolyte)",
+          "x_mm": 140.0,
+          "y_mm": null,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            140,
+            260,
+            501,
+            275
+          ],
+          "_content_y": 260.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    }
+  ],
+  "total_labels": 1,
+  "warnings": [
+    "structure: using CV plate outlines (1 plates, gate trusted)",
+    "content: 2 line(s) could not be assigned to any plate bbox",
+    "plate #1 'Material: Traffolyte or SS316': y_mm=240 outside plate - null",
+    "plate #1 'Background Colour: Yellow (For Traffolyte)': y_mm=260 outside plate - null",
+    "label #1 (7000-SWC-20001): '7000-SWC-20001' y_mm=100.0 outside plate (80mm) — dropped",
+    "label #1 (7000-SWC-20001): 'Switchboard' y_mm=130.0 outside plate (80mm) — dropped",
+    "label #1 (7000-SWC-20001): 'Letter Size: 20mm BOLD (1st Line)' y_mm=200.0 outside plate (80mm) — dropped",
+    "label #1 (7000-SWC-20001): 'Letter Size: 10mm BOLD (2nd Line)' y_mm=220.0 outside plate (80mm) — dropped",
+    "label #1 (7000-SWC-20001): 'Material: Traffolyte or SS316' y_mm=240.0 outside plate (80mm) — dropped",
+    "label #1 (7000-SWC-20001): 'Background Colour: Yellow (For Traffolyte)' y_mm=260.0 outside plate (80mm) — dropped"
+  ]
+}

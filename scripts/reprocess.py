@@ -7,8 +7,21 @@ from pathlib import Path
 from dual_call.postprocess import merge_to_spec
 
 
+def resolve_run_dir(run_id: str) -> Path:
+    for base in (
+        Path("results/current"),
+        Path("results/benchmark-models"),
+        Path("results/archieve"),
+        Path("results"),
+    ):
+        candidate = base / run_id
+        if candidate.is_dir():
+            return candidate
+    raise FileNotFoundError(run_id)
+
+
 def reprocess(run_id: str) -> tuple[dict, list[str]]:
-    base = Path("results") / run_id
+    base = resolve_run_dir(run_id)
     structure = json.loads((base / "stages/01_structure.json").read_text(encoding="utf-8"))
     content = json.loads((base / "stages/02_content.json").read_text(encoding="utf-8"))
     image_px = structure.get("image_px") or content.get("image_px")

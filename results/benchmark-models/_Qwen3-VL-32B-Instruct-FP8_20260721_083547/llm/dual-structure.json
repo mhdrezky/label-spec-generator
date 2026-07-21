@@ -1,0 +1,44 @@
+{
+  "cached_at": "2026-07-21T00:35:54+00:00",
+  "stage": "dual-structure",
+  "content": {
+    "draft_type": "photo",
+    "material": "Traffolyte",
+    "background_color": "Yellow",
+    "text_color": "Black",
+    "fixing": "Self-adhesive",
+    "default_size_mm": 4,
+    "line_sizes": [],
+    "dimension_annotations": [
+      {
+        "value_mm": 37,
+        "axis": "horizontal",
+        "span_frac": [
+          0.1896,
+          0.7167
+        ]
+      },
+      {
+        "value_mm": 10,
+        "axis": "vertical",
+        "span_frac": [
+          0.0,
+          0.1896
+        ]
+      }
+    ],
+    "plates": [
+      {
+        "id": 1,
+        "bbox_frac": [
+          0.1896,
+          0.0331,
+          0.7167,
+          0.3002
+        ],
+        "width_mm": 37,
+        "height_mm": 10
+      }
+    ]
+  }
+}

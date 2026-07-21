@@ -1,0 +1,1669 @@
+{
+  "source_image": "D:\\Repositories\\label-extractor\\sample-data\\traffolyte-pdf.png",
+  "generated_at": "2026-07-21T08:42:49",
+  "extract_method": "dual_call",
+  "model": "Qwen/Qwen3.6-35B-A3B",
+  "unit": "mm",
+  "image_px": {
+    "width": 1191,
+    "height": 1684
+  },
+  "dimension_annotations": [
+    {
+      "value_mm": 140,
+      "axis": "horizontal",
+      "span_px": [
+        17.865,
+        327.52500000000003
+      ]
+    },
+    {
+      "value_mm": 40,
+      "axis": "vertical",
+      "span_px": [
+        42.1,
+        109.46000000000001
+      ]
+    },
+    {
+      "value_mm": 100,
+      "axis": "horizontal",
+      "span_px": [
+        17.865,
+        267.975
+      ]
+    },
+    {
+      "value_mm": 40,
+      "axis": "vertical",
+      "span_px": [
+        294.7,
+        362.06
+      ]
+    },
+    {
+      "value_mm": 100,
+      "axis": "horizontal",
+      "span_px": [
+        17.865,
+        267.975
+      ]
+    },
+    {
+      "value_mm": 40,
+      "axis": "vertical",
+      "span_px": [
+        479.93999999999994,
+        547.3000000000001
+      ]
+    },
+    {
+      "value_mm": 100,
+      "axis": "horizontal",
+      "span_px": [
+        17.865,
+        267.975
+      ]
+    },
+    {
+      "value_mm": 40,
+      "axis": "vertical",
+      "span_px": [
+        665.1800000000001,
+        732.54
+      ]
+    },
+    {
+      "value_mm": 100,
+      "axis": "horizontal",
+      "span_px": [
+        17.865,
+        267.975
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_px": [
+        850.42,
+        917.7800000000001
+      ]
+    },
+    {
+      "value_mm": 100,
+      "axis": "horizontal",
+      "span_px": [
+        17.865,
+        267.975
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_px": [
+        934.6200000000001,
+        1001.9799999999999
+      ]
+    },
+    {
+      "value_mm": 100,
+      "axis": "horizontal",
+      "span_px": [
+        17.865,
+        267.975
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_px": [
+        1119.8600000000001,
+        1187.22
+      ]
+    },
+    {
+      "value_mm": 100,
+      "axis": "horizontal",
+      "span_px": [
+        17.865,
+        267.975
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_px": [
+        1305.1000000000001,
+        1372.4599999999998
+      ]
+    },
+    {
+      "value_mm": 100,
+      "axis": "horizontal",
+      "span_px": [
+        17.865,
+        267.975
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_px": [
+        1490.34,
+        1557.7
+      ]
+    },
+    {
+      "value_mm": 100,
+      "axis": "horizontal",
+      "span_px": [
+        17.865,
+        267.975
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_px": [
+        1574.5400000000002,
+        1641.8999999999999
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "horizontal",
+      "span_px": [
+        458.535,
+        506.175
+      ]
+    },
+    {
+      "value_mm": 215,
+      "axis": "vertical",
+      "span_px": [
+        42.1,
+        732.54
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "horizontal",
+      "span_px": [
+        708.645,
+        756.285
+      ]
+    },
+    {
+      "value_mm": 215,
+      "axis": "vertical",
+      "span_px": [
+        42.1,
+        732.54
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "horizontal",
+      "span_px": [
+        458.535,
+        506.175
+      ]
+    },
+    {
+      "value_mm": 215,
+      "axis": "vertical",
+      "span_px": [
+        850.42,
+        1540.8600000000001
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "horizontal",
+      "span_px": [
+        708.645,
+        756.285
+      ]
+    },
+    {
+      "value_mm": 215,
+      "axis": "vertical",
+      "span_px": [
+        850.42,
+        1540.8600000000001
+      ]
+    },
+    {
+      "value_mm": 100,
+      "axis": "horizontal",
+      "span_px": [
+        458.535,
+        708.645
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_px": [
+        1574.5400000000002,
+        1641.8999999999999
+      ]
+    }
+  ],
+  "labels": [
+    {
+      "label_number": 1,
+      "width_mm": 140,
+      "height_mm": 40,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        18,
+        42,
+        328,
+        109
+      ],
+      "lines": [
+        {
+          "text": "GENERATOR SUPPLY",
+          "x_mm": 70.0,
+          "y_mm": 12.0,
+          "size_mm": 4.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            30,
+            51,
+            316,
+            67
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "ISOLATOR",
+          "x_mm": 70.0,
+          "y_mm": 22.0,
+          "size_mm": 4.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            30,
+            67,
+            316,
+            84
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "(100/250A)",
+          "x_mm": 70.0,
+          "y_mm": 32.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            30,
+            84,
+            316,
+            101
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 2,
+      "width_mm": 100.0,
+      "height_mm": 40,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        18,
+        210,
+        268,
+        278
+      ],
+      "lines": [
+        {
+          "text": "MAIN ISOLATOR",
+          "x_mm": 50.0,
+          "y_mm": 12.0,
+          "size_mm": 4.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            30,
+            219,
+            256,
+            236
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "NON ESSENTIAL POWER",
+          "x_mm": 50.0,
+          "y_mm": 22.0,
+          "size_mm": 4.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            30,
+            236,
+            256,
+            253
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "(150/160A)",
+          "x_mm": 50.0,
+          "y_mm": 32.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            30,
+            253,
+            256,
+            269
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 3,
+      "width_mm": 100.0,
+      "height_mm": 40,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        18,
+        413,
+        268,
+        480
+      ],
+      "lines": [
+        {
+          "text": "MAIN ISOLATOR",
+          "x_mm": 50.0,
+          "y_mm": 12.0,
+          "size_mm": 4.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            30,
+            421,
+            256,
+            438
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "ESSENTIAL LIGHTING",
+          "x_mm": 50.0,
+          "y_mm": 22.0,
+          "size_mm": 4.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            30,
+            438,
+            256,
+            455
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "(80/100A)",
+          "x_mm": 50.0,
+          "y_mm": 32.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            30,
+            455,
+            256,
+            472
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 4,
+      "width_mm": 100.0,
+      "height_mm": 40,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        18,
+        615,
+        268,
+        682
+      ],
+      "lines": [
+        {
+          "text": "MAIN ISOLATOR",
+          "x_mm": 50.0,
+          "y_mm": 12.0,
+          "size_mm": 4.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            30,
+            623,
+            256,
+            640
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "ESSENTIAL POWER",
+          "x_mm": 50.0,
+          "y_mm": 22.0,
+          "size_mm": 4.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            30,
+            640,
+            256,
+            657
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "(80/100A)",
+          "x_mm": 50.0,
+          "y_mm": 32.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            30,
+            657,
+            256,
+            674
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 5,
+      "width_mm": 100,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        18,
+        817,
+        268,
+        884
+      ],
+      "lines": [
+        {
+          "text": "NON ESSENTIAL",
+          "x_mm": 50.0,
+          "y_mm": 7.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            30,
+            825,
+            256,
+            842
+          ],
+          "_content_y": 7.0,
+          "measured_fields": []
+        },
+        {
+          "text": "POWER CHASSIS",
+          "x_mm": 50.0,
+          "y_mm": 13.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            30,
+            842,
+            256,
+            859
+          ],
+          "_content_y": 13.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 6,
+      "width_mm": 100,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        18,
+        918,
+        268,
+        985
+      ],
+      "lines": [
+        {
+          "text": "ESSENTIAL",
+          "x_mm": 50.0,
+          "y_mm": 7.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            30,
+            926,
+            256,
+            943
+          ],
+          "_content_y": 7.0,
+          "measured_fields": []
+        },
+        {
+          "text": "POWER CHASSIS",
+          "x_mm": 50.0,
+          "y_mm": 13.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            30,
+            943,
+            256,
+            960
+          ],
+          "_content_y": 13.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 7,
+      "width_mm": 100,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        18,
+        1103,
+        268,
+        1170
+      ],
+      "lines": [
+        {
+          "text": "ESSENTIAL",
+          "x_mm": 50.0,
+          "y_mm": 7.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            30,
+            1111,
+            256,
+            1128
+          ],
+          "_content_y": 7.0,
+          "measured_fields": []
+        },
+        {
+          "text": "LIGHTING CHASSIS",
+          "x_mm": 50.0,
+          "y_mm": 13.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            30,
+            1128,
+            256,
+            1145
+          ],
+          "_content_y": 13.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 8,
+      "width_mm": 100,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        18,
+        1288,
+        268,
+        1356
+      ],
+      "lines": [
+        {
+          "text": "NON ESSENTIAL",
+          "x_mm": 50.0,
+          "y_mm": 7.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            30,
+            1297,
+            256,
+            1314
+          ],
+          "_content_y": 7.0,
+          "measured_fields": []
+        },
+        {
+          "text": "POWER METER",
+          "x_mm": 50.0,
+          "y_mm": 13.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            30,
+            1314,
+            256,
+            1330
+          ],
+          "_content_y": 13.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 9,
+      "width_mm": 100,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        18,
+        1474,
+        268,
+        1541
+      ],
+      "lines": [
+        {
+          "text": "ESSENTIAL POWER",
+          "x_mm": 50.0,
+          "y_mm": 7.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            30,
+            1482,
+            256,
+            1499
+          ],
+          "_content_y": 7.0,
+          "measured_fields": []
+        },
+        {
+          "text": "METER",
+          "x_mm": 50.0,
+          "y_mm": 13.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            30,
+            1499,
+            256,
+            1516
+          ],
+          "_content_y": 13.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 10,
+      "width_mm": 100,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        18,
+        1575,
+        268,
+        1642
+      ],
+      "lines": [
+        {
+          "text": "ESSENTIAL LIGHTING",
+          "x_mm": 50.0,
+          "y_mm": 7.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            30,
+            1583,
+            256,
+            1600
+          ],
+          "_content_y": 7.0,
+          "measured_fields": []
+        },
+        {
+          "text": "METER",
+          "x_mm": 50.0,
+          "y_mm": 13.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            30,
+            1600,
+            256,
+            1617
+          ],
+          "_content_y": 13.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 11,
+      "width_mm": 20,
+      "height_mm": 215,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        459,
+        42,
+        506,
+        733
+      ],
+      "lines": [
+        {
+          "text": "73",
+          "x_mm": 10.0,
+          "y_mm": 9.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            464,
+            51,
+            500,
+            67
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "74",
+          "x_mm": 10.0,
+          "y_mm": 27.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            464,
+            81,
+            500,
+            98
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "75",
+          "x_mm": 10.0,
+          "y_mm": 45.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            464,
+            111,
+            500,
+            128
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "76",
+          "x_mm": 10.0,
+          "y_mm": 63.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            464,
+            141,
+            500,
+            158
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "77",
+          "x_mm": 10.0,
+          "y_mm": 81.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            464,
+            172,
+            500,
+            189
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "78",
+          "x_mm": 10.0,
+          "y_mm": 99.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            464,
+            202,
+            500,
+            219
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "79",
+          "x_mm": 10.0,
+          "y_mm": 117.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            464,
+            232,
+            500,
+            249
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "80",
+          "x_mm": 10.0,
+          "y_mm": 135.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            464,
+            263,
+            500,
+            280
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "81",
+          "x_mm": 10.0,
+          "y_mm": 153.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            464,
+            293,
+            500,
+            310
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "82",
+          "x_mm": 10.0,
+          "y_mm": 171.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            464,
+            323,
+            500,
+            340
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "83",
+          "x_mm": 10.0,
+          "y_mm": 189.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            464,
+            354,
+            500,
+            370
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "84",
+          "x_mm": 10.0,
+          "y_mm": 207.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            464,
+            384,
+            500,
+            401
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 12,
+      "width_mm": 20,
+      "height_mm": 215,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        709,
+        42,
+        756,
+        733
+      ],
+      "lines": [
+        {
+          "text": "85",
+          "x_mm": 10.0,
+          "y_mm": 9.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            715,
+            51,
+            750,
+            67
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "86",
+          "x_mm": 10.0,
+          "y_mm": 27.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            715,
+            81,
+            750,
+            98
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "87",
+          "x_mm": 10.0,
+          "y_mm": 45.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            715,
+            111,
+            750,
+            128
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "88",
+          "x_mm": 10.0,
+          "y_mm": 63.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            715,
+            141,
+            750,
+            158
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "89",
+          "x_mm": 10.0,
+          "y_mm": 81.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            715,
+            172,
+            750,
+            189
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "90",
+          "x_mm": 10.0,
+          "y_mm": 99.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            715,
+            202,
+            750,
+            219
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "91",
+          "x_mm": 10.0,
+          "y_mm": 117.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            715,
+            232,
+            750,
+            249
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "92",
+          "x_mm": 10.0,
+          "y_mm": 135.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            715,
+            263,
+            750,
+            280
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "93",
+          "x_mm": 10.0,
+          "y_mm": 153.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            715,
+            293,
+            750,
+            310
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "94",
+          "x_mm": 10.0,
+          "y_mm": 171.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            715,
+            323,
+            750,
+            340
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "95",
+          "x_mm": 10.0,
+          "y_mm": 189.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            715,
+            354,
+            750,
+            370
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "96",
+          "x_mm": 10.0,
+          "y_mm": 207.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            715,
+            384,
+            750,
+            401
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 13,
+      "width_mm": 20,
+      "height_mm": 215,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        459,
+        850,
+        506,
+        1541
+      ],
+      "lines": [
+        {
+          "text": "97",
+          "x_mm": 10.0,
+          "y_mm": 9.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            464,
+            859,
+            500,
+            876
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "98",
+          "x_mm": 10.0,
+          "y_mm": 27.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            464,
+            889,
+            500,
+            906
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "99",
+          "x_mm": 10.0,
+          "y_mm": 45.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            464,
+            919,
+            500,
+            936
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "100",
+          "x_mm": 10.0,
+          "y_mm": 63.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            464,
+            950,
+            500,
+            967
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "101",
+          "x_mm": 10.0,
+          "y_mm": 81.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            464,
+            980,
+            500,
+            997
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "102",
+          "x_mm": 10.0,
+          "y_mm": 99.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            464,
+            1010,
+            500,
+            1027
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "103",
+          "x_mm": 10.0,
+          "y_mm": 117.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            464,
+            1041,
+            500,
+            1058
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "104",
+          "x_mm": 10.0,
+          "y_mm": 135.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            464,
+            1071,
+            500,
+            1088
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "105",
+          "x_mm": 10.0,
+          "y_mm": 153.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            464,
+            1101,
+            500,
+            1118
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "106",
+          "x_mm": 10.0,
+          "y_mm": 171.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            464,
+            1132,
+            500,
+            1148
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "107",
+          "x_mm": 10.0,
+          "y_mm": 189.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            464,
+            1162,
+            500,
+            1179
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "108",
+          "x_mm": 10.0,
+          "y_mm": 207.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            464,
+            1192,
+            500,
+            1209
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 14,
+      "width_mm": 20,
+      "height_mm": 215,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        709,
+        850,
+        756,
+        1541
+      ],
+      "lines": [
+        {
+          "text": "109",
+          "x_mm": 10.0,
+          "y_mm": 9.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            715,
+            859,
+            750,
+            876
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "110",
+          "x_mm": 10.0,
+          "y_mm": 27.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            715,
+            889,
+            750,
+            906
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "111",
+          "x_mm": 10.0,
+          "y_mm": 45.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            715,
+            919,
+            750,
+            936
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "112",
+          "x_mm": 10.0,
+          "y_mm": 63.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            715,
+            950,
+            750,
+            967
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "113",
+          "x_mm": 10.0,
+          "y_mm": 81.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            715,
+            980,
+            750,
+            997
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "114",
+          "x_mm": 10.0,
+          "y_mm": 99.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            715,
+            1010,
+            750,
+            1027
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "115",
+          "x_mm": 10.0,
+          "y_mm": 117.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            715,
+            1041,
+            750,
+            1058
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "116",
+          "x_mm": 10.0,
+          "y_mm": 135.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            715,
+            1071,
+            750,
+            1088
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "117",
+          "x_mm": 10.0,
+          "y_mm": 153.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            715,
+            1101,
+            750,
+            1118
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "118",
+          "x_mm": 10.0,
+          "y_mm": 171.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            715,
+            1132,
+            750,
+            1148
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "119",
+          "x_mm": 10.0,
+          "y_mm": 189.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            715,
+            1162,
+            750,
+            1179
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "120",
+          "x_mm": 10.0,
+          "y_mm": 207.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            715,
+            1192,
+            750,
+            1209
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 15,
+      "width_mm": 100,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        459,
+        1575,
+        709,
+        1642
+      ],
+      "lines": [
+        {
+          "text": "SPARE",
+          "x_mm": 50.0,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            464,
+            1583,
+            703,
+            1633
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    }
+  ],
+  "total_labels": 15,
+  "warnings": [
+    "structure: using LLM plate outlines (CV gate: cv=0, llm=15, trust_cv=False)",
+    "plate #2: width_mm=100 inconsistent with bbox scale (sx=2.50 sy=1.70) — re-inferring from outline",
+    "plate #3: width_mm=100 inconsistent with bbox scale (sx=2.50 sy=1.68) — re-inferring from outline",
+    "plate #4: width_mm=100 inconsistent with bbox scale (sx=2.50 sy=1.68) — re-inferring from outline"
+  ]
+}

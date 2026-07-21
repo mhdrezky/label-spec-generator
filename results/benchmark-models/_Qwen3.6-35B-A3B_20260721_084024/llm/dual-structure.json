@@ -1,0 +1,49 @@
+{
+  "cached_at": "2026-07-21T00:40:27+00:00",
+  "stage": "dual-structure",
+  "content": {
+    "draft_type": "sketch",
+    "material": "Stainless Steel",
+    "background_color": "white",
+    "text_color": "blue",
+    "fixing": null,
+    "default_size_mm": 10,
+    "line_sizes": [
+      {
+        "line": 1,
+        "size_mm": 10
+      }
+    ],
+    "dimension_annotations": [
+      {
+        "value_mm": 200,
+        "axis": "horizontal",
+        "span_frac": [
+          0.2256,
+          0.8319
+        ]
+      },
+      {
+        "value_mm": 35,
+        "axis": "vertical",
+        "span_frac": [
+          0.4367,
+          0.57
+        ]
+      }
+    ],
+    "plates": [
+      {
+        "id": 1,
+        "bbox_frac": [
+          0.2256,
+          0.4367,
+          0.8319,
+          0.57
+        ],
+        "width_mm": 200,
+        "height_mm": 35
+      }
+    ]
+  }
+}

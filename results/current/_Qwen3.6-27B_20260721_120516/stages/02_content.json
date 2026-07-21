@@ -1,0 +1,194 @@
+{
+  "plates": [
+    {
+      "id": 1,
+      "line_count": 0,
+      "width_mm": 160,
+      "height_mm": 60,
+      "lines": []
+    },
+    {
+      "id": 2,
+      "line_count": 0,
+      "width_mm": 160,
+      "height_mm": 60,
+      "lines": []
+    },
+    {
+      "id": 3,
+      "line_count": 3,
+      "width_mm": 120,
+      "height_mm": 30,
+      "lines": [
+        {
+          "text": "ROOM 30007",
+          "x_mm": 60,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.010416,
+            0.726562,
+            0.133333,
+            0.742187
+          ]
+        },
+        {
+          "text": "FAN FAN MED HIGH",
+          "x_mm": 60,
+          "y_mm": 15,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.010416,
+            0.742187,
+            0.133333,
+            0.757812
+          ]
+        },
+        {
+          "text": "LOW",
+          "x_mm": 60,
+          "y_mm": 20,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.010416,
+            0.757812,
+            0.133333,
+            0.773437
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "line_count": 3,
+      "width_mm": 120,
+      "height_mm": 30,
+      "lines": [
+        {
+          "text": "ROOM 30007",
+          "x_mm": 60,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.145833,
+            0.726562,
+            0.269791,
+            0.742187
+          ]
+        },
+        {
+          "text": "FAN FAN MED HIGH",
+          "x_mm": 60,
+          "y_mm": 15,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.145833,
+            0.742187,
+            0.269791,
+            0.757812
+          ]
+        },
+        {
+          "text": "LOW",
+          "x_mm": 60,
+          "y_mm": 20,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.145833,
+            0.757812,
+            0.269791,
+            0.773437
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "line_count": 3,
+      "width_mm": 120,
+      "height_mm": 30,
+      "lines": [
+        {
+          "text": "ROOM 30007",
+          "x_mm": 60,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.447916,
+            0.726562,
+            0.571875,
+            0.742187
+          ]
+        },
+        {
+          "text": "FAN FAN MED HIGH",
+          "x_mm": 60,
+          "y_mm": 15,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.447916,
+            0.742187,
+            0.571875,
+            0.757812
+          ]
+        },
+        {
+          "text": "LOW",
+          "x_mm": 60,
+          "y_mm": 20,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.447916,
+            0.757812,
+            0.571875,
+            0.773437
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "line_count": 3,
+      "width_mm": 120,
+      "height_mm": 30,
+      "lines": [
+        {
+          "text": "ROOM 30007",
+          "x_mm": 60,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.804166,
+            0.726562,
+            0.928125,
+            0.742187
+          ]
+        },
+        {
+          "text": "FAN FAN MED HIGH",
+          "x_mm": 60,
+          "y_mm": 15,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.804166,
+            0.742187,
+            0.928125,
+            0.757812
+          ]
+        },
+        {
+          "text": "LOW",
+          "x_mm": 60,
+          "y_mm": 20,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.804166,
+            0.757812,
+            0.928125,
+            0.773437
+          ]
+        }
+      ]
+    }
+  ]
+}

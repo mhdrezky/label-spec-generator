@@ -1,0 +1,2671 @@
+{
+  "source_image": "D:\\Repositories\\label-extractor\\sample-data\\image003.png",
+  "generated_at": "2026-07-21T08:42:12",
+  "extract_method": "dual_call",
+  "model": "Qwen/Qwen3-VL-32B-Instruct-FP8",
+  "unit": "mm",
+  "image_px": {
+    "width": 520,
+    "height": 480
+  },
+  "dimension_annotations": [
+    {
+      "value_mm": 65,
+      "axis": "horizontal",
+      "span_px": [
+        0.0,
+        130.0
+      ]
+    },
+    {
+      "value_mm": 65,
+      "axis": "horizontal",
+      "span_px": [
+        130.0,
+        260.0
+      ]
+    },
+    {
+      "value_mm": 65,
+      "axis": "horizontal",
+      "span_px": [
+        260.0,
+        390.0
+      ]
+    },
+    {
+      "value_mm": 65,
+      "axis": "horizontal",
+      "span_px": [
+        390.0,
+        520.0
+      ]
+    },
+    {
+      "value_mm": 40,
+      "axis": "vertical",
+      "span_px": [
+        0.0,
+        20.016000000000002
+      ]
+    },
+    {
+      "value_mm": 13,
+      "axis": "horizontal",
+      "span_px": [
+        0.0,
+        32.5
+      ]
+    },
+    {
+      "value_mm": 13,
+      "axis": "horizontal",
+      "span_px": [
+        32.5,
+        65.0
+      ]
+    },
+    {
+      "value_mm": 13,
+      "axis": "horizontal",
+      "span_px": [
+        130.0,
+        162.5
+      ]
+    },
+    {
+      "value_mm": 13,
+      "axis": "horizontal",
+      "span_px": [
+        162.5,
+        195.0
+      ]
+    },
+    {
+      "value_mm": 13,
+      "axis": "horizontal",
+      "span_px": [
+        260.0,
+        292.5
+      ]
+    },
+    {
+      "value_mm": 13,
+      "axis": "horizontal",
+      "span_px": [
+        292.5,
+        325.0
+      ]
+    },
+    {
+      "value_mm": 13,
+      "axis": "horizontal",
+      "span_px": [
+        390.0,
+        422.5
+      ]
+    },
+    {
+      "value_mm": 13,
+      "axis": "horizontal",
+      "span_px": [
+        422.5,
+        455.0
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_px": [
+        20.016000000000002,
+        39.984
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_px": [
+        39.984,
+        60.0
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_px": [
+        60.0,
+        80.01599999999999
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_px": [
+        80.01599999999999,
+        99.98400000000001
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_px": [
+        99.98400000000001,
+        120.0
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_px": [
+        120.0,
+        140.01600000000002
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_px": [
+        140.01600000000002,
+        159.98399999999998
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_px": [
+        159.98399999999998,
+        180.0
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_px": [
+        180.0,
+        200.01600000000002
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_px": [
+        200.01600000000002,
+        219.98399999999998
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_px": [
+        219.98399999999998,
+        240.0
+      ]
+    },
+    {
+      "value_mm": 25,
+      "axis": "horizontal",
+      "span_px": [
+        0.0,
+        32.5
+      ]
+    },
+    {
+      "value_mm": 100,
+      "axis": "horizontal",
+      "span_px": [
+        32.5,
+        260.0
+      ]
+    },
+    {
+      "value_mm": 100,
+      "axis": "horizontal",
+      "span_px": [
+        260.0,
+        487.5
+      ]
+    },
+    {
+      "value_mm": 25,
+      "axis": "horizontal",
+      "span_px": [
+        487.5,
+        520.0
+      ]
+    }
+  ],
+  "labels": [
+    {
+      "label_number": 1,
+      "width_mm": 65.0,
+      "height_mm": 40,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        0,
+        20,
+        130,
+        60
+      ],
+      "lines": [
+        {
+          "text": "ROOM 31",
+          "x_mm": 32.5,
+          "y_mm": 20.0,
+          "size_mm": 10.5,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            0,
+            20,
+            130,
+            60
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 2,
+      "width_mm": 65.0,
+      "height_mm": 40,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        130,
+        20,
+        260,
+        60
+      ],
+      "lines": [
+        {
+          "text": "ROOM 32",
+          "x_mm": 32.5,
+          "y_mm": 20.0,
+          "size_mm": 10.5,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            130,
+            20,
+            260,
+            60
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 3,
+      "width_mm": 65.0,
+      "height_mm": 40,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        260,
+        20,
+        390,
+        60
+      ],
+      "lines": [
+        {
+          "text": "ROOM 33",
+          "x_mm": 32.5,
+          "y_mm": 20.0,
+          "size_mm": 10.5,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            260,
+            20,
+            390,
+            60
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 4,
+      "width_mm": 65.0,
+      "height_mm": 40,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        390,
+        20,
+        520,
+        60
+      ],
+      "lines": [
+        {
+          "text": "ROOM 34",
+          "x_mm": 32.5,
+          "y_mm": 20.0,
+          "size_mm": 10.5,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            390,
+            20,
+            520,
+            60
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 5,
+      "width_mm": 65.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        0,
+        60,
+        130,
+        80
+      ],
+      "lines": [
+        {
+          "text": "ROOM",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            0,
+            60,
+            130,
+            80
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "DISABLE",
+          "x_mm": 13.0,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            0,
+            60,
+            65,
+            80
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "ENABLE",
+          "x_mm": 52.0,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            65,
+            60,
+            130,
+            80
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 6,
+      "width_mm": 65.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        130,
+        60,
+        260,
+        80
+      ],
+      "lines": [
+        {
+          "text": "FANS",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            130,
+            60,
+            260,
+            80
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "LOW",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            130,
+            60,
+            195,
+            80
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "HIGH",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            195,
+            60,
+            260,
+            80
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 7,
+      "width_mm": 65.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        260,
+        60,
+        390,
+        80
+      ],
+      "lines": [
+        {
+          "text": "SUCTION",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            260,
+            60,
+            390,
+            80
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "LOW",
+          "x_mm": 52.0,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            260,
+            60,
+            325,
+            80
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "HIGH",
+          "x_mm": 64.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            325,
+            60,
+            390,
+            80
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 8,
+      "width_mm": 65.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        390,
+        60,
+        520,
+        80
+      ],
+      "lines": [
+        {
+          "text": "SUCTION",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            390,
+            60,
+            520,
+            80
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "LOW",
+          "x_mm": 16.0,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            390,
+            60,
+            455,
+            80
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "HIGH",
+          "x_mm": 49.0,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            455,
+            60,
+            520,
+            80
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 9,
+      "width_mm": 65.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        0,
+        80,
+        130,
+        100
+      ],
+      "lines": [
+        {
+          "text": "ROOM",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            0,
+            80,
+            130,
+            100
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "DISABLE",
+          "x_mm": 13.0,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            0,
+            80,
+            65,
+            100
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "ENABLE",
+          "x_mm": 52.0,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            65,
+            80,
+            130,
+            100
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 10,
+      "width_mm": 65.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        130,
+        80,
+        260,
+        100
+      ],
+      "lines": [
+        {
+          "text": "FANS",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            130,
+            80,
+            260,
+            100
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "LOW",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            130,
+            80,
+            195,
+            100
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "HIGH",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            195,
+            80,
+            260,
+            100
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 11,
+      "width_mm": 65.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        260,
+        80,
+        390,
+        100
+      ],
+      "lines": [
+        {
+          "text": "SUCTION",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            260,
+            80,
+            390,
+            100
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "LOW",
+          "x_mm": 52.0,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            260,
+            80,
+            325,
+            100
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "HIGH",
+          "x_mm": 64.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            325,
+            80,
+            390,
+            100
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 12,
+      "width_mm": 65.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        390,
+        80,
+        520,
+        100
+      ],
+      "lines": [
+        {
+          "text": "SUCTION",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            390,
+            80,
+            520,
+            100
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "LOW",
+          "x_mm": 16.0,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            390,
+            80,
+            455,
+            100
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "HIGH",
+          "x_mm": 49.0,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            455,
+            80,
+            520,
+            100
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 13,
+      "width_mm": 65.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        0,
+        100,
+        130,
+        120
+      ],
+      "lines": [
+        {
+          "text": "ROOM",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            0,
+            100,
+            130,
+            120
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "DISABLE",
+          "x_mm": 13.0,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            0,
+            100,
+            65,
+            120
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "ENABLE",
+          "x_mm": 52.0,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            65,
+            100,
+            130,
+            120
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 14,
+      "width_mm": 65.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        130,
+        100,
+        260,
+        120
+      ],
+      "lines": [
+        {
+          "text": "FANS",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            130,
+            100,
+            260,
+            120
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "LOW",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            130,
+            100,
+            195,
+            120
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "HIGH",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            195,
+            100,
+            260,
+            120
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 15,
+      "width_mm": 65.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        260,
+        100,
+        390,
+        120
+      ],
+      "lines": [
+        {
+          "text": "SUCTION",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            260,
+            100,
+            390,
+            120
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "LOW",
+          "x_mm": 52.0,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            260,
+            100,
+            325,
+            120
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "HIGH",
+          "x_mm": 64.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            325,
+            100,
+            390,
+            120
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 16,
+      "width_mm": 65.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        390,
+        100,
+        520,
+        120
+      ],
+      "lines": [
+        {
+          "text": "SUCTION",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            390,
+            100,
+            520,
+            120
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "LOW",
+          "x_mm": 16.0,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            390,
+            100,
+            455,
+            120
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "HIGH",
+          "x_mm": 49.0,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            455,
+            100,
+            520,
+            120
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 17,
+      "width_mm": 65.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        0,
+        120,
+        130,
+        140
+      ],
+      "lines": [
+        {
+          "text": "ROOM",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            0,
+            120,
+            130,
+            140
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "DISABLE",
+          "x_mm": 13.0,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            0,
+            120,
+            65,
+            140
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "ENABLE",
+          "x_mm": 52.0,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            65,
+            120,
+            130,
+            140
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 18,
+      "width_mm": 65.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        130,
+        120,
+        260,
+        140
+      ],
+      "lines": [
+        {
+          "text": "FANS",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            130,
+            120,
+            260,
+            140
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "LOW",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            130,
+            120,
+            195,
+            140
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "HIGH",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            195,
+            120,
+            260,
+            140
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 19,
+      "width_mm": 65.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        260,
+        120,
+        390,
+        140
+      ],
+      "lines": [
+        {
+          "text": "SUCTION",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            260,
+            120,
+            390,
+            140
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "LOW",
+          "x_mm": 52.0,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            260,
+            120,
+            325,
+            140
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "HIGH",
+          "x_mm": 64.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            325,
+            120,
+            390,
+            140
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 20,
+      "width_mm": 65.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        390,
+        120,
+        520,
+        140
+      ],
+      "lines": [
+        {
+          "text": "SUCTION",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            390,
+            120,
+            520,
+            140
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "LOW",
+          "x_mm": 16.0,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            390,
+            120,
+            455,
+            140
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "HIGH",
+          "x_mm": 49.0,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            455,
+            120,
+            520,
+            140
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 21,
+      "width_mm": 65.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        0,
+        140,
+        130,
+        160
+      ],
+      "lines": [
+        {
+          "text": "ROOM",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            0,
+            140,
+            130,
+            160
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "DISABLE",
+          "x_mm": 13.0,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            0,
+            140,
+            65,
+            160
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "ENABLE",
+          "x_mm": 52.0,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            65,
+            140,
+            130,
+            160
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 22,
+      "width_mm": 65.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        130,
+        140,
+        260,
+        160
+      ],
+      "lines": [
+        {
+          "text": "FANS",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            130,
+            140,
+            260,
+            160
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "LOW",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            130,
+            140,
+            195,
+            160
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "HIGH",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            195,
+            140,
+            260,
+            160
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 23,
+      "width_mm": 65.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        260,
+        140,
+        390,
+        160
+      ],
+      "lines": [
+        {
+          "text": "SUCTION",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            260,
+            140,
+            390,
+            160
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "LOW",
+          "x_mm": 52.0,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            260,
+            140,
+            325,
+            160
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "HIGH",
+          "x_mm": 64.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            325,
+            140,
+            390,
+            160
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 24,
+      "width_mm": 65.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        390,
+        140,
+        520,
+        160
+      ],
+      "lines": [
+        {
+          "text": "SUCTION",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            390,
+            140,
+            520,
+            160
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "LOW",
+          "x_mm": 16.0,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            390,
+            140,
+            455,
+            160
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "HIGH",
+          "x_mm": 49.0,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            455,
+            140,
+            520,
+            160
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 25,
+      "width_mm": 65.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        0,
+        160,
+        130,
+        180
+      ],
+      "lines": [
+        {
+          "text": "ROOM",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            0,
+            160,
+            130,
+            180
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "DISABLE",
+          "x_mm": 13.0,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            0,
+            160,
+            65,
+            180
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "ENABLE",
+          "x_mm": 52.0,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            65,
+            160,
+            130,
+            180
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 26,
+      "width_mm": 65.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        130,
+        160,
+        260,
+        180
+      ],
+      "lines": [
+        {
+          "text": "FANS",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            130,
+            160,
+            260,
+            180
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "LOW",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            130,
+            160,
+            195,
+            180
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "HIGH",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            195,
+            160,
+            260,
+            180
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 27,
+      "width_mm": 65.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        260,
+        160,
+        390,
+        180
+      ],
+      "lines": [
+        {
+          "text": "SUCTION",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            260,
+            160,
+            390,
+            180
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "LOW",
+          "x_mm": 52.0,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            260,
+            160,
+            325,
+            180
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "HIGH",
+          "x_mm": 64.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            325,
+            160,
+            390,
+            180
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 28,
+      "width_mm": 65.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        390,
+        160,
+        520,
+        180
+      ],
+      "lines": [
+        {
+          "text": "SUCTION",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            390,
+            160,
+            520,
+            180
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "LOW",
+          "x_mm": 16.0,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            390,
+            160,
+            455,
+            180
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "HIGH",
+          "x_mm": 49.0,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            455,
+            160,
+            520,
+            180
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 29,
+      "width_mm": 65.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        0,
+        180,
+        130,
+        200
+      ],
+      "lines": [
+        {
+          "text": "ROOM",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            0,
+            180,
+            130,
+            200
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "DISABLE",
+          "x_mm": 13.0,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            0,
+            180,
+            65,
+            200
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "ENABLE",
+          "x_mm": 52.0,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            65,
+            180,
+            130,
+            200
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 30,
+      "width_mm": 65.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        130,
+        180,
+        260,
+        200
+      ],
+      "lines": [
+        {
+          "text": "FANS",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            130,
+            180,
+            260,
+            200
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "LOW",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            130,
+            180,
+            195,
+            200
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "HIGH",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            195,
+            180,
+            260,
+            200
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 31,
+      "width_mm": 65.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        260,
+        180,
+        390,
+        200
+      ],
+      "lines": [
+        {
+          "text": "SUCTION",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            260,
+            180,
+            390,
+            200
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "LOW",
+          "x_mm": 52.0,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            260,
+            180,
+            325,
+            200
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "HIGH",
+          "x_mm": 64.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            325,
+            180,
+            390,
+            200
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 32,
+      "width_mm": 65.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        390,
+        180,
+        520,
+        200
+      ],
+      "lines": [
+        {
+          "text": "SUCTION",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            390,
+            180,
+            520,
+            200
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "LOW",
+          "x_mm": 16.0,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            390,
+            180,
+            455,
+            200
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "HIGH",
+          "x_mm": 49.0,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            455,
+            180,
+            520,
+            200
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 33,
+      "width_mm": 65.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        0,
+        200,
+        130,
+        220
+      ],
+      "lines": [
+        {
+          "text": "ROOM",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            0,
+            200,
+            130,
+            220
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "DISABLE",
+          "x_mm": 13.0,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            0,
+            200,
+            65,
+            220
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "ENABLE",
+          "x_mm": 52.0,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            65,
+            200,
+            130,
+            220
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 34,
+      "width_mm": 65.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        130,
+        200,
+        260,
+        220
+      ],
+      "lines": [
+        {
+          "text": "FANS",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            130,
+            200,
+            260,
+            220
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "LOW",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            130,
+            200,
+            195,
+            220
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "HIGH",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            195,
+            200,
+            260,
+            220
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 35,
+      "width_mm": 65.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        260,
+        200,
+        390,
+        220
+      ],
+      "lines": [
+        {
+          "text": "SUCTION",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            260,
+            200,
+            390,
+            220
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "LOW",
+          "x_mm": 52.0,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            260,
+            200,
+            325,
+            220
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "HIGH",
+          "x_mm": 64.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            325,
+            200,
+            390,
+            220
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 36,
+      "width_mm": 65.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        390,
+        200,
+        520,
+        220
+      ],
+      "lines": [
+        {
+          "text": "SUCTION",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            390,
+            200,
+            520,
+            220
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "LOW",
+          "x_mm": 16.0,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            390,
+            200,
+            455,
+            220
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "HIGH",
+          "x_mm": 49.0,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            455,
+            200,
+            520,
+            220
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 37,
+      "width_mm": 65.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        0,
+        220,
+        130,
+        240
+      ],
+      "lines": [
+        {
+          "text": "CALLING",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            0,
+            220,
+            130,
+            240
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 38,
+      "width_mm": 65.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        130,
+        220,
+        260,
+        240
+      ],
+      "lines": [
+        {
+          "text": "FAULT",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            130,
+            220,
+            260,
+            240
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 39,
+      "width_mm": 65.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        260,
+        220,
+        390,
+        240
+      ],
+      "lines": [
+        {
+          "text": "DEFROST",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            260,
+            220,
+            390,
+            240
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 40,
+      "width_mm": 65.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        390,
+        220,
+        520,
+        240
+      ],
+      "lines": [
+        {
+          "text": "DEFROST",
+          "x_mm": 32.5,
+          "y_mm": 10.0,
+          "size_mm": 8.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            390,
+            220,
+            520,
+            240
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    }
+  ],
+  "total_labels": 40,
+  "warnings": [
+    "structure: using LLM plate outlines (CV gate: cv=12, llm=40, trust_cv=False)",
+    "plate #1: width_mm=65 inconsistent with bbox scale (sx=2.00 sy=1.00) — re-inferring from outline",
+    "plate #1: text 'ROOM 31' too wide at 12mm — reduced to 10.5mm",
+    "plate #2: width_mm=65 inconsistent with bbox scale (sx=2.00 sy=1.00) — re-inferring from outline",
+    "plate #2: text 'ROOM 32' too wide at 12mm — reduced to 10.5mm",
+    "plate #3: width_mm=65 inconsistent with bbox scale (sx=2.00 sy=1.00) — re-inferring from outline",
+    "plate #3: text 'ROOM 33' too wide at 12mm — reduced to 10.5mm",
+    "plate #4: width_mm=65 inconsistent with bbox scale (sx=2.00 sy=1.00) — re-inferring from outline",
+    "plate #4: text 'ROOM 34' too wide at 12mm — reduced to 10.5mm",
+    "plate #5: width_mm=65 inconsistent with bbox scale (sx=2.00 sy=1.00) — re-inferring from outline",
+    "plate #6: width_mm=65 inconsistent with bbox scale (sx=2.00 sy=1.00) — re-inferring from outline",
+    "plate #7: width_mm=65 inconsistent with bbox scale (sx=2.00 sy=1.00) — re-inferring from outline",
+    "plate #8: width_mm=65 inconsistent with bbox scale (sx=2.00 sy=1.00) — re-inferring from outline",
+    "plate #9: width_mm=65 inconsistent with bbox scale (sx=2.00 sy=1.00) — re-inferring from outline",
+    "plate #10: width_mm=65 inconsistent with bbox scale (sx=2.00 sy=1.00) — re-inferring from outline",
+    "plate #11: width_mm=65 inconsistent with bbox scale (sx=2.00 sy=1.00) — re-inferring from outline",
+    "plate #12: width_mm=65 inconsistent with bbox scale (sx=2.00 sy=1.00) — re-inferring from outline",
+    "plate #13: width_mm=65 inconsistent with bbox scale (sx=2.00 sy=1.00) — re-inferring from outline",
+    "plate #14: width_mm=65 inconsistent with bbox scale (sx=2.00 sy=1.00) — re-inferring from outline",
+    "plate #15: width_mm=65 inconsistent with bbox scale (sx=2.00 sy=1.00) — re-inferring from outline",
+    "plate #16: width_mm=65 inconsistent with bbox scale (sx=2.00 sy=1.00) — re-inferring from outline",
+    "plate #17: width_mm=65 inconsistent with bbox scale (sx=2.00 sy=1.00) — re-inferring from outline",
+    "plate #18: width_mm=65 inconsistent with bbox scale (sx=2.00 sy=1.00) — re-inferring from outline",
+    "plate #19: width_mm=65 inconsistent with bbox scale (sx=2.00 sy=1.00) — re-inferring from outline",
+    "plate #20: width_mm=65 inconsistent with bbox scale (sx=2.00 sy=1.00) — re-inferring from outline",
+    "plate #21: width_mm=65 inconsistent with bbox scale (sx=2.00 sy=1.00) — re-inferring from outline",
+    "plate #22: width_mm=65 inconsistent with bbox scale (sx=2.00 sy=1.00) — re-inferring from outline",
+    "plate #23: width_mm=65 inconsistent with bbox scale (sx=2.00 sy=1.00) — re-inferring from outline",
+    "plate #24: width_mm=65 inconsistent with bbox scale (sx=2.00 sy=1.00) — re-inferring from outline",
+    "plate #25: width_mm=65 inconsistent with bbox scale (sx=2.00 sy=1.00) — re-inferring from outline",
+    "plate #26: width_mm=65 inconsistent with bbox scale (sx=2.00 sy=1.00) — re-inferring from outline",
+    "plate #27: width_mm=65 inconsistent with bbox scale (sx=2.00 sy=1.00) — re-inferring from outline",
+    "plate #28: width_mm=65 inconsistent with bbox scale (sx=2.00 sy=1.00) — re-inferring from outline",
+    "plate #29: width_mm=65 inconsistent with bbox scale (sx=2.00 sy=1.00) — re-inferring from outline",
+    "plate #30: width_mm=65 inconsistent with bbox scale (sx=2.00 sy=1.00) — re-inferring from outline",
+    "plate #31: width_mm=65 inconsistent with bbox scale (sx=2.00 sy=1.00) — re-inferring from outline",
+    "plate #32: width_mm=65 inconsistent with bbox scale (sx=2.00 sy=1.00) — re-inferring from outline",
+    "plate #33: width_mm=65 inconsistent with bbox scale (sx=2.00 sy=1.00) — re-inferring from outline",
+    "plate #34: width_mm=65 inconsistent with bbox scale (sx=2.00 sy=1.00) — re-inferring from outline",
+    "plate #35: width_mm=65 inconsistent with bbox scale (sx=2.00 sy=1.00) — re-inferring from outline",
+    "plate #36: width_mm=65 inconsistent with bbox scale (sx=2.00 sy=1.00) — re-inferring from outline",
+    "plate #37: width_mm=65 inconsistent with bbox scale (sx=2.00 sy=1.00) — re-inferring from outline",
+    "plate #38: width_mm=65 inconsistent with bbox scale (sx=2.00 sy=1.00) — re-inferring from outline",
+    "plate #39: width_mm=65 inconsistent with bbox scale (sx=2.00 sy=1.00) — re-inferring from outline",
+    "plate #40: width_mm=65 inconsistent with bbox scale (sx=2.00 sy=1.00) — re-inferring from outline"
+  ]
+}

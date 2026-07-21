@@ -1,0 +1,1283 @@
+{
+  "source_image": "D:\\Repositories\\label-extractor\\sample-data\\image003.png",
+  "generated_at": "2026-07-21T10:12:47",
+  "extract_method": "dual_call",
+  "model": "Qwen/Qwen3.6-27B",
+  "unit": "mm",
+  "image_px": {
+    "width": 520,
+    "height": 480
+  },
+  "dimension_annotations": [
+    {
+      "value_mm": 65,
+      "axis": "horizontal",
+      "span_px": [
+        38.012,
+        154.024
+      ]
+    },
+    {
+      "value_mm": 65,
+      "axis": "horizontal",
+      "span_px": [
+        154.024,
+        273.0
+      ]
+    },
+    {
+      "value_mm": 65,
+      "axis": "horizontal",
+      "span_px": [
+        273.0,
+        391.976
+      ]
+    },
+    {
+      "value_mm": 65,
+      "axis": "horizontal",
+      "span_px": [
+        391.976,
+        510.016
+      ]
+    },
+    {
+      "value_mm": 48,
+      "axis": "vertical",
+      "span_px": [
+        20.016000000000002,
+        110.01599999999999
+      ]
+    },
+    {
+      "value_mm": 13,
+      "axis": "horizontal",
+      "span_px": [
+        47.007999999999996,
+        60.008
+      ]
+    },
+    {
+      "value_mm": 13,
+      "axis": "horizontal",
+      "span_px": [
+        60.008,
+        73.008
+      ]
+    },
+    {
+      "value_mm": 13,
+      "axis": "horizontal",
+      "span_px": [
+        258.024,
+        271.024
+      ]
+    },
+    {
+      "value_mm": 13,
+      "axis": "horizontal",
+      "span_px": [
+        271.024,
+        284.024
+      ]
+    },
+    {
+      "value_mm": 13,
+      "axis": "horizontal",
+      "span_px": [
+        463.008,
+        476.008
+      ]
+    },
+    {
+      "value_mm": 13,
+      "axis": "horizontal",
+      "span_px": [
+        476.008,
+        489.008
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_px": [
+        157.008,
+        194.016
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_px": [
+        194.016,
+        230.01600000000002
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_px": [
+        230.01600000000002,
+        266.016
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_px": [
+        266.016,
+        302.01599999999996
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_px": [
+        302.01599999999996,
+        339.024
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_px": [
+        339.024,
+        374.976
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_px": [
+        374.976,
+        410.976
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_px": [
+        410.976,
+        447.98400000000004
+      ]
+    },
+    {
+      "value_mm": 25,
+      "axis": "horizontal",
+      "span_px": [
+        25.011999999999997,
+        47.007999999999996
+      ]
+    },
+    {
+      "value_mm": 100,
+      "axis": "horizontal",
+      "span_px": [
+        47.007999999999996,
+        146.224
+      ]
+    },
+    {
+      "value_mm": 100,
+      "axis": "horizontal",
+      "span_px": [
+        273.0,
+        372.216
+      ]
+    },
+    {
+      "value_mm": 25,
+      "axis": "horizontal",
+      "span_px": [
+        489.008,
+        510.016
+      ]
+    }
+  ],
+  "labels": [
+    {
+      "label_number": 1,
+      "width_mm": 65,
+      "height_mm": 48,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        38.0,
+        20.0,
+        154.0,
+        110.0
+      ],
+      "lines": [
+        {
+          "text": "ROOM 31",
+          "x_mm": 32.5,
+          "y_mm": 24.0,
+          "size_mm": 10.5,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            38,
+            20,
+            154,
+            110
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 2,
+      "width_mm": 65,
+      "height_mm": 48,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        154.0,
+        20.0,
+        273.0,
+        110.0
+      ],
+      "lines": [
+        {
+          "text": "ROOM 32",
+          "x_mm": 32.5,
+          "y_mm": 24.0,
+          "size_mm": 10.5,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            154,
+            20,
+            273,
+            110
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 3,
+      "width_mm": 65,
+      "height_mm": 48,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        273.0,
+        20.0,
+        392.0,
+        110.0
+      ],
+      "lines": [
+        {
+          "text": "ROOM 33",
+          "x_mm": 32.5,
+          "y_mm": 24.0,
+          "size_mm": 10.5,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            273,
+            20,
+            392,
+            110
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 4,
+      "width_mm": 65,
+      "height_mm": 48,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        392.0,
+        20.0,
+        510.0,
+        110.0
+      ],
+      "lines": [
+        {
+          "text": "ROOM 34",
+          "x_mm": 32.5,
+          "y_mm": 24.0,
+          "size_mm": 10.5,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            392,
+            20,
+            510,
+            110
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 5,
+      "width_mm": 260.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        47.0,
+        157.0,
+        502.0,
+        195.0
+      ],
+      "lines": [
+        {
+          "text": "ROOM",
+          "x_mm": 6.0,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            47,
+            157,
+            68,
+            175
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "FANS",
+          "x_mm": 117.5,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            242,
+            157,
+            263,
+            175
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "SUCTION",
+          "x_mm": 226.0,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            432,
+            157,
+            453,
+            175
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "DISABLE",
+          "x_mm": 6.0,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            47,
+            175,
+            68,
+            193
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "ENABLE",
+          "x_mm": 18.0,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            68,
+            175,
+            89,
+            193
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "LOW",
+          "x_mm": 111.5,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            232,
+            175,
+            253,
+            193
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "HIGH",
+          "x_mm": 123.5,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            253,
+            175,
+            274,
+            193
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "LOW",
+          "x_mm": 220.5,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            422,
+            175,
+            443,
+            193
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "HIGH",
+          "x_mm": 232.5,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            443,
+            175,
+            464,
+            193
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 6,
+      "width_mm": 260.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        47.0,
+        194.0,
+        502.0,
+        231.0
+      ],
+      "lines": [
+        {
+          "text": "ROOM",
+          "x_mm": 6.0,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            47,
+            194,
+            68,
+            212
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "FANS",
+          "x_mm": 117.5,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            242,
+            194,
+            263,
+            212
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "SUCTION",
+          "x_mm": 226.0,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            432,
+            194,
+            453,
+            212
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "DISABLE",
+          "x_mm": 6.0,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            47,
+            212,
+            68,
+            230
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "ENABLE",
+          "x_mm": 18.0,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            68,
+            212,
+            89,
+            230
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "LOW",
+          "x_mm": 111.5,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            232,
+            212,
+            253,
+            230
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "HIGH",
+          "x_mm": 123.5,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            253,
+            212,
+            274,
+            230
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "LOW",
+          "x_mm": 220.5,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            422,
+            212,
+            443,
+            230
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "HIGH",
+          "x_mm": 232.5,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            443,
+            212,
+            464,
+            230
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 7,
+      "width_mm": 260.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        47.0,
+        230.0,
+        502.0,
+        267.0
+      ],
+      "lines": [
+        {
+          "text": "ROOM",
+          "x_mm": 6.0,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            47,
+            230,
+            68,
+            248
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "FANS",
+          "x_mm": 117.5,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            242,
+            230,
+            263,
+            248
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "SUCTION",
+          "x_mm": 226.0,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            432,
+            230,
+            453,
+            248
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "DISABLE",
+          "x_mm": 6.0,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            47,
+            248,
+            68,
+            266
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "ENABLE",
+          "x_mm": 18.0,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            68,
+            248,
+            89,
+            266
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "LOW",
+          "x_mm": 111.5,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            232,
+            248,
+            253,
+            266
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "HIGH",
+          "x_mm": 123.5,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            253,
+            248,
+            274,
+            266
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "LOW",
+          "x_mm": 220.5,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            422,
+            248,
+            443,
+            266
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "HIGH",
+          "x_mm": 232.5,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            443,
+            248,
+            464,
+            266
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 8,
+      "width_mm": 260.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        47.0,
+        266.0,
+        502.0,
+        303.0
+      ],
+      "lines": [
+        {
+          "text": "ROOM",
+          "x_mm": 6.0,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            47,
+            266,
+            68,
+            284
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "FANS",
+          "x_mm": 117.5,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            242,
+            266,
+            263,
+            284
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "SUCTION",
+          "x_mm": 226.0,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            432,
+            266,
+            453,
+            284
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "DISABLE",
+          "x_mm": 6.0,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            47,
+            284,
+            68,
+            302
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "ENABLE",
+          "x_mm": 18.0,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            68,
+            284,
+            89,
+            302
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "LOW",
+          "x_mm": 111.5,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            232,
+            284,
+            253,
+            302
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "HIGH",
+          "x_mm": 123.5,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            253,
+            284,
+            274,
+            302
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "LOW",
+          "x_mm": 220.5,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            422,
+            284,
+            443,
+            302
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "HIGH",
+          "x_mm": 232.5,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            443,
+            284,
+            464,
+            302
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 9,
+      "width_mm": 260.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        47.0,
+        302.0,
+        502.0,
+        340.0
+      ],
+      "lines": [
+        {
+          "text": "CALLING",
+          "x_mm": 9.0,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            47,
+            302,
+            79,
+            340
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "FAULT",
+          "x_mm": 117.5,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            242,
+            302,
+            263,
+            340
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "DEFROST",
+          "x_mm": 229.0,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            432,
+            302,
+            464,
+            340
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 10,
+      "width_mm": 260.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        47.0,
+        339.0,
+        502.0,
+        376.0
+      ],
+      "lines": [
+        {
+          "text": "CALLING",
+          "x_mm": 9.0,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            47,
+            339,
+            79,
+            376
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "FAULT",
+          "x_mm": 117.5,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            242,
+            339,
+            263,
+            376
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "DEFROST",
+          "x_mm": 229.0,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            432,
+            339,
+            464,
+            376
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 11,
+      "width_mm": 260.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        47.0,
+        375.0,
+        502.0,
+        412.0
+      ],
+      "lines": [
+        {
+          "text": "CALLING",
+          "x_mm": 9.0,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            47,
+            375,
+            79,
+            412
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "FAULT",
+          "x_mm": 117.5,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            242,
+            375,
+            263,
+            412
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "DEFROST",
+          "x_mm": 229.0,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            432,
+            375,
+            464,
+            412
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 12,
+      "width_mm": 260.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        47.0,
+        411.0,
+        502.0,
+        448.0
+      ],
+      "lines": [
+        {
+          "text": "CALLING",
+          "x_mm": 9.0,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            47,
+            411,
+            79,
+            448
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "FAULT",
+          "x_mm": 117.5,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            242,
+            411,
+            263,
+            448
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "DEFROST",
+          "x_mm": 229.0,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            432,
+            411,
+            464,
+            448
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    }
+  ],
+  "total_labels": 12,
+  "warnings": [
+    "structure: using CV plate outlines (12 plates, gate trusted)",
+    "plate #1: text 'ROOM 31' too wide at 18mm — reduced to 10.5mm",
+    "plate #2: text 'ROOM 32' too wide at 18mm — reduced to 10.5mm",
+    "plate #3: text 'ROOM 33' too wide at 18mm — reduced to 10.5mm",
+    "plate #4: text 'ROOM 34' too wide at 18mm — reduced to 10.5mm",
+    "plate #5: width_mm=470 inconsistent with dimension span sum 260mm — using tiled sum",
+    "plate #6: width_mm=470 inconsistent with dimension span sum 260mm — using tiled sum",
+    "plate #7: width_mm=470 inconsistent with dimension span sum 260mm — using tiled sum",
+    "plate #8: width_mm=470 inconsistent with dimension span sum 260mm — using tiled sum",
+    "plate #9: width_mm=470 inconsistent with dimension span sum 260mm — using tiled sum",
+    "plate #10: width_mm=470 inconsistent with dimension span sum 260mm — using tiled sum",
+    "plate #11: width_mm=470 inconsistent with dimension span sum 260mm — using tiled sum",
+    "plate #12: width_mm=470 inconsistent with dimension span sum 260mm — using tiled sum"
+  ]
+}

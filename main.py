@@ -30,7 +30,7 @@ from render_md import render_markdown
 from samples import SAMPLE_DIR, sample_paths
 
 IMAGE_FILE = "draft.png"
-RESULT_DIR = "results"
+RESULT_DIR = os.path.join("results", "current")
 SPECS_FILENAME = "specs.json"
 OUTPUT_MD = "output.md"
 EDITOR_LATEST = os.path.join("editor", "latest-specs.json")

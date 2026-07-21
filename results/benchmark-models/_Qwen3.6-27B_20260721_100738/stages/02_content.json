@@ -1,0 +1,121 @@
+{
+  "plates": [
+    {
+      "id": 1,
+      "line_count": 1,
+      "width_mm": 160,
+      "height_mm": 60,
+      "lines": [
+        {
+          "text": "IN DRAWER",
+          "x_mm": 80,
+          "y_mm": 30,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.245833,
+            0.053125,
+            0.35,
+            0.078125
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "line_count": 3,
+      "width_mm": 120,
+      "height_mm": 60,
+      "lines": [
+        {
+          "text": "ROOM 31",
+          "x_mm": 60,
+          "y_mm": 15,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.245833,
+            0.109375,
+            0.322917,
+            0.125
+          ]
+        },
+        {
+          "text": "FAN FAN MED HIGH",
+          "x_mm": 60,
+          "y_mm": 30,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.245833,
+            0.125,
+            0.35,
+            0.140625
+          ]
+        },
+        {
+          "text": "LOW HIGH",
+          "x_mm": 60,
+          "y_mm": 45,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.245833,
+            0.140625,
+            0.322917,
+            0.15625
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "line_count": 2,
+      "width_mm": 120,
+      "height_mm": 30,
+      "lines": [
+        {
+          "text": "MISSED 576",
+          "x_mm": 60,
+          "y_mm": 10,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.245833,
+            0.195312,
+            0.322917,
+            0.210938
+          ]
+        },
+        {
+          "text": "C8",
+          "x_mm": 60,
+          "y_mm": 20,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.245833,
+            0.210938,
+            0.270833,
+            0.226563
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "line_count": 0,
+      "width_mm": null,
+      "height_mm": null,
+      "lines": []
+    },
+    {
+      "id": 5,
+      "line_count": 0,
+      "width_mm": null,
+      "height_mm": null,
+      "lines": []
+    },
+    {
+      "id": 6,
+      "line_count": 0,
+      "width_mm": null,
+      "height_mm": null,
+      "lines": []
+    }
+  ]
+}

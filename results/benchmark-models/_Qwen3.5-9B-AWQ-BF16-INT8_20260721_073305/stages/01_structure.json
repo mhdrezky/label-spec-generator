@@ -1,0 +1,422 @@
+{
+  "draft_type": "photo",
+  "material": "PVC",
+  "background_color": "White",
+  "text_color": "Black",
+  "fixing": "Self-tapping screws",
+  "default_size_mm": null,
+  "line_sizes": [
+    {
+      "line": 1,
+      "size_mm": 5
+    },
+    {
+      "line": 2,
+      "size_mm": 5
+    },
+    {
+      "line": 3,
+      "size_mm": 5
+    }
+  ],
+  "dimension_annotations": [
+    {
+      "value_mm": 140,
+      "axis": "horizontal",
+      "span_frac": [
+        0.005,
+        0.115
+      ]
+    },
+    {
+      "value_mm": 40,
+      "axis": "vertical",
+      "span_frac": [
+        0.015,
+        0.055
+      ]
+    },
+    {
+      "value_mm": 100,
+      "axis": "horizontal",
+      "span_frac": [
+        0.005,
+        0.115
+      ]
+    },
+    {
+      "value_mm": 40,
+      "axis": "vertical",
+      "span_frac": [
+        0.095,
+        0.135
+      ]
+    },
+    {
+      "value_mm": 100,
+      "axis": "horizontal",
+      "span_frac": [
+        0.005,
+        0.115
+      ]
+    },
+    {
+      "value_mm": 40,
+      "axis": "vertical",
+      "span_frac": [
+        0.175,
+        0.215
+      ]
+    },
+    {
+      "value_mm": 100,
+      "axis": "horizontal",
+      "span_frac": [
+        0.005,
+        0.115
+      ]
+    },
+    {
+      "value_mm": 40,
+      "axis": "vertical",
+      "span_frac": [
+        0.255,
+        0.295
+      ]
+    },
+    {
+      "value_mm": 100,
+      "axis": "horizontal",
+      "span_frac": [
+        0.005,
+        0.115
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_frac": [
+        0.375,
+        0.415
+      ]
+    },
+    {
+      "value_mm": 100,
+      "axis": "horizontal",
+      "span_frac": [
+        0.005,
+        0.115
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_frac": [
+        0.455,
+        0.495
+      ]
+    },
+    {
+      "value_mm": 100,
+      "axis": "horizontal",
+      "span_frac": [
+        0.005,
+        0.115
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_frac": [
+        0.535,
+        0.575
+      ]
+    },
+    {
+      "value_mm": 100,
+      "axis": "horizontal",
+      "span_frac": [
+        0.005,
+        0.115
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_frac": [
+        0.615,
+        0.655
+      ]
+    },
+    {
+      "value_mm": 100,
+      "axis": "horizontal",
+      "span_frac": [
+        0.005,
+        0.115
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_frac": [
+        0.695,
+        0.735
+      ]
+    },
+    {
+      "value_mm": 100,
+      "axis": "horizontal",
+      "span_frac": [
+        0.005,
+        0.115
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_frac": [
+        0.775,
+        0.815
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_frac": [
+        0.855,
+        0.895
+      ]
+    },
+    {
+      "value_mm": 215,
+      "axis": "vertical",
+      "span_frac": [
+        0.015,
+        0.895
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "horizontal",
+      "span_frac": [
+        0.125,
+        0.165
+      ]
+    },
+    {
+      "value_mm": 215,
+      "axis": "vertical",
+      "span_frac": [
+        0.125,
+        0.895
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "horizontal",
+      "span_frac": [
+        0.175,
+        0.215
+      ]
+    },
+    {
+      "value_mm": 215,
+      "axis": "vertical",
+      "span_frac": [
+        0.175,
+        0.895
+      ]
+    },
+    {
+      "value_mm": 100,
+      "axis": "horizontal",
+      "span_frac": [
+        0.405,
+        0.515
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_frac": [
+        0.915,
+        0.955
+      ]
+    }
+  ],
+  "plates": [
+    {
+      "id": 1,
+      "bbox_frac": [
+        0.005,
+        0.015,
+        0.115,
+        0.055
+      ],
+      "width_mm": 140,
+      "height_mm": 40
+    },
+    {
+      "id": 2,
+      "bbox_frac": [
+        0.005,
+        0.095,
+        0.115,
+        0.135
+      ],
+      "width_mm": 100,
+      "height_mm": 40
+    },
+    {
+      "id": 3,
+      "bbox_frac": [
+        0.005,
+        0.175,
+        0.115,
+        0.215
+      ],
+      "width_mm": 100,
+      "height_mm": 40
+    },
+    {
+      "id": 4,
+      "bbox_frac": [
+        0.005,
+        0.255,
+        0.115,
+        0.295
+      ],
+      "width_mm": 100,
+      "height_mm": 40
+    },
+    {
+      "id": 5,
+      "bbox_frac": [
+        0.005,
+        0.375,
+        0.115,
+        0.415
+      ],
+      "width_mm": 100,
+      "height_mm": 20
+    },
+    {
+      "id": 6,
+      "bbox_frac": [
+        0.005,
+        0.455,
+        0.115,
+        0.495
+      ],
+      "width_mm": 100,
+      "height_mm": 20
+    },
+    {
+      "id": 7,
+      "bbox_frac": [
+        0.005,
+        0.535,
+        0.115,
+        0.575
+      ],
+      "width_mm": 100,
+      "height_mm": 20
+    },
+    {
+      "id": 8,
+      "bbox_frac": [
+        0.005,
+        0.615,
+        0.115,
+        0.655
+      ],
+      "width_mm": 100,
+      "height_mm": 20
+    },
+    {
+      "id": 9,
+      "bbox_frac": [
+        0.005,
+        0.695,
+        0.115,
+        0.735
+      ],
+      "width_mm": 100,
+      "height_mm": 20
+    },
+    {
+      "id": 10,
+      "bbox_frac": [
+        0.005,
+        0.775,
+        0.115,
+        0.815
+      ],
+      "width_mm": 100,
+      "height_mm": 20
+    },
+    {
+      "id": 11,
+      "bbox_frac": [
+        0.005,
+        0.855,
+        0.115,
+        0.895
+      ],
+      "width_mm": 100,
+      "height_mm": 20
+    },
+    {
+      "id": 12,
+      "bbox_frac": [
+        0.125,
+        0.015,
+        0.165,
+        0.895
+      ],
+      "width_mm": 20,
+      "height_mm": 215
+    },
+    {
+      "id": 13,
+      "bbox_frac": [
+        0.175,
+        0.015,
+        0.215,
+        0.895
+      ],
+      "width_mm": 20,
+      "height_mm": 215
+    },
+    {
+      "id": 14,
+      "bbox_frac": [
+        0.405,
+        0.915,
+        0.515,
+        0.955
+      ],
+      "width_mm": 100,
+      "height_mm": 20
+    }
+  ],
+  "gate": {
+    "trust_cv": false,
+    "cv_count": 0,
+    "llm_count": 14,
+    "reasons": [
+      "cv_count 0 < 1",
+      "count gap 100% (cv=0, llm=14) > 60%",
+      "coverage 0% < 5%"
+    ]
+  },
+  "cv_meta": {
+    "size": [
+      1191,
+      1684
+    ],
+    "method": "opencv",
+    "count": 0
+  }
+}

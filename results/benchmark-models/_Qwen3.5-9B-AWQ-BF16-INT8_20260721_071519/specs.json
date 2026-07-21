@@ -1,0 +1,407 @@
+{
+  "source_image": "D:\\Repositories\\label-extractor\\sample-data\\kiso-handwritten.jpeg",
+  "generated_at": "2026-07-21T07:16:03",
+  "extract_method": "dual_call",
+  "model": "cyankiwi/Qwen3.5-9B-AWQ-BF16-INT8",
+  "unit": "mm",
+  "image_px": {
+    "width": 1600,
+    "height": 1200
+  },
+  "dimension_annotations": [
+    {
+      "value_mm": 20,
+      "axis": "horizontal",
+      "span_px": [
+        211.04,
+        328.0
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "horizontal",
+      "span_px": [
+        488.0,
+        604.96
+      ]
+    },
+    {
+      "value_mm": 216,
+      "axis": "vertical",
+      "span_px": [
+        366.0,
+        559.44
+      ]
+    },
+    {
+      "value_mm": 24,
+      "axis": "vertical",
+      "span_px": [
+        245.99999999999997,
+        266.64
+      ]
+    },
+    {
+      "value_mm": 52,
+      "axis": "vertical",
+      "span_px": [
+        245.99999999999997,
+        266.64
+      ]
+    },
+    {
+      "value_mm": 80,
+      "axis": "vertical",
+      "span_px": [
+        245.99999999999997,
+        266.64
+      ]
+    },
+    {
+      "value_mm": 108,
+      "axis": "vertical",
+      "span_px": [
+        245.99999999999997,
+        266.64
+      ]
+    },
+    {
+      "value_mm": 136,
+      "axis": "vertical",
+      "span_px": [
+        245.99999999999997,
+        266.64
+      ]
+    },
+    {
+      "value_mm": 164,
+      "axis": "vertical",
+      "span_px": [
+        245.99999999999997,
+        266.64
+      ]
+    },
+    {
+      "value_mm": 192,
+      "axis": "vertical",
+      "span_px": [
+        245.99999999999997,
+        266.64
+      ]
+    },
+    {
+      "value_mm": 24,
+      "axis": "vertical",
+      "span_px": [
+        366.0,
+        386.64
+      ]
+    },
+    {
+      "value_mm": 52,
+      "axis": "vertical",
+      "span_px": [
+        366.0,
+        386.64
+      ]
+    },
+    {
+      "value_mm": 80,
+      "axis": "vertical",
+      "span_px": [
+        366.0,
+        386.64
+      ]
+    },
+    {
+      "value_mm": 108,
+      "axis": "vertical",
+      "span_px": [
+        366.0,
+        386.64
+      ]
+    },
+    {
+      "value_mm": 136,
+      "axis": "vertical",
+      "span_px": [
+        366.0,
+        386.64
+      ]
+    },
+    {
+      "value_mm": 164,
+      "axis": "vertical",
+      "span_px": [
+        366.0,
+        386.64
+      ]
+    },
+    {
+      "value_mm": 192,
+      "axis": "vertical",
+      "span_px": [
+        366.0,
+        386.64
+      ]
+    }
+  ],
+  "labels": [
+    {
+      "label_number": 1,
+      "width_mm": 20.0,
+      "height_mm": 216,
+      "quantity": 1,
+      "material": "White",
+      "background_color": "White",
+      "text_color": "Black",
+      "fixing": "None",
+      "notes": null,
+      "bbox_px": [
+        211,
+        140,
+        328,
+        559
+      ],
+      "lines": [
+        {
+          "text": "KISO 1.1",
+          "x_mm": 10.0,
+          "y_mm": 24.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            211,
+            140,
+            328,
+            190
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "KISO 1.2",
+          "x_mm": 10.0,
+          "y_mm": 52.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            211,
+            190,
+            328,
+            240
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "KISO 1.3",
+          "x_mm": 10.0,
+          "y_mm": 80.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            211,
+            240,
+            328,
+            290
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "KISO 1.4",
+          "x_mm": 10.0,
+          "y_mm": 108.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            211,
+            290,
+            328,
+            340
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "KISO 1.6",
+          "x_mm": 10.0,
+          "y_mm": 136.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            211,
+            340,
+            328,
+            390
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "KISO 1.5",
+          "x_mm": 10.0,
+          "y_mm": 164.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            211,
+            390,
+            328,
+            440
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "KISO 1.7",
+          "x_mm": 10.0,
+          "y_mm": 192.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            211,
+            440,
+            328,
+            490
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 2,
+      "width_mm": 20.0,
+      "height_mm": 216,
+      "quantity": 1,
+      "material": "White",
+      "background_color": "White",
+      "text_color": "Black",
+      "fixing": "None",
+      "notes": null,
+      "bbox_px": [
+        488,
+        140,
+        605,
+        559
+      ],
+      "lines": [
+        {
+          "text": "KISO 2.1",
+          "x_mm": 10.0,
+          "y_mm": 24.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            488,
+            140,
+            605,
+            190
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "KISO 2.2",
+          "x_mm": 10.0,
+          "y_mm": 52.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            488,
+            190,
+            605,
+            240
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "KISO 2.3",
+          "x_mm": 10.0,
+          "y_mm": 80.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            488,
+            240,
+            605,
+            290
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "KISO 2.4",
+          "x_mm": 10.0,
+          "y_mm": 108.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            488,
+            290,
+            605,
+            340
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "KISO 2.6",
+          "x_mm": 10.0,
+          "y_mm": 136.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            488,
+            340,
+            605,
+            390
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "KISO 2.5",
+          "x_mm": 10.0,
+          "y_mm": 164.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            488,
+            390,
+            605,
+            440
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "KISO 2.7",
+          "x_mm": 10.0,
+          "y_mm": 192.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            488,
+            440,
+            605,
+            490
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    }
+  ],
+  "total_labels": 2,
+  "warnings": [
+    "structure: using LLM plate outlines (CV gate: cv=4, llm=2, trust_cv=False)",
+    "plate #1: width_mm=20 inconsistent with bbox scale (sx=5.85 sy=1.94) — re-inferring from outline",
+    "plate #2: width_mm=20 inconsistent with bbox scale (sx=5.85 sy=1.94) — re-inferring from outline"
+  ]
+}

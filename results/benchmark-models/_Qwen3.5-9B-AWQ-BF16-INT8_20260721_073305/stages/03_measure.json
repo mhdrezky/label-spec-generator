@@ -1,0 +1,1612 @@
+{
+  "unit": "mm",
+  "image_px": {
+    "width": 1191,
+    "height": 1684
+  },
+  "dimension_annotations": [
+    {
+      "value_mm": 140,
+      "axis": "horizontal",
+      "span_px": [
+        5.955,
+        136.965
+      ]
+    },
+    {
+      "value_mm": 40,
+      "axis": "vertical",
+      "span_px": [
+        25.259999999999998,
+        92.62
+      ]
+    },
+    {
+      "value_mm": 100,
+      "axis": "horizontal",
+      "span_px": [
+        5.955,
+        136.965
+      ]
+    },
+    {
+      "value_mm": 40,
+      "axis": "vertical",
+      "span_px": [
+        159.98,
+        227.34
+      ]
+    },
+    {
+      "value_mm": 100,
+      "axis": "horizontal",
+      "span_px": [
+        5.955,
+        136.965
+      ]
+    },
+    {
+      "value_mm": 40,
+      "axis": "vertical",
+      "span_px": [
+        294.7,
+        362.06
+      ]
+    },
+    {
+      "value_mm": 100,
+      "axis": "horizontal",
+      "span_px": [
+        5.955,
+        136.965
+      ]
+    },
+    {
+      "value_mm": 40,
+      "axis": "vertical",
+      "span_px": [
+        429.42,
+        496.78
+      ]
+    },
+    {
+      "value_mm": 100,
+      "axis": "horizontal",
+      "span_px": [
+        5.955,
+        136.965
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_px": [
+        631.5,
+        698.86
+      ]
+    },
+    {
+      "value_mm": 100,
+      "axis": "horizontal",
+      "span_px": [
+        5.955,
+        136.965
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_px": [
+        766.22,
+        833.58
+      ]
+    },
+    {
+      "value_mm": 100,
+      "axis": "horizontal",
+      "span_px": [
+        5.955,
+        136.965
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_px": [
+        900.94,
+        968.3
+      ]
+    },
+    {
+      "value_mm": 100,
+      "axis": "horizontal",
+      "span_px": [
+        5.955,
+        136.965
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_px": [
+        1035.66,
+        1103.02
+      ]
+    },
+    {
+      "value_mm": 100,
+      "axis": "horizontal",
+      "span_px": [
+        5.955,
+        136.965
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_px": [
+        1170.3799999999999,
+        1237.74
+      ]
+    },
+    {
+      "value_mm": 100,
+      "axis": "horizontal",
+      "span_px": [
+        5.955,
+        136.965
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_px": [
+        1305.1000000000001,
+        1372.4599999999998
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_px": [
+        1439.82,
+        1507.18
+      ]
+    },
+    {
+      "value_mm": 215,
+      "axis": "vertical",
+      "span_px": [
+        25.259999999999998,
+        1507.18
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "horizontal",
+      "span_px": [
+        148.875,
+        196.51500000000001
+      ]
+    },
+    {
+      "value_mm": 215,
+      "axis": "vertical",
+      "span_px": [
+        210.5,
+        1507.18
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "horizontal",
+      "span_px": [
+        208.42499999999998,
+        256.065
+      ]
+    },
+    {
+      "value_mm": 215,
+      "axis": "vertical",
+      "span_px": [
+        294.7,
+        1507.18
+      ]
+    },
+    {
+      "value_mm": 100,
+      "axis": "horizontal",
+      "span_px": [
+        482.355,
+        613.365
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_px": [
+        1540.8600000000001,
+        1608.22
+      ]
+    }
+  ],
+  "labels": [
+    {
+      "label_number": 1,
+      "width_mm": 100.0,
+      "height_mm": 40,
+      "quantity": 1,
+      "material": "PVC",
+      "background_color": "White",
+      "text_color": "Black",
+      "fixing": "Self-tapping screws",
+      "notes": null,
+      "bbox_px": [
+        6,
+        25,
+        137,
+        93
+      ],
+      "lines": [
+        {
+          "text": "GENERATOR SUPPLY",
+          "x_mm": 50.0,
+          "y_mm": 10.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            6,
+            25,
+            137,
+            42
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "ISOLATOR",
+          "x_mm": 50.0,
+          "y_mm": 20.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            6,
+            51,
+            137,
+            67
+          ],
+          "_content_y": 20.0,
+          "measured_fields": []
+        },
+        {
+          "text": "(100/250A)",
+          "x_mm": 50.0,
+          "y_mm": 30.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            6,
+            76,
+            137,
+            93
+          ],
+          "_content_y": 30.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 2,
+      "width_mm": 100,
+      "height_mm": 40,
+      "quantity": 1,
+      "material": "PVC",
+      "background_color": "White",
+      "text_color": "Black",
+      "fixing": "Self-tapping screws",
+      "notes": null,
+      "bbox_px": [
+        6,
+        160,
+        137,
+        227
+      ],
+      "lines": [
+        {
+          "text": "MAIN ISOLATOR",
+          "x_mm": 50.0,
+          "y_mm": 10.0,
+          "size_mm": 4.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            6,
+            160,
+            137,
+            177
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "NON ESSENTIAL POWER",
+          "x_mm": 50.0,
+          "y_mm": 20.0,
+          "size_mm": 4.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            6,
+            185,
+            137,
+            202
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "(150/160A)",
+          "x_mm": 50.0,
+          "y_mm": 30.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            6,
+            210,
+            137,
+            227
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 3,
+      "width_mm": 100,
+      "height_mm": 40,
+      "quantity": 1,
+      "material": "PVC",
+      "background_color": "White",
+      "text_color": "Black",
+      "fixing": "Self-tapping screws",
+      "notes": null,
+      "bbox_px": [
+        6,
+        295,
+        137,
+        362
+      ],
+      "lines": [
+        {
+          "text": "MAIN ISOLATOR",
+          "x_mm": 50.0,
+          "y_mm": 10.0,
+          "size_mm": 4.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            6,
+            295,
+            137,
+            312
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "ESSENTIAL LIGHTING",
+          "x_mm": 50.0,
+          "y_mm": 20.0,
+          "size_mm": 4.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            6,
+            320,
+            137,
+            337
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "(80/100A)",
+          "x_mm": 50.0,
+          "y_mm": 30.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            6,
+            345,
+            137,
+            362
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 4,
+      "width_mm": 100,
+      "height_mm": 40,
+      "quantity": 1,
+      "material": "PVC",
+      "background_color": "White",
+      "text_color": "Black",
+      "fixing": "Self-tapping screws",
+      "notes": null,
+      "bbox_px": [
+        6,
+        429,
+        137,
+        497
+      ],
+      "lines": [
+        {
+          "text": "MAIN ISOLATOR",
+          "x_mm": 50.0,
+          "y_mm": 10.0,
+          "size_mm": 4.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            6,
+            429,
+            137,
+            446
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "ESSENTIAL POWER",
+          "x_mm": 50.0,
+          "y_mm": 20.0,
+          "size_mm": 4.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            6,
+            455,
+            137,
+            472
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "(80/100A)",
+          "x_mm": 50.0,
+          "y_mm": 30.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            6,
+            480,
+            137,
+            497
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 5,
+      "width_mm": 100.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": "PVC",
+      "background_color": "White",
+      "text_color": "Black",
+      "fixing": "Self-tapping screws",
+      "notes": null,
+      "bbox_px": [
+        6,
+        632,
+        137,
+        699
+      ],
+      "lines": [
+        {
+          "text": "NON ESSENTIAL",
+          "x_mm": 50.0,
+          "y_mm": 10.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            6,
+            632,
+            137,
+            648
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "POWER CHASSIS",
+          "x_mm": 50.0,
+          "y_mm": 10.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            6,
+            648,
+            137,
+            665
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 6,
+      "width_mm": 100.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": "PVC",
+      "background_color": "White",
+      "text_color": "Black",
+      "fixing": "Self-tapping screws",
+      "notes": null,
+      "bbox_px": [
+        6,
+        766,
+        137,
+        834
+      ],
+      "lines": [
+        {
+          "text": "ESSENTIAL",
+          "x_mm": 50.0,
+          "y_mm": 10.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            6,
+            766,
+            137,
+            783
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "POWER CHASSIS",
+          "x_mm": 50.0,
+          "y_mm": 10.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            6,
+            783,
+            137,
+            800
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 7,
+      "width_mm": 100.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": "PVC",
+      "background_color": "White",
+      "text_color": "Black",
+      "fixing": "Self-tapping screws",
+      "notes": null,
+      "bbox_px": [
+        6,
+        901,
+        137,
+        968
+      ],
+      "lines": [
+        {
+          "text": "ESSENTIAL",
+          "x_mm": 50.0,
+          "y_mm": 10.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            6,
+            901,
+            137,
+            918
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "LIGHTING CHASSIS",
+          "x_mm": 50.0,
+          "y_mm": 10.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            6,
+            918,
+            137,
+            935
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 8,
+      "width_mm": 100.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": "PVC",
+      "background_color": "White",
+      "text_color": "Black",
+      "fixing": "Self-tapping screws",
+      "notes": null,
+      "bbox_px": [
+        6,
+        1036,
+        137,
+        1103
+      ],
+      "lines": [
+        {
+          "text": "NON ESSENTIAL",
+          "x_mm": 50.0,
+          "y_mm": 10.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            6,
+            1036,
+            137,
+            1052
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "POWER METER",
+          "x_mm": 50.0,
+          "y_mm": 10.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            6,
+            1052,
+            137,
+            1069
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 9,
+      "width_mm": 100.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": "PVC",
+      "background_color": "White",
+      "text_color": "Black",
+      "fixing": "Self-tapping screws",
+      "notes": null,
+      "bbox_px": [
+        6,
+        1170,
+        137,
+        1238
+      ],
+      "lines": [
+        {
+          "text": "ESSENTIAL",
+          "x_mm": 50.0,
+          "y_mm": 10.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            6,
+            1170,
+            137,
+            1187
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "POWER METER",
+          "x_mm": 50.0,
+          "y_mm": 10.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            6,
+            1187,
+            137,
+            1204
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 10,
+      "width_mm": 100.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": "PVC",
+      "background_color": "White",
+      "text_color": "Black",
+      "fixing": "Self-tapping screws",
+      "notes": null,
+      "bbox_px": [
+        6,
+        1305,
+        137,
+        1372
+      ],
+      "lines": [
+        {
+          "text": "ESSENTIAL",
+          "x_mm": 50.0,
+          "y_mm": 10.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            6,
+            1305,
+            137,
+            1322
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        },
+        {
+          "text": "LIGHTING METER",
+          "x_mm": 50.0,
+          "y_mm": 10.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            6,
+            1322,
+            137,
+            1339
+          ],
+          "_content_y": 10.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 11,
+      "width_mm": 100.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": "PVC",
+      "background_color": "White",
+      "text_color": "Black",
+      "fixing": "Self-tapping screws",
+      "notes": null,
+      "bbox_px": [
+        6,
+        1440,
+        137,
+        1507
+      ],
+      "lines": [
+        {
+          "text": "SPARE",
+          "x_mm": 50.0,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            6,
+            1440,
+            137,
+            1457
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 12,
+      "width_mm": 20.0,
+      "height_mm": 215,
+      "quantity": 1,
+      "material": "PVC",
+      "background_color": "White",
+      "text_color": "Black",
+      "fixing": "Self-tapping screws",
+      "notes": null,
+      "bbox_px": [
+        149,
+        25,
+        197,
+        1507
+      ],
+      "lines": [
+        {
+          "text": "73",
+          "x_mm": 10.0,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            149,
+            25,
+            197,
+            42
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "74",
+          "x_mm": 10.0,
+          "y_mm": 20.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            149,
+            51,
+            197,
+            67
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "75",
+          "x_mm": 10.0,
+          "y_mm": 30.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            149,
+            76,
+            197,
+            93
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "76",
+          "x_mm": 10.0,
+          "y_mm": 40.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            149,
+            101,
+            197,
+            118
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "77",
+          "x_mm": 10.0,
+          "y_mm": 50.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            149,
+            126,
+            197,
+            143
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "78",
+          "x_mm": 10.0,
+          "y_mm": 60.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            149,
+            152,
+            197,
+            168
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "79",
+          "x_mm": 10.0,
+          "y_mm": 70.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            149,
+            177,
+            197,
+            194
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "80",
+          "x_mm": 10.0,
+          "y_mm": 80.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            149,
+            202,
+            197,
+            219
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "81",
+          "x_mm": 10.0,
+          "y_mm": 90.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            149,
+            227,
+            197,
+            244
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "82",
+          "x_mm": 10.0,
+          "y_mm": 100.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            149,
+            253,
+            197,
+            269
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "83",
+          "x_mm": 10.0,
+          "y_mm": 110.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            149,
+            278,
+            197,
+            295
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "84",
+          "x_mm": 10.0,
+          "y_mm": 120.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            149,
+            303,
+            197,
+            320
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "EQ",
+          "x_mm": 10.0,
+          "y_mm": 130.0,
+          "size_mm": 2.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            149,
+            328,
+            197,
+            345
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "EQ",
+          "x_mm": 10.0,
+          "y_mm": 140.0,
+          "size_mm": 2.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            149,
+            354,
+            197,
+            370
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "EQ",
+          "x_mm": 10.0,
+          "y_mm": 150.0,
+          "size_mm": 2.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            149,
+            379,
+            197,
+            396
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "EQ",
+          "x_mm": 10.0,
+          "y_mm": 160.0,
+          "size_mm": 2.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            149,
+            404,
+            197,
+            421
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 13,
+      "width_mm": 20.0,
+      "height_mm": 215,
+      "quantity": 1,
+      "material": "PVC",
+      "background_color": "White",
+      "text_color": "Black",
+      "fixing": "Self-tapping screws",
+      "notes": null,
+      "bbox_px": [
+        208,
+        25,
+        256,
+        1507
+      ],
+      "lines": [
+        {
+          "text": "85",
+          "x_mm": 10.0,
+          "y_mm": 10.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            208,
+            25,
+            256,
+            42
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "86",
+          "x_mm": 10.0,
+          "y_mm": 20.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            208,
+            51,
+            256,
+            67
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "87",
+          "x_mm": 10.0,
+          "y_mm": 30.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            208,
+            76,
+            256,
+            93
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "88",
+          "x_mm": 10.0,
+          "y_mm": 40.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            208,
+            101,
+            256,
+            118
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "89",
+          "x_mm": 10.0,
+          "y_mm": 50.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            208,
+            126,
+            256,
+            143
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "90",
+          "x_mm": 10.0,
+          "y_mm": 60.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            208,
+            152,
+            256,
+            168
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "91",
+          "x_mm": 10.0,
+          "y_mm": 70.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            208,
+            177,
+            256,
+            194
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "92",
+          "x_mm": 10.0,
+          "y_mm": 80.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            208,
+            202,
+            256,
+            219
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "93",
+          "x_mm": 10.0,
+          "y_mm": 90.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            208,
+            227,
+            256,
+            244
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "94",
+          "x_mm": 10.0,
+          "y_mm": 100.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            208,
+            253,
+            256,
+            269
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "95",
+          "x_mm": 10.0,
+          "y_mm": 110.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            208,
+            278,
+            256,
+            295
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "96",
+          "x_mm": 10.0,
+          "y_mm": 120.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            208,
+            303,
+            256,
+            320
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "EQ",
+          "x_mm": 10.0,
+          "y_mm": 130.0,
+          "size_mm": 2.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            208,
+            328,
+            256,
+            345
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "EQ",
+          "x_mm": 10.0,
+          "y_mm": 140.0,
+          "size_mm": 2.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            208,
+            354,
+            256,
+            370
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "EQ",
+          "x_mm": 10.0,
+          "y_mm": 150.0,
+          "size_mm": 2.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            208,
+            379,
+            256,
+            396
+          ],
+          "measured_fields": []
+        },
+        {
+          "text": "EQ",
+          "x_mm": 10.0,
+          "y_mm": 160.0,
+          "size_mm": 2.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            208,
+            404,
+            256,
+            421
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 14,
+      "width_mm": 100.0,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": "PVC",
+      "background_color": "White",
+      "text_color": "Black",
+      "fixing": "Self-tapping screws",
+      "notes": null,
+      "bbox_px": [
+        482,
+        1541,
+        613,
+        1608
+      ],
+      "lines": [
+        {
+          "text": "97",
+          "x_mm": 13.0,
+          "y_mm": 3.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            482,
+            1541,
+            613,
+            1558
+          ],
+          "_content_y": 0.9302325581395349,
+          "measured_fields": []
+        },
+        {
+          "text": "98",
+          "x_mm": 31.5,
+          "y_mm": 3.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            482,
+            1566,
+            613,
+            1583
+          ],
+          "_content_y": 1.8604651162790697,
+          "measured_fields": []
+        },
+        {
+          "text": "99",
+          "x_mm": 50.0,
+          "y_mm": 3.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            482,
+            1591,
+            613,
+            1608
+          ],
+          "_content_y": 2.7906976744186047,
+          "measured_fields": []
+        },
+        {
+          "text": "100",
+          "x_mm": 68.5,
+          "y_mm": 3.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            482,
+            1617,
+            613,
+            1633
+          ],
+          "_content_y": 3.7209302325581395,
+          "measured_fields": []
+        },
+        {
+          "text": "101",
+          "x_mm": 87.0,
+          "y_mm": 3.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            482,
+            1642,
+            613,
+            1659
+          ],
+          "_content_y": 4.651162790697675,
+          "measured_fields": []
+        },
+        {
+          "text": "102",
+          "x_mm": 50.0,
+          "y_mm": 7.5,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            482,
+            1667,
+            613,
+            1684
+          ],
+          "_content_y": 5.5813953488372094,
+          "measured_fields": []
+        },
+        {
+          "text": "103",
+          "x_mm": 10.0,
+          "y_mm": 7.5,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null,
+          "_content_y": 6.511627906976744
+        },
+        {
+          "text": "104",
+          "x_mm": 10.0,
+          "y_mm": 7.5,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null,
+          "_content_y": 7.441860465116279
+        },
+        {
+          "text": "105",
+          "x_mm": 10.0,
+          "y_mm": 7.5,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null,
+          "_content_y": 8.372093023255815
+        },
+        {
+          "text": "106",
+          "x_mm": 10.0,
+          "y_mm": 7.5,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null,
+          "_content_y": 9.30232558139535
+        },
+        {
+          "text": "107",
+          "x_mm": 10.0,
+          "y_mm": 12.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null,
+          "_content_y": 10.232558139534884
+        },
+        {
+          "text": "108",
+          "x_mm": 10.0,
+          "y_mm": 12.0,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null,
+          "_content_y": 11.162790697674419
+        },
+        {
+          "text": "EQ",
+          "x_mm": 10.0,
+          "y_mm": 12.0,
+          "size_mm": 2.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null,
+          "_content_y": 12.093023255813954
+        },
+        {
+          "text": "EQ",
+          "x_mm": 10.0,
+          "y_mm": 12.0,
+          "size_mm": 2.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null,
+          "_content_y": 13.023255813953488
+        },
+        {
+          "text": "EQ",
+          "x_mm": 10.0,
+          "y_mm": 12.0,
+          "size_mm": 2.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null,
+          "_content_y": 13.953488372093023
+        },
+        {
+          "text": "EQ",
+          "x_mm": 10.0,
+          "y_mm": 15.0,
+          "size_mm": 2.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": null,
+          "_content_y": 14.883720930232558
+        }
+      ],
+      "holes": []
+    }
+  ],
+  "total_labels": 14,
+  "warnings": [
+    "structure: using LLM plate outlines (CV gate: cv=0, llm=14, trust_cv=False)",
+    "content: 10 line(s) could not be assigned to any plate bbox",
+    "plate #1: width_mm=140 inconsistent with dimension span sum 100mm — using tiled sum",
+    "plate #5: width_mm=100 inconsistent with bbox scale (sx=1.31 sy=3.35) — re-inferring from outline",
+    "plate #6: width_mm=100 inconsistent with bbox scale (sx=1.31 sy=3.40) — re-inferring from outline",
+    "plate #7: width_mm=100 inconsistent with bbox scale (sx=1.31 sy=3.35) — re-inferring from outline",
+    "plate #8: width_mm=100 inconsistent with bbox scale (sx=1.31 sy=3.35) — re-inferring from outline",
+    "plate #9: width_mm=100 inconsistent with bbox scale (sx=1.31 sy=3.40) — re-inferring from outline",
+    "plate #10: width_mm=100 inconsistent with bbox scale (sx=1.31 sy=3.35) — re-inferring from outline",
+    "plate #11: width_mm=100 inconsistent with bbox scale (sx=1.31 sy=3.35) — re-inferring from outline",
+    "plate #11: content line_count=2 but got 1 line(s)",
+    "plate #12: width_mm=20 inconsistent with bbox scale (sx=2.40 sy=6.89) — re-inferring from outline",
+    "plate #13: width_mm=20 inconsistent with bbox scale (sx=2.40 sy=6.89) — re-inferring from outline",
+    "plate #14: width_mm=100 inconsistent with bbox scale (sx=1.31 sy=3.35) — re-inferring from outline",
+    "plate #14 '100': y_mm=40 outside plate - null",
+    "plate #14 '101': y_mm=50 outside plate - null",
+    "plate #14 '102': y_mm=60 outside plate - null",
+    "plate #14 '103': y_mm=70 outside plate - null",
+    "plate #14 '104': y_mm=80 outside plate - null",
+    "plate #14 '105': y_mm=90 outside plate - null",
+    "plate #14 '106': y_mm=100 outside plate - null",
+    "plate #14 '107': y_mm=110 outside plate - null",
+    "plate #14 '108': y_mm=120 outside plate - null",
+    "plate #14 'EQ': y_mm=130 outside plate - null",
+    "plate #14 'EQ': y_mm=140 outside plate - null",
+    "plate #14 'EQ': y_mm=150 outside plate - null",
+    "plate #14 'EQ': y_mm=160 outside plate - null",
+    "plate #14: equal 5 column slot(s) across 100mm (was clustered to 50mm max before layout)"
+  ]
+}

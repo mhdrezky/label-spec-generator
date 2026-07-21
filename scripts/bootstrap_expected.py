@@ -24,7 +24,7 @@ from benchmark.run_benchmark import score_image  # noqa: E402
 from dual_call.postprocess import merge_to_spec  # noqa: E402
 
 EXPECTED_DIR = ROOT / "benchmark" / "expected"
-RESULTS_DIR = ROOT / "results"
+RESULTS_DIR = ROOT / "results" / "current"
 RUN_PREFIX = "_Qwen3.6-35B-A3B-FP8_20260720_"
 
 

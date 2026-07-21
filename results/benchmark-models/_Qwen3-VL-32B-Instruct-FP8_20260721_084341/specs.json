@@ -1,0 +1,769 @@
+{
+  "source_image": "D:\\Repositories\\label-extractor\\sample-data\\marshall-ave-st-leonards-msb-1-pdf-p1.png",
+  "generated_at": "2026-07-21T08:45:27",
+  "extract_method": "dual_call",
+  "model": "Qwen/Qwen3-VL-32B-Instruct-FP8",
+  "unit": "mm",
+  "image_px": {
+    "width": 1191,
+    "height": 1684
+  },
+  "dimension_annotations": [
+    {
+      "value_mm": 1191,
+      "axis": "horizontal",
+      "span_px": [
+        0.0,
+        1191.0
+      ]
+    },
+    {
+      "value_mm": 1684,
+      "axis": "vertical",
+      "span_px": [
+        0.0,
+        1684.0
+      ]
+    }
+  ],
+  "labels": [
+    {
+      "label_number": 1,
+      "width_mm": 508.0,
+      "height_mm": 113.0,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        65.0,
+        80.0,
+        573.0,
+        193.0
+      ],
+      "lines": [
+        {
+          "text": "MPE",
+          "x_mm": 254.0,
+          "y_mm": 56.5,
+          "size_mm": 3.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            65,
+            80,
+            573,
+            128
+          ],
+          "_content_y": 190.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 2,
+      "width_mm": 440.0,
+      "height_mm": 113.0,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        573.0,
+        80.0,
+        1013.0,
+        193.0
+      ],
+      "lines": [
+        {
+          "text": "custom switchboards",
+          "x_mm": 220.0,
+          "y_mm": 56.5,
+          "size_mm": 2.5,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            573,
+            80,
+            1013,
+            128
+          ],
+          "_content_y": 205.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 3,
+      "width_mm": 508.0,
+      "height_mm": 55.0,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        65.0,
+        193.0,
+        573.0,
+        248.0
+      ],
+      "lines": [
+        {
+          "text": "SMITHFIELD NSW 2164 (02) 9721 1698",
+          "x_mm": 254.0,
+          "y_mm": 27.5,
+          "size_mm": 2.5,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            65,
+            193,
+            573,
+            248
+          ],
+          "_content_y": 220.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 4,
+      "width_mm": 507.0,
+      "height_mm": 29.0,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        66.0,
+        248.0,
+        573.0,
+        277.0
+      ],
+      "lines": [
+        {
+          "text": "SWITCHBOARD BUILT TO AS/NZS 61439.1/2 : 2016",
+          "x_mm": 253.5,
+          "y_mm": 14.5,
+          "size_mm": 2.5,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            66,
+            248,
+            573,
+            277
+          ],
+          "_content_y": 235.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 5,
+      "width_mm": 550.0,
+      "height_mm": 29.0,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        573.0,
+        248.0,
+        1123.0,
+        277.0
+      ],
+      "lines": [
+        {
+          "text": "AS/NZS 3000 : 2018",
+          "x_mm": 275.0,
+          "y_mm": 14.5,
+          "size_mm": 2.5,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            573,
+            248,
+            1123,
+            277
+          ],
+          "_content_y": 235.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 6,
+      "width_mm": 150,
+      "height_mm": 70,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        65.0,
+        277.0,
+        573.0,
+        604.0
+      ],
+      "lines": [
+        {
+          "text": "SEGREGATION : FORM 3b/3bih",
+          "x_mm": 75.0,
+          "y_mm": 35.0,
+          "size_mm": 2.5,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            65,
+            277,
+            573,
+            604
+          ],
+          "_content_y": 250.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 7,
+      "width_mm": 220.8695652173913,
+      "height_mm": 30,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        65.0,
+        605.0,
+        573.0,
+        674.0
+      ],
+      "lines": [
+        {
+          "text": "DEGREE OF PROTECTION : IP42",
+          "x_mm": 110.5,
+          "y_mm": 15.0,
+          "size_mm": 2.5,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            65,
+            605,
+            573,
+            674
+          ],
+          "_content_y": 265.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 8,
+      "width_mm": 175.17241379310346,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        65.0,
+        674.0,
+        573.0,
+        732.0
+      ],
+      "lines": [
+        {
+          "text": "RATED : 415v 50Hz",
+          "x_mm": 87.5,
+          "y_mm": 10.0,
+          "size_mm": 2.5,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            65,
+            674,
+            573,
+            732
+          ],
+          "_content_y": 280.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 9,
+      "width_mm": 175.17241379310346,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        65.0,
+        732.0,
+        573.0,
+        790.0
+      ],
+      "lines": [
+        {
+          "text": "FAULT LEVEL : 40KA / 1 sec",
+          "x_mm": 87.5,
+          "y_mm": 10.0,
+          "size_mm": 2.5,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            65,
+            732,
+            573,
+            790
+          ],
+          "_content_y": 295.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 10,
+      "width_mm": 175.17241379310346,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        65.0,
+        790.0,
+        573.0,
+        848.0
+      ],
+      "lines": [
+        {
+          "text": "DATE OF MANUFACTURE : JULY 2026",
+          "x_mm": 87.5,
+          "y_mm": 10.0,
+          "size_mm": 2.5,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            65,
+            790,
+            573,
+            848
+          ],
+          "_content_y": 310.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 11,
+      "width_mm": 175.17241379310346,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        65.0,
+        848.0,
+        573.0,
+        906.0
+      ],
+      "lines": [
+        {
+          "text": "REFERENCE : M6339",
+          "x_mm": 87.5,
+          "y_mm": 10.0,
+          "size_mm": 2.5,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            65,
+            848,
+            573,
+            906
+          ],
+          "_content_y": 325.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 12,
+      "width_mm": 175.17241379310346,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        65.0,
+        907.0,
+        573.0,
+        965.0
+      ],
+      "lines": [
+        {
+          "text": "MAIN SWITCHBOARD 1",
+          "x_mm": 87.5,
+          "y_mm": 10.0,
+          "size_mm": 9.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            65,
+            907,
+            573,
+            965
+          ],
+          "_content_y": 340.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 13,
+      "width_mm": 175.17241379310346,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        65.0,
+        965.0,
+        573.0,
+        1023.0
+      ],
+      "lines": [
+        {
+          "text": "SERVICE PROTECTION DEVICE",
+          "x_mm": 87.5,
+          "y_mm": 10.0,
+          "size_mm": 6.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            65,
+            965,
+            573,
+            1023
+          ],
+          "_content_y": 355.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 14,
+      "width_mm": 175.17241379310346,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        65.0,
+        1023.0,
+        573.0,
+        1081.0
+      ],
+      "lines": [
+        {
+          "text": "PRIVATE METERING TOWER 1",
+          "x_mm": 87.5,
+          "y_mm": 10.0,
+          "size_mm": 6.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            65,
+            1023,
+            573,
+            1081
+          ],
+          "_content_y": 370.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 15,
+      "width_mm": 175.17241379310346,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        65.0,
+        1081.0,
+        573.0,
+        1139.0
+      ],
+      "lines": [
+        {
+          "text": "HOUSE SERVICES SECTION",
+          "x_mm": 87.5,
+          "y_mm": 10.0,
+          "size_mm": 6.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            65,
+            1081,
+            573,
+            1139
+          ],
+          "_content_y": 385.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 16,
+      "width_mm": 175.17241379310346,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        65.0,
+        1139.0,
+        573.0,
+        1197.0
+      ],
+      "lines": [
+        {
+          "text": "HOUSE SERVICES TOWER 1 SECTION",
+          "x_mm": 87.5,
+          "y_mm": 10.0,
+          "size_mm": 6.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            65,
+            1139,
+            573,
+            1197
+          ],
+          "_content_y": 400.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 17,
+      "width_mm": 175.17241379310346,
+      "height_mm": 30,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        65.0,
+        1197.0,
+        573.0,
+        1284.0
+      ],
+      "lines": [
+        {
+          "text": "HOUSE SERVICES TOWER 2 SECTION",
+          "x_mm": 87.5,
+          "y_mm": 15.0,
+          "size_mm": 6.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            65,
+            1197,
+            573,
+            1284
+          ],
+          "_content_y": 415.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 18,
+      "width_mm": 262.7586206896552,
+      "height_mm": 15,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        65.0,
+        1392.0,
+        573.0,
+        1421.0
+      ],
+      "lines": [
+        {
+          "text": "SAFETY SERVICES TOWER 1 SECTION",
+          "x_mm": 131.5,
+          "y_mm": 7.5,
+          "size_mm": 6.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            65,
+            1392,
+            573,
+            1421
+          ],
+          "_content_y": 430.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 19,
+      "width_mm": 175.17241379310346,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        65.0,
+        1421.0,
+        573.0,
+        1479.0
+      ],
+      "lines": [
+        {
+          "text": "EV SECTION TOWER 2",
+          "x_mm": 87.5,
+          "y_mm": 10.0,
+          "size_mm": 6.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            65,
+            1421,
+            573,
+            1479
+          ],
+          "_content_y": 445.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 20,
+      "width_mm": 175.17241379310346,
+      "height_mm": 30,
+      "quantity": 1,
+      "material": null,
+      "background_color": null,
+      "text_color": null,
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        65.0,
+        1479.0,
+        573.0,
+        1566.0
+      ],
+      "lines": [
+        {
+          "text": "SOLAR SECTION",
+          "x_mm": 87.5,
+          "y_mm": 15.0,
+          "size_mm": 6.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            65,
+            1479,
+            573,
+            1566
+          ],
+          "_content_y": 460.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    }
+  ],
+  "total_labels": 20,
+  "warnings": [
+    "structure: using CV plate outlines (20 plates, gate trusted)",
+    "plate #7: width_mm=130 inconsistent with bbox scale (sx=3.91 sy=2.30) — re-inferring from outline",
+    "plate #8: width_mm=80 inconsistent with bbox scale (sx=6.35 sy=2.90) — re-inferring from outline",
+    "plate #9: width_mm=80 inconsistent with bbox scale (sx=6.35 sy=2.90) — re-inferring from outline",
+    "plate #10: width_mm=80 inconsistent with bbox scale (sx=6.35 sy=2.90) — re-inferring from outline",
+    "plate #11: width_mm=80 inconsistent with bbox scale (sx=6.35 sy=2.90) — re-inferring from outline",
+    "plate #12: width_mm=80 inconsistent with bbox scale (sx=6.35 sy=2.90) — re-inferring from outline",
+    "plate #13: width_mm=80 inconsistent with bbox scale (sx=6.35 sy=2.90) — re-inferring from outline",
+    "plate #14: width_mm=80 inconsistent with bbox scale (sx=6.35 sy=2.90) — re-inferring from outline",
+    "plate #15: width_mm=80 inconsistent with bbox scale (sx=6.35 sy=2.90) — re-inferring from outline",
+    "plate #16: width_mm=80 inconsistent with bbox scale (sx=6.35 sy=2.90) — re-inferring from outline",
+    "plate #17: width_mm=80 inconsistent with bbox scale (sx=6.35 sy=2.90) — re-inferring from outline",
+    "plate #18: width_mm=70 inconsistent with bbox scale (sx=7.26 sy=1.93) — re-inferring from outline",
+    "plate #19: width_mm=80 inconsistent with bbox scale (sx=6.35 sy=2.90) — re-inferring from outline",
+    "plate #20: width_mm=80 inconsistent with bbox scale (sx=6.35 sy=2.90) — re-inferring from outline"
+  ]
+}

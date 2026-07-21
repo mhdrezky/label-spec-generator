@@ -1,0 +1,123 @@
+{
+  "draft_type": "sketch",
+  "material": "white blank material",
+  "background_color": "white",
+  "text_color": "black",
+  "fixing": "glue",
+  "default_size_mm": null,
+  "line_sizes": [
+    {
+      "line": 1,
+      "size_mm": 160
+    },
+    {
+      "line": 2,
+      "size_mm": 110
+    },
+    {
+      "line": 3,
+      "size_mm": 120
+    }
+  ],
+  "dimension_annotations": [
+    {
+      "value_mm": 160,
+      "axis": "horizontal",
+      "span_frac": [
+        0.24,
+        0.36
+      ]
+    },
+    {
+      "value_mm": 60,
+      "axis": "vertical",
+      "span_frac": [
+        0.24,
+        0.36
+      ]
+    },
+    {
+      "value_mm": 110,
+      "axis": "horizontal",
+      "span_frac": [
+        0.24,
+        0.36
+      ]
+    },
+    {
+      "value_mm": 60,
+      "axis": "vertical",
+      "span_frac": [
+        0.24,
+        0.36
+      ]
+    },
+    {
+      "value_mm": 120,
+      "axis": "horizontal",
+      "span_frac": [
+        0.24,
+        0.36
+      ]
+    },
+    {
+      "value_mm": 90,
+      "axis": "vertical",
+      "span_frac": [
+        0.24,
+        0.36
+      ]
+    }
+  ],
+  "plates": [
+    {
+      "id": 1,
+      "bbox_frac": [
+        0.24,
+        0.16,
+        0.36,
+        0.28
+      ],
+      "width_mm": 160,
+      "height_mm": 60
+    },
+    {
+      "id": 2,
+      "bbox_frac": [
+        0.24,
+        0.36,
+        0.36,
+        0.48
+      ],
+      "width_mm": 110,
+      "height_mm": 60
+    },
+    {
+      "id": 3,
+      "bbox_frac": [
+        0.24,
+        0.56,
+        0.36,
+        0.68
+      ],
+      "width_mm": 120,
+      "height_mm": 90
+    }
+  ],
+  "gate": {
+    "trust_cv": false,
+    "cv_count": 6,
+    "llm_count": 3,
+    "reasons": [
+      "count gap 100% (cv=6, llm=3) > 60%"
+    ]
+  },
+  "cv_meta": {
+    "size": [
+      480,
+      640
+    ],
+    "method": "opencv",
+    "count": 6
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "unit": "mm",
+  "image_px": {
+    "width": 1200,
+    "height": 1600
+  },
+  "dimension_annotations": [
+    {
+      "value_mm": 200,
+      "axis": "horizontal",
+      "span_px": [
+        176.04,
+        995.0400000000001
+      ]
+    },
+    {
+      "value_mm": 35,
+      "axis": "vertical",
+      "span_px": [
+        470.08,
+        616.96
+      ]
+    },
+    {
+      "value_mm": 100,
+      "axis": "horizontal",
+      "span_px": [
+        179.04,
+        866.04
+      ]
+    },
+    {
+      "value_mm": 17,
+      "axis": "vertical",
+      "span_px": [
+        871.04,
+        993.92
+      ]
+    }
+  ],
+  "labels": [
+    {
+      "label_number": 1,
+      "width_mm": 200,
+      "height_mm": 35,
+      "quantity": 1,
+      "material": null,
+      "background_color": "white",
+      "text_color": "black",
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        176,
+        470,
+        995,
+        617
+      ],
+      "lines": [
+        {
+          "text": "FED",
+          "x_mm": 20.0,
+          "y_mm": 25.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            176,
+            470,
+            340,
+            545
+          ],
+          "_content_y": null,
+          "measured_fields": []
+        },
+        {
+          "text": "FROM",
+          "x_mm": 60.0,
+          "y_mm": 25.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            340,
+            470,
+            504,
+            545
+          ],
+          "_content_y": null,
+          "measured_fields": []
+        },
+        {
+          "text": "MCC1",
+          "x_mm": 100.0,
+          "y_mm": 25.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            504,
+            470,
+            667,
+            545
+          ],
+          "_content_y": null,
+          "measured_fields": []
+        },
+        {
+          "text": "TIER",
+          "x_mm": 140.0,
+          "y_mm": 25.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            667,
+            470,
+            831,
+            545
+          ],
+          "_content_y": null,
+          "measured_fields": []
+        },
+        {
+          "text": "1",
+          "x_mm": 180.0,
+          "y_mm": 25.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            831,
+            470,
+            995,
+            545
+          ],
+          "_content_y": null,
+          "measured_fields": []
+        },
+        {
+          "text": "STP008-2000-SLV-003 XA.02",
+          "x_mm": 100.0,
+          "y_mm": 25.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            176,
+            545,
+            995,
+            617
+          ],
+          "_content_y": 25.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 2,
+      "width_mm": 100,
+      "height_mm": 17,
+      "quantity": 1,
+      "material": null,
+      "background_color": "white",
+      "text_color": "black",
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        179,
+        871,
+        866,
+        994
+      ],
+      "lines": [
+        {
+          "text": "POWER MONITOR",
+          "x_mm": 50.0,
+          "y_mm": 8.5,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            179,
+            871,
+            866,
+            994
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    }
+  ],
+  "total_labels": 2,
+  "warnings": [
+    "structure: using LLM plate outlines (CV gate: cv=5, llm=2, trust_cv=False)",
+    "plate #1: split 1 merged multi-word line(s) into separate text entries",
+    "plate #1: merged 1 extra row(s) into adjacent row (column stack)"
+  ]
+}

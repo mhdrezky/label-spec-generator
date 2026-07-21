@@ -1,0 +1,43 @@
+{
+  "draft_type": null,
+  "material": null,
+  "background_color": null,
+  "text_color": null,
+  "fixing": null,
+  "default_size_mm": null,
+  "line_sizes": [],
+  "dimension_annotations": [],
+  "plates": [
+    {
+      "id": 1,
+      "bbox_frac": [
+        0.005344418052256532,
+        0.24705882352941178,
+        0.9958432304038005,
+        0.753781512605042
+      ],
+      "bbox_px": [
+        9.0,
+        294.0,
+        1677.0,
+        897.0
+      ],
+      "width_mm": null,
+      "height_mm": null
+    }
+  ],
+  "gate": {
+    "trust_cv": true,
+    "cv_count": 1,
+    "llm_count": 0,
+    "reasons": []
+  },
+  "cv_meta": {
+    "size": [
+      1684,
+      1190
+    ],
+    "method": "opencv",
+    "count": 1
+  }
+}

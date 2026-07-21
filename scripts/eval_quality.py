@@ -6,7 +6,7 @@ extra lines, merged plate dimensions, flattened sizes. This scorer adds them.
     python scripts/eval_quality.py [--root DIR] [--prefix MODEL] [--since TS] [--until TS]
 
 For each image with a ground truth in benchmark/expected/, it finds the latest
-matching run under <root>/results/ and reports, per image and in aggregate:
+matching run under <root>/results/current/ and reports, per image and in aggregate:
 
 - labels     : predicted label count vs expected (exact-match flag)
 - text P/R/F1: MULTISET precision & recall of transcribed lines. Precision drops
@@ -131,7 +131,7 @@ def main() -> None:
 
     root = Path(args.root)
     exp_dir = Path(args.expected) if args.expected else DEFAULT_ROOT / "benchmark" / "expected"
-    runs = latest_runs(root / "results", args.prefix, args.since, args.until)
+    runs = latest_runs(root / "results" / "current", args.prefix, args.since, args.until)
 
     rows = []
     agg = dict(lab_ok=0, lab_n=0, tp=0, pt=0, et=0, dh=0, dt=0, el=0, pl=0)

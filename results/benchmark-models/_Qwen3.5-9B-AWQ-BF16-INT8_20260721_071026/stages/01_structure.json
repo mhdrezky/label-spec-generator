@@ -1,0 +1,165 @@
+{
+  "draft_type": "sketch",
+  "material": "paper",
+  "background_color": "white",
+  "text_color": "black",
+  "fixing": "none",
+  "default_size_mm": null,
+  "line_sizes": [
+    {
+      "line": 1,
+      "size_mm": 5
+    },
+    {
+      "line": 2,
+      "size_mm": 5
+    },
+    {
+      "line": 3,
+      "size_mm": 5
+    }
+  ],
+  "dimension_annotations": [
+    {
+      "value_mm": 70,
+      "axis": "horizontal",
+      "span_frac": [
+        0.29,
+        0.71
+      ]
+    },
+    {
+      "value_mm": 40,
+      "axis": "vertical",
+      "span_frac": [
+        0.29,
+        0.71
+      ]
+    },
+    {
+      "value_mm": 10,
+      "axis": "vertical",
+      "span_frac": [
+        0.71,
+        0.71
+      ]
+    },
+    {
+      "value_mm": 250,
+      "axis": "horizontal",
+      "span_frac": [
+        0.1,
+        0.9
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_frac": [
+        0.1,
+        0.1
+      ]
+    },
+    {
+      "value_mm": 25,
+      "axis": "horizontal",
+      "span_frac": [
+        0.1,
+        0.1
+      ]
+    },
+    {
+      "value_mm": 25,
+      "axis": "horizontal",
+      "span_frac": [
+        0.9,
+        0.9
+      ]
+    },
+    {
+      "value_mm": 250,
+      "axis": "horizontal",
+      "span_frac": [
+        0.1,
+        0.9
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_frac": [
+        0.1,
+        0.1
+      ]
+    },
+    {
+      "value_mm": 25,
+      "axis": "horizontal",
+      "span_frac": [
+        0.1,
+        0.1
+      ]
+    },
+    {
+      "value_mm": 25,
+      "axis": "horizontal",
+      "span_frac": [
+        0.9,
+        0.9
+      ]
+    }
+  ],
+  "plates": [
+    {
+      "id": 1,
+      "bbox_frac": [
+        0.29,
+        0.1,
+        0.71,
+        0.29
+      ],
+      "width_mm": 70,
+      "height_mm": 40
+    },
+    {
+      "id": 2,
+      "bbox_frac": [
+        0.1,
+        0.4,
+        0.9,
+        0.5
+      ],
+      "width_mm": 250,
+      "height_mm": 20
+    },
+    {
+      "id": 3,
+      "bbox_frac": [
+        0.1,
+        0.7,
+        0.9,
+        0.8
+      ],
+      "width_mm": 250,
+      "height_mm": 20
+    }
+  ],
+  "gate": {
+    "trust_cv": false,
+    "cv_count": 0,
+    "llm_count": 3,
+    "reasons": [
+      "cv_count 0 < 1",
+      "count gap 100% (cv=0, llm=3) > 60%",
+      "coverage 0% < 5%"
+    ]
+  },
+  "cv_meta": {
+    "size": [
+      1155,
+      1649
+    ],
+    "method": "opencv",
+    "count": 0
+  }
+}

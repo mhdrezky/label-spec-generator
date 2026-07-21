@@ -1,0 +1,76 @@
+{
+  "cached_at": "2026-07-21T00:41:24+00:00",
+  "stage": "dual-structure",
+  "content": {
+    "draft_type": "sketch",
+    "material": "DIN18",
+    "background_color": "W/B",
+    "text_color": "W/B",
+    "fixing": "STRIPS",
+    "default_size_mm": 6,
+    "line_sizes": [
+      {
+        "line": 1,
+        "size_mm": 6
+      }
+    ],
+    "dimension_annotations": [
+      {
+        "value_mm": 162,
+        "axis": "horizontal",
+        "span_frac": [
+          0.0546,
+          0.225
+        ]
+      },
+      {
+        "value_mm": 15,
+        "axis": "vertical",
+        "span_frac": [
+          0.75,
+          0.805
+        ]
+      },
+      {
+        "value_mm": 270,
+        "axis": "horizontal",
+        "span_frac": [
+          0.0546,
+          0.281
+        ]
+      },
+      {
+        "value_mm": 15,
+        "axis": "vertical",
+        "span_frac": [
+          0.88,
+          0.935
+        ]
+      }
+    ],
+    "plates": [
+      {
+        "id": 1,
+        "bbox_frac": [
+          0.0546,
+          0.75,
+          0.225,
+          0.805
+        ],
+        "width_mm": 162,
+        "height_mm": 15
+      },
+      {
+        "id": 2,
+        "bbox_frac": [
+          0.0546,
+          0.88,
+          0.281,
+          0.935
+        ],
+        "width_mm": 270,
+        "height_mm": 15
+      }
+    ]
+  }
+}

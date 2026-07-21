@@ -1,0 +1,28 @@
+{
+  "cached_at": "2026-07-21T04:04:59+00:00",
+  "stage": "dual-content",
+  "content": {
+    "plates": [
+      {
+        "id": 1,
+        "line_count": 1,
+        "width_mm": 37,
+        "height_mm": 10,
+        "lines": [
+          {
+            "text": "7000-FEE-20001",
+            "x_mm": 18.5,
+            "y_mm": 5.0,
+            "size_mm": 4,
+            "bbox_frac": [
+              0.3125,
+              0.2136,
+              0.5938,
+              0.2634
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

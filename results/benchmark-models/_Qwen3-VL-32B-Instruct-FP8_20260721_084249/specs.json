@@ -1,0 +1,425 @@
+{
+  "source_image": "D:\\Repositories\\label-extractor\\sample-data\\kiso-handwritten.jpeg",
+  "generated_at": "2026-07-21T08:43:41",
+  "extract_method": "dual_call",
+  "model": "Qwen/Qwen3-VL-32B-Instruct-FP8",
+  "unit": "mm",
+  "image_px": {
+    "width": 1600,
+    "height": 1200
+  },
+  "dimension_annotations": [
+    {
+      "value_mm": 20,
+      "axis": "horizontal",
+      "span_px": [
+        192.0,
+        448.00000000000006
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "horizontal",
+      "span_px": [
+        608.0,
+        864.0
+      ]
+    },
+    {
+      "value_mm": 216,
+      "axis": "vertical",
+      "span_px": [
+        144.0,
+        336.00000000000006
+      ]
+    },
+    {
+      "value_mm": 24,
+      "axis": "vertical",
+      "span_px": [
+        336.00000000000006,
+        384.0
+      ]
+    },
+    {
+      "value_mm": 52,
+      "axis": "vertical",
+      "span_px": [
+        384.0,
+        432.0
+      ]
+    },
+    {
+      "value_mm": 80,
+      "axis": "vertical",
+      "span_px": [
+        432.0,
+        480.0
+      ]
+    },
+    {
+      "value_mm": 108,
+      "axis": "vertical",
+      "span_px": [
+        480.0,
+        528.0
+      ]
+    },
+    {
+      "value_mm": 136,
+      "axis": "vertical",
+      "span_px": [
+        528.0,
+        576.0
+      ]
+    },
+    {
+      "value_mm": 164,
+      "axis": "vertical",
+      "span_px": [
+        576.0,
+        624.0
+      ]
+    },
+    {
+      "value_mm": 192,
+      "axis": "vertical",
+      "span_px": [
+        624.0,
+        672.0000000000001
+      ]
+    },
+    {
+      "value_mm": 24,
+      "axis": "vertical",
+      "span_px": [
+        648.0,
+        696.0
+      ]
+    },
+    {
+      "value_mm": 52,
+      "axis": "vertical",
+      "span_px": [
+        696.0,
+        744.0
+      ]
+    },
+    {
+      "value_mm": 80,
+      "axis": "vertical",
+      "span_px": [
+        744.0,
+        792.0
+      ]
+    },
+    {
+      "value_mm": 108,
+      "axis": "vertical",
+      "span_px": [
+        792.0,
+        840.0
+      ]
+    },
+    {
+      "value_mm": 136,
+      "axis": "vertical",
+      "span_px": [
+        840.0,
+        888.0
+      ]
+    },
+    {
+      "value_mm": 164,
+      "axis": "vertical",
+      "span_px": [
+        888.0,
+        936.0
+      ]
+    },
+    {
+      "value_mm": 192,
+      "axis": "vertical",
+      "span_px": [
+        936.0,
+        983.9999999999999
+      ]
+    }
+  ],
+  "labels": [
+    {
+      "label_number": 1,
+      "width_mm": 20.0,
+      "height_mm": 216,
+      "quantity": 1,
+      "material": null,
+      "background_color": "White",
+      "text_color": "Black",
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        192,
+        336,
+        448,
+        1032
+      ],
+      "lines": [
+        {
+          "text": "KISO 1.1",
+          "x_mm": 10.0,
+          "y_mm": 36.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            192,
+            336,
+            448,
+            408
+          ],
+          "_content_y": 36.0,
+          "measured_fields": []
+        },
+        {
+          "text": "KISO 1.2",
+          "x_mm": 10.0,
+          "y_mm": 72.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            192,
+            408,
+            448,
+            480
+          ],
+          "_content_y": 72.0,
+          "measured_fields": []
+        },
+        {
+          "text": "KISO 1.3",
+          "x_mm": 10.0,
+          "y_mm": 108.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            192,
+            480,
+            448,
+            552
+          ],
+          "_content_y": 108.0,
+          "measured_fields": []
+        },
+        {
+          "text": "KISO 1.4",
+          "x_mm": 10.0,
+          "y_mm": 144.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            192,
+            552,
+            448,
+            624
+          ],
+          "_content_y": 144.0,
+          "measured_fields": []
+        },
+        {
+          "text": "KISO 1.6",
+          "x_mm": 10.0,
+          "y_mm": 180.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            192,
+            624,
+            448,
+            696
+          ],
+          "_content_y": 180.0,
+          "measured_fields": []
+        },
+        {
+          "text": "KISO 1.5",
+          "x_mm": 10.0,
+          "y_mm": 216.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            192,
+            696,
+            448,
+            768
+          ],
+          "_content_y": 216.0,
+          "measured_fields": []
+        },
+        {
+          "text": "KISO 1.7",
+          "x_mm": 10.0,
+          "y_mm": null,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            192,
+            768,
+            448,
+            840
+          ],
+          "_content_y": 252.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    },
+    {
+      "label_number": 2,
+      "width_mm": 20.0,
+      "height_mm": 216,
+      "quantity": 1,
+      "material": null,
+      "background_color": "White",
+      "text_color": "Black",
+      "fixing": null,
+      "notes": null,
+      "bbox_px": [
+        608,
+        336,
+        864,
+        1032
+      ],
+      "lines": [
+        {
+          "text": "KISO 2.1",
+          "x_mm": 10.0,
+          "y_mm": 36.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            608,
+            336,
+            864,
+            408
+          ],
+          "_content_y": 36.0,
+          "measured_fields": []
+        },
+        {
+          "text": "KISO 2.2",
+          "x_mm": 10.0,
+          "y_mm": 72.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            608,
+            408,
+            864,
+            480
+          ],
+          "_content_y": 72.0,
+          "measured_fields": []
+        },
+        {
+          "text": "KISO 2.3",
+          "x_mm": 10.0,
+          "y_mm": 108.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            608,
+            480,
+            864,
+            552
+          ],
+          "_content_y": 108.0,
+          "measured_fields": []
+        },
+        {
+          "text": "KISO 2.4",
+          "x_mm": 10.0,
+          "y_mm": 144.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            608,
+            552,
+            864,
+            624
+          ],
+          "_content_y": 144.0,
+          "measured_fields": []
+        },
+        {
+          "text": "KISO 2.6",
+          "x_mm": 10.0,
+          "y_mm": 180.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            608,
+            624,
+            864,
+            696
+          ],
+          "_content_y": 180.0,
+          "measured_fields": []
+        },
+        {
+          "text": "KISO 2.5",
+          "x_mm": 10.0,
+          "y_mm": 216.0,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            608,
+            696,
+            864,
+            768
+          ],
+          "_content_y": 216.0,
+          "measured_fields": []
+        },
+        {
+          "text": "KISO 2.7",
+          "x_mm": 10.0,
+          "y_mm": null,
+          "size_mm": 5.0,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            608,
+            768,
+            864,
+            840
+          ],
+          "_content_y": 252.0,
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    }
+  ],
+  "total_labels": 2,
+  "warnings": [
+    "structure: using LLM plate outlines (CV gate: cv=4, llm=2, trust_cv=False)",
+    "plate #1: width_mm=20 inconsistent with bbox scale (sx=12.80 sy=3.22) — re-inferring from outline",
+    "plate #2: width_mm=20 inconsistent with bbox scale (sx=12.80 sy=3.22) — re-inferring from outline",
+    "label #1 (KISO 1.1): 'KISO 1.7' y_mm=252.0 outside plate (216mm) — dropped",
+    "label #2 (KISO 2.1): 'KISO 2.7' y_mm=252.0 outside plate (216mm) — dropped",
+    "label #1 (KISO 1.1): 'KISO 1.5' (center 216.0mm, size 5.0mm) extends past plate edge (height 216)",
+    "label #2 (KISO 2.1): 'KISO 2.5' (center 216.0mm, size 5.0mm) extends past plate edge (height 216)"
+  ]
+}

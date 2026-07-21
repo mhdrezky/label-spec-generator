@@ -1,0 +1,1000 @@
+{
+  "plates": [
+    {
+      "id": 1,
+      "line_count": 3,
+      "width_mm": 140,
+      "height_mm": 40,
+      "lines": [
+        {
+          "text": "GENERATOR SUPPLY",
+          "x_mm": 70,
+          "y_mm": 12,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.025,
+            0.03,
+            0.265,
+            0.04
+          ]
+        },
+        {
+          "text": "ISOLATOR",
+          "x_mm": 70,
+          "y_mm": 22,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.025,
+            0.04,
+            0.265,
+            0.05
+          ]
+        },
+        {
+          "text": "(100/250A)",
+          "x_mm": 70,
+          "y_mm": 32,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.025,
+            0.05,
+            0.265,
+            0.06
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "line_count": 3,
+      "width_mm": 100,
+      "height_mm": 40,
+      "lines": [
+        {
+          "text": "MAIN ISOLATOR",
+          "x_mm": 50,
+          "y_mm": 12,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.025,
+            0.13,
+            0.215,
+            0.14
+          ]
+        },
+        {
+          "text": "NON ESSENTIAL POWER",
+          "x_mm": 50,
+          "y_mm": 22,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.025,
+            0.14,
+            0.215,
+            0.15
+          ]
+        },
+        {
+          "text": "(150/160A)",
+          "x_mm": 50,
+          "y_mm": 32,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.025,
+            0.15,
+            0.215,
+            0.16
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "line_count": 3,
+      "width_mm": 100,
+      "height_mm": 40,
+      "lines": [
+        {
+          "text": "MAIN ISOLATOR",
+          "x_mm": 50,
+          "y_mm": 12,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.025,
+            0.25,
+            0.215,
+            0.26
+          ]
+        },
+        {
+          "text": "ESSENTIAL LIGHTING",
+          "x_mm": 50,
+          "y_mm": 22,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.025,
+            0.26,
+            0.215,
+            0.27
+          ]
+        },
+        {
+          "text": "(80/100A)",
+          "x_mm": 50,
+          "y_mm": 32,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.025,
+            0.27,
+            0.215,
+            0.28
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "line_count": 3,
+      "width_mm": 100,
+      "height_mm": 40,
+      "lines": [
+        {
+          "text": "MAIN ISOLATOR",
+          "x_mm": 50,
+          "y_mm": 12,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.025,
+            0.37,
+            0.215,
+            0.38
+          ]
+        },
+        {
+          "text": "ESSENTIAL POWER",
+          "x_mm": 50,
+          "y_mm": 22,
+          "size_mm": 4,
+          "bbox_frac": [
+            0.025,
+            0.38,
+            0.215,
+            0.39
+          ]
+        },
+        {
+          "text": "(80/100A)",
+          "x_mm": 50,
+          "y_mm": 32,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.025,
+            0.39,
+            0.215,
+            0.4
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "line_count": 2,
+      "width_mm": 100,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "NON ESSENTIAL",
+          "x_mm": 50,
+          "y_mm": 7,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.025,
+            0.49,
+            0.215,
+            0.5
+          ]
+        },
+        {
+          "text": "POWER CHASSIS",
+          "x_mm": 50,
+          "y_mm": 13,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.025,
+            0.5,
+            0.215,
+            0.51
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "line_count": 2,
+      "width_mm": 100,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "ESSENTIAL",
+          "x_mm": 50,
+          "y_mm": 7,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.025,
+            0.55,
+            0.215,
+            0.56
+          ]
+        },
+        {
+          "text": "POWER CHASSIS",
+          "x_mm": 50,
+          "y_mm": 13,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.025,
+            0.56,
+            0.215,
+            0.57
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "line_count": 2,
+      "width_mm": 100,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "ESSENTIAL",
+          "x_mm": 50,
+          "y_mm": 7,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.025,
+            0.66,
+            0.215,
+            0.67
+          ]
+        },
+        {
+          "text": "LIGHTING CHASSIS",
+          "x_mm": 50,
+          "y_mm": 13,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.025,
+            0.67,
+            0.215,
+            0.68
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "line_count": 2,
+      "width_mm": 100,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "NON ESSENTIAL",
+          "x_mm": 50,
+          "y_mm": 7,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.025,
+            0.77,
+            0.215,
+            0.78
+          ]
+        },
+        {
+          "text": "POWER METER",
+          "x_mm": 50,
+          "y_mm": 13,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.025,
+            0.78,
+            0.215,
+            0.79
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "line_count": 2,
+      "width_mm": 100,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "ESSENTIAL POWER",
+          "x_mm": 50,
+          "y_mm": 7,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.025,
+            0.88,
+            0.215,
+            0.89
+          ]
+        },
+        {
+          "text": "METER",
+          "x_mm": 50,
+          "y_mm": 13,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.025,
+            0.89,
+            0.215,
+            0.9
+          ]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "line_count": 2,
+      "width_mm": 100,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "ESSENTIAL LIGHTING",
+          "x_mm": 50,
+          "y_mm": 7,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.025,
+            0.94,
+            0.215,
+            0.95
+          ]
+        },
+        {
+          "text": "METER",
+          "x_mm": 50,
+          "y_mm": 13,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.025,
+            0.95,
+            0.215,
+            0.96
+          ]
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "line_count": 12,
+      "width_mm": 20,
+      "height_mm": 215,
+      "lines": [
+        {
+          "text": "73",
+          "x_mm": 10,
+          "y_mm": 9,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.39,
+            0.03,
+            0.42,
+            0.04
+          ]
+        },
+        {
+          "text": "74",
+          "x_mm": 10,
+          "y_mm": 27,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.39,
+            0.048,
+            0.42,
+            0.058
+          ]
+        },
+        {
+          "text": "75",
+          "x_mm": 10,
+          "y_mm": 45,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.39,
+            0.066,
+            0.42,
+            0.076
+          ]
+        },
+        {
+          "text": "76",
+          "x_mm": 10,
+          "y_mm": 63,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.39,
+            0.084,
+            0.42,
+            0.094
+          ]
+        },
+        {
+          "text": "77",
+          "x_mm": 10,
+          "y_mm": 81,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.39,
+            0.102,
+            0.42,
+            0.112
+          ]
+        },
+        {
+          "text": "78",
+          "x_mm": 10,
+          "y_mm": 99,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.39,
+            0.12,
+            0.42,
+            0.13
+          ]
+        },
+        {
+          "text": "79",
+          "x_mm": 10,
+          "y_mm": 117,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.39,
+            0.138,
+            0.42,
+            0.148
+          ]
+        },
+        {
+          "text": "80",
+          "x_mm": 10,
+          "y_mm": 135,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.39,
+            0.156,
+            0.42,
+            0.166
+          ]
+        },
+        {
+          "text": "81",
+          "x_mm": 10,
+          "y_mm": 153,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.39,
+            0.174,
+            0.42,
+            0.184
+          ]
+        },
+        {
+          "text": "82",
+          "x_mm": 10,
+          "y_mm": 171,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.39,
+            0.192,
+            0.42,
+            0.202
+          ]
+        },
+        {
+          "text": "83",
+          "x_mm": 10,
+          "y_mm": 189,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.39,
+            0.21,
+            0.42,
+            0.22
+          ]
+        },
+        {
+          "text": "84",
+          "x_mm": 10,
+          "y_mm": 207,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.39,
+            0.228,
+            0.42,
+            0.238
+          ]
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "line_count": 12,
+      "width_mm": 20,
+      "height_mm": 215,
+      "lines": [
+        {
+          "text": "85",
+          "x_mm": 10,
+          "y_mm": 9,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.6,
+            0.03,
+            0.63,
+            0.04
+          ]
+        },
+        {
+          "text": "86",
+          "x_mm": 10,
+          "y_mm": 27,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.6,
+            0.048,
+            0.63,
+            0.058
+          ]
+        },
+        {
+          "text": "87",
+          "x_mm": 10,
+          "y_mm": 45,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.6,
+            0.066,
+            0.63,
+            0.076
+          ]
+        },
+        {
+          "text": "88",
+          "x_mm": 10,
+          "y_mm": 63,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.6,
+            0.084,
+            0.63,
+            0.094
+          ]
+        },
+        {
+          "text": "89",
+          "x_mm": 10,
+          "y_mm": 81,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.6,
+            0.102,
+            0.63,
+            0.112
+          ]
+        },
+        {
+          "text": "90",
+          "x_mm": 10,
+          "y_mm": 99,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.6,
+            0.12,
+            0.63,
+            0.13
+          ]
+        },
+        {
+          "text": "91",
+          "x_mm": 10,
+          "y_mm": 117,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.6,
+            0.138,
+            0.63,
+            0.148
+          ]
+        },
+        {
+          "text": "92",
+          "x_mm": 10,
+          "y_mm": 135,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.6,
+            0.156,
+            0.63,
+            0.166
+          ]
+        },
+        {
+          "text": "93",
+          "x_mm": 10,
+          "y_mm": 153,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.6,
+            0.174,
+            0.63,
+            0.184
+          ]
+        },
+        {
+          "text": "94",
+          "x_mm": 10,
+          "y_mm": 171,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.6,
+            0.192,
+            0.63,
+            0.202
+          ]
+        },
+        {
+          "text": "95",
+          "x_mm": 10,
+          "y_mm": 189,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.6,
+            0.21,
+            0.63,
+            0.22
+          ]
+        },
+        {
+          "text": "96",
+          "x_mm": 10,
+          "y_mm": 207,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.6,
+            0.228,
+            0.63,
+            0.238
+          ]
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "line_count": 12,
+      "width_mm": 20,
+      "height_mm": 215,
+      "lines": [
+        {
+          "text": "97",
+          "x_mm": 10,
+          "y_mm": 9,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.39,
+            0.51,
+            0.42,
+            0.52
+          ]
+        },
+        {
+          "text": "98",
+          "x_mm": 10,
+          "y_mm": 27,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.39,
+            0.528,
+            0.42,
+            0.538
+          ]
+        },
+        {
+          "text": "99",
+          "x_mm": 10,
+          "y_mm": 45,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.39,
+            0.546,
+            0.42,
+            0.556
+          ]
+        },
+        {
+          "text": "100",
+          "x_mm": 10,
+          "y_mm": 63,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.39,
+            0.564,
+            0.42,
+            0.574
+          ]
+        },
+        {
+          "text": "101",
+          "x_mm": 10,
+          "y_mm": 81,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.39,
+            0.582,
+            0.42,
+            0.592
+          ]
+        },
+        {
+          "text": "102",
+          "x_mm": 10,
+          "y_mm": 99,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.39,
+            0.6,
+            0.42,
+            0.61
+          ]
+        },
+        {
+          "text": "103",
+          "x_mm": 10,
+          "y_mm": 117,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.39,
+            0.618,
+            0.42,
+            0.628
+          ]
+        },
+        {
+          "text": "104",
+          "x_mm": 10,
+          "y_mm": 135,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.39,
+            0.636,
+            0.42,
+            0.646
+          ]
+        },
+        {
+          "text": "105",
+          "x_mm": 10,
+          "y_mm": 153,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.39,
+            0.654,
+            0.42,
+            0.664
+          ]
+        },
+        {
+          "text": "106",
+          "x_mm": 10,
+          "y_mm": 171,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.39,
+            0.672,
+            0.42,
+            0.682
+          ]
+        },
+        {
+          "text": "107",
+          "x_mm": 10,
+          "y_mm": 189,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.39,
+            0.69,
+            0.42,
+            0.7
+          ]
+        },
+        {
+          "text": "108",
+          "x_mm": 10,
+          "y_mm": 207,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.39,
+            0.708,
+            0.42,
+            0.718
+          ]
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "line_count": 12,
+      "width_mm": 20,
+      "height_mm": 215,
+      "lines": [
+        {
+          "text": "109",
+          "x_mm": 10,
+          "y_mm": 9,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.6,
+            0.51,
+            0.63,
+            0.52
+          ]
+        },
+        {
+          "text": "110",
+          "x_mm": 10,
+          "y_mm": 27,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.6,
+            0.528,
+            0.63,
+            0.538
+          ]
+        },
+        {
+          "text": "111",
+          "x_mm": 10,
+          "y_mm": 45,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.6,
+            0.546,
+            0.63,
+            0.556
+          ]
+        },
+        {
+          "text": "112",
+          "x_mm": 10,
+          "y_mm": 63,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.6,
+            0.564,
+            0.63,
+            0.574
+          ]
+        },
+        {
+          "text": "113",
+          "x_mm": 10,
+          "y_mm": 81,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.6,
+            0.582,
+            0.63,
+            0.592
+          ]
+        },
+        {
+          "text": "114",
+          "x_mm": 10,
+          "y_mm": 99,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.6,
+            0.6,
+            0.63,
+            0.61
+          ]
+        },
+        {
+          "text": "115",
+          "x_mm": 10,
+          "y_mm": 117,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.6,
+            0.618,
+            0.63,
+            0.628
+          ]
+        },
+        {
+          "text": "116",
+          "x_mm": 10,
+          "y_mm": 135,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.6,
+            0.636,
+            0.63,
+            0.646
+          ]
+        },
+        {
+          "text": "117",
+          "x_mm": 10,
+          "y_mm": 153,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.6,
+            0.654,
+            0.63,
+            0.664
+          ]
+        },
+        {
+          "text": "118",
+          "x_mm": 10,
+          "y_mm": 171,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.6,
+            0.672,
+            0.63,
+            0.682
+          ]
+        },
+        {
+          "text": "119",
+          "x_mm": 10,
+          "y_mm": 189,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.6,
+            0.69,
+            0.63,
+            0.7
+          ]
+        },
+        {
+          "text": "120",
+          "x_mm": 10,
+          "y_mm": 207,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.6,
+            0.708,
+            0.63,
+            0.718
+          ]
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "line_count": 1,
+      "width_mm": 100,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "SPARE",
+          "x_mm": 50,
+          "y_mm": 10,
+          "size_mm": 3,
+          "bbox_frac": [
+            0.39,
+            0.94,
+            0.59,
+            0.97
+          ]
+        }
+      ]
+    }
+  ]
+}

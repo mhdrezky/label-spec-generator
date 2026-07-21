@@ -1,0 +1,92 @@
+{
+  "cached_at": "2026-07-20T23:11:59+00:00",
+  "stage": "dual-content",
+  "content": {
+    "plates": [
+      {
+        "id": 1,
+        "line_count": 1,
+        "width_mm": 160,
+        "height_mm": 60,
+        "lines": [
+          {
+            "text": "IN ORANGE BOLD",
+            "x_mm": 80,
+            "y_mm": 30,
+            "size_mm": 10,
+            "bbox_frac": [
+              0.24,
+              0.16,
+              0.36,
+              0.28
+            ]
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "line_count": 2,
+        "width_mm": 110,
+        "height_mm": 60,
+        "lines": [
+          {
+            "text": "DRAIN WORK",
+            "x_mm": 55,
+            "y_mm": 30,
+            "size_mm": 10,
+            "bbox_frac": [
+              0.24,
+              0.36,
+              0.36,
+              0.48
+            ]
+          },
+          {
+            "text": "FAN FILM WEB 4/50",
+            "x_mm": 55,
+            "y_mm": 45,
+            "size_mm": 8,
+            "bbox_frac": [
+              0.24,
+              0.36,
+              0.36,
+              0.48
+            ]
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "line_count": 2,
+        "width_mm": 120,
+        "height_mm": 90,
+        "lines": [
+          {
+            "text": "ADDED 5/25 COMB",
+            "x_mm": 60,
+            "y_mm": 45,
+            "size_mm": 10,
+            "bbox_frac": [
+              0.24,
+              0.56,
+              0.36,
+              0.68
+            ]
+          },
+          {
+            "text": "CR",
+            "x_mm": 60,
+            "y_mm": 60,
+            "size_mm": 8,
+            "bbox_frac": [
+              0.24,
+              0.56,
+              0.36,
+              0.68
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

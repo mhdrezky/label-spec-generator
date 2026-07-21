@@ -1,0 +1,952 @@
+{
+  "plates": [
+    {
+      "id": 1,
+      "line_count": 2,
+      "width_mm": 140,
+      "height_mm": 40,
+      "lines": [
+        {
+          "text": "GENERATOR SUPPLY ISOLATOR",
+          "x_mm": 70,
+          "y_mm": 20,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.0,
+            0.0,
+            0.288,
+            0.044
+          ]
+        },
+        {
+          "text": "(100/250A)",
+          "x_mm": 70,
+          "y_mm": 20,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.0,
+            0.044,
+            0.288,
+            0.088
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "line_count": 2,
+      "width_mm": 100,
+      "height_mm": 40,
+      "lines": [
+        {
+          "text": "MAIN ISOLATOR NON ESSENTIAL POWER",
+          "x_mm": 50,
+          "y_mm": 20,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.0,
+            0.088,
+            0.227,
+            0.132
+          ]
+        },
+        {
+          "text": "(150/160A)",
+          "x_mm": 50,
+          "y_mm": 20,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.0,
+            0.132,
+            0.227,
+            0.176
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "line_count": 2,
+      "width_mm": 100,
+      "height_mm": 40,
+      "lines": [
+        {
+          "text": "MAIN ISOLATOR ESSENTIAL LIGHTING",
+          "x_mm": 50,
+          "y_mm": 20,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.0,
+            0.176,
+            0.227,
+            0.22
+          ]
+        },
+        {
+          "text": "(80/100A)",
+          "x_mm": 50,
+          "y_mm": 20,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.0,
+            0.22,
+            0.227,
+            0.264
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "line_count": 2,
+      "width_mm": 100,
+      "height_mm": 40,
+      "lines": [
+        {
+          "text": "MAIN ISOLATOR ESSENTIAL POWER",
+          "x_mm": 50,
+          "y_mm": 20,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.0,
+            0.264,
+            0.227,
+            0.308
+          ]
+        },
+        {
+          "text": "(80/100A)",
+          "x_mm": 50,
+          "y_mm": 20,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.0,
+            0.308,
+            0.227,
+            0.352
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "line_count": 1,
+      "width_mm": 100,
+      "height_mm": 40,
+      "lines": [
+        {
+          "text": "NON ESSENTIAL POWER CHASSIS",
+          "x_mm": 50,
+          "y_mm": 20,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.0,
+            0.352,
+            0.227,
+            0.396
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "line_count": 1,
+      "width_mm": 100,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "ESSENTIAL POWER CHASSIS",
+          "x_mm": 50,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.0,
+            0.44,
+            0.227,
+            0.46
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "line_count": 1,
+      "width_mm": 100,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "ESSENTIAL LIGHTING CHASSIS",
+          "x_mm": 50,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.0,
+            0.528,
+            0.227,
+            0.548
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "line_count": 1,
+      "width_mm": 100,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "NON ESSENTIAL POWER METER",
+          "x_mm": 50,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.0,
+            0.616,
+            0.227,
+            0.636
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "line_count": 1,
+      "width_mm": 100,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "ESSENTIAL POWER METER",
+          "x_mm": 50,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.0,
+            0.704,
+            0.227,
+            0.724
+          ]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "line_count": 1,
+      "width_mm": 100,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "ESSENTIAL LIGHTING METER",
+          "x_mm": 50,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.0,
+            0.792,
+            0.227,
+            0.812
+          ]
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "line_count": 1,
+      "width_mm": 100,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "SPARE",
+          "x_mm": 50,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.388,
+            0.968,
+            0.603,
+            0.988
+          ]
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "line_count": 1,
+      "width_mm": 20,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "73",
+          "x_mm": 10,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.388,
+            0.0,
+            0.447,
+            0.044
+          ]
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "line_count": 1,
+      "width_mm": 20,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "74",
+          "x_mm": 10,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.388,
+            0.044,
+            0.447,
+            0.088
+          ]
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "line_count": 1,
+      "width_mm": 20,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "75",
+          "x_mm": 10,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.388,
+            0.088,
+            0.447,
+            0.132
+          ]
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "line_count": 1,
+      "width_mm": 20,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "76",
+          "x_mm": 10,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.388,
+            0.132,
+            0.447,
+            0.176
+          ]
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "line_count": 1,
+      "width_mm": 20,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "77",
+          "x_mm": 10,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.388,
+            0.176,
+            0.447,
+            0.22
+          ]
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "line_count": 1,
+      "width_mm": 20,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "78",
+          "x_mm": 10,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.388,
+            0.22,
+            0.447,
+            0.264
+          ]
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "line_count": 1,
+      "width_mm": 20,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "79",
+          "x_mm": 10,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.388,
+            0.264,
+            0.447,
+            0.308
+          ]
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "line_count": 1,
+      "width_mm": 20,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "80",
+          "x_mm": 10,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.388,
+            0.308,
+            0.447,
+            0.352
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "line_count": 1,
+      "width_mm": 20,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "81",
+          "x_mm": 10,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.388,
+            0.352,
+            0.447,
+            0.396
+          ]
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "line_count": 1,
+      "width_mm": 20,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "82",
+          "x_mm": 10,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.388,
+            0.396,
+            0.447,
+            0.44
+          ]
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "line_count": 1,
+      "width_mm": 20,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "83",
+          "x_mm": 10,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.388,
+            0.44,
+            0.447,
+            0.484
+          ]
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "line_count": 1,
+      "width_mm": 20,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "84",
+          "x_mm": 10,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.388,
+            0.484,
+            0.447,
+            0.528
+          ]
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "line_count": 1,
+      "width_mm": 20,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "97",
+          "x_mm": 10,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.388,
+            0.528,
+            0.447,
+            0.572
+          ]
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "line_count": 1,
+      "width_mm": 20,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "98",
+          "x_mm": 10,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.388,
+            0.572,
+            0.447,
+            0.616
+          ]
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "line_count": 1,
+      "width_mm": 20,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "99",
+          "x_mm": 10,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.388,
+            0.616,
+            0.447,
+            0.66
+          ]
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "line_count": 1,
+      "width_mm": 20,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "100",
+          "x_mm": 10,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.388,
+            0.66,
+            0.447,
+            0.704
+          ]
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "line_count": 1,
+      "width_mm": 20,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "101",
+          "x_mm": 10,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.388,
+            0.704,
+            0.447,
+            0.748
+          ]
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "line_count": 1,
+      "width_mm": 20,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "102",
+          "x_mm": 10,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.388,
+            0.748,
+            0.447,
+            0.792
+          ]
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "line_count": 1,
+      "width_mm": 20,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "103",
+          "x_mm": 10,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.388,
+            0.792,
+            0.447,
+            0.836
+          ]
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "line_count": 1,
+      "width_mm": 20,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "104",
+          "x_mm": 10,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.388,
+            0.836,
+            0.447,
+            0.88
+          ]
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "line_count": 1,
+      "width_mm": 20,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "105",
+          "x_mm": 10,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.388,
+            0.88,
+            0.447,
+            0.924
+          ]
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "line_count": 1,
+      "width_mm": 20,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "106",
+          "x_mm": 10,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.388,
+            0.924,
+            0.447,
+            0.968
+          ]
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "line_count": 1,
+      "width_mm": 20,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "107",
+          "x_mm": 10,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.388,
+            0.968,
+            0.447,
+            1.012
+          ]
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "line_count": 1,
+      "width_mm": 20,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "108",
+          "x_mm": 10,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.388,
+            1.012,
+            0.447,
+            1.056
+          ]
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "line_count": 1,
+      "width_mm": 20,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "85",
+          "x_mm": 10,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.608,
+            0.0,
+            0.667,
+            0.044
+          ]
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "line_count": 1,
+      "width_mm": 20,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "86",
+          "x_mm": 10,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.608,
+            0.044,
+            0.667,
+            0.088
+          ]
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "line_count": 1,
+      "width_mm": 20,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "87",
+          "x_mm": 10,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.608,
+            0.088,
+            0.667,
+            0.132
+          ]
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "line_count": 1,
+      "width_mm": 20,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "88",
+          "x_mm": 10,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.608,
+            0.132,
+            0.667,
+            0.176
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "line_count": 1,
+      "width_mm": 20,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "89",
+          "x_mm": 10,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.608,
+            0.176,
+            0.667,
+            0.22
+          ]
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "line_count": 1,
+      "width_mm": 20,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "90",
+          "x_mm": 10,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.608,
+            0.22,
+            0.667,
+            0.264
+          ]
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "line_count": 1,
+      "width_mm": 20,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "91",
+          "x_mm": 10,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.608,
+            0.264,
+            0.667,
+            0.308
+          ]
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "line_count": 1,
+      "width_mm": 20,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "92",
+          "x_mm": 10,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.608,
+            0.308,
+            0.667,
+            0.352
+          ]
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "line_count": 1,
+      "width_mm": 20,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "93",
+          "x_mm": 10,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.608,
+            0.352,
+            0.667,
+            0.396
+          ]
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "line_count": 1,
+      "width_mm": 100,
+      "height_mm": 20,
+      "lines": [
+        {
+          "text": "SPARE",
+          "x_mm": 50,
+          "y_mm": 10,
+          "size_mm": 5,
+          "bbox_frac": [
+            0.388,
+            0.968,
+            0.603,
+            0.988
+          ]
+        }
+      ]
+    }
+  ]
+}

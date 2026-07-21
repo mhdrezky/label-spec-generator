@@ -1,0 +1,516 @@
+{
+  "cached_at": "2026-07-20T23:24:44+00:00",
+  "stage": "dual-structure",
+  "content": {
+    "draft_type": "sketch",
+    "material": "W/B",
+    "background_color": "white",
+    "text_color": "black",
+    "fixing": "adhesive",
+    "default_size_mm": null,
+    "line_sizes": [
+      {
+        "line": 1,
+        "size_mm": 6
+      }
+    ],
+    "dimension_annotations": [
+      {
+        "value_mm": 162,
+        "axis": "horizontal",
+        "span_frac": [
+          0.505,
+          0.545
+        ]
+      },
+      {
+        "value_mm": 15,
+        "axis": "vertical",
+        "span_frac": [
+          0.79,
+          0.81
+        ]
+      },
+      {
+        "value_mm": 270,
+        "axis": "horizontal",
+        "span_frac": [
+          0.505,
+          0.545
+        ]
+      },
+      {
+        "value_mm": 15,
+        "axis": "vertical",
+        "span_frac": [
+          0.89,
+          0.91
+        ]
+      }
+    ],
+    "plates": [
+      {
+        "id": 1,
+        "bbox_frac": [
+          0.0546,
+          0.0475,
+          0.4811,
+          0.1093
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 2,
+        "bbox_frac": [
+          0.4811,
+          0.0475,
+          0.8505,
+          0.1093
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 3,
+        "bbox_frac": [
+          0.0546,
+          0.2963,
+          0.4811,
+          0.3426
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 4,
+        "bbox_frac": [
+          0.0546,
+          0.389,
+          0.4811,
+          0.405
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 5,
+        "bbox_frac": [
+          0.0546,
+          0.405,
+          0.4811,
+          0.4204
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 6,
+        "bbox_frac": [
+          0.0546,
+          0.4204,
+          0.4811,
+          0.4359
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 7,
+        "bbox_frac": [
+          0.0546,
+          0.4359,
+          0.4811,
+          0.4513
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 8,
+        "bbox_frac": [
+          0.0546,
+          0.4513,
+          0.4811,
+          0.4667
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 9,
+        "bbox_frac": [
+          0.0546,
+          0.4667,
+          0.4811,
+          0.4822
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 10,
+        "bbox_frac": [
+          0.0546,
+          0.4822,
+          0.4811,
+          0.4982
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 11,
+        "bbox_frac": [
+          0.0546,
+          0.4982,
+          0.4811,
+          0.5137
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 12,
+        "bbox_frac": [
+          0.0546,
+          0.5137,
+          0.4811,
+          0.5291
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 13,
+        "bbox_frac": [
+          0.0546,
+          0.5291,
+          0.4811,
+          0.5445
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 14,
+        "bbox_frac": [
+          0.0546,
+          0.5445,
+          0.4811,
+          0.56
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 15,
+        "bbox_frac": [
+          0.0546,
+          0.56,
+          0.4811,
+          0.5754
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 16,
+        "bbox_frac": [
+          0.0546,
+          0.5754,
+          0.4811,
+          0.5914
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 17,
+        "bbox_frac": [
+          0.0546,
+          0.5914,
+          0.4811,
+          0.6069
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 18,
+        "bbox_frac": [
+          0.0546,
+          0.6069,
+          0.4811,
+          0.6223
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 19,
+        "bbox_frac": [
+          0.0546,
+          0.6223,
+          0.4811,
+          0.6378
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 20,
+        "bbox_frac": [
+          0.0546,
+          0.6378,
+          0.4811,
+          0.6532
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 21,
+        "bbox_frac": [
+          0.0546,
+          0.6532,
+          0.4811,
+          0.6686
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 22,
+        "bbox_frac": [
+          0.0546,
+          0.6686,
+          0.4811,
+          0.6847
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 23,
+        "bbox_frac": [
+          0.0546,
+          0.6847,
+          0.4811,
+          0.7001
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 24,
+        "bbox_frac": [
+          0.0546,
+          0.7001,
+          0.4811,
+          0.7156
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 25,
+        "bbox_frac": [
+          0.0546,
+          0.7156,
+          0.4811,
+          0.731
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 26,
+        "bbox_frac": [
+          0.0546,
+          0.731,
+          0.4811,
+          0.7464
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 27,
+        "bbox_frac": [
+          0.0546,
+          0.7464,
+          0.4811,
+          0.7618
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 28,
+        "bbox_frac": [
+          0.0546,
+          0.7618,
+          0.4811,
+          0.7772
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 29,
+        "bbox_frac": [
+          0.0546,
+          0.7772,
+          0.4811,
+          0.7926
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 30,
+        "bbox_frac": [
+          0.0546,
+          0.7926,
+          0.4811,
+          0.808
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 31,
+        "bbox_frac": [
+          0.0546,
+          0.808,
+          0.4811,
+          0.8234
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 32,
+        "bbox_frac": [
+          0.0546,
+          0.8234,
+          0.4811,
+          0.8388
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 33,
+        "bbox_frac": [
+          0.0546,
+          0.8388,
+          0.4811,
+          0.8542
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 34,
+        "bbox_frac": [
+          0.0546,
+          0.8542,
+          0.4811,
+          0.8696
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 35,
+        "bbox_frac": [
+          0.0546,
+          0.8696,
+          0.4811,
+          0.885
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 36,
+        "bbox_frac": [
+          0.0546,
+          0.885,
+          0.4811,
+          0.9004
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 37,
+        "bbox_frac": [
+          0.0546,
+          0.9004,
+          0.4811,
+          0.9158
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 38,
+        "bbox_frac": [
+          0.0546,
+          0.9158,
+          0.4811,
+          0.9312
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 39,
+        "bbox_frac": [
+          0.0546,
+          0.9312,
+          0.4811,
+          0.9466
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 40,
+        "bbox_frac": [
+          0.0546,
+          0.9466,
+          0.4811,
+          0.962
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 41,
+        "bbox_frac": [
+          0.0546,
+          0.962,
+          0.4811,
+          0.9774
+        ],
+        "width_mm": null,
+        "height_mm": null
+      },
+      {
+        "id": 42,
+        "bbox_frac": [
+          0.0546,
+          0.9774,
+          0.4811,
+          0.9928
+        ],
+        "width_mm": null,
+        "height_mm": null
+      }
+    ]
+  }
+}

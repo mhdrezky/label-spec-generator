@@ -43,10 +43,10 @@ python main.py --all             # every image in sample-data/
 
 Env overrides: `API_URL`, `MODEL`, `AGENTIC_EXTRACT_MAX_CONCURRENT`, ... (see `api_client.py`).
 
-LLM cache under `results/_<model>_<timestamp>/llm/` (`dual-structure`, `dual-content`).
+LLM cache under `results/current/_<model>_<timestamp>/llm/` (`dual-structure`, `dual-content`).
 Set `LLM_CACHE=0` to disable.
 
-Stage snapshots under `results/_<model>_<timestamp>/stages/`:
+Stage snapshots under `results/current/_<model>_<timestamp>/stages/`:
 
 | File | After |
 |------|--------|
@@ -73,7 +73,7 @@ python -m http.server 8641
 # open http://localhost:8641/editor/index.html
 ```
 
-Pick a run from `results/` in the dropdown, or load `editor/latest-specs.json`
+Pick a run from `results/current/` or `results/benchmark-models/` in the dropdown, or load `editor/latest-specs.json`
 (updated automatically after each `main.py` extract).
 
 ## Benchmark

@@ -1,0 +1,71 @@
+{
+  "source_image": "D:\\Repositories\\label-extractor\\sample-data\\drawing3.png",
+  "generated_at": "2026-07-21T08:36:10",
+  "extract_method": "dual_call",
+  "model": "Qwen/Qwen3-VL-32B-Instruct-FP8",
+  "unit": "mm",
+  "image_px": {
+    "width": 568,
+    "height": 481
+  },
+  "dimension_annotations": [
+    {
+      "value_mm": 70,
+      "axis": "horizontal",
+      "span_px": [
+        95.992,
+        470.98560000000003
+      ]
+    },
+    {
+      "value_mm": 20,
+      "axis": "vertical",
+      "span_px": [
+        81.289,
+        81.289
+      ]
+    }
+  ],
+  "labels": [
+    {
+      "label_number": 1,
+      "width_mm": 70,
+      "height_mm": 20,
+      "quantity": 1,
+      "material": "Traffolyte or SS316",
+      "background_color": "Yellow (For Traffolyte)",
+      "text_color": "Black",
+      "fixing": "Self-adhesive",
+      "notes": null,
+      "bbox_px": [
+        96,
+        81,
+        471,
+        195
+      ],
+      "lines": [
+        {
+          "text": "7000-SEN-20001",
+          "x_mm": 35.0,
+          "y_mm": 10.0,
+          "size_mm": 5.5,
+          "alignment": null,
+          "bold": null,
+          "bbox_px": [
+            96,
+            81,
+            471,
+            195
+          ],
+          "measured_fields": []
+        }
+      ],
+      "holes": []
+    }
+  ],
+  "total_labels": 1,
+  "warnings": [
+    "structure: using LLM plate outlines (CV gate: cv=2, llm=1, trust_cv=False)",
+    "plate #1: text '7000-SEN-20001' too wide at 8mm — reduced to 5.5mm"
+  ]
+}

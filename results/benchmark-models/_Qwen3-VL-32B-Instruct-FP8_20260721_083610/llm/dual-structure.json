@@ -1,0 +1,120 @@
+{
+  "cached_at": "2026-07-21T00:36:25+00:00",
+  "stage": "dual-structure",
+  "content": {
+    "draft_type": "sketch",
+    "material": null,
+    "background_color": "white",
+    "text_color": "black",
+    "fixing": null,
+    "default_size_mm": null,
+    "line_sizes": [],
+    "dimension_annotations": [
+      {
+        "value_mm": 160,
+        "axis": "horizontal",
+        "span_frac": [
+          0.22,
+          0.42
+        ]
+      },
+      {
+        "value_mm": 60,
+        "axis": "vertical",
+        "span_frac": [
+          0.42,
+          0.48
+        ]
+      },
+      {
+        "value_mm": 100,
+        "axis": "horizontal",
+        "span_frac": [
+          0.18,
+          0.32
+        ]
+      },
+      {
+        "value_mm": 60,
+        "axis": "vertical",
+        "span_frac": [
+          0.32,
+          0.38
+        ]
+      },
+      {
+        "value_mm": 100,
+        "axis": "horizontal",
+        "span_frac": [
+          0.18,
+          0.32
+        ]
+      },
+      {
+        "value_mm": 10,
+        "axis": "vertical",
+        "span_frac": [
+          0.32,
+          0.38
+        ]
+      }
+    ],
+    "plates": [
+      {
+        "id": 1,
+        "bbox_frac": [
+          0.22,
+          0.24,
+          0.42,
+          0.34
+        ],
+        "width_mm": 160,
+        "height_mm": 60
+      },
+      {
+        "id": 2,
+        "bbox_frac": [
+          0.18,
+          0.38,
+          0.32,
+          0.48
+        ],
+        "width_mm": 100,
+        "height_mm": 60
+      },
+      {
+        "id": 3,
+        "bbox_frac": [
+          0.18,
+          0.52,
+          0.32,
+          0.62
+        ],
+        "width_mm": 100,
+        "height_mm": 10
+      },
+      {
+        "id": 4,
+        "bbox_frac": [
+          0.18,
+          0.52,
+          0.32,
+          0.62
+        ],
+        "width_mm": 100,
+        "height_mm": 10
+      },
+      {
+        "id": 5,
+        "bbox_frac": [
+          0.18,
+          0.52,
+          0.32,
+          0.62
+        ],
+        "width_mm": 100,
+        "height_mm": 10
+      }
+    ]
+  }
+}
